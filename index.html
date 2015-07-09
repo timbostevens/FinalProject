@@ -17,14 +17,29 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-<style type="text/css">
-    
-    #top{
-        background-image: url(img/Car02Bright.png);
-        background-size: cover;
-    }
+      <style type="text/css">
 
-</style>
+        #top{
+            background-image: url(img/Car02Bright.png);
+            background-size: cover;
+            height: 500px;
+        }
+
+        #middle{
+            background-color: #FFD464;
+        }
+
+        #bottom{
+            background-color: #A6D8DE;
+        }
+
+        .jumbotron{
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+    </style>
 
 
 
@@ -32,12 +47,12 @@
 <body>
 
 
-    <div class ="navbar navbar-default">
+    <div class ="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
 
 
-         <!--  my website logo -->
-         <div class="navbar-header">
+           <!--  my website logo -->
+           <div class="navbar-header">
             <a href="" class="navbar-brand">Electric DeLorean</a>
 
 
@@ -73,21 +88,92 @@
 </div>
 
 <div id="top" class="jumbotron">
-  <div class="container">
-    <p>This is my top container</p>
-  </div>
+    <div class="container">
+            <h2>DeLorean Electric Car</h2>
+            <p>Who knew a car could be so awesome<br/>I need to fix the image scaling</p>
+    </div>
 </div>
-    
-    <div id="middle" class="jumbotron">
+<!-- set up  jumbotron container -->
+<div id="middle" class="jumbotron">
   <div class="container">
-    <p>This is my middle container</p>
-  </div>
+  <h2>Recent Journeys</h2>
+   <!-- set up accordion list -->
+    <div class="bs-example">
+        <div class="panel-group" id="accordion">
+        <!-- This is the first entry -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">12th September 2015</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p>Put in some data here</p>
+                    </div>
+                </div>
+            </div>
+            <!-- This is the second entry -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">11th September 2015</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Put in some data here</p>
+                    </div>
+                </div>
+            </div>
+            <!-- This is the third entry -->
+         <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">10th September 2015</a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Put in some data here</p>
+                    </div>
+                </div>
+            </div>
+                        <!-- This is the Fourth entry -->
+         <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">9th September 2015</a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Put in some data here</p>
+                    </div>
+                </div>
+            </div>
+                        <!-- This is the Fifth entry -->
+         <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">8th September 2015</a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Put in some data here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
-    <div id="middle" class="jumbotron">
+<div id="bottom" class="jumbotron">
   <div class="container">
     <p>This is my bottom container</p>
-  </div>
+</div>
 </div>
 
 
