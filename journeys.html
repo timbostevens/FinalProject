@@ -31,6 +31,12 @@
 
         }
 
+        #squareChart{
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            }
+
 
     </style>
 
@@ -74,14 +80,8 @@
 
 
         </div>
-
-
     </div>
-
-    
-
 </div>
-
 
 <!-- set up  jumbotron container -->
 <div class="jumbotron">
@@ -90,7 +90,7 @@
       <!-- set up accordion list -->
       <div class="bs-example">
         <div class="panel-group" id="accordion">
-            <!-- This is the first entry -->
+            <!-- This is the first accordion entry -->
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -102,27 +102,47 @@
                         <div class = "googlemap">
                             <div id="map" style="width: 100%; height: 300px;"></div>
                         </div>
-                        
+                        <!-- large horizontal chart -->
                         <div class="hchart">
                             <h5>Some data vs some data</h5>
                             <img src="img/sampleChartWide.png" class="img-responsive"/>
                         </div>
 
                         <div class="row">
+                        <!-- Left hand column containing stat list -->
+
+                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
+                            THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                             <div class="col-md-6 box">
                                 <h4>Some stats</h4>
+
+                                <p>Start Time: 13:23</p>
+
+                                <p>End Time: 14:00</p>
+
+
                                 <p>Distance: 12 km<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
 
-                              <p>Duration: 32 minutes<button type="button" class="btn btn-link btn-xs">
+                                <p>Duration: 32 minutes<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
 
-                          </div>
 
-                          <div class="col-md-6 box">
+                                <p>Speed: 32 km/h<button type="button" class="btn btn-link btn-xs">
+                                  <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                            <h5>Some data vs some data</h5>
-                            <img src="img/sampleScatterGraph01.jpeg" class="img-responsive" id="squareChart"/>
+                                <p>Energy Saved: 234 kWh<button type="button" class="btn btn-link btn-xs">
+                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
+
+                                <p>CO2 Saved: 50 g<button type="button" class="btn btn-link btn-xs">
+                                  <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+
+                                
+                            </div>
+                        <!-- Right hand column containing chart -->
+                            <div class="col-md-6 box">
+                                <h5>Some data vs some data</h5>
+                            <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive" id="squareChart"/>
 
                         </div>
 
@@ -131,7 +151,7 @@
                 </div>
             </div>
         </div>
-        <!-- This is the second entry -->
+        <!-- This is the second accordion entry -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -144,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <!-- This is the third entry -->
+        <!-- This is the third accordion entry -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -157,7 +177,7 @@
                 </div>
             </div>
         </div>
-        <!-- This is the Fourth entry -->
+        <!-- This is the Fourth accordion entry -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -170,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <!-- This is the Fifth entry -->
+        <!-- This is the Fifth accordion entry -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
