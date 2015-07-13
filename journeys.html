@@ -17,19 +17,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+      <link rel="stylesheet" type="text/css" href="styles.css"/>
 
 
-</head>
-<body onload="load()">
+  </head>
+  <body onload="load()">
 
 
-    <div class ="navbar navbar-inverse navbar-fixed-top">
+    <div class ="navbar navbar-default navbar-fixed-top">
         <div class="container">
 
 
-         <!--  my website logo -->
-         <div class="navbar-header">
+           <!--  my website logo -->
+           <div class="navbar-header">
             <a href="index.html" class="navbar-brand">Electric DeLorean</a>
 
 
@@ -50,7 +50,7 @@
         <!-- menu items -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Journeys</a></li>
+                <li class="active"><a href="">Journeys</a></li>
                 <li><a href="visualisations.html">Visualisations</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="about.html">Contact</a></li>
@@ -187,21 +187,25 @@
             </div>
         </div>
 
+
+
         <footer class="footer">
           <div class="container">
-            <p class="text-muted">Place sticky footer content here.</p>
-        </div>
-    </footer>
 
-    <!-- Load Google map API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Google Map loading code -->
-    <script type="text/javascript" src="mapload.js"></script>
-    <!-- Chart changer -->
-    <script type="text/javascript" src="chartChanger.js"></script>
+            <img src="img/QueensLogo02.png" class="img-responsive" id="footerLogo"/>
+
+        </div>
+</footer>
+
+<!-- Load Google map API -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Google Map loading code -->
+<script type="text/javascript" src="mapload.js"></script>
+<!-- Chart changer -->
+<script type="text/javascript" src="chartChanger.js"></script>
 </body>
 </html>
