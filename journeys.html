@@ -8,7 +8,7 @@
     <title>Awesome DeLorean Project</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,28 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-      <style type="text/css">
-
-        .jumbotron{
-            background-color: #FFD464;
-            text-align: center;
-            margin-bottom: 0;
-            margin-top: 0;
-        }
-
-        .large{
-            font-size: 150%;
-
-        }
-
-        #squareChart{
-            width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            }
-
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
 
 
 </head>
@@ -109,113 +88,120 @@
                         </div>
 
                         <div class="row">
-                        <!-- Left hand column containing stat list -->
+                            <!-- Left hand column containing stat list -->
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
-                            THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
-                            <div class="col-md-6 box">
-                                <h4>Some stats</h4>
+                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
+                        <div class="col-md-6 box">
+                            <h4>Some stats</h4>
 
-                                <p>Start Time: 13:23</p>
+                            <p>Start Time: 13:23</p>
 
-                                <p>End Time: 14:00</p>
+                            <p>End Time: 14:00</p>
 
 
-                                <p>Distance: 12 km<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
+                            <p>Distance: 12 km<button type="button" class="btn btn-link btn-xs">
+                              <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
 
-                                <p>Duration: 32 minutes<button type="button" class="btn btn-link btn-xs">
+                              <p>Duration: 32 minutes<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
 
 
-                                <p>Speed: 32 km/h<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
+                                  <p>Speed: 32 km/h<button type="button" class="btn btn-link btn-xs">
+                                      <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                                <p>Energy Saved: 234 kWh<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
+                                      <p>Energy Saved: 234 kWh<button type="button" class="btn btn-link btn-xs">
+                                          <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                                <p>CO2 Saved: 50 g<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+                                          <p>CO2 Saved: 50 g<button type="button" class="btn btn-link btn-xs">
+                                              <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
-                                
+
+                                          </div>
+                                          <!-- Right hand column containing chart -->
+                                          <div class="col-md-6 box">
+                                            <h5>Some data vs some data</h5>
+                                            <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive" id="squareChart"/>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
-                        <!-- Right hand column containing chart -->
-                            <div class="col-md-6 box">
-                                <h5>Some data vs some data</h5>
-                            <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive" id="squareChart"/>
-
                         </div>
-
+                        <!-- This is the second accordion entry -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">11th September 2015</a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Put in some data here</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- This is the third accordion entry -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">10th September 2015</a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Put in some data here</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- This is the Fourth accordion entry -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">9th September 2015</a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Put in some data here</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- This is the Fifth accordion entry -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">8th September 2015</a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Put in some data here</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                </div>
-            </div>
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
         </div>
-        <!-- This is the second accordion entry -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">11th September 2015</a>
-                </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Put in some data here</p>
-                </div>
-            </div>
-        </div>
-        <!-- This is the third accordion entry -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">10th September 2015</a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Put in some data here</p>
-                </div>
-            </div>
-        </div>
-        <!-- This is the Fourth accordion entry -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">9th September 2015</a>
-                </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Put in some data here</p>
-                </div>
-            </div>
-        </div>
-        <!-- This is the Fifth accordion entry -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">8th September 2015</a>
-                </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Put in some data here</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<!-- Load Google map API -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Google Map loading code -->
-<script type="text/javascript" src="mapload.js"></script>
-<!-- Chart changer -->
-<script type="text/javascript" src="chartChanger.js"></script>
+    </footer>
+
+    <!-- Load Google map API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Google Map loading code -->
+    <script type="text/javascript" src="mapload.js"></script>
+    <!-- Chart changer -->
+    <script type="text/javascript" src="chartChanger.js"></script>
 </body>
 </html>
