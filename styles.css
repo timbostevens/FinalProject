@@ -1,0 +1,174 @@
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  /* Padding top for navbar*/
+  margin-top: 50px;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: 'Biryani', sans-serif;
+}
+
+/* Centralises text horizontally */
+.centralised-text{
+  text-align:center;
+}
+
+.navbar{
+  background-color: #222930;
+
+}
+/* Navbar links */
+.navbar .nav > li > a {
+    color: #E9E9E9;
+}
+
+
+.footer {
+  position: absolute;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: grey;
+}
+
+#footerLogo{
+  margin-top: 15px;
+  width: 100px;
+  float: right;
+}
+
+#footer-container{
+  margin-right: 10px;
+}
+
+.jumbotron{
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 0 !important;
+  /*Trying to stop text overflowing*/
+  overflow: auto;
+}
+
+/*.centre-block-text{
+  position: relative;
+  top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    }*/
+
+    #top{
+      background-image: url(img/Car02Bright.png);
+      background-size: cover;
+      height: 500px;
+    }
+
+    #middle{
+      background-color: #a4c5db;
+    }
+
+    #bottom{
+      background-color: #C3D7DF;
+    }
+
+/*
+ * Global add-ons
+ */
+
+ .sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+ .navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+ /* Hide for mobile, show later */
+ .sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+ .main {
+  padding: 0px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+/*Change colour of sidebar on hover or click*/
+.nav>li>a:focus,
+.nav>li>a:hover{
+  background-color: lightgrey;
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+/*.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
