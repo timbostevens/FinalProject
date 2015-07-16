@@ -37,8 +37,13 @@ body {
 /* Centralises text horizontally */
 .centralised-text{
   text-align:center;
+  margin-left: 0;
 }
 
+#no-margin-container{
+  margin-left: 0;
+  margin-right: 0;
+}
 
 #top{
   background-image: url(img/Car02Bright.png);
@@ -49,6 +54,7 @@ body {
 
 #middle{
   background-color: #FFFFFF;
+
 }
 
 #bottom{
@@ -159,8 +165,6 @@ body {
   color: #fff;
   background-color: #428bca;
 }
-
-
 
 /*Change colour of sidebar on hover or click*/
 .nav>li>a:focus,
