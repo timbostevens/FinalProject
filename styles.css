@@ -1,3 +1,5 @@
+/*=============================*/
+/*===== Main Elements==========*/
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
@@ -8,10 +10,59 @@ body {
   font-family: 'Biryani', sans-serif;
 }
 
+ .main {
+  padding: 0px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+.jumbotron{
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 0 !important;
+  /*Trying to stop text overflowing*/
+  overflow: auto;
+}
+
 /* Centralises text horizontally */
 .centralised-text{
   text-align:center;
 }
+
+
+#top{
+  background-image: url(img/Car02Bright.png);
+  background-size: cover;
+  height: 500px;
+}
+
+#middle{
+  background-color: #a4c5db;
+}
+
+#bottom{
+  background-color: #C3D7DF;
+}
+
+/*
+ * Global add-ons
+ */
+
+ .sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*=============================*/
+/*===== Navbar ================*/
 
 .navbar{
   background-color: #222930;
@@ -22,6 +73,13 @@ body {
     color: #E9E9E9;
 }
 
+/*Hide default border to remove 1px line */
+ .navbar-fixed-top {
+  border: 0;
+}
+
+/*=============================*/
+/*===== Footer ================*/
 
 .footer {
   position: absolute;
@@ -41,57 +99,9 @@ body {
   margin-right: 10px;
 }
 
-.jumbotron{
-  text-align: center;
-  margin-bottom: auto;
-  margin-top: auto;
-  border-radius: 0 !important;
-  /*Trying to stop text overflowing*/
-  overflow: auto;
-}
 
-/*.centre-block-text{
-  position: relative;
-  top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    }*/
-
-    #top{
-      background-image: url(img/Car02Bright.png);
-      background-size: cover;
-      height: 500px;
-    }
-
-    #middle{
-      background-color: #a4c5db;
-    }
-
-    #bottom{
-      background-color: #C3D7DF;
-    }
-
-/*
- * Global add-ons
- */
-
- .sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-/*
- * Top navigation
- * Hide default border to remove 1px line.
- */
- .navbar-fixed-top {
-  border: 0;
-}
-
-/*
- * Sidebar
- */
+/*=============================*/
+/*===== Sidebar ===============*/
 
  /* Hide for mobile, show later */
  .sidebar {
@@ -131,44 +141,8 @@ body {
 }
 
 
-/*
- * Main content
- */
-
- .main {
-  padding: 0px;
-}
-@media (min-width: 768px) {
-  .main {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-.main .page-header {
-  margin-top: 0;
-}
-
 /*Change colour of sidebar on hover or click*/
 .nav>li>a:focus,
 .nav>li>a:hover{
   background-color: lightgrey;
-}
-
-/*
- * Placeholder dashboard ideas
- */
-
-/*.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
 }
