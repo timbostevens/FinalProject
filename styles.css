@@ -40,6 +40,16 @@ body {
   margin-left: 0;
 }
 
+#column-med-padding{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.jumbotron .info-text{
+  font-size: 90%;
+  padding-top: 10px;
+}
+
 #no-margin-container{
   margin-left: 0;
   margin-right: 0;
