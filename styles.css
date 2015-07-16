@@ -4,6 +4,16 @@
   margin-top: auto;
 }
 
+
+.navbar{
+  background-color: #222930;
+
+}
+/* Navbar links */
+.navbar .nav > li > a {
+    color: #E9E9E9;
+}
+
 .large{
   font-size: 150%;
 
@@ -22,11 +32,11 @@
 }
 
 #middle{
-  background-color: #FFD464;
+  background-color: #a4c5db;
 }
 
 #bottom{
-  background-color: #A6D8DE;
+  background-color: #C3D7DF;
 }
 
 /* html, body and footer all for sticky footer*/
@@ -39,6 +49,7 @@ html {
 body {
 /* Margin bottom by footer height */
 margin-bottom: 60px;
+font-family: 'Biryani', sans-serif;
 }
 
 .footer {
@@ -67,3 +78,12 @@ margin-bottom: 60px;
 .centralisedText{
   text-align:center;
 }
+
+.infoText{
+  margin-top: 10px;
+}
+
+#middle .row p {
+    font-size: 125%
+}
+
