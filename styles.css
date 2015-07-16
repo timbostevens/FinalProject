@@ -8,6 +8,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   font-family: 'Biryani', sans-serif !important;
+  letter-spacing: 2px;
 }
 
  .main {
@@ -149,7 +150,7 @@ body {
 .nav-sidebar > li > a {
   padding-right: 20px;
   padding-left: 20px;
-  color: red;
+  color: grey;
   margin-bottom: 0;
 }
 .nav-sidebar > .active > a,
