@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Download fint from google -->
+<!-- Download fint from google -->
   <link href='http://fonts.googleapis.com/css?family=Biryani' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,11 +28,25 @@
       <![endif]-->
     </head>
 
-    <body onload="load()">
+     <body onload="load()">
       <!-- Navbar -->
       
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
+          <div class="row">
+
+<!--first column to hold recent journeys text-->
+<div class="col-md-2 col-sm-3" id="navbar-recent">
+<div>
+  <h6>JOURNEYS</h6>
+
+</div>
+</div>
+
+<!--second column to hold main navbar contents -->
+<div class="col-md-10 col-sm-9 col-xs-12">
+
+
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -40,69 +54,78 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">DeLorean Project</a>
+            <a class="navbar-brand" href="index.html">DeLOREAN PROJECT</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Journeys</a></li>
-              <li><a href="#">Visualsations</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li class="active"><a href="#">journeys</a></li>
+              <li><a href="visualisations.html">visualsations</a></li>
+              <li><a href="about.html">about</a></li>
+              <li><a href="about.html">contact</a></li>
             </ul>
-
-
-
-
-
-<!--           <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form> -->
         </div>
+      
+
+
+</div>
+
+
+
+      </div>
       </div>
     </nav> <!-- End Navbar -->
 
 
 
-
+<!--main panel split into two (sidebar and main)-->
 
     <div class="container-fluid centralised-text">
       <div class="row">
+
+
+
         <!-- Sidebar -->
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
 
-            <h4>Recent Journeys</h4>
             <!-- Sidebar entry -->
             <li><a href="#">              
               <div>
-                <img src="img/techController04.jpg" class="img-responsive">
-                <h5>12th September 2013 <br/>14 km</h5>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
               </div>
             </a></li> <!-- End sidebar entry -->
+            <hr/>
             <li><a href="#">              
               <div>
-                <img src="img/techController04.jpg" class="img-responsive">
-                <h5>12th September 2013 <br/>14 km</h5>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
               </div>
             </a></li> <!-- End sidebar entry -->
+            <hr/>
             <li><a href="#">              
               <div>
-                <img src="img/techController04.jpg" class="img-responsive">
-                <h5>12th September 2013 <br/>14 km</h5>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
               </div>
             </a></li> <!-- End sidebar entry -->
+            <hr/>
             <li><a href="#">              
               <div>
-                <img src="img/techController04.jpg" class="img-responsive">
-                <h5>12th September 2013 <br/>14 km</h5>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
               </div>
             </a></li> <!-- End sidebar entry -->
+            <hr/>
             <li><a href="#">              
               <div>
-                <img src="img/techController04.jpg" class="img-responsive">
-                <h5>12th September 2013 <br/>14 km</h5>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
               </div>
             </a></li> <!-- End sidebar entry -->
+            <hr/>
+            <li><a href="#">more journeys</a></li>
+            <!-- End sidebar entry -->
           </ul>
 
         </div> <!-- End Sidebar -->
@@ -114,10 +137,13 @@
 
 
 
+
+
+
           <!-- set up  jumbotron container -->
 <div class="jumbotron" id="middle">
   <div class="container">
-      <h2>Recent Journeys</h2>
+      <h3>JOURNEYS</h3>
       <!-- set up accordion list -->
       <div class="bs-example">
         <div class="panel-group" id="accordion">
@@ -244,19 +270,19 @@
 
 
 
+
         </div> <!-- End Main Content -->
       </div> <!-- End Row -->
     </div> <!-- End container-->
 
     <footer class="footer">
-      <div class="container" id="footer-container">
+  <div class="container" id="footer-container">
 
-        <img src="img/QueensLogo02.png" class="img-responsive" id="footerLogo"/>
+    <img src="img/QueensLogo02.png" class="img-responsive" id="footerLogo"/>
 
-      </div>
-    </footer>
-    <!-- Load Google map API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</div>
+</footer>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -265,7 +291,9 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <!-- Google Map loading code -->
+    <!-- Load Google map API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        <!-- Google Map loading code -->
     <script type="text/javascript" src="mapload.js"></script>
     <!-- Chart changer -->
     <script type="text/javascript" src="chartChanger.js"></script>

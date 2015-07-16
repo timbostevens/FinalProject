@@ -1,174 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href='http://fonts.googleapis.com/css?family=Biryani' rel='stylesheet' type='text/css'>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Awesome DeLorean Project</title>
+<!-- Download fint from google -->
+  <link href='http://fonts.googleapis.com/css?family=Biryani' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <title>Tim's Dashboard Test</title>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="styles.css" rel="stylesheet">
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
+    </head>
+
+    <body>
+      <!-- Navbar -->
+      
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="row">
+
+<!--first column to hold recent journeys text-->
+<div class="col-md-2 col-sm-3" id="navbar-recent">
+<div>
+  <h6>JOURNEYS</h6>
+
+</div>
+</div>
+
+<!--second column to hold main navbar contents -->
+<div class="col-md-10 col-sm-9 col-xs-12">
 
 
-<link rel="stylesheet" type="text/css" href="styles.css"/>
-
-
-</head>
-<body>
-
-
-    <div class ="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-
-
-           <!--  my website logo -->
-           <div class="navbar-header">
-            <a href="" class="navbar-brand">Electric DeLorean</a>
-
-
-            <!-- sets up the button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <!-- text for screen readers -->
-                <span class ="sr-only">Toggle navigation</span>
-                <!--  creates a single button out of three horizontal bars -->
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
-
-
-        </div>
-
-        <!-- menu items -->
-        <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="#">DeLOREAN PROJECT</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="journeys.html">Journeys</a></li>
-                <li><a href="visualisations.html">Visualisations</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="about.html">Contact</a></li>
-                <li><a href=""><span class="glyphicon glyphicon-home small"></span></a></li>
-
+              <li><a href="journeys.html">journeys</a></li>
+              <li><a href="visualisations.html">visualsations</a></li>
+              <li><a href="about.html">about</a></li>
+              <li><a href="about.html">contact</a></li>
             </ul>
-
-
         </div>
+      
 
 
-    </div>
 </div>
 
-<div id="top" class="jumbotron">
-    <div class="container centre-block-text">
-            <h2>DeLorean Electric Car</h2>
-            <p>Who knew a car could be so awesome<br/>I need to fix the image scaling and text centralisation</p>
-    </div>
-</div>
-<!-- set up  jumbotron container -->
-<div id="middle" class="jumbotron">
-  <div class="container">
-  <h2>Recent Journeys</h2>
-   <!-- set up accordion list -->
-    <div class="bs-example">
-        <div class="panel-group" id="accordion">
-        <!-- This is the first entry -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">12th September 2015</a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <p>Put in some data here</p>
-                    </div>
-                </div>
+
+
+      </div>
+      </div>
+    </nav> <!-- End Navbar -->
+
+
+
+<!--main panel split into two (sidebar and main)-->
+
+    <div class="container-fluid centralised-text">
+      <div class="row">
+
+
+
+        <!-- Sidebar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+
+            <!-- Sidebar entry -->
+            <li><a href="#">              
+              <div>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
+              </div>
+            </a></li> <!-- End sidebar entry -->
+            <hr/>
+            <li><a href="#">              
+              <div>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
+              </div>
+            </a></li> <!-- End sidebar entry -->
+            <hr/>
+            <li><a href="#">              
+              <div>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
+              </div>
+            </a></li> <!-- End sidebar entry -->
+            <hr/>
+            <li><a href="#">              
+              <div>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
+              </div>
+            </a></li> <!-- End sidebar entry -->
+            <hr/>
+            <li><a href="#">              
+              <div>
+                <img src="img/sampleMap02.jpg" class="img-responsive">
+                <h6>12th September 2013 <br/>14 km</h6>
+              </div>
+            </a></li> <!-- End sidebar entry -->
+            <hr/>
+            <li><a href="#">more journeys</a></li>
+            <!-- End sidebar entry -->
+          </ul>
+
+        </div> <!-- End Sidebar -->
+
+
+        <!-- Main Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+
+<!-- Top container -->
+          <div id="top" class="jumbotron">
+            <div class="container centre-block-text">
+              <h2>DeLorean Electric Car</h2>
+              <p><Small>Turning a weird car into something awesome</Small></p>
             </div>
-            <!-- This is the second entry -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">11th September 2015</a>
-                    </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p>Put in some data here</p>
-                    </div>
-                </div>
-            </div>
-            <!-- This is the third entry -->
-         <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">10th September 2015</a>
-                    </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p>Put in some data here</p>
-                    </div>
-                </div>
-            </div>
-                        <!-- This is the Fourth entry -->
-         <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">9th September 2015</a>
-                    </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p>Put in some data here</p>
-                    </div>
-                </div>
-            </div>
-                        <!-- This is the Fifth entry -->
-         <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">8th September 2015</a>
-                    </h4>
-                </div>
-                <div id="collapseFive" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p>Put in some data here</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<div id="bottom" class="jumbotron">
-  <div class="container">
-    <p>This is my bottom container</p>
-</div>
-</div>
+          </div>
+          
 
 
-<footer class="footer">
-          <div class="container">
-            
-            <img src="img/QueensLogo02.png" class="img-responsive" id="footerLogo"/>
 
-        </div>
+
+
+
+
+
+
+
+
+        </div> <!-- End Main Content -->
+      </div> <!-- End Row -->
+    </div> <!-- End container-->
+
+    <footer class="footer">
+  <div class="container" id="footer-container">
+
+    <img src="img/QueensLogo02.png" class="img-responsive" id="footerLogo"/>
+
+</div>
 </footer>
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+
+
+
+
+  </html>
