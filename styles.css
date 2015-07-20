@@ -212,6 +212,17 @@ color: lightgrey;
 /*==================================*/
 /*==========Visualisations==========*/
 
+/*date button*/
+#date-select{
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+
+/*text in the dropdown*/
+.dropdown-menu > li > a{
+ font-size: 90%;
+}
+
 .pill-holder{
   padding-top: 40px;
   padding-right: 40px;
