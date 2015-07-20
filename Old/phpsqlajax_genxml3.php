@@ -24,10 +24,8 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM datapoints";
+$query = "SELECT * FROM markers WHERE 1";
 $result = mysql_query($query);
-
-// if there is no result, throw an error
 if (!$result) {
   die('Invalid query: ' . mysql_error());
 }
@@ -38,19 +36,13 @@ header("Content-type: text/xml");
 
 while ($row = @mysql_fetch_assoc($result)){
   // ADD TO XML DOCUMENT NODE
-
-  // states the node name
   $node = $dom->createElement("marker");
-  // creates a new node
   $newnode = $parnode->appendChild($node);
-
-  // $row[] states column name in to retrieve from db results
-  // setAttribute(.... is how it is listed in produced xml
-  $newnode->setAttribute("name",$row['point_id']);
-  $newnode->setAttribute("speed", $row['speed_kmh']);
-  $newnode->setAttribute("lat", $row['lat_dd']);
-  $newnode->setAttribute("lng", $row['long_dd']);
-  $newnode->setAttribute("b_current", $row['battery_current']);
+  $newnode->setAttribute("name",$row['name']);
+  $newnode->setAttribute("address", $row['address']);
+  $newnode->setAttribute("lat", $row['lat']);
+  $newnode->setAttribute("lng", $row['lng']);
+  $newnode->setAttribute("type", $row['type']);
 }
 
 echo $dom->saveXML();

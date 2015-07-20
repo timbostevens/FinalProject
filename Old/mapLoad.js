@@ -3,7 +3,7 @@
     */
     function load() {
       var map = new google.maps.Map(document.getElementById("map"), {
-        center: new google.maps.LatLng(54.5954, -5.876),
+        center: new google.maps.LatLng(47.6145, -122.3418),
         zoom: 13,
         mapTypeId: 'roadmap'
       });
@@ -17,14 +17,14 @@
         // retrieve attributes for each element
         for (var i = 0; i < markers.length; i++) {
           var name = markers[i].getAttribute("name");
-          var speed = markers[i].getAttribute("speed");
-          var batCur = markers[i].getAttribute("b_current");
+          var address = markers[i].getAttribute("address");
+          var type = markers[i].getAttribute("type");
           var point = new google.maps.LatLng(
             parseFloat(markers[i].getAttribute("lat")),
             parseFloat(markers[i].getAttribute("lng")));
           
           // create text for info window  
-          var html = "Data Point: " + name + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Current: " + batCur + " A";
+          var html = "<b>" + name + "</b> <br/>" + address;
           //var icon = customIcons[type] || {};
           // create marker
           var marker = new google.maps.Marker({
