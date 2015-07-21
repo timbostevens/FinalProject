@@ -4,6 +4,9 @@ $username="root";
 $password="";
 $database="test";
 
+// pull journey number from Get request
+$journeyNumber = $_GET["journey"];
+
 // Start XML file, create parent node
 
 $dom = new DOMDocument("1.0");
@@ -24,7 +27,7 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM datapoints";
+$query = "SELECT * FROM datapoints WHERE journey_id = $journeyNumber";
 $result = mysql_query($query);
 
 // if there is no result, throw an error
