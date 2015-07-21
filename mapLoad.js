@@ -3,11 +3,27 @@
     * takes journey number as argument
     */
     function load(journeyNumber) {
-      var map = new google.maps.Map(document.getElementById("map"), {
+        // vars for finding centre and zoom
+        var minLat;
+        var maxLat;
+        var minLong;
+        var maxLong;
+      // arrays for lats and longs
+      var latArray = [];
+      var longArray = [];
+
+
+
+
+      // setup map options
+      var mapOptions={
         center: new google.maps.LatLng(54.5954, -5.876),
         zoom: 13,
-        mapTypeId: 'roadmap'
-      });
+        //mapTypeId: 'roadmap'
+      };
+
+      // create new map with map options
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
       // creates varible for info window
       var infoWindow = new google.maps.InfoWindow;
 
@@ -29,6 +45,9 @@
           var point = new google.maps.LatLng(
             parseFloat(markers[i].getAttribute("lat")),
             parseFloat(markers[i].getAttribute("lng")));
+          // add lat and long to arrays
+          latArray.push(parseFloat(markers[i].getAttribute("lat")));
+          longArray.push(parseFloat(markers[i].getAttribute("lng")));
           
           // create text for info window  
           var html = "Data Point: " + name + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Current: " + batCur + " A";
@@ -41,9 +60,29 @@
           });
           // call function
           bindInfoWindow(marker, map, infoWindow, html);
-        }
-      });
-}
+
+           // on the last pass do this stuff
+           if(i==(markers.length-1)){
+            // calculate centre lat and longs
+            var centLat = Math.min.apply(null, latArray) + ((Math.max.apply(null, latArray)-Math.min.apply(null, latArray))/2);
+            var centLong = Math.min.apply(null, longArray) + ((Math.max.apply(null, longArray)-Math.min.apply(null, longArray))/2);
+              // create updated map options
+            var updatedMapOptions = {
+                center: new google.maps.LatLng(centLat,centLong),
+                // center: new google.maps.LatLng(57.5, -4),
+                zoom: 17,
+              };// end updated map options
+
+            map.setOptions(updatedMapOptions);
+          }// end if
+
+        }// end for
+
+      } // end download URL function
+
+    );//end download url
+  }// end load()
+
     /*
     * adds event listener to markers to manage clicks and diplay info windows
     */
@@ -70,7 +109,7 @@
         }
       };
 // Ajax request (GET request tyoe, url, true = asynchronous)
-      request.open('GET', url, true);
+request.open('GET', url, true);
       // sends the Ajax request
       request.send(null);
     }
