@@ -25,10 +25,10 @@ if (!$db_selected) {
   die ('Can\'t use db : ' . mysql_error());
 }
 
-// Select all the rows in the markers table
-
-$query = "SELECT * FROM datapoints WHERE journey_id = $journeyNumber";
-$result = mysql_query($query);
+// Select rows from the datapoints table
+//updates results so that journey 1 becomes the highest journey number from the database
+$queryDatapoints = "SELECT * FROM datapoints WHERE journey_id = ((SELECT COUNT(*) FROM journeys)+1-$journeyNumber)";
+$result = mysql_query($queryDatapoints);
 
 // if there is no result, throw an error
 if (!$result) {
