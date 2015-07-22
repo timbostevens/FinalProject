@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Download fint from google -->
+	<!-- Download font from google -->
 	<link href='http://fonts.googleapis.com/css?family=Biryani' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
