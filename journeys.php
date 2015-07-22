@@ -250,11 +250,21 @@
                           </div>
                           <!-- This is the second accordion entry -->
                           <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">11th September 2015</a>
-                              </h4>
-                            </div>
+     <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          <div class="row">
+                          <div class="col-md-8">
+                            <p>Journey <?php echo $resultArray[1][0]; ?></p>
+                            <p><small><?php echo $resultArray[1][1]; ?></small></p>
+                            <p><small>13 km</small></p>
+                          </div>
+                          <div class="col-md-4">
+                            <img src="img/sampleMap02.jpg"/>
+                          </div>
+                          </a>
+                        </h4>
+                      </div>
                             <div id="collapseTwo" class="panel-collapse collapse">
                               <div class="panel-body">
                               <p>Enter some content</p>
