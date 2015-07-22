@@ -3,16 +3,8 @@
     * takes journey number as argument
     */
     function load(journeyNumber) {
-        // vars for finding centre and zoom
-        var minLat;
-        var maxLat;
-        var minLong;
-        var maxLong;
-      // arrays for lats and longs
-      var latArray = [];
-      var longArray = [];
-
-
+      // var for marker bounds (used for setting the zoom and centre)
+      var markerBounds = new google.maps.LatLngBounds();
 
 
       // setup map options
@@ -45,10 +37,9 @@
           var point = new google.maps.LatLng(
             parseFloat(markers[i].getAttribute("lat")),
             parseFloat(markers[i].getAttribute("lng")));
-          // add lat and long to arrays
-          latArray.push(parseFloat(markers[i].getAttribute("lat")));
-          longArray.push(parseFloat(markers[i].getAttribute("lng")));
           
+          // add marker to marker bounds
+          markerBounds.extend(point);
           // create text for info window  
           var html = "Data Point: " + name + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Current: " + batCur + " A";
           //var icon = customIcons[type] || {};
@@ -61,25 +52,13 @@
           // call function
           bindInfoWindow(marker, map, infoWindow, html);
 
-           // on the last pass do this stuff
+           // on the last pass do this
            if(i==(markers.length-1)){
-            // calculate centre lat and longs
-            var centLat = Math.min.apply(null, latArray) + ((Math.max.apply(null, latArray)-Math.min.apply(null, latArray))/2);
-            var centLong = Math.min.apply(null, longArray) + ((Math.max.apply(null, longArray)-Math.min.apply(null, longArray))/2);
-              // create updated map options
-            var updatedMapOptions = {
-                center: new google.maps.LatLng(centLat,centLong),
-                // center: new google.maps.LatLng(57.5, -4),
-                zoom: 17,
-              };// end updated map options
-
-            map.setOptions(updatedMapOptions);
-          }// end if
-
+              // set zoom based on marker bounds
+              map.fitBounds(markerBounds);
+          }// end last pass if
         }// end for
-
       } // end download URL function
-
     );//end download url
   }// end load()
 
