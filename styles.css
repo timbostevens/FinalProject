@@ -315,3 +315,15 @@ color: lightgrey;
   color: white;
 }
 
+/*========================*/
+/*=========journeys=======*/
+
+/*Accordion Stuff*/
+.panel-title .col-md-8>p{
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+
+.panel-title .col-md-4>img{
+  width: 200px;
+}
