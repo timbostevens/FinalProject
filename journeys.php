@@ -8,23 +8,23 @@
     include("connection.php");
     // sql query to count journeys
     $query="SELECT tempdata.journey_id as Journey, DATE_FORMAT(tempdata.point_timestamp,'%D %M %Y') as FirstTimestamp
-            FROM (SELECT * FROM datapoints WHERE point_id=1) as tempdata
-            JOIN (SELECT journey_id
-            FROM journeys
-            ORDER BY journey_id desc
-            LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
-            ORDER BY tempdata.journey_id desc";
+    FROM (SELECT * FROM datapoints WHERE point_id=1) as tempdata
+    JOIN (SELECT journey_id
+      FROM journeys
+      ORDER BY journey_id desc
+      LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
+ORDER BY tempdata.journey_id desc";
     // runs the query and sets to variable
-    $result = mysqli_query($connection,$query);
+$result = mysqli_query($connection,$query);
     // create array to hold results (will be multidimensional)
-    $resultArray = [];
+$resultArray = [];
     // cycle through reuslt and add to reuslts array
-    while($row = mysqli_fetch_array($result)){
+while($row = mysqli_fetch_array($result)){
       // create array for each row
-      $innerArray = [$row['Journey'], $row['FirstTimestamp']];
+  $innerArray = [$row['Journey'], $row['FirstTimestamp']];
       // add each row array to the outer array
-      array_push($resultArray, $innerArray);
-    };
+  array_push($resultArray, $innerArray);
+};
 
 
 ?>
@@ -58,8 +58,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
     </head>
-  <!-- Passes journey number 1 on load-->
-    <body onload="load(1)">
+    
+    <body>
       <!-- Navbar -->
       
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -165,11 +165,6 @@
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 
-
-
-
-
-
             <!-- set up  jumbotron container -->
             <div class="jumbotron" id="middle">
               <div class="container">
@@ -179,34 +174,34 @@
                   <div class="panel-group" id="accordion">
                     <!-- This is the first accordion entry -->
                     <div class="panel panel-default">
-                      <div class="panel-heading">
+                    <div class="panel-heading" id="<?php echo $resultArray[0][0]; ?>">
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                          <div class="row">
-                          <div class="col-md-8">
-                            <p>Journey <?php echo $resultArray[0][0]; ?></p>
-                            <p><small><?php echo $resultArray[0][1]; ?></small></p>
-                            <p><small>13 km</small></p>
-                          </div>
-                          <div class="col-md-4">
-                            <img src="img/sampleMap02.jpg"/>
-                          </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <div class = "googlemap">
-                            <div id="map" style="width: 100%; height: 300px;"></div>
-                          </div>
-                          <!-- large horizontal chart -->
-                          <div class="hchart">
-                            <h5>Some data vs some data</h5>
-                            <img src="img/sampleChartWide.png" class="img-responsive"/>
-                          </div>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p>Journey <?php echo $resultArray[0][0]; ?></p>
+                                <p><small><?php echo $resultArray[0][1]; ?></small></p>
+                                <p><small>13 km</small></p>
+                              </div>
+                              <div class="col-md-4">
+                                <img src="img/sampleMap02.jpg"/>
+                              </div>
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class = "googlemap">
+                              <div id="map" style="width: 100%; height: 300px;"></div>
+                            </div>
+                            <!-- large horizontal chart -->
+                            <div class="hchart">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleChartWide.png" class="img-responsive"/>
+                            </div>
 
-                          <div class="row">
-                            <!-- Left hand column containing stat list -->
+                            <div class="row">
+                              <!-- Left hand column containing stat list -->
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
@@ -250,25 +245,25 @@
                           </div>
                           <!-- This is the second accordion entry -->
                           <div class="panel panel-default">
-     <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                          <div class="row">
-                          <div class="col-md-8">
-                            <p>Journey <?php echo $resultArray[1][0]; ?></p>
-                            <p><small><?php echo $resultArray[1][1]; ?></small></p>
-                            <p><small>13 km</small></p>
-                          </div>
-                          <div class="col-md-4">
-                            <img src="img/sampleMap02.jpg"/>
-                          </div>
-                          </a>
-                        </h4>
-                      </div>
+                           <div class="panel-heading" id="<?php echo $resultArray[1][0]; ?>">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <p>Journey <?php echo $resultArray[1][0]; ?></p>
+                                    <p><small><?php echo $resultArray[1][1]; ?></small></p>
+                                    <p><small>13 km</small></p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <img src="img/sampleMap02.jpg"/>
+                                  </div>
+                                </a>
+                              </h4>
+                            </div>
                             <div id="collapseTwo" class="panel-collapse collapse">
                               <div class="panel-body">
-                              <p>Enter some content</p>
-                            </div>
+                                <p>Enter some content</p>
+                              </div>
                             </div>
                           </div>
                           <!-- This is the third accordion entry -->
@@ -333,7 +328,7 @@
               </div>
             </footer>
 
-<!-- listens for clicks on accordion -->
+            <!-- listens for clicks on accordion -->
 
 
 
@@ -352,13 +347,14 @@
     <!-- Chart changer -->
     <script type="text/javascript" src="chartChanger.js"></script>
 
-      <script>
+    <script>
+    // runs on accordion panel click
+      $(".panel-heading").click(function(){
+        // sends the id (journey number) to mapLoad.load()
+        load(this.id);
+      });
 
-          $(".panel-heading").click(function(){
-          alert("you clicked a panel title "+this.class);
-          });
-
-      </script>
+    </script>
 
 
 
