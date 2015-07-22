@@ -5,6 +5,8 @@
     function load(journeyNumber) {
       // var for marker bounds (used for setting the zoom and centre)
       var markerBounds = new google.maps.LatLngBounds();
+      // new array holding polyline
+      var routeArray = [];
 
 
       // setup map options
@@ -38,6 +40,9 @@
             parseFloat(markers[i].getAttribute("lat")),
             parseFloat(markers[i].getAttribute("lng")));
           
+          // add point to polyline array
+          routeArray.push(point);
+
           // add marker to marker bounds
           markerBounds.extend(point);
           // create text for info window  
@@ -56,6 +61,42 @@
            if(i==(markers.length-1)){
               // set zoom based on marker bounds
               map.fitBounds(markerBounds);
+
+              // setup polyline options
+              var routeLine = new google.maps.Polyline({
+                path: routeArray,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+                // add icons to start and finish
+                icons: [
+                  {
+                  icon: {
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    scale: 4,
+                    strokeWeight: 2,
+                    fillColor: 'yellow',
+                    fillOpacity: 1
+                    },
+                  // start of line
+                  offset: '0%'
+                  }, {
+                  icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 5,
+                    strokeWeight: 2,
+                    fillColor: 'yellow',
+                    fillOpacity: 1
+                    },
+                  // end of line
+                  offset: '100%'
+                }
+                ]
+              });
+              // add line to map
+              routeLine.setMap(map);
+
           }// end last pass if
         }// end for
       } // end download URL function
