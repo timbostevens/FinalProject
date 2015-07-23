@@ -11,7 +11,7 @@
      // trim off the hourney text to leave the journey number
      journeyTitle = journeyTitle.replace('Journey ','');
      // send the journey number to map loader
-    load(journeyTitle);
+    load(journeyTitle, parentID);
 });
 
 
@@ -19,7 +19,7 @@
     * Loads map and sets default zoom
     * takes journey number as argument
     */
-    function load(journeyNumber) {
+    function load(journeyNumber, panelNumber) {
       // var for marker bounds (used for setting the zoom and centre)
       var markerBounds = new google.maps.LatLngBounds();
       // new array holding polyline
@@ -33,8 +33,12 @@
         //mapTypeId: 'roadmap'
       };
 
+      /////////////////////////////////////////////
+      // IMPLEMENT A CHECK FOR the map already having contents
+      ////////////////////////////////////////////
+
       // create new map with map options - gets map element id by using "mapcanvas"+journeyNumber
-      var map = new google.maps.Map(document.getElementById("mapcanvas"+journeyNumber), mapOptions);
+      var map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
       // creates varible for info window
       var infoWindow = new google.maps.InfoWindow;
 

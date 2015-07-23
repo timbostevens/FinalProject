@@ -202,7 +202,7 @@
                         <div id="collapseOne" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
-                              <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
+                              <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                             </div>
                             <!-- large horizontal chart -->
                             <div class="hchart">
@@ -280,7 +280,7 @@
                               <div class="panel-body">
                                 <p>here is some stuff</p>
                                 <div class = "googlemap">
-                                  <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
+                                  <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
                                 </div>
                               </div>
                             </div> <!-- end Main Panel Body -->
@@ -288,60 +288,97 @@
 
 
                           <!-- This is the third accordion entry -->
-                          <!-- <div class="panel panel-default" id="panel3"> -->
-                           <!-- <div class="panel-heading"> -->
-                            <!-- <h4 class="panel-title"> -->
+                          <div class="panel panel-default" id="panel3">
+                           <div class="panel-heading">
+                            <h4 class="panel-title">
                               <!-- href uses journey number -->
-                              <!-- <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[2][0]; ?>"> -->
-                                <!-- <div class="row"> -->
-                                  <!-- <div class="col-md-8"> -->
-                                    <!-- <p>Journey <?php echo $resultArray[2][0]; ?></p> -->
-                                    <!-- <p><small><?php echo $resultArray[2][1]; ?></small></p> -->
-                                    <!-- <p><small>13 km</small></p> -->
-                                  <!-- </div> -->
-                                  <!-- <div class="col-md-4"> -->
-                                    <!-- <img src="img/sampleMap02.jpg"/> -->
-                                  <!-- </div> -->
-                                <!-- </a> -->
-                              <!-- </h4> -->
-                            <!-- </div> -->
-                            <!-- id set as journey number (used lated when clicked to load map) -->
-                            <!-- <div id="<?php echo $resultArray[2][0]; ?>" class="panel-collapse collapse"> -->
-                              <!-- <div class="panel-body"> -->
-                                <!-- <p>here is some stuff</p> -->
-                                <!-- <div class = "googlemap"> -->
-                                  <!-- <div id="mapcanvas<?php echo $resultArray[2][0]; ?>" style="width: 100%; height: 300px;"></div> -->
-                                <!-- </div> -->
-                              <!-- </div> -->
-                            <!-- </div> -->
-                          <!-- </div> --> <!-- end third accordion entry -->
-                          <!-- This is the Fourth accordion entry -->
-                          <div class="panel panel-default" id="panel4">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">9th September 2015</a>
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <p id="journeyP3">Journey x</p>
+                                    <p id="dateP3"><small>Date x</small></p>
+                                    <p><small>13 km</small></p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <img src="img/sampleMap02.jpg"/>
+                                  </div>
+                                </a>
                               </h4>
-                            </div>
+                            </div> <!-- end panel-heading -->
+                            <!-- Main Panel Body -->
+                            <!-- id set as journey number (used lated when clicked to load map) -->
+                            <div id="collapseThree" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <p>here is some stuff</p>
+                                <div class = "googlemap">
+                                  <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
+                                </div>
+                              </div>
+                            </div> <!-- end Main Panel Body -->
+                          </div> <!-- end third accordion -->
+
+
+                          <!-- This is the fourth accordion entry -->
+                          <div class="panel panel-default" id="panel4">
+                           <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <!-- href uses journey number -->
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <p id="journeyP4">Journey x</p>
+                                    <p id="dateP4"><small>Date x</small></p>
+                                    <p><small>13 km</small></p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <img src="img/sampleMap02.jpg"/>
+                                  </div>
+                                </a>
+                              </h4>
+                            </div> <!-- end panel-heading -->
+                            <!-- Main Panel Body -->
+                            <!-- id set as journey number (used lated when clicked to load map) -->
                             <div id="collapseFour" class="panel-collapse collapse">
                               <div class="panel-body">
-                                <p>Put in some data here</p>
+                                <p>here is some stuff</p>
+                                <div class = "googlemap">
+                                  <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
+                                </div>
                               </div>
-                            </div>
-                          </div> <!-- end fourth accordion entry -->
+                            </div> <!-- end Main Panel Body -->
+                          </div> <!-- end fourth accordion -->
 
-                          <!-- This is the Fifth accordion entry -->
+
+
+                          <!-- This is the fifth accordion entry -->
                           <div class="panel panel-default" id="panel5">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">8th September 2015</a>
+                           <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <!-- href uses journey number -->
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <p id="journeyP5">Journey x</p>
+                                    <p id="dateP5"><small>Date x</small></p>
+                                    <p><small>13 km</small></p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <img src="img/sampleMap02.jpg"/>
+                                  </div>
+                                </a>
                               </h4>
-                            </div>
+                            </div> <!-- end panel-heading -->
+                            <!-- Main Panel Body -->
+                            <!-- id set as journey number (used lated when clicked to load map) -->
                             <div id="collapseFive" class="panel-collapse collapse">
                               <div class="panel-body">
-                                <p>Put in some data here</p>
+                                <p>here is some stuff</p>
+                                <div class = "googlemap">
+                                  <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
+                                </div>
                               </div>
-                            </div>
-                          </div> <!-- end fifth accordion entry -->
+                            </div> <!-- end Main Panel Body -->
+                          </div> <!-- end fifth accordion -->
 
 
 
