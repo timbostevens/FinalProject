@@ -1,3 +1,6 @@
+var map;
+
+
 /*
     * Loads map and sets default zoom
     * takes journey number as argument
@@ -17,7 +20,7 @@
       };
 
       // create new map with map options
-      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      map = new google.maps.Map(document.getElementById("map"), mapOptions);
       // creates varible for info window
       var infoWindow = new google.maps.InfoWindow;
 
@@ -135,3 +138,22 @@ request.open('GET', url, true);
     }
 
     function doNothing() {}
+
+
+
+// $("#panel-heading").on('shown.bs.collapse', function() {
+
+//      Trigger map resize event 
+//   google.maps.event.trigger(map, 'resize');
+// });
+
+
+  $(".panel-collapse").on('shown.bs.collapse', function() {
+    /* Trigger map resize event */
+  load(this.id);
+
+  // run resize event
+  //google.maps.event.trigger(map, 'resize');
+});
+
+

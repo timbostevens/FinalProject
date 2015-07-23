@@ -174,9 +174,9 @@ while($row = mysqli_fetch_array($result)){
                   <div class="panel-group" id="accordion">
                     <!-- This is the first accordion entry -->
                     <div class="panel panel-default">
-                    <div class="panel-heading" id="<?php echo $resultArray[0][0]; ?>">
+                    <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[0][0]; ?>">
                             <div class="row">
                               <div class="col-md-8">
                                 <p>Journey <?php echo $resultArray[0][0]; ?></p>
@@ -189,7 +189,7 @@ while($row = mysqli_fetch_array($result)){
                             </a>
                           </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse">
+                        <div id="<?php echo $resultArray[0][0]; ?>" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="map" style="width: 100%; height: 300px;"></div>
@@ -349,10 +349,25 @@ while($row = mysqli_fetch_array($result)){
 
     <script>
     // runs on accordion panel click
-      $(".panel-heading").click(function(){
-        // sends the id (journey number) to mapLoad.load()
-        load(this.id);
-      });
+      // $(".panel-heading").click(function(){
+      //   // sends the id (journey number) to mapLoad.load()
+      //   load(this.id);
+      // });
+// $(function(){
+//   $("#collapseOne").on('show.bs.collapse', function() {
+//      Trigger map resize event 
+//   load(1);
+
+//   // run resize event
+//   google.maps.event.trigger(map, 'resize');
+// });
+
+
+
+// });
+
+
+
 
     </script>
 
