@@ -1,3 +1,11 @@
+// When a panel is expanded, this waits for it to load then calls load(this.id)
+// this gets the id of the panel that was clicked and passes it on
+  $(".panel-collapse").on('shown.bs.collapse', function() {
+    /* Trigger map resize event */
+  load(this.id);
+});
+
+
 /*
     * Loads map and sets default zoom
     * takes journey number as argument
@@ -137,11 +145,6 @@ request.open('GET', url, true);
     function doNothing() {}
 
 
-// When a panel is expanded, this waits for it to load then calls load(this.id)
-// this gets the id of the panel that was clicked and passes it on
-  $(".panel-collapse").on('shown.bs.collapse', function() {
-    /* Trigger map resize event */
-  load(this.id);
-});
+
 
 

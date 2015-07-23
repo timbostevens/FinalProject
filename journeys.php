@@ -13,18 +13,23 @@
       FROM journeys
       ORDER BY journey_id desc
       LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
-ORDER BY tempdata.journey_id desc";
+      ORDER BY tempdata.journey_id desc";
+
+
+
     // runs the query and sets to variable
-$result = mysqli_query($connection,$query);
+  $result = mysqli_query($connection,$query);
     // create array to hold results (will be multidimensional)
-$resultArray = [];
+  $resultArray = [];
     // cycle through reuslt and add to reuslts array
-while($row = mysqli_fetch_array($result)){
+  while($row = mysqli_fetch_array($result)){
       // create array for each row
-  $innerArray = [$row['Journey'], $row['FirstTimestamp']];
+      $innerArray = [$row['Journey'], $row['FirstTimestamp']];
       // add each row array to the outer array
-  array_push($resultArray, $innerArray);
-};
+      array_push($resultArray, $innerArray);
+  };
+  // counts the number of journeys
+  $journeyCount = count($resultArray);
 
 
 ?>
@@ -59,7 +64,7 @@ while($row = mysqli_fetch_array($result)){
       <![endif]-->
     </head>
     
-    <body>
+    <body onload="accordionManager(<?php echo $journeyCount; ?>)">
       <!-- Navbar -->
       
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -173,8 +178,8 @@ while($row = mysqli_fetch_array($result)){
                 <div class="bs-example">
                   <div class="panel-group" id="accordion">
                     <!-- This is the first accordion entry -->
-                    <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel panel-default" id="panel1">
+                      <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
                           <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[0][0]; ?>">
@@ -190,7 +195,7 @@ while($row = mysqli_fetch_array($result)){
                             </a>
                           </h4>
                         </div>
-                       <!-- id set as journey number (used lated when clicked to load map) -->
+                        <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="<?php echo $resultArray[0][0]; ?>" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
@@ -246,10 +251,10 @@ while($row = mysqli_fetch_array($result)){
                             </div>
                           </div>
                           <!-- This is the second accordion entry -->
-                          <div class="panel panel-default">
+                          <div class="panel panel-default" id="panel2">
                            <div class="panel-heading">
                             <h4 class="panel-title">
-                            <!-- href uses journey number -->
+                              <!-- href uses journey number -->
                               <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[1][0]; ?>">
                                 <div class="row">
                                   <div class="col-md-8">
@@ -266,7 +271,7 @@ while($row = mysqli_fetch_array($result)){
                             <!-- id set as journey number (used lated when clicked to load map) -->
                             <div id="<?php echo $resultArray[1][0]; ?>" class="panel-collapse collapse">
                               <div class="panel-body">
-                              <p>here is some stuff</p>
+                                <p>here is some stuff</p>
                                 <div class = "googlemap">
                                   <div id="mapcanvas<?php echo $resultArray[1][0]; ?>" style="width: 100%; height: 300px;"></div>
                                 </div>
@@ -274,20 +279,35 @@ while($row = mysqli_fetch_array($result)){
                             </div>
                           </div>
                           <!-- This is the third accordion entry -->
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">10th September 2015</a>
-                              </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <p>Put in some data here</p>
-                              </div>
-                            </div>
-                          </div>
+                          <!-- <div class="panel panel-default" id="panel3"> -->
+                           <!-- <div class="panel-heading"> -->
+                            <!-- <h4 class="panel-title"> -->
+                              <!-- href uses journey number -->
+                              <!-- <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[2][0]; ?>"> -->
+                                <!-- <div class="row"> -->
+                                  <!-- <div class="col-md-8"> -->
+                                    <!-- <p>Journey <?php echo $resultArray[2][0]; ?></p> -->
+                                    <!-- <p><small><?php echo $resultArray[2][1]; ?></small></p> -->
+                                    <!-- <p><small>13 km</small></p> -->
+                                  <!-- </div> -->
+                                  <!-- <div class="col-md-4"> -->
+                                    <!-- <img src="img/sampleMap02.jpg"/> -->
+                                  <!-- </div> -->
+                                <!-- </a> -->
+                              <!-- </h4> -->
+                            <!-- </div> -->
+                            <!-- id set as journey number (used lated when clicked to load map) -->
+                            <!-- <div id="<?php echo $resultArray[2][0]; ?>" class="panel-collapse collapse"> -->
+                              <!-- <div class="panel-body"> -->
+                                <!-- <p>here is some stuff</p> -->
+                                <!-- <div class = "googlemap"> -->
+                                  <!-- <div id="mapcanvas<?php echo $resultArray[2][0]; ?>" style="width: 100%; height: 300px;"></div> -->
+                                <!-- </div> -->
+                              <!-- </div> -->
+                            <!-- </div> -->
+                          <!-- </div> -->
                           <!-- This is the Fourth accordion entry -->
-                          <div class="panel panel-default">
+                          <div class="panel panel-default" id="panel4">
                             <div class="panel-heading">
                               <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">9th September 2015</a>
@@ -300,7 +320,7 @@ while($row = mysqli_fetch_array($result)){
                             </div>
                           </div>
                           <!-- This is the Fifth accordion entry -->
-                          <div class="panel panel-default">
+                          <div class="panel panel-default" id="panel5">
                             <div class="panel-heading">
                               <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">8th September 2015</a>
@@ -335,10 +355,6 @@ while($row = mysqli_fetch_array($result)){
               </div>
             </footer>
 
-            <!-- listens for clicks on accordion -->
-
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -353,6 +369,8 @@ while($row = mysqli_fetch_array($result)){
     <script type="text/javascript" src="mapload.js"></script>
     <!-- Chart changer -->
     <script type="text/javascript" src="chartChanger.js"></script>
+        <!-- Acordion Manager -->
+    <script type="text/javascript" src="accordionManager.js"></script>
 
     <script>
     // runs on accordion panel click
@@ -362,7 +380,7 @@ while($row = mysqli_fetch_array($result)){
       // });
 // $(function(){
 //   $("#collapseOne").on('show.bs.collapse', function() {
-//      Trigger map resize event 
+//      Trigger map resize event  
 //   load(1);
 
 //   // run resize event
@@ -376,13 +394,13 @@ while($row = mysqli_fetch_array($result)){
 
 
 
-    </script>
+</script>
 
 
 
-  </body>
+</body>
 
 
 
 
-  </html>
+</html>
