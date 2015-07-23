@@ -1,6 +1,3 @@
-var map;
-
-
 /*
     * Loads map and sets default zoom
     * takes journey number as argument
@@ -19,8 +16,8 @@ var map;
         //mapTypeId: 'roadmap'
       };
 
-      // create new map with map options
-      map = new google.maps.Map(document.getElementById("map"+journeyNumber), mapOptions);
+      // create new map with map options - gets map element id by using "mapcanvas"+journeyNumber
+      var map = new google.maps.Map(document.getElementById("mapcanvas"+journeyNumber), mapOptions);
       // creates varible for info window
       var infoWindow = new google.maps.InfoWindow;
 
@@ -140,20 +137,11 @@ request.open('GET', url, true);
     function doNothing() {}
 
 
-
-// $("#panel-heading").on('shown.bs.collapse', function() {
-
-//      Trigger map resize event 
-//   google.maps.event.trigger(map, 'resize');
-// });
-
-
+// When a panel is expanded, this waits for it to load then calls load(this.id)
+// this gets the id of the panel that was clicked and passes it on
   $(".panel-collapse").on('shown.bs.collapse', function() {
     /* Trigger map resize event */
   load(this.id);
-
-  // run resize event
-  //google.maps.event.trigger(map, 'resize');
 });
 
 

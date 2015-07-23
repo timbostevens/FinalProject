@@ -176,6 +176,7 @@ while($row = mysqli_fetch_array($result)){
                     <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                          <!-- href set as journey number -->
                           <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[0][0]; ?>">
                             <div class="row">
                               <div class="col-md-8">
@@ -189,10 +190,11 @@ while($row = mysqli_fetch_array($result)){
                             </a>
                           </h4>
                         </div>
+                       <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="<?php echo $resultArray[0][0]; ?>" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
-                              <div id="map<?php echo $resultArray[0][0]; ?>" style="width: 100%; height: 300px;"></div>
+                              <div id="mapcanvas<?php echo $resultArray[0][0]; ?>" style="width: 100%; height: 300px;"></div>
                             </div>
                             <!-- large horizontal chart -->
                             <div class="hchart">
@@ -247,6 +249,7 @@ while($row = mysqli_fetch_array($result)){
                           <div class="panel panel-default">
                            <div class="panel-heading">
                             <h4 class="panel-title">
+                            <!-- href uses journey number -->
                               <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[1][0]; ?>">
                                 <div class="row">
                                   <div class="col-md-8">
@@ -260,11 +263,12 @@ while($row = mysqli_fetch_array($result)){
                                 </a>
                               </h4>
                             </div>
+                            <!-- id set as journey number (used lated when clicked to load map) -->
                             <div id="<?php echo $resultArray[1][0]; ?>" class="panel-collapse collapse">
                               <div class="panel-body">
                               <p>here is some stuff</p>
                                 <div class = "googlemap">
-                                  <div id="map<?php echo $resultArray[1][0]; ?>" style="width: 100%; height: 300px;"></div>
+                                  <div id="mapcanvas<?php echo $resultArray[1][0]; ?>" style="width: 100%; height: 300px;"></div>
                                 </div>
                               </div>
                             </div>
