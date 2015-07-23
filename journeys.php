@@ -192,7 +192,7 @@ while($row = mysqli_fetch_array($result)){
                         <div id="<?php echo $resultArray[0][0]; ?>" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
-                              <div id="map" style="width: 100%; height: 300px;"></div>
+                              <div id="map<?php echo $resultArray[0][0]; ?>" style="width: 100%; height: 300px;"></div>
                             </div>
                             <!-- large horizontal chart -->
                             <div class="hchart">
@@ -245,9 +245,9 @@ while($row = mysqli_fetch_array($result)){
                           </div>
                           <!-- This is the second accordion entry -->
                           <div class="panel panel-default">
-                           <div class="panel-heading" id="<?php echo $resultArray[1][0]; ?>">
+                           <div class="panel-heading">
                             <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[1][0]; ?>">
                                 <div class="row">
                                   <div class="col-md-8">
                                     <p>Journey <?php echo $resultArray[1][0]; ?></p>
@@ -260,9 +260,12 @@ while($row = mysqli_fetch_array($result)){
                                 </a>
                               </h4>
                             </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
+                            <div id="<?php echo $resultArray[1][0]; ?>" class="panel-collapse collapse">
                               <div class="panel-body">
-                                <p>Enter some content</p>
+                              <p>here is some stuff</p>
+                                <div class = "googlemap">
+                                  <div id="map<?php echo $resultArray[1][0]; ?>" style="width: 100%; height: 300px;"></div>
+                                </div>
                               </div>
                             </div>
                           </div>
