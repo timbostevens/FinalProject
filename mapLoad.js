@@ -1,8 +1,17 @@
 // When a panel is expanded, this waits for it to load then calls load(this.id)
-// this gets the id of the panel that was clicked and passes it on
   $(".panel-collapse").on('shown.bs.collapse', function() {
-    /* Trigger map resize event */
-  load(this.id);
+    // get the id of hte div clicked
+    var divClicked = document.getElementById(this.id);
+    // get the parent id
+    var parentID = divClicked.parentNode.id;
+    // trim the parent id to leave just the number
+    parentID = parentID.replace('panel','');
+    // get hte text from the journey title
+     var journeyTitle = document.getElementById("journeyP"+parentID).innerHTML;
+     // trim off the hourney text to leave the journey number
+     journeyTitle = journeyTitle.replace('Journey ','');
+     // send the journey number to map loader
+    load(journeyTitle);
 });
 
 

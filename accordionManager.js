@@ -15,17 +15,16 @@ downloadUrl(urlGet, function(data) {
         	var journeyID = journeyArray[i].getAttribute("journeyID");
         	var date = journeyArray[i].getAttribute("date");
           	var panelNumber = i+1;
-
         	// show accordion panels
         	document.getElementById("panel"+(panelNumber)).style.display="block";
 
         	// update panelBody id
-        	document.getElementById("panelBody"+(panelNumber)).id = journeyID;
+        	//document.getElementById("panelBody"+(panelNumber)).id = journeyID;
         	// update headings
         	document.getElementById("journeyP"+(panelNumber)).innerHTML = "Journey "+journeyID;
         	document.getElementById("dateP"+(panelNumber)).innerHTML = date;
         	// update href to match new panel id
-        	document.getElementById("panelLink"+(panelNumber)).href = "#"+journeyID;
+        	//document.getElementById("panelLink"+(panelNumber)).href = "#"+journeyID;
         	// update map canvas
         	//document.getElementById("mapCan"+(panelNumber)).id = "mapCanvas"+journeyID;
            

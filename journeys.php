@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
     /*
     NEED SOME MANAGEMNET FOR DATABASE FAILURE
@@ -33,7 +33,7 @@
   $journeyCount = count($resultArray);
 
 
-?>
+?> -->
 
 
 <!DOCTYPE html>
@@ -184,7 +184,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#x">
+                          <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                             <div class="row">
                               <div class="col-md-8">
                                 <p id="journeyP1">Journey x</p>
@@ -199,7 +199,7 @@
                         </div>
                         <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="panelBody1" class="panel-collapse collapse">
+                        <div id="collapseOne" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
@@ -226,43 +226,46 @@
                           <p>Distance: 12 km<button type="button" class="btn btn-link btn-xs">
                             <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
 
-                            <p>Duration: 32 minutes<button type="button" class="btn btn-link btn-xs">
+                          <p>Duration: 32 minutes<button type="button" class="btn btn-link btn-xs">
                               <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
 
 
-                              <p>Speed: 32 km/h<button type="button" class="btn btn-link btn-xs">
+                          <p>Speed: 32 km/h<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                                <p>Energy Saved: 234 kWh<button type="button" class="btn btn-link btn-xs">
+                          <p>Energy Saved: 234 kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                                  <p>CO2 Saved: 50 g<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: 50 g<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
-                                  </div>
+                          </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
-                                  <div class="col-md-6 box">
-                                    <h5>Some data vs some data</h5>
-                                    <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive" id="squareChart"/>
+                            <div class="col-md-6 box">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive" id="squareChart"/>
 
-                                  </div>
+                            </div> <!-- end col-md-6 box-->
 
-                                </div>
+                          </div> <!-- end row -->
 
-                              </div>
-                            </div>
-                          </div>
+                              </div> <!-- end panel body -->
+                            </div> <!-- end main panel body -->
+                          </div> <!-- end first accordion -->
+
+
+
                           <!-- This is the second accordion entry -->
                           <div class="panel panel-default" id="panel2">
                            <div class="panel-heading">
                             <h4 class="panel-title">
                               <!-- href uses journey number -->
-                              <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[1][0]; ?>">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                                 <div class="row">
                                   <div class="col-md-8">
-                                    <p>Journey <?php echo $resultArray[1][0]; ?></p>
-                                    <p><small><?php echo $resultArray[1][1]; ?></small></p>
+                                    <p id="journeyP2">Journey x</p>
+                                    <p id="dateP2"><small>Date x</small></p>
                                     <p><small>13 km</small></p>
                                   </div>
                                   <div class="col-md-4">
@@ -270,17 +273,20 @@
                                   </div>
                                 </a>
                               </h4>
-                            </div>
+                            </div> <!-- end panel-heading -->
+                            <!-- Main Panel Body -->
                             <!-- id set as journey number (used lated when clicked to load map) -->
-                            <div id="<?php echo $resultArray[1][0]; ?>" class="panel-collapse collapse">
+                            <div id="collapseTwo" class="panel-collapse collapse">
                               <div class="panel-body">
                                 <p>here is some stuff</p>
                                 <div class = "googlemap">
                                   <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
+                            </div> <!-- end Main Panel Body -->
+                          </div> <!-- end second accordion -->
+
+
                           <!-- This is the third accordion entry -->
                           <!-- <div class="panel panel-default" id="panel3"> -->
                            <!-- <div class="panel-heading"> -->
@@ -308,7 +314,7 @@
                                 <!-- </div> -->
                               <!-- </div> -->
                             <!-- </div> -->
-                          <!-- </div> -->
+                          <!-- </div> --> <!-- end third accordion entry -->
                           <!-- This is the Fourth accordion entry -->
                           <div class="panel panel-default" id="panel4">
                             <div class="panel-heading">
@@ -321,7 +327,8 @@
                                 <p>Put in some data here</p>
                               </div>
                             </div>
-                          </div>
+                          </div> <!-- end fourth accordion entry -->
+
                           <!-- This is the Fifth accordion entry -->
                           <div class="panel panel-default" id="panel5">
                             <div class="panel-heading">
@@ -334,11 +341,15 @@
                                 <p>Put in some data here</p>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                          </div> <!-- end fifth accordion entry -->
+
+
+
+
+                        </div> <!-- end panel group id=accordion -->
+                      </div> <!-- end bs example -->
+                    </div> <!-- end container -->
+                  </div> <!-- end Jumbotron -->
 
 
 
