@@ -2,6 +2,7 @@
 
     /*
     NEED SOME MANAGEMNET FOR DATABASE FAILURE
+    AM TRYING TO GET RID OF THIS WHOLE SECTION TO MAKE IT RUN VIA AJAX
     */
     
     // gets connection details
@@ -64,7 +65,7 @@
       <![endif]-->
     </head>
     
-    <body onload="accordionManager(<?php echo $journeyCount; ?>)">
+    <body onload="setupAccordion()">
       <!-- Navbar -->
       
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -174,21 +175,20 @@
             <div class="jumbotron" id="middle">
               <div class="container">
                 <h3>JOURNEYS</h3>
-
-                <p><?php echo json_encode($resultArray); ?></p>
                 <!-- set up accordion list -->
                 <div class="bs-example">
                   <div class="panel-group" id="accordion">
                     <!-- This is the first accordion entry -->
                     <div class="panel panel-default" id="panel1">
+                      <!-- Panel Header -->
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $resultArray[0][0]; ?>">
+                          <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#x">
                             <div class="row">
                               <div class="col-md-8">
-                                <p>Journey <?php echo $resultArray[0][0]; ?></p>
-                                <p><small><?php echo $resultArray[0][1]; ?></small></p>
+                                <p id="journeyP1">Journey x</p>
+                                <p id="dateP1"><small>Date x</small></p>
                                 <p><small>13 km</small></p>
                               </div>
                               <div class="col-md-4">
@@ -197,11 +197,12 @@
                             </a>
                           </h4>
                         </div>
+                        <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="<?php echo $resultArray[0][0]; ?>" class="panel-collapse collapse">
+                        <div id="panelBody1" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
-                              <div id="mapcanvas<?php echo $resultArray[0][0]; ?>" style="width: 100%; height: 300px;"></div>
+                              <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
                             </div>
                             <!-- large horizontal chart -->
                             <div class="hchart">
@@ -275,7 +276,7 @@
                               <div class="panel-body">
                                 <p>here is some stuff</p>
                                 <div class = "googlemap">
-                                  <div id="mapcanvas<?php echo $resultArray[1][0]; ?>" style="width: 100%; height: 300px;"></div>
+                                  <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                                 </div>
                               </div>
                             </div>
@@ -371,7 +372,7 @@
     <script type="text/javascript" src="mapload.js"></script>
     <!-- Chart changer -->
     <script type="text/javascript" src="chartChanger.js"></script>
-        <!-- Acordion Manager -->
+        <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
 
     <script>

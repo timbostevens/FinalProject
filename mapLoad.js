@@ -66,6 +66,7 @@
           bindInfoWindow(marker, map, infoWindow, html);
 
            // on the last pass do this
+           // CAN I MOVE THIS DOWN AND NOT IN AN IF?
            if(i==(markers.length-1)){
               // set zoom based on marker bounds
               map.fitBounds(markerBounds);
