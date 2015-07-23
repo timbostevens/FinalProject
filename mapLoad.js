@@ -32,7 +32,7 @@
 
 
       // append journey number to get request
-      var urlGet = "phpsqlajax_genxml3.php?journey="+journeyNumber;
+      var urlGet = "mapLoadAjax.php?journey="+journeyNumber;
 
 
       // get data from MySQL and calls download URL function

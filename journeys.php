@@ -174,6 +174,8 @@
             <div class="jumbotron" id="middle">
               <div class="container">
                 <h3>JOURNEYS</h3>
+
+                <p><?php echo json_encode($resultArray); ?></p>
                 <!-- set up accordion list -->
                 <div class="bs-example">
                   <div class="panel-group" id="accordion">
