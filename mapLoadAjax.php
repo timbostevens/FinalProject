@@ -27,7 +27,7 @@ if (!$db_selected) {
 
 // Select rows from the datapoints table
 //updates results so that journey 1 becomes the highest journey number from the database
-$queryDatapoints = "SELECT * FROM datapoints WHERE journey_id = ((SELECT COUNT(*) FROM journeys)+1-$journeyNumber)";
+$queryDatapoints = "SELECT * FROM datapoints WHERE journey_id = $journeyNumber";
 $result = mysql_query($queryDatapoints);
 
 // if there is no result, throw an error
@@ -49,7 +49,8 @@ while ($row = @mysql_fetch_assoc($result)){
 
   // $row[] states column name in to retrieve from db results
   // setAttribute(.... is how it is listed in produced xml
-  $newnode->setAttribute("name",$row['point_id']);
+  $newnode->setAttribute("journey_ref",$row['journey_id']);
+  $newnode->setAttribute("point",$row['point_id']);
   $newnode->setAttribute("speed", $row['speed_kmh']);
   $newnode->setAttribute("lat", $row['lat_dd']);
   $newnode->setAttribute("lng", $row['long_dd']);

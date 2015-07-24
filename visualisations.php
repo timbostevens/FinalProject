@@ -106,7 +106,7 @@
     					</div>
     					<div id="navbar" class="navbar-collapse collapse">
     						<ul class="nav navbar-nav navbar-right">
-    							<li><a href="journeys.html">journeys</a></li>
+    							<li><a href="journeys.php">journeys</a></li>
     							<li class="active"><a href="#">visualsations</a></li>
     							<li><a href="about.html">about</a></li>
     						</ul>

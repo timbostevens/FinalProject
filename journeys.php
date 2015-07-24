@@ -1,41 +1,3 @@
-<!-- <?php
-
-    /*
-    NEED SOME MANAGEMNET FOR DATABASE FAILURE
-    AM TRYING TO GET RID OF THIS WHOLE SECTION TO MAKE IT RUN VIA AJAX
-    */
-    
-    // gets connection details
-    include("connection.php");
-    // sql query to count journeys
-    $query="SELECT tempdata.journey_id as Journey, DATE_FORMAT(tempdata.point_timestamp,'%D %M %Y') as FirstTimestamp
-    FROM (SELECT * FROM datapoints WHERE point_id=1) as tempdata
-    JOIN (SELECT journey_id
-      FROM journeys
-      ORDER BY journey_id desc
-      LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
-      ORDER BY tempdata.journey_id desc";
-
-
-
-    // runs the query and sets to variable
-  $result = mysqli_query($connection,$query);
-    // create array to hold results (will be multidimensional)
-  $resultArray = [];
-    // cycle through reuslt and add to reuslts array
-  while($row = mysqli_fetch_array($result)){
-      // create array for each row
-      $innerArray = [$row['Journey'], $row['FirstTimestamp']];
-      // add each row array to the outer array
-      array_push($resultArray, $innerArray);
-  };
-  // counts the number of journeys
-  $journeyCount = count($resultArray);
-
-
-?> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,6 +140,10 @@
                 <!-- set up accordion list -->
                 <div class="bs-example">
                   <div class="panel-group" id="accordion">
+                   
+
+
+
                     <!-- This is the first accordion entry -->
                     <div class="panel panel-default" id="panel1">
                       <!-- Panel Header -->

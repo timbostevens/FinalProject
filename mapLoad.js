@@ -3,23 +3,26 @@
     // get the id of hte div clicked
     var divClicked = document.getElementById(this.id);
     // get the parent id
-    var parentID = divClicked.parentNode.id;
+    var panelNumber = divClicked.parentNode.id;
     // trim the parent id to leave just the number
-    parentID = parentID.replace('panel','');
+    panelNumber = panelNumber.replace('panel','');
     // get hte text from the journey title
-     var journeyTitle = document.getElementById("journeyP"+parentID).innerHTML;
+     var journeyNumber = document.getElementById("journeyP"+panelNumber).innerHTML;
      // trim off the hourney text to leave the journey number
-     journeyTitle = journeyTitle.replace('Journey ','');
+     journeyNumber = journeyNumber.replace('Journey ','');
      // send the journey number to map loader
-    load(journeyTitle, parentID);
+    load(journeyNumber, panelNumber);
 });
 
 
 /*
     * Loads map and sets default zoom
-    * takes journey number as argument
+    * takes journey number and panel number as argument
     */
     function load(journeyNumber, panelNumber) {
+      
+      console.log(journeyNumber, panelNumber);
+
       // var for marker bounds (used for setting the zoom and centre)
       var markerBounds = new google.maps.LatLngBounds();
       // new array holding polyline
@@ -37,7 +40,7 @@
       // IMPLEMENT A CHECK FOR the map already having contents
       ////////////////////////////////////////////
 
-      // create new map with map options - gets map element id by using "mapcanvas"+journeyNumber
+      // create new map with map options - gets map element id by using "mapcanvas"+panelNumber
       var map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
       // creates varible for info window
       var infoWindow = new google.maps.InfoWindow;
@@ -54,7 +57,8 @@
         var markers = xml.documentElement.getElementsByTagName("marker");
         // retrieve attributes for each element
         for (var i = 0; i < markers.length; i++) {
-          var name = markers[i].getAttribute("name");
+          var journeypoint = markers[i].getAttribute("journey_ref");
+          var datapoint = markers[i].getAttribute("point");
           var speed = markers[i].getAttribute("speed");
           var batCur = markers[i].getAttribute("b_current");
           var point = new google.maps.LatLng(
@@ -67,7 +71,7 @@
           // add marker to marker bounds
           markerBounds.extend(point);
           // create text for info window  
-          var html = "Data Point: " + name + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Current: " + batCur + " A";
+          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Current: " + batCur + " A";
           //var icon = customIcons[type] || {};
           // create marker
           var marker = new google.maps.Marker({
