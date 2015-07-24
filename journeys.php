@@ -145,7 +145,7 @@
 
 
                     <!-- This is the first accordion entry -->
-                    <div class="panel panel-default" id="panel1">
+                    <div class="panel panel-default accordion-panel" id="panel1">
                       <!-- Panel Header -->
                       <div class="panel-heading">
                         <h4 class="panel-title">
@@ -223,7 +223,7 @@
 
 
                           <!-- This is the second accordion entry -->
-                          <div class="panel panel-default" id="panel2">
+                          <div class="panel panel-default accordion-panel" id="panel2">
                            <div class="panel-heading">
                             <h4 class="panel-title">
                               <!-- href uses journey number -->
@@ -254,7 +254,7 @@
 
 
                           <!-- This is the third accordion entry -->
-                          <div class="panel panel-default" id="panel3">
+                          <div class="panel panel-default accordion-panel" id="panel3">
                            <div class="panel-heading">
                             <h4 class="panel-title">
                               <!-- href uses journey number -->
@@ -285,7 +285,7 @@
 
 
                           <!-- This is the fourth accordion entry -->
-                          <div class="panel panel-default" id="panel4">
+                          <div class="panel panel-default accordion-panel" id="panel4">
                            <div class="panel-heading">
                             <h4 class="panel-title">
                               <!-- href uses journey number -->
@@ -317,7 +317,7 @@
 
 
                           <!-- This is the fifth accordion entry -->
-                          <div class="panel panel-default" id="panel5">
+                          <div class="panel panel-default accordion-panel" id="panel5">
                            <div class="panel-heading">
                             <h4 class="panel-title">
                               <!-- href uses journey number -->

@@ -318,7 +318,7 @@ color: lightgrey;
 /*========================*/
 /*=========journeys=======*/
 /*hidden by default - shown via accordionManager script*/
-.panel{
+.accordion-panel{
   display: none;
 }
 

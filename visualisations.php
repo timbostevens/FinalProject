@@ -207,8 +207,7 @@
 
     				<div class="pill-holder">
     					<!-- first row of pills -->
-
-    					<div class="row">
+                     	<div class="row">
 
     						<div class="col-lg-3 col-md-6">
     							<div class="panel panel-primary">
@@ -218,7 +217,7 @@
     											<i class="fa fa-car fa-5x"></i>
     										</div>
     										<div class="col-xs-9 text-right">
-    											<div class="vis-huge"><?php echo $journeyCount; ?></div>
+    											<div class="vis-huge">3</div>
     											<div>JOURNEYS</div>
     										</div>
     									</div>
