@@ -158,7 +158,7 @@
                                 <p><small>13 km</small></p>
                               </div>
                               <div class="col-md-4">
-                                <img src="img/sampleMap02.jpg"/>
+                                <img src="img/sampleMap02.jpg" id="panel-static-image1"/>
                               </div>
                             </a>
                           </h4>
@@ -235,7 +235,7 @@
                                     <p><small>13 km</small></p>
                                   </div>
                                   <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg"/>
+                                    <img src="img/sampleMap02.jpg" id="panel-static-image2"/>
                                   </div>
                                 </a>
                               </h4>
@@ -266,7 +266,7 @@
                                     <p><small>13 km</small></p>
                                   </div>
                                   <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg"/>
+                                    <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
                                   </div>
                                 </a>
                               </h4>
@@ -297,7 +297,7 @@
                                     <p><small>13 km</small></p>
                                   </div>
                                   <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg"/>
+                                    <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
                                   </div>
                                 </a>
                               </h4>
@@ -329,7 +329,7 @@
                                     <p><small>13 km</small></p>
                                   </div>
                                   <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg"/>
+                                    <img src="img/sampleMap02.jpg" id="panel-static-image5"/>
                                   </div>
                                 </a>
                               </h4>

@@ -18,15 +18,11 @@ downloadUrl(urlGet, function(data) {
         	// show accordion panels
         	document.getElementById("panel"+(panelNumber)).style.display="block";
 
-        	// update panelBody id
-        	//document.getElementById("panelBody"+(panelNumber)).id = journeyID;
         	// update headings
         	document.getElementById("journeyP"+(panelNumber)).innerHTML = "Journey "+journeyID;
         	document.getElementById("dateP"+(panelNumber)).innerHTML = date;
-        	// update href to match new panel id
-        	//document.getElementById("panelLink"+(panelNumber)).href = "#"+journeyID;
-        	// update map canvas
-        	//document.getElementById("mapCan"+(panelNumber)).id = "mapCanvas"+journeyID;
+        	// get static image (scale=2 returns high res version)
+            document.getElementById("panel-static-image"+(panelNumber)).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain";
            
         }// end for
       } // end download URL function
