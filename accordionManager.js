@@ -12,18 +12,42 @@ downloadUrl(urlGet, function(data) {
 
 
         for (var i = 0; i < journeyArray.length; ++i) {
-        	var journeyID = journeyArray[i].getAttribute("journeyID");
+        	
+            /////////////////////////////////////////////////////////////
+            //Probably don't have to create all the vars - good for clarity though
+            /////////////////////////////////////////////////////////////
+
+            var journeyID = journeyArray[i].getAttribute("journeyID");
         	var date = journeyArray[i].getAttribute("date");
+            var start = journeyArray[i].getAttribute("start");
+            var end = journeyArray[i].getAttribute("end");
+            var distance = journeyArray[i].getAttribute("distance");
+            var duration = journeyArray[i].getAttribute("duration");
+            var speed = journeyArray[i].getAttribute("speed");
+            var energy = journeyArray[i].getAttribute("energy");
+            var co2 = journeyArray[i].getAttribute("co2");
+
           	var panelNumber = i+1;
         	// show accordion panels
-        	document.getElementById("panel"+(panelNumber)).style.display="block";
+        	document.getElementById("panel"+panelNumber).style.display="block";
 
         	// update headings
-        	document.getElementById("journeyP"+(panelNumber)).innerHTML = "Journey "+journeyID;
-        	document.getElementById("dateP"+(panelNumber)).innerHTML = date;
+        	document.getElementById("journeyP"+panelNumber).innerHTML = "Journey "+journeyID;
+        	document.getElementById("dateP"+panelNumber).innerHTML = date;
         	// get static image (scale=2 returns high res version)
-            document.getElementById("panel-static-image"+(panelNumber)).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain";
-           
+            document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain";
+            // update stats witihn panel
+            document.getElementById("start-stat"+panelNumber).innerHTML = "Start Time: "+start;
+            document.getElementById("end-stat"+panelNumber).innerHTML = "End Time: "+end;
+            document.getElementById("distance-stat"+panelNumber).innerHTML = "Distance: "+distance+" miles";
+            document.getElementById("duration-stat"+panelNumber).innerHTML = "Duration: "+duration+" minutes";
+            document.getElementById("speed-stat"+panelNumber).innerHTML = "Average Speed: "+speed+" mph";
+            document.getElementById("energy-stat"+panelNumber).innerHTML = "Energy Saved: "+energy+" kWh";
+            document.getElementById("co2-stat"+panelNumber).innerHTML = "CO2 Saved: "+co2+" g";
+
+
+            console.log(energy, co2);
+
         }// end for
       } // end download URL function
     );//end download url
