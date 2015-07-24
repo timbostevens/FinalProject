@@ -8,7 +8,7 @@
     // gets connection details
     include("connection.php");
     // sql query to count journeys
-    $query="SELECT COUNT(*) AS 'count' FROM journeys";
+    $query="SELECT COUNT(*) AS 'count' FROM jour";
     // runs the query and sets to variable
     $result = mysqli_query($connection,$query);
     // gets the first row (all that is needed for this one)
@@ -217,7 +217,7 @@
     											<i class="fa fa-car fa-5x"></i>
     										</div>
     										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">3</div>
+    											<div class="vis-huge"><?php echo($journeyCount); ?></div>
     											<div>JOURNEYS</div>
     										</div>
     									</div>

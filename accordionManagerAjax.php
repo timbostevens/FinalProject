@@ -25,9 +25,9 @@ if (!$db_selected) {
 // Select rows from the datapoints table
 //updates results so that journey 1 becomes the highest journey number from the database
 $queryDatapoints = "SELECT tempdata.journey_id as JourneyID, DATE_FORMAT(tempdata.point_timestamp,'%D %M %Y') as FirstTimestamp
-    FROM (SELECT * FROM datapoints WHERE point_id=1) as tempdata
+    FROM (SELECT * FROM datap WHERE point_id=1) as tempdata
     JOIN (SELECT journey_id
-      FROM journeys
+      FROM jour
       ORDER BY journey_id desc
       LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
       ORDER BY tempdata.journey_id desc";

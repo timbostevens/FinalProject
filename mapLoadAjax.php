@@ -27,7 +27,7 @@ if (!$db_selected) {
 
 // Select rows from the datapoints table
 //updates results so that journey 1 becomes the highest journey number from the database
-$queryDatapoints = "SELECT * FROM datapoints WHERE journey_id = $journeyNumber";
+$queryDatapoints = "SELECT * FROM datap WHERE journey_id = $journeyNumber";
 $result = mysql_query($queryDatapoints);
 
 // if there is no result, throw an error
@@ -54,7 +54,7 @@ while ($row = @mysql_fetch_assoc($result)){
   $newnode->setAttribute("speed", $row['speed_kmh']);
   $newnode->setAttribute("lat", $row['lat_dd']);
   $newnode->setAttribute("lng", $row['long_dd']);
-  $newnode->setAttribute("b_current", $row['battery_current']);
+  $newnode->setAttribute("b_current", $row['battery_charge']);
 }
 
 echo $dom->saveXML();

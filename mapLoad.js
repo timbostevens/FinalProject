@@ -71,7 +71,7 @@
           // add marker to marker bounds
           markerBounds.extend(point);
           // create text for info window  
-          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Current: " + batCur + " A";
+          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " km/h" + "<br/>Battery Charge: " + batCur + " A";
           //var icon = customIcons[type] || {};
           // create marker
           var marker = new google.maps.Marker({
