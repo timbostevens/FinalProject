@@ -184,24 +184,23 @@
                         <div class="col-md-6 box">
                           <h4>Some stats</h4>
 
-                          <p id="start-stat1">Start Time: xxxxxxx</p>
+                          <p>Start Time: <span id="start-stat1">xxxxxx</span></p>
 
-                          <p id="end-stat1">End Time: xxxxxxx</p>
+                          <p>End Time: <span id="end-stat1">xxxxxx</span></p>
 
-                          <p id="distance-stat1">Distance: xxxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p> Distance: <span id="distance-stat1">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
                             <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
 
-                          <p id="duration-stat1">Duration: xxxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>Duration: <span id="duration-stat1">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
                               <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
 
-
-                          <p id="speed-stat1">Speed: xxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>Speed: <span id="speed-stat1">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p id="energy-stat1">Energy Saved: xxxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>Energy Saved: <span id="energy-stat1">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p id="co2-stat1">CO2 Saved: xxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
@@ -261,25 +260,25 @@
                         <div class="col-md-6 box">
                           <h4>Some stats</h4>
 
-                          <p id="start-stat2">Start Time: xxxxxxx</p>
+                          <p>Start Time: <span id="start-stat2">xxxxxx</span></p>
 
-                          <p id="end-stat2">End Time: xxxxxxx</p>
+                          <p>End Time: <span id="end-stat2">xxxxxx</span></p>
 
-                          <p id="distance-stat2">Distance: xxxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p> Distance: <span id="distance-stat2">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
                             <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
 
-                          <p id="duration-stat2">Duration: xxxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>Duration: <span id="duration-stat2">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
                               <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
 
-
-                          <p id="speed-stat2">Speed: xxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>Speed: <span id="speed-stat2">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p id="energy-stat2">Energy Saved: xxxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>Energy Saved: <span id="energy-stat2">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p id="co2-stat2">CO2 Saved: xxxxx<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+
 
 
                           </div> <!-- end col-md-6 -->

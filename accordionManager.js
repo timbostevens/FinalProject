@@ -37,13 +37,13 @@ downloadUrl(urlGet, function(data) {
         	// get static image (scale=2 returns high res version)
             document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain";
             // update stats witihn panel
-            document.getElementById("start-stat"+panelNumber).innerHTML = "Start Time: "+start;
-            document.getElementById("end-stat"+panelNumber).innerHTML = "End Time: "+end;
-            document.getElementById("distance-stat"+panelNumber).innerHTML = "Distance: "+distance+" miles";
-            document.getElementById("duration-stat"+panelNumber).innerHTML = "Duration: "+duration+" minutes";
-            document.getElementById("speed-stat"+panelNumber).innerHTML = "Average Speed: "+speed+" mph";
-            document.getElementById("energy-stat"+panelNumber).innerHTML = "Energy Saved: "+energy+" kWh";
-            document.getElementById("co2-stat"+panelNumber).innerHTML = "CO2 Saved: "+co2+" g";
+            document.getElementById("start-stat"+panelNumber).innerHTML = start;
+            document.getElementById("end-stat"+panelNumber).innerHTML = end;
+            document.getElementById("distance-stat"+panelNumber).innerHTML = distance;
+            document.getElementById("duration-stat"+panelNumber).innerHTML = duration;
+            document.getElementById("speed-stat"+panelNumber).innerHTML = speed;
+            document.getElementById("energy-stat"+panelNumber).innerHTML = energy;
+            document.getElementById("co2-stat"+panelNumber).innerHTML = co2;
 
 
             console.log(energy, co2);
