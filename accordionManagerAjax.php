@@ -1,9 +1,5 @@
 <?php
 
-$username="root";
-$password="";
-$database="test";
-
 // Start XML file, create parent node
 
 $dom = new DOMDocument("1.0");
@@ -12,15 +8,14 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-$connection=mysql_connect ('localhost', $username, $password);
-if (!$connection) {  die('Not connected : ' . mysql_error());}
+include("connection.php");
 
 // Set the active MySQL database
 
-$db_selected = mysql_select_db($database, $connection);
-if (!$db_selected) {
-  die ('Can\'t use db : ' . mysql_error());
-}
+// $db_selected = mysql_select_db($database, $connection);
+// if (!$db_selected) {
+//   die ('Can\'t use db : ' . mysql_error());
+// }
 
 
 ////////////////////////////////////////////////////
@@ -42,7 +37,7 @@ $queryDatapoints = "SELECT tempdata.journey_id as JourneyID, DATE_FORMAT(tempdat
       ORDER BY journey_id desc
       LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
       ORDER BY tempdata.journey_id desc";
-$result = mysql_query($queryDatapoints);
+$result = mysqli_query($connection, $queryDatapoints);
 
 // if there is no result, throw an error
 if (!$result) {
@@ -53,7 +48,7 @@ header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysql_fetch_assoc($result)){
+while ($row = @mysqli_fetch_assoc($result)){
   // ADD TO XML DOCUMENT NODE
 
   // states the node name

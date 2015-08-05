@@ -1,9 +1,5 @@
 <?php
 
-$username="root";
-$password="";
-$database="test";
-
 // pull journey number from Get request
 $journeyNumber = $_GET["journey"];
 
@@ -15,20 +11,19 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-$connection=mysql_connect ('localhost', $username, $password);
-if (!$connection) {  die('Not connected : ' . mysql_error());}
+include("connection.php");
 
 // Set the active MySQL database
 
-$db_selected = mysql_select_db($database, $connection);
-if (!$db_selected) {
-  die ('Can\'t use db : ' . mysql_error());
-}
+// $db_selected = mysqli_select_db($database, $connection);
+// if (!$db_selected) {
+//   die ('Can\'t use db : ' . mysql_error());
+// }
 
 // Select rows from the datapoints table
 //updates results so that journey 1 becomes the highest journey number from the database
 $queryDatapoints = "SELECT * FROM datap WHERE journey_id = $journeyNumber";
-$result = mysql_query($queryDatapoints);
+$result = mysqli_query($connection, $queryDatapoints);
 
 // if there is no result, throw an error
 if (!$result) {
@@ -39,7 +34,7 @@ header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysql_fetch_assoc($result)){
+while ($row = @mysqli_fetch_assoc($result)){
   // ADD TO XML DOCUMENT NODE
 
   // states the node name
