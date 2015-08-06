@@ -22,7 +22,7 @@ include("connection.php");
 
 // Select rows from the datapoints table
 //updates results so that journey 1 becomes the highest journey number from the database
-$queryDatapoints = "SELECT * FROM datap WHERE journey_id = $journeyNumber";
+$queryDatapoints = "SELECT * FROM datapointsimport WHERE journey_id = $journeyNumber";
 $result = mysqli_query($connection, $queryDatapoints);
 
 // if there is no result, throw an error
@@ -46,10 +46,10 @@ while ($row = @mysqli_fetch_assoc($result)){
   // setAttribute(.... is how it is listed in produced xml
   $newnode->setAttribute("journey_ref",$row['journey_id']);
   $newnode->setAttribute("point",$row['point_id']);
-  $newnode->setAttribute("speed", $row['speed_mph']);
+  $newnode->setAttribute("speed", $row['velocity_mph']);
   $newnode->setAttribute("lat", $row['lat_dd']);
   $newnode->setAttribute("lng", $row['long_dd']);
-  $newnode->setAttribute("b_current", $row['battery_charge']);
+  $newnode->setAttribute("b_current", $row['battery_percent']);
 }
 
 echo $dom->saveXML();

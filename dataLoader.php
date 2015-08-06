@@ -3,7 +3,7 @@
 include("journeyCount.php");
 
 // get file
-$jsondata = file_get_contents("01-Original-Data.json");
+$jsondata = file_get_contents("02-Original-Data-Day2.json");
 
 // decodes the data into an array
 $json = json_decode($jsondata, true);
@@ -50,7 +50,7 @@ if (mysqli_query($connection, $insertjourneyquery)) {
     echo "Error:<br>" . mysqli_error($connection);
 }
 
-// run the datapoint query
+// // run the datapoint query
 if (mysqli_query($connection, $insertpointquery)) {
     echo "Success";
 } else {
@@ -73,7 +73,8 @@ function updatesummarystats($journeynumber){
 global $connection;
 
 	// create query to retrieve summary stats
-	$summaryselectquery="SELECT DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
+	$summaryselectquery="SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
+								DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
 								DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
         						MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
         						MAX(total_dist_mi) as distance_mi,
@@ -88,14 +89,15 @@ global $connection;
 
     // create query to update database with summary stats
     $summaryupdatequery = "UPDATE journeysimport SET";
-    $summaryupdatequery = $summaryupdatequery." start_time='".$row['start_time'];
+    $summaryupdatequery = $summaryupdatequery." journey_date='".$row['journey_date'];
+    $summaryupdatequery = $summaryupdatequery."', start_time='".$row['start_time'];
 	$summaryupdatequery = $summaryupdatequery."', end_time='".$row['end_time'];		
 	$summaryupdatequery = $summaryupdatequery."', average_speed_mph=".$row['average_speed_mph'];
 	$summaryupdatequery = $summaryupdatequery.", distance_mi=".$row['distance_mi'];
 	$summaryupdatequery = $summaryupdatequery.", duration_mins=".$row['duration_mins'];
 	$summaryupdatequery = $summaryupdatequery." WHERE journey_id=".$journeynumber;
 
-    //echo $summaryupdatequery;
+    // echo $summaryupdatequery;
 	// run the query
 	if (mysqli_query($connection, $summaryupdatequery)) {
     	echo "Success";
