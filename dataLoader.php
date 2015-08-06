@@ -141,6 +141,13 @@ function iteratorLooper($iterator){
 				$rownumber++;
 			} else { // if it's not a new row
     			// adds the value
+
+
+			//////////////////////////////////////////////////////////////////////////////////
+			////////////LAT AND LONG ARE CURRENTLY BACKWARDS IN THE SOURCE FILES//////////////
+			//////////////////////MY DATABASE FIELD NAMES CORRECT THIS////////////////////////
+
+
 				$insertpointquery = $insertpointquery.$iterator -> current().PHP_EOL.", ";
 			}
 		}
