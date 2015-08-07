@@ -76,12 +76,11 @@ function dataLoader($newFiles){
 	//include("journeyCount.php");
 
 // cycle through each of the new files and send each one to the callback function
-array_filter($newFiles, function($newFile){
+	array_filter($newFiles, function($newFile){
 
 		global $journeyCount;
 		global $connection;
-		global $insertPointQuery
-	;
+		global $insertPointQuery;
 		global $insertJourneyQuery;
 		global $rowNumber;
 
@@ -91,67 +90,73 @@ array_filter($newFiles, function($newFile){
 // decodes the data into an array
 		$json = json_decode($jsonData, true);
 
-// creates a new recursive array iterator
-		$iterator = new RecursiveArrayIterator($json);
+// check if this is a valid array
+		if(is_array($json)){
+			
+			// creates a new recursive array iterator
+			$iterator = new RecursiveArrayIterator($json);
 
-// gets journey count from journeyCount.php and increments it by 1 (the next journey number)
-		$journeyCount = $journeyCount+1;
+			// gets journey count from journeyCount.php and increments it by 1 (the next journey number)
+			$journeyCount = $journeyCount+1;
 
-// add first parameter (journey id) to journey query
-		$insertJourneyQuery = $insertJourneyQuery."(".$journeyCount;
+			// add first parameter (journey id) to journey query
+			$insertJourneyQuery = $insertJourneyQuery."(".$journeyCount;
 
-// add second parameter (upload time) to journey query
-		$insertJourneyQuery = $insertJourneyQuery.", NOW()";
+			// add second parameter (upload time) to journey query
+			$insertJourneyQuery = $insertJourneyQuery.", NOW()";
 
-// add third parameter (source filename) to journey query
-		$insertJourneyQuery = $insertJourneyQuery.", '".$newFile."')";
+			// add third parameter (source filename) to journey query
+			$insertJourneyQuery = $insertJourneyQuery.", '".$newFile."')";
 
-// calls function and passes in interator
-iterator_apply($iterator, 'iteratorLooper', array($iterator));
+			// calls function and passes in interator
+			iterator_apply($iterator, 'iteratorLooper', array($iterator));
 
-////////////////////////////////////////////////////
-///////////FIX SOME DATAPOINT ERRORS////////////////
-///////////////////////////////////////////////////
+			////////////////////////////////////////////////////
+			///////////FIX SOME DATAPOINT ERRORS////////////////
+			///////////////////////////////////////////////////
 
-// address first set of double brackets after first entry
-$insertPointQuery = str_replace(", ),)," , "),",$insertPointQuery
-);
-// remove extra commas at the end of line
-$insertPointQuery = str_replace(", )," , ")",$insertPointQuery
-);
-// insert commas back in between entries
-$insertPointQuery = str_replace(") (" , "), (",$insertPointQuery
- );
+			// address first set of double brackets after first entry
+			$insertPointQuery = str_replace(", ),)," , "),",$insertPointQuery
+			);
+			// remove extra commas at the end of line
+			$insertPointQuery = str_replace(", )," , ")",$insertPointQuery
+			);
+			// insert commas back in between entries
+			$insertPointQuery = str_replace(") (" , "), (",$insertPointQuery
+				);
 
+			// run the journey query
+			if (mysqli_query($connection, $insertJourneyQuery)) {
+				echo "Success";
+			} else {
+				echo "<br/>".$insertJourneyQuery."<br/>";
+				echo "Journey Error:<br>" . mysqli_error($connection);
+			}
 
-// run the journey query
-if (mysqli_query($connection, $insertJourneyQuery)) {
-	echo "Success";
-} else {
-	echo "<br/>".$insertJourneyQuery."<br/>";
-	echo "Journey Error:<br>" . mysqli_error($connection);
-}
+			// // run the datapoint query
+			if (mysqli_query($connection, $insertPointQuery
+				)) {
+				echo "Success";
+			} else {
+				echo "<br/>".$insertPointQuery
+				."<br/>";
+				echo "Datapoint Error:<br>" . mysqli_error($connection);
+			}
 
-// // run the datapoint query
-if (mysqli_query($connection, $insertPointQuery
-)) {
-	echo "Success";
-} else {
-	echo "<br/>".$insertPointQuery
-."<br/>";
-	echo "Datapoint Error:<br>" . mysqli_error($connection);
-}
+			// run the update summary stats function
+			updateSummaryStats($journeyCount);
 
-// run the update summary stats function
-updateSummaryStats($journeyCount);
+			// reset queries
+			$insertPointQuery = "INSERT INTO datapointsimport VALUES ";
+			$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
+			$rowNumber = 1;
 
-// reset queries
-$insertPointQuery = "INSERT INTO datapointsimport VALUES ";
-$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
-$rowNumber = 1;
+		}else {
+			// do something when I find an invalid array
+			echo "I'm not an array ".$newFile;
+		}// end if/else array check
 
-
-}); // end array_filter
+	}); // end array_filter
 
 
 } // end function
@@ -214,7 +219,7 @@ function iteratorLooper($iterator){
 
 // create references to vars outside function
 	global $insertPointQuery
-;
+	;
 	global $rowNumber;
 	global $journeyCount;
 	global $insertJourneyQuery;
@@ -232,12 +237,12 @@ function iteratorLooper($iterator){
 			if($iterator -> key()=="timestamp"){
 				// adds opening brackets, rowNumber and journey number and start of string to date
 				$insertPointQuery
-			 = $insertPointQuery
+				= $insertPointQuery
 				." (".$rowNumber.", ".$journeyCount.", STR_TO_DATE('";
 				// add the value with the string to date format
-				$insertPointQuery
-			 = $insertPointQuery
-				.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
+					$insertPointQuery
+					= $insertPointQuery
+					.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
 				// increments row number
 $rowNumber++;
 			} else { // if it's not a new row
@@ -250,7 +255,7 @@ $rowNumber++;
 
 
 			$insertPointQuery
-		 = $insertPointQuery
+			= $insertPointQuery
 			.$iterator -> current().PHP_EOL.", ";
 		}
 	}
@@ -258,7 +263,7 @@ $rowNumber++;
 		// if this is the last entry in a row then close brackets
 	if($iterator -> key()=="route"){
 		$insertPointQuery
-	 = $insertPointQuery
+		= $insertPointQuery
 		."),";
 }
 
