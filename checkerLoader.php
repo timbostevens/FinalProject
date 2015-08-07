@@ -1,5 +1,8 @@
 <?php
 
+define("DATA_FILEPATH", "source/");
+define("DATA_ERROR_FILEPATH", "source/errors/");
+
 //include("connection.php");
 
 // load journey count - instead of connection as we'll need the count
@@ -25,12 +28,8 @@ $queryDatapoints = "SELECT source_file FROM journeysimport";
 // runs query and passes results to var
 $result = mysqli_query($connection, $queryDatapoints);
 
-//////////////////////////////
-//Need some sql validation here
-//////////////////////////////
-
 // gets all files in folder with pattern
-$allFiles = glob("source/*.json");
+$allFiles = glob(DATA_FILEPATH."*.json");
 //Iterates over each value in the array passing them to the callback function.
 //If the callback function returns true, the current value from array is returned into the result array.
 $newFiles = array_filter(
@@ -151,9 +150,12 @@ function dataLoader($newFiles){
 			$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
 			$rowNumber = 1;
 
-		}else {
-			// do something when I find an invalid array
-			echo "I'm not an array ".$newFile;
+		}else { // move file to errors folder
+			// create string containing new file location
+			$newFileLocation = str_replace(DATA_FILEPATH,DATA_ERROR_FILEPATH,$newFile);
+			// move file to error folder
+			rename($newFile, $newFileLocation);
+
 		}// end if/else array check
 
 	}); // end array_filter
