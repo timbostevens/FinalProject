@@ -22,8 +22,20 @@ include("connection.php");
 
 // Select rows from the datapoints table
 //updates results so that journey 1 becomes the highest journey number from the database
-$queryDatapoints = "SELECT * FROM datapointsimport WHERE journey_id = $journeyNumber";
-$result = mysqli_query($connection, $queryDatapoints);
+//$queryDatapoints = "SELECT * FROM datapointsimport WHERE journey_id = $journeyNumber";
+//$result = mysqli_query($connection, $queryDatapoints);
+
+// prepare statement
+$stmt = mysqli_prepare($connection, "SELECT * FROM datapointsimport WHERE journey_id = ?");
+
+// bind parameters
+mysqli_stmt_bind_param($stmt, 'i',$journeyNumber);
+
+// get result
+mysqli_stmt_execute($stmt);
+
+// get result and pass to var
+$result = mysqli_stmt_get_result($stmt);
 
 // if there is no result, throw an error
 if (!$result) {
