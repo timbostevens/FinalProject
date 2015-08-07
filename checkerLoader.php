@@ -1,5 +1,5 @@
 <?php
-
+// Constants for data filepath and error filepath
 define("DATA_FILEPATH", "source/");
 define("DATA_ERROR_FILEPATH", "source/errors/");
 
@@ -60,6 +60,11 @@ if ($newFiles){
 
 	dataloader($newFiles);
 } else {
+
+////////////////////////
+////REMOVE FOR PRODUCTION
+///////////////////
+
 	echo "no new files";
 }
 
