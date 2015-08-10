@@ -34,6 +34,7 @@ downloadUrl(urlGet, function(data) {
         	// update headings
         	document.getElementById("journeyP"+panelNumber).innerHTML = "Journey "+journeyID;
         	document.getElementById("dateP"+panelNumber).innerHTML = date;
+            document.getElementById("startP"+panelNumber).innerHTML = "Start: "+start;
         	// get static image (scale=2 returns high res version)
             document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain";
             // update stats witihn panel

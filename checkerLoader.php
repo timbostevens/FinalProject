@@ -18,6 +18,9 @@ $insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp,
 // row and journey numbers definded outside function to allow for recusrsive incrementation
 $rowNumber = 1;
 
+// logfile name
+$logFile = "loadLog.txt";
+
 
 ////////////////////////////////////////
 // This section checks for new files////
@@ -65,9 +68,10 @@ if ($newFiles){
 ////REMOVE FOR PRODUCTION
 ///////////////////
 
-	echo "no new files";
+	echo "no new files<br/>";
 }
 
+	echo "done";
 
 /*
 FUNCTION
@@ -87,6 +91,7 @@ function dataLoader($newFiles){
 		global $insertPointQuery;
 		global $insertJourneyQuery;
 		global $rowNumber;
+		global $logFile;
 
 // get file
 		$jsonData = file_get_contents($newFile);
@@ -131,20 +136,29 @@ function dataLoader($newFiles){
 
 			// run the journey query
 			if (mysqli_query($connection, $insertJourneyQuery)) {
-				echo "Success";
+				// create text string
+				$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+				// write to file
+				file_put_contents($logFile, $journeySuccess, FILE_APPEND | LOCK_EX);
 			} else {
-				echo "<br/>".$insertJourneyQuery."<br/>";
-				echo "Journey Error:<br>" . mysqli_error($connection);
+				// create text string
+				$journeyFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
+				// write to file
+				file_put_contents($logFile, $journeyFail, FILE_APPEND | LOCK_EX);
 			}
 
 			// // run the datapoint query
 			if (mysqli_query($connection, $insertPointQuery
 				)) {
-				echo "Success";
+				// create text string
+				$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+				// write to file
+				file_put_contents($logFile, $datapointSuccess, FILE_APPEND | LOCK_EX);
 			} else {
-				echo "<br/>".$insertPointQuery
-				."<br/>";
-				echo "Datapoint Error:<br>" . mysqli_error($connection);
+				// create text string
+				$datapointFail = "\n".date('d/m/Y H:i:s', time())." Datapoint Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
+				// write to file
+				file_put_contents($logFile, $datapointFail, FILE_APPEND | LOCK_EX);
 			}
 
 			// run the update summary stats function
@@ -155,11 +169,16 @@ function dataLoader($newFiles){
 			$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
 			$rowNumber = 1;
 
-		}else { // move file to errors folder
+		}else { // move file to errors folder & log error
 			// create string containing new file location
 			$newFileLocation = str_replace(DATA_FILEPATH,DATA_ERROR_FILEPATH,$newFile);
 			// move file to error folder
 			rename($newFile, $newFileLocation);
+
+			// create text string
+			$arrayFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Array Load FAIL - File: ".$newFile;
+			// write to file
+			file_put_contents($logFile, $arrayFail, FILE_APPEND | LOCK_EX);
 
 		}// end if/else array check
 
@@ -177,6 +196,7 @@ function updateSummaryStats($journeyCount){
 
 
 	global $connection;
+	global $logFile;
 
 	// create query to retrieve summary stats
 	$summaryselectquery="SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
@@ -206,10 +226,15 @@ function updateSummaryStats($journeyCount){
     // echo $summaryupdatequery;
 	// run the query
 	if (mysqli_query($connection, $summaryupdatequery)) {
-		echo "Success";
+		// create text string
+		$summarySuccess = "\n".date('d/m/Y H:i:s', time())." Summary Generation Success - Journey Ref: ".$journeyCount;
+		// write to file
+		file_put_contents($logFile, $summarySuccess, FILE_APPEND | LOCK_EX);
 	} else {
-		echo "<br/>".$summaryupdatequery."<br/>";
-		echo "Summary Stats Error:<br>" . mysqli_error($connection);
+		// create text string
+		$summaryFail = "\n".date('d/m/Y H:i:s', time())." Summary Generation FAIL - Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
+		// write to file
+		file_put_contents($logFile, $summaryFail, FILE_APPEND | LOCK_EX);
 	}
 
 }

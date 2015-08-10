@@ -6,7 +6,7 @@
     var panelNumber = divClicked.parentNode.id;
     // trim the parent id to leave just the number
     panelNumber = panelNumber.replace('panel','');
-    // get hte text from the journey title
+    // get the text from the journey title
      var journeyNumber = document.getElementById("journeyP"+panelNumber).innerHTML;
      // trim off the hourney text to leave the journey number
      journeyNumber = journeyNumber.replace('Journey ','');

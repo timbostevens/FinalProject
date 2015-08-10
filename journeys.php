@@ -153,8 +153,9 @@
                           <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                             <div class="row">
                               <div class="col-md-8">
-                                <p id="journeyP1">Journey x</p>
-                                <p id="dateP1"><small>Date x</small></p>
+                                <p class="accordion-title" id="journeyP1">Journey x</p>
+                                <p id="dateP1">Date x</p>
+                                <p id="startP1">Start x</p>
                                 <p><small>13 km</small></p>
                               </div>
                               <div class="col-md-4">
@@ -229,8 +230,9 @@
                           <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                             <div class="row">
                               <div class="col-md-8">
-                                <p id="journeyP2">Journey x</p>
-                                <p id="dateP2"><small>Date x</small></p>
+                                <p class="accordion-title" id="journeyP2">Journey x</p>
+                                <p id="dateP2">Date x</p>
+                                <p id="startP2">Start x</p>
                                 <p><small>13 km</small></p>
                               </div>
                               <div class="col-md-4">
@@ -304,8 +306,9 @@
                               <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                                 <div class="row">
                                   <div class="col-md-8">
-                                    <p id="journeyP3">Journey x</p>
-                                    <p id="dateP3"><small>Date x</small></p>
+                                    <p class="accordion-title" id="journeyP3">Journey x</p>
+                                    <p id="dateP3">Date x</p>
+                                    <p id="startP3">Start x</p>
                                     <p><small>13 km</small></p>
                                   </div>
                                   <div class="col-md-4">
@@ -335,7 +338,7 @@
                               <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
                                 <div class="row">
                                   <div class="col-md-8">
-                                    <p id="journeyP4">Journey x</p>
+                                    <p class="accordion-title" id="journeyP4">Journey x</p>
                                     <p id="dateP4"><small>Date x</small></p>
                                     <p><small>13 km</small></p>
                                   </div>
@@ -367,7 +370,7 @@
                               <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
                                 <div class="row">
                                   <div class="col-md-8">
-                                    <p id="journeyP5">Journey x</p>
+                                    <p class="accordion-title" id="journeyP5">Journey x</p>
                                     <p id="dateP5"><small>Date x</small></p>
                                     <p><small>13 km</small></p>
                                   </div>
