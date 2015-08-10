@@ -29,7 +29,7 @@ include("connection.php");
 $stmt = mysqli_prepare($connection, "SELECT * FROM datapointsimport WHERE journey_id = ?");
 
 // bind parameters
-mysqli_stmt_bind_param($stmt, 'i',$journeyNumber);
+mysqli_stmt_bind_param($stmt, 'is',$journeyNumber);
 
 // get result
 mysqli_stmt_execute($stmt);

@@ -14,7 +14,7 @@ include("journeyCount.php");
 $insertPointQuery = "INSERT INTO datapointsimport VALUES ";
 
 // create start of insert journeys query
-$insertJourneyStmt = mysqli_prepare($connection,"INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES (?,NOW(),?)");
+$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
 
 // row and journey numbers definded outside function to allow for recusrsive incrementation
 $rowNumber = 1;
@@ -89,7 +89,7 @@ function dataLoader($newFiles){
 		global $journeyCount;
 		global $connection;
 		global $insertPointQuery;
-		global $insertJourneyStmt;
+		global $insertJourneyQuery;
 		global $rowNumber;
 		global $dateErrorFlag;
 
@@ -108,8 +108,14 @@ function dataLoader($newFiles){
 			// gets journey count from journeyCount.php and increments it by 1 (the next journey number)
 			$journeyCount = $journeyCount+1;
 
-			// bind the values (int, strng) into the prepared statement
-			mysqli_stmt_bind_param($insertJourneyStmt,'is',$journeyCount,$newFile);
+			// add first parameter (journey id) to journey query
+			$insertJourneyQuery = $insertJourneyQuery."(".$journeyCount;
+
+			// add second parameter (upload time) to journey query
+			$insertJourneyQuery = $insertJourneyQuery.", NOW()";
+
+			// add third parameter (source filename) to journey query
+			$insertJourneyQuery = $insertJourneyQuery.", '".$newFile."')";
 
 			// calls function and passes in interator
 			iterator_apply($iterator, 'iteratorLooper', array($iterator));
@@ -134,7 +140,7 @@ function dataLoader($newFiles){
 
 
 				// run the journey query
-				if (mysqli_execute($insertJourneyStmt)) {
+				if (mysqli_query($connection, $insertJourneyQuery)) {
 					// create text string
 					$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
 					// write to file
@@ -146,8 +152,11 @@ function dataLoader($newFiles){
 					file_put_contents(DATALOAD_LOGFILE, $journeyFail, FILE_APPEND | LOCK_EX);
 				}
 
+				//echo $insertPointQuery;
+
 				// // run the datapoint query
-				if (mysqli_query($connection, $insertPointQuery)) {
+				if (mysqli_query($connection, $insertPointQuery
+					)) {
 					// create text string
 					$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
 					// write to file
@@ -178,6 +187,7 @@ function dataLoader($newFiles){
 			}
 			// reset queries
 			$insertPointQuery = "INSERT INTO datapointsimport VALUES ";
+			$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
 			$rowNumber = 1;
 			$dateErrorFlag = false;
 
@@ -209,23 +219,17 @@ function updateSummaryStats($journeyCount){
 
 	global $connection;
 
-	// create prepared statement to retrieve summary stats
-	$summarySelectStmt=mysqli_prepare($connection, "SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
+	// create query to retrieve summary stats
+	$summaryselectquery="SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
 	DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
 	DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
 	MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
 	MAX(total_dist_mi) as distance_mi,
 	MAX(time_elapsed_sec)/60 as duration_mins
 	FROM datapointsimport
-	WHERE journey_id = ?");
-
-	// bind parameters (integer)
-	mysqli_stmt_bind_param($summarySelectStmt, 'i',$journeyCount);
-	// execute prepared statement
-	mysqli_stmt_execute($summarySelectStmt);
-
-    // run summarySelectStmt
-	$result = mysqli_stmt_get_result($summarySelectStmt);
+	WHERE journey_id = ".$journeyCount;
+    // run summaryselectquery
+	$result = mysqli_query($connection,$summaryselectquery);
     // add results to an array
 	$row = mysqli_fetch_array($result);
 
@@ -270,6 +274,7 @@ function iteratorLooper($iterator){
 	global $insertPointQuery;
 	global $rowNumber;
 	global $journeyCount;
+	global $insertJourneyQuery;
 	global $dateErrorFlag;
 
 // checks for valid entry
