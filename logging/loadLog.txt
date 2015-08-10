@@ -50,3 +50,35 @@ NEW JOURNEY
 10/08/2015 15:10:52 Journey Load Success - File: source/SmallMar.json Journey Ref: 10
 10/08/2015 15:10:52 Datapoint Load Success - File: source/SmallMar.json Journey Ref: 10
 10/08/2015 15:10:52 Summary Generation Success - Journey Ref: 10
+NEW JOURNEY
+10/08/2015 15:36:52 Journey Load Success - File: source/SmallJan.json Journey Ref: 1
+10/08/2015 15:36:52 Datapoint Load Success - File: source/SmallJan.json Journey Ref: 1
+10/08/2015 15:36:52 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+10/08/2015 15:36:52 Journey Load Success - File: source/SmallJuly.json Journey Ref: 2
+10/08/2015 15:36:52 Datapoint Load Success - File: source/SmallJuly.json Journey Ref: 2
+10/08/2015 15:36:52 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+10/08/2015 15:36:52 Journey Load Success - File: source/SmallMar.json Journey Ref: 3
+10/08/2015 15:36:52 Datapoint Load Success - File: source/SmallMar.json Journey Ref: 3
+10/08/2015 15:36:52 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+10/08/2015 15:48:13 Journey Load Success - File: source/SmallAug.json Journey Ref: 4
+10/08/2015 15:48:13 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 4
+10/08/2015 15:48:13 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+10/08/2015 15:48:13 Array Load FAIL - File: source/SmallFeb.json
+NEW JOURNEY
+10/08/2015 15:48:13 Journey Load Success - File: source/SmallJul2.json Journey Ref: 5
+10/08/2015 15:48:13 Datapoint Load Success - File: source/SmallJul2.json Journey Ref: 5
+10/08/2015 15:48:13 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+10/08/2015 15:49:12 Journey Load Success - File: source/SmallFeb.json Journey Ref: 6
+10/08/2015 15:49:12 Datapoint Load Success - File: source/SmallFeb.json Journey Ref: 6
+10/08/2015 15:49:12 Summary Generation Success - Journey Ref: 6
+NEW JOURNEY
+10/08/2015 15:53:32 Journey Load Success - File: source/SmallAug2.json Journey Ref: 7
+10/08/2015 15:53:32 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 7
+10/08/2015 15:53:32 Summary Generation Success - Journey Ref: 7
+NEW JOURNEY
+10/08/2015 16:01:02 Array Load FAIL - File: source/01-ErrorsNoEndBracket.json

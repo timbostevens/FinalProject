@@ -142,8 +142,6 @@
                   <div class="panel-group" id="accordion">
                    
 
-
-
                     <!-- This is the first accordion entry -->
                     <div class="panel panel-default accordion-panel" id="panel1">
                       <!-- Panel Header -->

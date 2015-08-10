@@ -1,7 +1,8 @@
 <?php
-// Constants for data filepath and error filepath
+// Constants for data filepath, error filepath and logfile
 define("DATA_FILEPATH", "source/");
 define("DATA_ERROR_FILEPATH", "source/errors/");
+define("DATALOAD_LOGFILE","logging/loadlog.txt");
 
 //include("connection.php");
 
@@ -17,10 +18,6 @@ $insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp,
 
 // row and journey numbers definded outside function to allow for recusrsive incrementation
 $rowNumber = 1;
-
-// logfile name
-$logFile = "loadLog.txt";
-
 
 ////////////////////////////////////////
 // This section checks for new files////
@@ -91,7 +88,6 @@ function dataLoader($newFiles){
 		global $insertPointQuery;
 		global $insertJourneyQuery;
 		global $rowNumber;
-		global $logFile;
 
 // get file
 		$jsonData = file_get_contents($newFile);
@@ -139,12 +135,12 @@ function dataLoader($newFiles){
 				// create text string
 				$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
 				// write to file
-				file_put_contents($logFile, $journeySuccess, FILE_APPEND | LOCK_EX);
+				file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
 			} else {
 				// create text string
 				$journeyFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
 				// write to file
-				file_put_contents($logFile, $journeyFail, FILE_APPEND | LOCK_EX);
+				file_put_contents(DATALOAD_LOGFILE, $journeyFail, FILE_APPEND | LOCK_EX);
 			}
 
 			// // run the datapoint query
@@ -153,12 +149,12 @@ function dataLoader($newFiles){
 				// create text string
 				$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
 				// write to file
-				file_put_contents($logFile, $datapointSuccess, FILE_APPEND | LOCK_EX);
+				file_put_contents(DATALOAD_LOGFILE, $datapointSuccess, FILE_APPEND | LOCK_EX);
 			} else {
 				// create text string
 				$datapointFail = "\n".date('d/m/Y H:i:s', time())." Datapoint Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
 				// write to file
-				file_put_contents($logFile, $datapointFail, FILE_APPEND | LOCK_EX);
+				file_put_contents(DATALOAD_LOGFILE, $datapointFail, FILE_APPEND | LOCK_EX);
 			}
 
 			// run the update summary stats function
@@ -178,7 +174,7 @@ function dataLoader($newFiles){
 			// create text string
 			$arrayFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Array Load FAIL - File: ".$newFile;
 			// write to file
-			file_put_contents($logFile, $arrayFail, FILE_APPEND | LOCK_EX);
+			file_put_contents(DATALOAD_LOGFILE, $arrayFail, FILE_APPEND | LOCK_EX);
 
 		}// end if/else array check
 
@@ -196,7 +192,6 @@ function updateSummaryStats($journeyCount){
 
 
 	global $connection;
-	global $logFile;
 
 	// create query to retrieve summary stats
 	$summaryselectquery="SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
@@ -229,12 +224,12 @@ function updateSummaryStats($journeyCount){
 		// create text string
 		$summarySuccess = "\n".date('d/m/Y H:i:s', time())." Summary Generation Success - Journey Ref: ".$journeyCount;
 		// write to file
-		file_put_contents($logFile, $summarySuccess, FILE_APPEND | LOCK_EX);
+		file_put_contents(DATALOAD_LOGFILE, $summarySuccess, FILE_APPEND | LOCK_EX);
 	} else {
 		// create text string
 		$summaryFail = "\n".date('d/m/Y H:i:s', time())." Summary Generation FAIL - Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
 		// write to file
-		file_put_contents($logFile, $summaryFail, FILE_APPEND | LOCK_EX);
+		file_put_contents(DATALOAD_LOGFILE, $summaryFail, FILE_APPEND | LOCK_EX);
 	}
 
 }
@@ -250,8 +245,7 @@ recursive function to loop through multi-dimensional array
 function iteratorLooper($iterator){
 
 // create references to vars outside function
-	global $insertPointQuery
-	;
+	global $insertPointQuery;
 	global $rowNumber;
 	global $journeyCount;
 	global $insertJourneyQuery;

@@ -46,7 +46,7 @@ $queryDatapoints = "SELECT  journey_id as JourneyID,
         energy_saved as EnergySaved,
         co2_saved as CO2Saved
       FROM journeysimport
-      ORDER BY JourneyDate desc, StartTime desc
+      ORDER BY journey_date desc, start_time desc
       LIMIT 5";
 
 
