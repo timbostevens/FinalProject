@@ -230,6 +230,11 @@ function updateSummaryStats($journeyCount){
 	$row = mysqli_fetch_array($result);
 
 
+
+	/////////////////////////////////////////////
+	/////CHNAGE TO PREPARED STATEMENT///////
+	///////////////////////////////////////////
+
     // create query to update database with summary stats
 	$summaryupdatequery = "UPDATE journeysimport SET";
 	$summaryupdatequery = $summaryupdatequery." journey_date='".$row['journey_date'];
