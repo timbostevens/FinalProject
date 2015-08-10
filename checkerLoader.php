@@ -19,6 +19,9 @@ $insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp,
 // row and journey numbers definded outside function to allow for recusrsive incrementation
 $rowNumber = 1;
 
+// flag for date errors
+$dateErrorFlag = false;
+
 ////////////////////////////////////////
 // This section checks for new files////
 ///////////////////////////////////////
@@ -88,6 +91,7 @@ function dataLoader($newFiles){
 		global $insertPointQuery;
 		global $insertJourneyQuery;
 		global $rowNumber;
+		global $dateErrorFlag;
 
 // get file
 		$jsonData = file_get_contents($newFile);
@@ -116,6 +120,7 @@ function dataLoader($newFiles){
 			// calls function and passes in interator
 			iterator_apply($iterator, 'iteratorLooper', array($iterator));
 
+
 			////////////////////////////////////////////////////
 			///////////FIX SOME DATAPOINT ERRORS////////////////
 			///////////////////////////////////////////////////
@@ -130,40 +135,61 @@ function dataLoader($newFiles){
 			$insertPointQuery = str_replace(") (" , "), (",$insertPointQuery
 				);
 
-			// run the journey query
-			if (mysqli_query($connection, $insertJourneyQuery)) {
+			// check for date error flag
+			if($dateErrorFlag===false){
+
+
+				// run the journey query
+				if (mysqli_query($connection, $insertJourneyQuery)) {
+					// create text string
+					$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+					// write to file
+					file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
+				} else {
+					// create text string
+					$journeyFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
+					// write to file
+					file_put_contents(DATALOAD_LOGFILE, $journeyFail, FILE_APPEND | LOCK_EX);
+				}
+
+				//echo $insertPointQuery;
+
+				// // run the datapoint query
+				if (mysqli_query($connection, $insertPointQuery
+					)) {
+					// create text string
+					$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+					// write to file
+					file_put_contents(DATALOAD_LOGFILE, $datapointSuccess, FILE_APPEND | LOCK_EX);
+				} else {
+					// create text string
+					$datapointFail = "\n".date('d/m/Y H:i:s', time())." Datapoint Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
+					// write to file
+					file_put_contents(DATALOAD_LOGFILE, $datapointFail, FILE_APPEND | LOCK_EX);
+				}
+			
+				// run the update summary stats function
+				updateSummaryStats($journeyCount);
+
+			} else {// move file to errors folder & log error
+			
+				// create string containing new file location
+				$newFileLocation = str_replace(DATA_FILEPATH,DATA_ERROR_FILEPATH,$newFile);
+				// move file to error folder
+				rename($newFile, $newFileLocation);
+
 				// create text string
-				$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+				$dateFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Date FAIL - File: ".$newFile;
 				// write to file
-				file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
-			} else {
-				// create text string
-				$journeyFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
-				// write to file
-				file_put_contents(DATALOAD_LOGFILE, $journeyFail, FILE_APPEND | LOCK_EX);
+				file_put_contents(DATALOAD_LOGFILE, $dateFail, FILE_APPEND | LOCK_EX);
+
+
 			}
-
-			// // run the datapoint query
-			if (mysqli_query($connection, $insertPointQuery
-				)) {
-				// create text string
-				$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
-				// write to file
-				file_put_contents(DATALOAD_LOGFILE, $datapointSuccess, FILE_APPEND | LOCK_EX);
-			} else {
-				// create text string
-				$datapointFail = "\n".date('d/m/Y H:i:s', time())." Datapoint Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
-				// write to file
-				file_put_contents(DATALOAD_LOGFILE, $datapointFail, FILE_APPEND | LOCK_EX);
-			}
-
-			// run the update summary stats function
-			updateSummaryStats($journeyCount);
-
 			// reset queries
 			$insertPointQuery = "INSERT INTO datapointsimport VALUES ";
 			$insertJourneyQuery = "INSERT INTO journeysimport (journey_id, upload_timestamp, source_file) VALUES ";
 			$rowNumber = 1;
+			$dateErrorFlag = false;
 
 		}else { // move file to errors folder & log error
 			// create string containing new file location
@@ -218,7 +244,7 @@ function updateSummaryStats($journeyCount){
 	$summaryupdatequery = $summaryupdatequery.", duration_mins=".$row['duration_mins'];
 	$summaryupdatequery = $summaryupdatequery." WHERE journey_id=".$journeyCount;
 
-    // echo $summaryupdatequery;
+    //echo $summaryupdatequery;
 	// run the query
 	if (mysqli_query($connection, $summaryupdatequery)) {
 		// create text string
@@ -249,9 +275,10 @@ function iteratorLooper($iterator){
 	global $rowNumber;
 	global $journeyCount;
 	global $insertJourneyQuery;
+	global $dateErrorFlag;
 
 // checks for valid entry
-	while ($iterator->valid()){
+	while (($iterator->valid()) and ($dateErrorFlag!==true)){
 
 	// if the entry has children
 		if($iterator->hasChildren()){
@@ -261,16 +288,32 @@ function iteratorLooper($iterator){
 		} else {
     	// checks for a new entry - uses timestamp as a new line id
 			if($iterator -> key()=="timestamp"){
+				
+				///////////////////////
+				////Date Validation////
+				//////////////////////
+
+				// get string from iterator
+				$validityCheckString = $iterator -> current().PHP_EOL;
+				// trim carrigae return from end
+				$validityCheckString = str_replace("\n", "",$validityCheckString);
+				// create new date/time from the retrieved value
+				$newDate = date_create_from_format('j M Y H:i:s',$validityCheckString);
+				// check if new date matches the retieved date
+				// this is needed as php turns 31 Feb into 3 March!!!!				
+				if($validityCheckString!==date_format($newDate, 'j M Y H:i:s')){
+					$dateErrorFlag = true;
+					break;
+				};
+
 				// adds opening brackets, rowNumber and journey number and start of string to date
 				$insertPointQuery
 				= $insertPointQuery
 				." (".$rowNumber.", ".$journeyCount.", STR_TO_DATE('";
 				// add the value with the string to date format
-					$insertPointQuery
-					= $insertPointQuery
-					.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
+					$insertPointQuery = $insertPointQuery.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
 				// increments row number
-$rowNumber++;
+				$rowNumber++;
 			} else { // if it's not a new row
     			// adds the value
 
