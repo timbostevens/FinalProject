@@ -43,11 +43,17 @@ downloadUrl(urlGet, function(data) {
             document.getElementById("distance-stat"+panelNumber).innerHTML = distance;
             document.getElementById("duration-stat"+panelNumber).innerHTML = duration;
             document.getElementById("speed-stat"+panelNumber).innerHTML = speed;
-            document.getElementById("energy-stat"+panelNumber).innerHTML = energy;
-            document.getElementById("co2-stat"+panelNumber).innerHTML = co2;
+            
+            ///////////////////////
+            /////Not in place yet
+            ///////////////////////
 
 
-            console.log(energy, co2);
+            //document.getElementById("energy-stat"+panelNumber).innerHTML = energy;
+            //document.getElementById("co2-stat"+panelNumber).innerHTML = co2;
+
+
+            //console.log(energy, co2);
 
         }// end for
       } // end download URL function

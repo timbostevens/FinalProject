@@ -227,7 +227,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          <a id="panelLink2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                             <div class="row">
                               <div class="col-md-8">
                                 <p class="accordion-title" id="journeyP2">Journey x</p>
@@ -299,97 +299,234 @@
 
 
                           <!-- This is the third accordion entry -->
-                          <div class="panel panel-default accordion-panel" id="panel3">
-                           <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <!-- href uses journey number -->
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                <div class="row">
-                                  <div class="col-md-8">
-                                    <p class="accordion-title" id="journeyP3">Journey x</p>
-                                    <p id="dateP3">Date x</p>
-                                    <p id="startP3">Start x</p>
-                                    <p><small>13 km</small></p>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
-                                  </div>
-                                </a>
-                              </h4>
-                            </div> <!-- end panel-heading -->
-                            <!-- Main Panel Body -->
-                            <!-- id set as journey number (used lated when clicked to load map) -->
-                            <div id="collapseThree" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <p>here is some stuff</p>
-                                <div class = "googlemap">
-                                  <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
-                                </div>
+                    <div class="panel panel-default accordion-panel" id="panel3">
+                      <!-- Panel Header -->
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <!-- href set as journey number -->
+                          <a id="panelLink3" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="accordion-title" id="journeyP3">Journey x</p>
+                                <p id="dateP3">Date x</p>
+                                <p id="startP3">Start x</p>
+                                <p><small>13 km</small></p>
                               </div>
-                            </div> <!-- end Main Panel Body -->
+                              <div class="col-md-4">
+                                <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
+                              </div>
+                            </a>
+                          </h4>
+                        </div>
+                        <!-- Main Panel Body -->
+                        <!-- id set as journey number (used lated when clicked to load map) -->
+                        <div id="collapseThree" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class = "googlemap">
+                              <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
+                            </div>
+                            <!-- large horizontal chart -->
+                            <div class="hchart">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleChartWide.png" class="img-responsive"/>
+                            </div>
+
+                            <div class="row">
+                              <!-- Left hand column containing stat list -->
+
+                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
+                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
+                        <div class="col-md-6 box">
+                          <h4>Some stats</h4>
+
+                          <p>Start Time: <span id="start-stat3">xxxxxx</span></p>
+
+                          <p>End Time: <span id="end-stat3">xxxxxx</span></p>
+
+                          <p> Distance: <span id="distance-stat3">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
+                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
+
+                          <p>Duration: <span id="duration-stat3">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
+                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
+
+                          <p>Speed: <span id="speed-stat3">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
+                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
+
+                          <p>Energy Saved: <span id="energy-stat3">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
+
+                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+
+
+
+                          </div> <!-- end col-md-6 -->
+                                  <!-- Right hand column containing chart -->
+                            <div class="col-md-6 box">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+
+                            </div> <!-- end col-md-6 box-->
+
+                          </div> <!-- end row -->
+
+                              </div> <!-- end panel body -->
+                            </div> <!-- end main panel body -->
                           </div> <!-- end third accordion -->
 
 
                           <!-- This is the fourth accordion entry -->
-                          <div class="panel panel-default accordion-panel" id="panel4">
-                           <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <!-- href uses journey number -->
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                <div class="row">
-                                  <div class="col-md-8">
-                                    <p class="accordion-title" id="journeyP4">Journey x</p>
-                                    <p id="dateP4"><small>Date x</small></p>
-                                    <p><small>13 km</small></p>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
-                                  </div>
-                                </a>
-                              </h4>
-                            </div> <!-- end panel-heading -->
-                            <!-- Main Panel Body -->
-                            <!-- id set as journey number (used lated when clicked to load map) -->
-                            <div id="collapseFour" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <p>here is some stuff</p>
-                                <div class = "googlemap">
-                                  <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
-                                </div>
+                  <div class="panel panel-default accordion-panel" id="panel4">
+                      <!-- Panel Header -->
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <!-- href set as journey number -->
+                          <a id="panelLink4" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="accordion-title" id="journeyP4">Journey x</p>
+                                <p id="dateP4">Date x</p>
+                                <p id="startP4">Start x</p>
+                                <p><small>13 km</small></p>
                               </div>
-                            </div> <!-- end Main Panel Body -->
+                              <div class="col-md-4">
+                                <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
+                              </div>
+                            </a>
+                          </h4>
+                        </div>
+                        <!-- Main Panel Body -->
+                        <!-- id set as journey number (used lated when clicked to load map) -->
+                        <div id="collapseFour" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class = "googlemap">
+                              <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
+                            </div>
+                            <!-- large horizontal chart -->
+                            <div class="hchart">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleChartWide.png" class="img-responsive"/>
+                            </div>
+
+                            <div class="row">
+                              <!-- Left hand column containing stat list -->
+
+                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
+                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
+                        <div class="col-md-6 box">
+                          <h4>Some stats</h4>
+
+                          <p>Start Time: <span id="start-stat4">xxxxxx</span></p>
+
+                          <p>End Time: <span id="end-stat4">xxxxxx</span></p>
+
+                          <p> Distance: <span id="distance-stat4">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
+                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
+
+                          <p>Duration: <span id="duration-stat4">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
+                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
+
+                          <p>Speed: <span id="speed-stat4">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
+                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
+
+                          <p>Energy Saved: <span id="energy-stat4">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
+
+                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+
+
+
+                          </div> <!-- end col-md-6 -->
+                                  <!-- Right hand column containing chart -->
+                            <div class="col-md-6 box">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+
+                            </div> <!-- end col-md-6 box-->
+
+                          </div> <!-- end row -->
+
+                              </div> <!-- end panel body -->
+                            </div> <!-- end main panel body -->
                           </div> <!-- end fourth accordion -->
 
 
 
                           <!-- This is the fifth accordion entry -->
-                          <div class="panel panel-default accordion-panel" id="panel5">
-                           <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <!-- href uses journey number -->
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                <div class="row">
-                                  <div class="col-md-8">
-                                    <p class="accordion-title" id="journeyP5">Journey x</p>
-                                    <p id="dateP5"><small>Date x</small></p>
-                                    <p><small>13 km</small></p>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <img src="img/sampleMap02.jpg" id="panel-static-image5"/>
-                                  </div>
-                                </a>
-                              </h4>
-                            </div> <!-- end panel-heading -->
-                            <!-- Main Panel Body -->
-                            <!-- id set as journey number (used lated when clicked to load map) -->
-                            <div id="collapseFive" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <p>here is some stuff</p>
-                                <div class = "googlemap">
-                                  <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
-                                </div>
+                    <div class="panel panel-default accordion-panel" id="panel5">
+                      <!-- Panel Header -->
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <!-- href set as journey number -->
+                          <a id="panelLink5" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="accordion-title" id="journeyP5">Journey x</p>
+                                <p id="dateP5">Date x</p>
+                                <p id="startP5">Start x</p>
+                                <p><small>13 km</small></p>
                               </div>
-                            </div> <!-- end Main Panel Body -->
+                              <div class="col-md-4">
+                                <img src="img/sampleMap02.jpg" id="panel-static-image5"/>
+                              </div>
+                            </a>
+                          </h4>
+                        </div>
+                        <!-- Main Panel Body -->
+                        <!-- id set as journey number (used lated when clicked to load map) -->
+                        <div id="collapseFive" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class = "googlemap">
+                              <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
+                            </div>
+                            <!-- large horizontal chart -->
+                            <div class="hchart">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleChartWide.png" class="img-responsive"/>
+                            </div>
+
+                            <div class="row">
+                              <!-- Left hand column containing stat list -->
+
+                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
+                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
+                        <div class="col-md-6 box">
+                          <h4>Some stats</h4>
+
+                          <p>Start Time: <span id="start-stat5">xxxxxx</span></p>
+
+                          <p>End Time: <span id="end-stat5">xxxxxx</span></p>
+
+                          <p> Distance: <span id="distance-stat5">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
+                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
+
+                          <p>Duration: <span id="duration-stat5">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
+                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
+
+                          <p>Speed: <span id="speed-stat5">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
+                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
+
+                          <p>Energy Saved: <span id="energy-stat5">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
+
+                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+
+
+
+                          </div> <!-- end col-md-6 -->
+                                  <!-- Right hand column containing chart -->
+                            <div class="col-md-6 box">
+                              <h5>Some data vs some data</h5>
+                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+
+                            </div> <!-- end col-md-6 box-->
+
+                          </div> <!-- end row -->
+
+                              </div> <!-- end panel body -->
+                            </div> <!-- end main panel body -->
                           </div> <!-- end fifth accordion -->
 
 
