@@ -13,23 +13,11 @@ $parnode = $dom->appendChild($node);
 
 include("connection.php");
 
-// Set the active MySQL database
-
-// $db_selected = mysqli_select_db($database, $connection);
-// if (!$db_selected) {
-//   die ('Can\'t use db : ' . mysql_error());
-// }
-
-// Select rows from the datapoints table
-//updates results so that journey 1 becomes the highest journey number from the database
-//$queryDatapoints = "SELECT * FROM datapointsimport WHERE journey_id = $journeyNumber";
-//$result = mysqli_query($connection, $queryDatapoints);
-
 // prepare statement
 $stmt = mysqli_prepare($connection, "SELECT * FROM datapointsimport WHERE journey_id = ?");
 
-// bind parameters
-mysqli_stmt_bind_param($stmt, 'is',$journeyNumber);
+// bind parameters (integer)
+mysqli_stmt_bind_param($stmt, 'i',$journeyNumber);
 
 // get result
 mysqli_stmt_execute($stmt);

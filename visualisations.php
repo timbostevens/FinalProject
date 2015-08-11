@@ -40,7 +40,7 @@
       <![endif]-->
 
 
-      <!--Load the Google Charts AJAX API (Pie Chart) -->
+      <!--Load the Google Charts AJAX API -->
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
       <!-- Sample Google chart code (Pie Chart) -->
@@ -433,8 +433,6 @@
     						<h5>BIG WIDE CHART</h5>
     						<div id="curve_chart" style="height: 500px"></div>
     					</div>
-
-
     				</div>
 
 

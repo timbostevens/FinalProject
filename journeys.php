@@ -19,6 +19,17 @@
   <!-- Custom styles for this template -->
   <link href="styles.css" rel="stylesheet">
 
+  <!--Load the Google Charts AJAX API -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+  <!-- Load core chart scrip-->
+  <script type="text/javascript" src="charts/googleCoreCharts.js"></script>
+
+      <!-- Google Chart Code -->
+    <!-- <script type="text/javascript" src="charts/journeysArea.js"></script> -->
+
+
+    <!-- <script type="text/javascript" src="charts/sampleGoogleChartLine.js"></script> -->
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,7 +49,6 @@
             <div class="col-md-2 col-sm-3" id="navbar-recent">
               <div>
                 <h6>JOURNEYS</h6>
-
               </div>
             </div>
 
@@ -137,8 +147,11 @@
             <div class="jumbotron" id="middle">
               <div class="container">
                 <h3>JOURNEYS</h3>
+
+
+          
                 <!-- set up accordion list -->
-                <div class="bs-example">
+                <!-- <div class="bs-example"> -->
                   <div class="panel-group" id="accordion">
                    
 
@@ -155,6 +168,9 @@
                                 <p id="dateP1">Date x</p>
                                 <p id="startP1">Start x</p>
                                 <p><small>13 km</small></p>
+
+
+
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image1"/>
@@ -169,11 +185,19 @@
                             <div class = "googlemap">
                               <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                             </div>
-                            <!-- large horizontal chart -->
-                            <div class="hchart">
-                              <h5>Some data vs some data</h5>
-                              <img src="img/sampleChartWide.png" class="img-responsive"/>
-                            </div>
+                            
+                            <!-- <div class="hchart" id="journey-area-chart"></div> -->
+                            <!-- <div id="curve_chart" style="height: 500px"></div> -->
+
+                            <!-- <div class="row"> -->
+                                <!-- <div class="col-md-12"> -->
+                                  <!-- large horizontal chart -->
+                <div class = "journey-area-chart" id="journey-area-chart1" style="width: 100%"></div>
+
+                                <!-- </div> -->
+                            <!-- </div> -->
+
+
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -531,7 +555,7 @@
 
 
                         </div> <!-- end panel group id=accordion -->
-                      </div> <!-- end bs example -->
+                      <!-- </div> end bs example -->
                     </div> <!-- end container -->
                   </div> <!-- end Jumbotron -->
 
@@ -564,7 +588,7 @@
     <!-- Load Google map API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- Google Map loading code -->
-    <script type="text/javascript" src="mapload.js"></script>
+    <script type="text/javascript" src="journeyDataload.js"></script>
     <!-- Chart changer -->
     <script type="text/javascript" src="chartChanger.js"></script>
         <!-- Accordion Manager -->

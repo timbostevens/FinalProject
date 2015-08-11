@@ -1,5 +1,7 @@
 // When a panel is expanded, this waits for it to load then calls load(this.id)
   $(".panel-collapse").on('shown.bs.collapse', function() {
+    // function within journeysArea.js
+    //drawChart();
     // get the id of hte div clicked
     var divClicked = document.getElementById(this.id);
     // get the parent id
@@ -21,13 +23,14 @@
     */
     function load(journeyNumber, panelNumber) {
       
-      console.log(journeyNumber, panelNumber);
+      // console.log(journeyNumber, panelNumber);
 
-      // var for marker bounds (used for setting the zoom and centre)
-      var markerBounds = new google.maps.LatLngBounds();
-      // new array holding polyline
-      var routeArray = [];
-
+      // global var - var for marker bounds (used for setting the zoom and centre)
+      markerBounds = new google.maps.LatLngBounds();
+      // global var - new array holding polyline
+      routeArray = [];
+      // global var - create array for area chart
+      areaChartInputData = [['Point', 'Speed']];
 
       // setup map options
       var mapOptions={
@@ -40,21 +43,31 @@
       // IMPLEMENT A CHECK FOR the map already having contents
       ////////////////////////////////////////////
 
-      // create new map with map options - gets map element id by using "mapcanvas"+panelNumber
-      var map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
-      // creates varible for info window
-      var infoWindow = new google.maps.InfoWindow;
-
-
+      // global var - create new map with map options - gets map element id by using "mapcanvas"+panelNumber
+      map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
+      // global var - creates varible for info window
+      infoWindow = new google.maps.InfoWindow;
 
       // append journey number to get request
-      var urlGet = "mapLoadAjax.php?journey="+journeyNumber;
-
+      var urlGet = "journeyDataLoadAjax.php?journey="+journeyNumber;
 
       // get data from MySQL and calls download URL function
       downloadUrl(urlGet, function(data) {
         var xml = data.responseXML;
         var markers = xml.documentElement.getElementsByTagName("marker");
+        
+        loadAreaChart(markers);
+        loadMap(markers);
+        
+
+
+      } // end download URL function
+    );//end download url
+  }// end load()
+
+    
+    function loadMap(markers){
+
         // retrieve attributes for each element
         for (var i = 0; i < markers.length; i++) {
           var journeypoint = markers[i].getAttribute("journey_ref");
@@ -73,6 +86,7 @@
           // create text for info window  
           var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batCur + " A";
           //var icon = customIcons[type] || {};
+          
           // create marker
           var marker = new google.maps.Marker({
             map: map,
@@ -126,9 +140,31 @@
 
           }// end last pass if
         }// end for
-      } // end download URL function
-    );//end download url
-  }// end load()
+    } // end loadMap
+
+
+    function loadAreaChart(datapoints){
+
+        for (var i = 0; i < datapoints.length; i++) {
+          // push new datapoint (as array) to the main array
+          areaChartInputData.push([datapoints[i].getAttribute("point"),parseFloat(datapoints[i].getAttribute("speed"))]);
+          
+        }// end for
+
+        var dataArray = google.visualization.arrayToDataTable(areaChartInputData);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+          legend: {position: 'none'},
+          width: '100%'
+          };
+
+          var chart = new google.visualization.AreaChart(document.getElementById('journey-area-chart1'));
+          chart.draw(dataArray, options);
+    }
+
 
     /*
     * adds event listener to markers to manage clicks and diplay info windows

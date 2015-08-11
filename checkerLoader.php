@@ -11,6 +11,8 @@ define("DATALOAD_LOGFILE","logging/loadlog.txt");
 include("journeyCount.php");
 
 // create start of insert datapoint query
+// not converted to prepared statement to make it easier to catch errors
+// (if it was a prepared statement and x points had already loaded before an error was found, it would be difficult ro step it back)
 $insertPointQuery = "INSERT INTO datapointsimport VALUES ";
 
 // create start of insert journeys query
@@ -229,22 +231,6 @@ function updateSummaryStats($journeyCount){
     // add results to an array
 	$row = mysqli_fetch_array($result);
 
-
-
-	/////////////////////////////////////////////
-	/////CHNAGE TO PREPARED STATEMENT///////
-	///////////////////////////////////////////
-
-    // create query to update database with summary stats
-	// $summaryupdatequery = "UPDATE journeysimport SET";
-	// $summaryupdatequery = $summaryupdatequery." journey_date='".$row['journey_date'];
-	// $summaryupdatequery = $summaryupdatequery."', start_time='".$row['start_time'];
-	// $summaryupdatequery = $summaryupdatequery."', end_time='".$row['end_time'];		
-	// $summaryupdatequery = $summaryupdatequery."', average_speed_mph=".$row['average_speed_mph'];
-	// $summaryupdatequery = $summaryupdatequery.", distance_mi=".$row['distance_mi'];
-	// $summaryupdatequery = $summaryupdatequery.", duration_mins=".$row['duration_mins'];
-	// $summaryupdatequery = $summaryupdatequery." WHERE journey_id=".$journeyCount;
-
 	// create prepared statement to update database with summary stats
 	$summaryUpdateStmt = mysqli_prepare($connection,"UPDATE journeysimport SET journey_date=?,
 													start_time=?,
@@ -273,8 +259,6 @@ function updateSummaryStats($journeyCount){
 	}
 
 }
-
-
 
 
 /*
