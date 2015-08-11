@@ -236,18 +236,31 @@ function updateSummaryStats($journeyCount){
 	///////////////////////////////////////////
 
     // create query to update database with summary stats
-	$summaryupdatequery = "UPDATE journeysimport SET";
-	$summaryupdatequery = $summaryupdatequery." journey_date='".$row['journey_date'];
-	$summaryupdatequery = $summaryupdatequery."', start_time='".$row['start_time'];
-	$summaryupdatequery = $summaryupdatequery."', end_time='".$row['end_time'];		
-	$summaryupdatequery = $summaryupdatequery."', average_speed_mph=".$row['average_speed_mph'];
-	$summaryupdatequery = $summaryupdatequery.", distance_mi=".$row['distance_mi'];
-	$summaryupdatequery = $summaryupdatequery.", duration_mins=".$row['duration_mins'];
-	$summaryupdatequery = $summaryupdatequery." WHERE journey_id=".$journeyCount;
+	// $summaryupdatequery = "UPDATE journeysimport SET";
+	// $summaryupdatequery = $summaryupdatequery." journey_date='".$row['journey_date'];
+	// $summaryupdatequery = $summaryupdatequery."', start_time='".$row['start_time'];
+	// $summaryupdatequery = $summaryupdatequery."', end_time='".$row['end_time'];		
+	// $summaryupdatequery = $summaryupdatequery."', average_speed_mph=".$row['average_speed_mph'];
+	// $summaryupdatequery = $summaryupdatequery.", distance_mi=".$row['distance_mi'];
+	// $summaryupdatequery = $summaryupdatequery.", duration_mins=".$row['duration_mins'];
+	// $summaryupdatequery = $summaryupdatequery." WHERE journey_id=".$journeyCount;
 
-    //echo $summaryupdatequery;
+	// create prepared statement to update database with summary stats
+	$summaryUpdateStmt = mysqli_prepare($connection,"UPDATE journeysimport SET journey_date=?,
+													start_time=?,
+													end_time=?,
+													average_speed_mph=?,
+													distance_mi=?,
+													duration_mins=?
+												WHERE journey_id=?");
+
+    // bind parameters
+	mysqli_stmt_bind_param($summaryUpdateStmt,'sssdddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$journeyCount);
+
+
+
 	// run the query
-	if (mysqli_query($connection, $summaryupdatequery)) {
+	if (mysqli_execute($summaryUpdateStmt)) {
 		// create text string
 		$summarySuccess = "\n".date('d/m/Y H:i:s', time())." Summary Generation Success - Journey Ref: ".$journeyCount;
 		// write to file

@@ -45,3 +45,19 @@ NEW JOURNEY
 10/08/2015 22:37:11 Journey Load Success - File: source/02-SmallOld.json Journey Ref: 10
 10/08/2015 22:37:11 Datapoint Load Success - File: source/02-SmallOld.json Journey Ref: 10
 10/08/2015 22:37:11 Summary Generation Success - Journey Ref: 10
+NEW JOURNEY
+11/08/2015 10:35:47 Journey Load Success - File: source/SmallFeb.json Journey Ref: 1
+11/08/2015 10:35:47 Datapoint Load Success - File: source/SmallFeb.json Journey Ref: 1
+11/08/2015 10:35:47 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+11/08/2015 10:36:13 Journey Load Success - File: source/SmallJuly.json Journey Ref: 2
+11/08/2015 10:36:13 Datapoint Load Success - File: source/SmallJuly.json Journey Ref: 2
+11/08/2015 10:36:13 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+11/08/2015 10:46:58 Journey Load Success - File: source/SmallFeb.json Journey Ref: 1
+11/08/2015 10:46:58 Datapoint Load Success - File: source/SmallFeb.json Journey Ref: 1
+11/08/2015 10:46:58 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+11/08/2015 10:48:20 Journey Load Success - File: source/03-Third.json Journey Ref: 2
+11/08/2015 10:48:20 Datapoint Load Success - File: source/03-Third.json Journey Ref: 2
+11/08/2015 10:48:20 Summary Generation Success - Journey Ref: 2
