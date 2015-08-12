@@ -1,7 +1,5 @@
 // When a panel is expanded, this waits for it to load then calls load(this.id)
   $(".panel-collapse").on('shown.bs.collapse', function() {
-    // function within journeysArea.js
-    //drawChart();
     // get the id of hte div clicked
     var divClicked = document.getElementById(this.id);
     // get the parent id
@@ -30,7 +28,7 @@
       // global var - new array holding polyline
       routeArray = [];
       // global var - create array for area chart
-      areaChartInputData = [['Point', 'Speed']];
+      areaChartInputData = [['Point', 'Speed (mph)', 'Battery (%)']];
 
       // setup map options
       var mapOptions={
@@ -42,7 +40,8 @@
       /////////////////////////////////////////////
       // IMPLEMENT A CHECK FOR the map already having contents
       ////////////////////////////////////////////
-
+      // global var - create new area chart
+      chart = new google.visualization.AreaChart(document.getElementById("journey-area-chart"+panelNumber));
       // global var - create new map with map options - gets map element id by using "mapcanvas"+panelNumber
       map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
       // global var - creates varible for info window
@@ -55,8 +54,9 @@
       downloadUrl(urlGet, function(data) {
         var xml = data.responseXML;
         var markers = xml.documentElement.getElementsByTagName("marker");
-        
+        // load the area chart
         loadAreaChart(markers);
+        // load the map
         loadMap(markers);
         
 
@@ -84,7 +84,7 @@
           // add marker to marker bounds
           markerBounds.extend(point);
           // create text for info window  
-          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batCur + " A";
+          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batCur + " %";
           //var icon = customIcons[type] || {};
           
           // create marker
@@ -147,21 +147,23 @@
 
         for (var i = 0; i < datapoints.length; i++) {
           // push new datapoint (as array) to the main array
-          areaChartInputData.push([datapoints[i].getAttribute("point"),parseFloat(datapoints[i].getAttribute("speed"))]);
-          
+          areaChartInputData.push([datapoints[i].getAttribute("point"),parseFloat(datapoints[i].getAttribute("speed")), parseFloat(datapoints[i].getAttribute("b_current"))]);
         }// end for
-
+        
+        // convert data into data table
         var dataArray = google.visualization.arrayToDataTable(areaChartInputData);
-
+        // set chart options
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0},
-          legend: {position: 'none'},
-          width: '100%'
+          vAxis: {minValue: 0,  titleTextStyle: {color: '#333'}},
+          hAxis: {textPosition: 'bottom'},
+          legend: {position: 'bottom'},
+          chartArea:{left:30,top:50,width:'100%',height:'75%'},
+          fontSize: 12,
+          fontName: 'Biryani',
+          interpolateNulls: true,
+          lineWidth: 1
           };
-
-          var chart = new google.visualization.AreaChart(document.getElementById('journey-area-chart1'));
+          // draw chart
           chart.draw(dataArray, options);
     }
 

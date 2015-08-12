@@ -299,7 +299,9 @@ function iteratorLooper($iterator){
 				// check if new date matches the retieved date
 				// this is needed as php turns 31 Feb into 3 March!!!!				
 				if($validityCheckString!==date_format($newDate, 'j M Y H:i:s')){
+					// sets error flag to true
 					$dateErrorFlag = true;
+					// breaks the loop
 					break;
 				};
 
@@ -311,18 +313,21 @@ function iteratorLooper($iterator){
 					$insertPointQuery = $insertPointQuery.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
 				// increments row number
 				$rowNumber++;
-			} else { // if it's not a new row
-    			// adds the value
+			// checks for speeds over 100mph and removes them
+			} elseif(($iterator -> key()=="velocity_mph") && ($iterator -> current().PHP_EOL>100)){
+				// appends null to the spped attribute
+				$insertPointQuery= $insertPointQuery."Null".", ";
+
+			// all other attributes
+			} else {
 
 
 			//////////////////////////////////////////////////////////////////////////////////
 			////////////LAT AND LONG ARE CURRENTLY BACKWARDS IN THE SOURCE FILES//////////////
 			//////////////////////MY DATABASE FIELD NAMES CORRECT THIS////////////////////////
 
-
-			$insertPointQuery
-			= $insertPointQuery
-			.$iterator -> current().PHP_EOL.", ";
+    		// adds the value
+			$insertPointQuery=$insertPointQuery.$iterator -> current().PHP_EOL.", ";
 		}
 	}
 

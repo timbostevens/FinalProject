@@ -185,14 +185,11 @@
                             <div class = "googlemap">
                               <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                             </div>
-                            
-                            <!-- <div class="hchart" id="journey-area-chart"></div> -->
-                            <!-- <div id="curve_chart" style="height: 500px"></div> -->
-
+                          
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
-                <div class = "journey-area-chart" id="journey-area-chart1" style="width: 100%"></div>
+                                    <div class = "journey-area-chart" id="journey-area-chart1" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
                             <!-- </div> -->
@@ -270,11 +267,16 @@
                             <div class = "googlemap">
                               <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
                             </div>
-                            <!-- large horizontal chart -->
-                            <div class="hchart">
-                              <h5>Some data vs some data</h5>
-                              <img src="img/sampleChartWide.png" class="img-responsive"/>
-                            </div>
+
+
+                             <!-- <div class="row"> -->
+                                <!-- <div class="col-md-12"> -->
+                                  <!-- large horizontal chart -->
+                                    <div class = "journey-area-chart" id="journey-area-chart2" style="width: 100%; height: 300px"></div>
+
+                                <!-- </div> -->
+                            <!-- </div> -->
+
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -347,11 +349,14 @@
                             <div class = "googlemap">
                               <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
                             </div>
-                            <!-- large horizontal chart -->
-                            <div class="hchart">
-                              <h5>Some data vs some data</h5>
-                              <img src="img/sampleChartWide.png" class="img-responsive"/>
-                            </div>
+
+                            <!-- <div class="row"> -->
+                                <!-- <div class="col-md-12"> -->
+                                  <!-- large horizontal chart -->
+                                    <div class = "journey-area-chart" id="journey-area-chart3" style="width: 100%; height: 300px"></div>
+
+                                <!-- </div> -->
+                            <!-- </div> -->
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -424,11 +429,14 @@
                             <div class = "googlemap">
                               <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
                             </div>
-                            <!-- large horizontal chart -->
-                            <div class="hchart">
-                              <h5>Some data vs some data</h5>
-                              <img src="img/sampleChartWide.png" class="img-responsive"/>
-                            </div>
+
+                            <!-- <div class="row"> -->
+                                <!-- <div class="col-md-12"> -->
+                                  <!-- large horizontal chart -->
+                                    <div class = "journey-area-chart" id="journey-area-chart4" style="width: 100%; height: 300px"></div>
+
+                                <!-- </div> -->
+                            <!-- </div> -->                            
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -502,11 +510,14 @@
                             <div class = "googlemap">
                               <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
                             </div>
-                            <!-- large horizontal chart -->
-                            <div class="hchart">
-                              <h5>Some data vs some data</h5>
-                              <img src="img/sampleChartWide.png" class="img-responsive"/>
-                            </div>
+
+                            <!-- <div class="row"> -->
+                                <!-- <div class="col-md-12"> -->
+                                  <!-- large horizontal chart -->
+                                    <div class = "journey-area-chart" id="journey-area-chart5" style="width: 100%; height: 300px"></div>
+
+                                <!-- </div> -->
+                            <!-- </div> -->
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
