@@ -46,10 +46,10 @@ while ($row = @mysqli_fetch_assoc($result)){
   // setAttribute(.... is how it is listed in produced xml
   $newnode->setAttribute("journey_ref",$row['journey_id']);
   $newnode->setAttribute("point",$row['point_id']);
-  $newnode->setAttribute("speed", $row['velocity_mph']);
+  $newnode->setAttribute("speed",number_format($row['velocity_mph'],1));
   $newnode->setAttribute("lat", $row['lat_dd']);
   $newnode->setAttribute("lng", $row['long_dd']);
-  $newnode->setAttribute("b_current", $row['battery_percent']);
+  $newnode->setAttribute("bat_percent", $row['battery_percent']);
 }
 
 echo $dom->saveXML();

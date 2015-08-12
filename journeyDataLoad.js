@@ -73,7 +73,7 @@
           var journeypoint = markers[i].getAttribute("journey_ref");
           var datapoint = markers[i].getAttribute("point");
           var speed = markers[i].getAttribute("speed");
-          var batCur = markers[i].getAttribute("b_current");
+          var batPer = markers[i].getAttribute("bat_percent");
           var point = new google.maps.LatLng(
             parseFloat(markers[i].getAttribute("lat")),
             parseFloat(markers[i].getAttribute("lng")));
@@ -84,7 +84,7 @@
           // add marker to marker bounds
           markerBounds.extend(point);
           // create text for info window  
-          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batCur + " %";
+          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batPer + " %";
           //var icon = customIcons[type] || {};
           
           // create marker
@@ -147,7 +147,7 @@
 
         for (var i = 0; i < datapoints.length; i++) {
           // push new datapoint (as array) to the main array
-          areaChartInputData.push([datapoints[i].getAttribute("point"),parseFloat(datapoints[i].getAttribute("speed")), parseFloat(datapoints[i].getAttribute("b_current"))]);
+          areaChartInputData.push([datapoints[i].getAttribute("point"),parseFloat(datapoints[i].getAttribute("speed")), parseFloat(datapoints[i].getAttribute("bat_percent"))]);
         }// end for
         
         // convert data into data table
