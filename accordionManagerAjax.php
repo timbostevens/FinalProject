@@ -40,11 +40,11 @@ $queryDatapoints = "SELECT  journey_id as JourneyID,
     DATE_FORMAT(journey_date,'%D %M %Y') as JourneyDate,
         DATE_FORMAT(start_time,'%H:%i') as StartTime,
         DATE_FORMAT(end_time,'%H:%i') as EndTime,
-        average_speed_mph as AverageSpeed,
-        distance_mi as Distance,
+        ROUND(average_speed_mph,2) as AverageSpeed,
+        ROUND(distance_mi,2) as Distance,
         duration_mins as Duration,
         energy_saved as EnergySaved,
-        co2_saved as CO2Saved
+        ROUND(co2_saved_kg,2) as CO2Saved
       FROM journeysimport
       ORDER BY journey_date desc, start_time desc
       LIMIT 5";

@@ -3,6 +3,7 @@
 define("DATA_FILEPATH", "source/");
 define("DATA_ERROR_FILEPATH", "source/errors/");
 define("DATALOAD_LOGFILE","logging/loadlog.txt");
+define("LARGE_CAR_CO2",0.467064); // pulled from DEFRA Carbon Emissions
 
 //include("connection.php");
 
@@ -237,11 +238,15 @@ function updateSummaryStats($journeyCount){
 													end_time=?,
 													average_speed_mph=?,
 													distance_mi=?,
-													duration_mins=?
+													duration_mins=?,
+													co2_saved_kg=?
 												WHERE journey_id=?");
 
+	// create var for CO2 saving
+	$co2Saving = $row['distance_mi']*LARGE_CAR_CO2;
+
     // bind parameters
-	mysqli_stmt_bind_param($summaryUpdateStmt,'sssdddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$journeyCount);
+	mysqli_stmt_bind_param($summaryUpdateStmt,'sssddddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$co2Saving,$journeyCount);
 
 
 

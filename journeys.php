@@ -202,7 +202,7 @@
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-6 box">
-                          <h4>Some stats</h4>
+                          
 
                           <p>Start Time: <span id="start-stat1">xxxxxx</span></p>
 
@@ -220,14 +220,14 @@
                           <p>Energy Saved: <span id="energy-stat1">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
-                              <h5>Some data vs some data</h5>
+                              
                               <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
 
                             </div> <!-- end col-md-6 box-->
@@ -284,7 +284,7 @@
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-6 box">
-                          <h4>Some stats</h4>
+                          
 
                           <p>Start Time: <span id="start-stat2">xxxxxx</span></p>
 
@@ -302,7 +302,7 @@
                           <p>Energy Saved: <span id="energy-stat2">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
@@ -310,7 +310,7 @@
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
-                              <h5>Some data vs some data</h5>
+                              
                               <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
 
                             </div> <!-- end col-md-6 box-->
@@ -364,7 +364,7 @@
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-6 box">
-                          <h4>Some stats</h4>
+                          
 
                           <p>Start Time: <span id="start-stat3">xxxxxx</span></p>
 
@@ -382,7 +382,7 @@
                           <p>Energy Saved: <span id="energy-stat3">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat3">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
@@ -390,7 +390,7 @@
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
-                              <h5>Some data vs some data</h5>
+                              
                               <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
 
                             </div> <!-- end col-md-6 box-->
@@ -444,7 +444,7 @@
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-6 box">
-                          <h4>Some stats</h4>
+                          
 
                           <p>Start Time: <span id="start-stat4">xxxxxx</span></p>
 
@@ -462,7 +462,7 @@
                           <p>Energy Saved: <span id="energy-stat4">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
@@ -470,7 +470,7 @@
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
-                              <h5>Some data vs some data</h5>
+                              
                               <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
 
                             </div> <!-- end col-md-6 box-->
@@ -525,7 +525,7 @@
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-6 box">
-                          <h4>Some stats</h4>
+                          
 
                           <p>Start Time: <span id="start-stat5">xxxxxx</span></p>
 
@@ -543,7 +543,7 @@
                           <p>Energy Saved: <span id="energy-stat5">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
-                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> g<button type="button" class="btn btn-link btn-xs">
+                          <p>CO2 Saved: <span id="co2-stat5">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
                                     <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
 
 
@@ -551,7 +551,7 @@
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
-                              <h5>Some data vs some data</h5>
+                              
                               <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
 
                             </div> <!-- end col-md-6 box-->

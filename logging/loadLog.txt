@@ -117,3 +117,63 @@ NEW JOURNEY
 12/08/2015 11:50:55 Journey Load Success - File: source/SmallAug2.json Journey Ref: 5
 12/08/2015 11:50:55 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 5
 12/08/2015 11:50:55 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+12/08/2015 15:21:52 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 15:21:52 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 15:21:52 Summary Generation FAIL - Journey Ref: 1mySQL Error: 
+NEW JOURNEY
+12/08/2015 15:21:54 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 15:21:54 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 15:21:54 Summary Generation FAIL - Journey Ref: 2mySQL Error: 
+NEW JOURNEY
+12/08/2015 15:21:54 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 15:21:54 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 15:21:54 Summary Generation FAIL - Journey Ref: 3mySQL Error: 
+NEW JOURNEY
+12/08/2015 15:21:54 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 15:21:54 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 15:21:54 Summary Generation FAIL - Journey Ref: 4mySQL Error: 
+NEW JOURNEY
+12/08/2015 15:21:54 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 15:21:54 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 15:21:54 Summary Generation FAIL - Journey Ref: 5mySQL Error: 
+NEW JOURNEY
+12/08/2015 15:23:13 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 15:23:13 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 15:23:13 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+12/08/2015 15:23:15 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 15:23:15 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 15:23:15 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+12/08/2015 15:23:15 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 15:23:15 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 15:23:15 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+12/08/2015 15:23:15 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 15:23:15 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 15:23:15 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+12/08/2015 15:23:15 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 15:23:15 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 15:23:15 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+12/08/2015 15:24:36 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 15:24:36 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 15:24:36 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+12/08/2015 15:24:38 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 15:24:38 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 15:24:38 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+12/08/2015 15:24:38 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 15:24:38 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 15:24:38 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+12/08/2015 15:24:38 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 15:24:38 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 15:24:38 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+12/08/2015 15:24:38 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 15:24:38 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 15:24:38 Summary Generation Success - Journey Ref: 5
