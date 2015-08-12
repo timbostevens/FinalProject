@@ -14,6 +14,7 @@
     load(journeyNumber, panelNumber);
     // set session storage var of panel number
     sessionStorage.panelNumber = panelNumber;
+    sessionStorage.journeyNumber = journeyNumber;
     // call loading of scatter chart
     loadScatterChart();
 });
