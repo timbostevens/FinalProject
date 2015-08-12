@@ -24,6 +24,7 @@ downloadUrl(urlGet, function(data) {
             var distance = journeyArray[i].getAttribute("distance");
             var duration = journeyArray[i].getAttribute("duration");
             var speed = journeyArray[i].getAttribute("speed");
+            var petrol = journeyArray[i].getAttribute("petrol");
             var co2 = journeyArray[i].getAttribute("co2");
             
             ///////////////////////
@@ -49,6 +50,7 @@ downloadUrl(urlGet, function(data) {
             document.getElementById("distance-stat"+panelNumber).innerHTML = distance;
             document.getElementById("duration-stat"+panelNumber).innerHTML = duration;
             document.getElementById("speed-stat"+panelNumber).innerHTML = speed;
+            document.getElementById("petrol-stat"+panelNumber).innerHTML = petrol;
             document.getElementById("co2-stat"+panelNumber).innerHTML = co2;
             
             ///////////////////////

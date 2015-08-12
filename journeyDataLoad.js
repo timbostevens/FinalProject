@@ -1,6 +1,6 @@
 // When a panel is expanded, this waits for it to load then calls load(this.id)
   $(".panel-collapse").on('shown.bs.collapse', function() {
-    // get the id of hte div clicked
+    // get the id of the div clicked
     var divClicked = document.getElementById(this.id);
     // get the parent id
     var panelNumber = divClicked.parentNode.id;
@@ -12,8 +12,9 @@
      journeyNumber = journeyNumber.replace('Journey ','');
      // send the journey number to map loader
     load(journeyNumber, panelNumber);
+    // call loading of scatter chart
+    loadScatterChart();
 });
-
 
 /*
     * Loads map and sets default zoom

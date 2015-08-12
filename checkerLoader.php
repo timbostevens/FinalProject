@@ -4,6 +4,8 @@ define("DATA_FILEPATH", "source/");
 define("DATA_ERROR_FILEPATH", "source/errors/");
 define("DATALOAD_LOGFILE","logging/loadlog.txt");
 define("LARGE_CAR_CO2",0.467064); // pulled from DEFRA Carbon Emissions
+define("CAR_MPG",28); //Combined - pulled from http://www.aboutautomobile.com/Fuel/1981/Delorean/DMC+12
+define("IMP_GALLON_TO_LITRE", 4.54609); // conversion factor for imp gallon to litre
 
 //include("connection.php");
 
@@ -239,14 +241,18 @@ function updateSummaryStats($journeyCount){
 													average_speed_mph=?,
 													distance_mi=?,
 													duration_mins=?,
+													petrol_saved_ltr=?,
 													co2_saved_kg=?
 												WHERE journey_id=?");
 
 	// create var for CO2 saving
 	$co2Saving = $row['distance_mi']*LARGE_CAR_CO2;
 
+	// create var for petrol saving
+	$petrolSaving = ($row['distance_mi']/CAR_MPG)*IMP_GALLON_TO_LITRE;
+
     // bind parameters
-	mysqli_stmt_bind_param($summaryUpdateStmt,'sssddddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$co2Saving,$journeyCount);
+	mysqli_stmt_bind_param($summaryUpdateStmt,'sssdddddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$journeyCount);
 
 
 

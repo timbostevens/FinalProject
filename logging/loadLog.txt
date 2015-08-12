@@ -177,3 +177,88 @@ NEW JOURNEY
 12/08/2015 15:24:38 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
 12/08/2015 15:24:38 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
 12/08/2015 15:24:38 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+12/08/2015 16:00:29 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:00:29 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:00:29 Summary Generation FAIL - Journey Ref: 1mySQL Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'co2_saved_kg=?
+												WHERE journey_id=?' at line 8
+NEW JOURNEY
+12/08/2015 16:00:31 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:00:31 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:00:31 Summary Generation FAIL - Journey Ref: 2mySQL Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'co2_saved_kg=?
+												WHERE journey_id=?' at line 8
+NEW JOURNEY
+12/08/2015 16:00:31 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:00:31 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:00:31 Summary Generation FAIL - Journey Ref: 3mySQL Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'co2_saved_kg=?
+												WHERE journey_id=?' at line 8
+NEW JOURNEY
+12/08/2015 16:00:31 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:00:31 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:00:31 Summary Generation FAIL - Journey Ref: 4mySQL Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'co2_saved_kg=?
+												WHERE journey_id=?' at line 8
+NEW JOURNEY
+12/08/2015 16:00:31 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:00:31 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:00:31 Summary Generation FAIL - Journey Ref: 5mySQL Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'co2_saved_kg=?
+												WHERE journey_id=?' at line 8
+NEW JOURNEY
+12/08/2015 16:05:18 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:05:18 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:05:18 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+12/08/2015 16:05:20 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:05:20 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:05:20 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+12/08/2015 16:05:20 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:05:20 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:05:20 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+12/08/2015 16:05:20 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:05:20 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:05:20 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+12/08/2015 16:05:20 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:05:20 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:05:20 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+12/08/2015 16:12:50 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:12:50 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:12:50 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+12/08/2015 16:12:51 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:12:51 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:12:51 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+12/08/2015 16:12:51 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:12:51 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:12:51 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+12/08/2015 16:12:51 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:12:51 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:12:51 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+12/08/2015 16:12:51 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:12:51 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:12:51 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+12/08/2015 16:14:59 Journey Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:14:59 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 1
+12/08/2015 16:14:59 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+12/08/2015 16:15:00 Journey Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:15:01 Datapoint Load Success - File: source/06-Sixth.json Journey Ref: 2
+12/08/2015 16:15:01 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+12/08/2015 16:15:01 Journey Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:15:01 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 3
+12/08/2015 16:15:01 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+12/08/2015 16:15:01 Journey Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:15:01 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 4
+12/08/2015 16:15:01 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+12/08/2015 16:15:01 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:15:01 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 5
+12/08/2015 16:15:01 Summary Generation Success - Journey Ref: 5

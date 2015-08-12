@@ -189,7 +189,7 @@
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
-                                    <div class = "journey-area-chart" id="journey-area-chart1" style="width: 100%; height: 300px"></div>
+                                    <div id="journey-area-chart1" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
                             <!-- </div> -->
@@ -217,7 +217,7 @@
                           <p>Speed: <span id="speed-stat1">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p>Energy Saved: <span id="energy-stat1">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                          <p>Petrol Saved: <span id="petrol-stat1">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
                           <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
@@ -228,7 +228,7 @@
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
                               
-                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+                              <div id="journey-scatter-chart1" style="width: 100%; height: 100%"></div>
 
                             </div> <!-- end col-md-6 box-->
 
@@ -272,7 +272,7 @@
                              <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
-                                    <div class = "journey-area-chart" id="journey-area-chart2" style="width: 100%; height: 300px"></div>
+                                    <div id="journey-area-chart2" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
                             <!-- </div> -->
@@ -299,7 +299,7 @@
                           <p>Speed: <span id="speed-stat2">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p>Energy Saved: <span id="energy-stat2">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                          <p>Petrol Saved: <span id="petrol-stat2">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
                           <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
@@ -353,7 +353,7 @@
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
-                                    <div class = "journey-area-chart" id="journey-area-chart3" style="width: 100%; height: 300px"></div>
+                                    <div id="journey-area-chart3" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
                             <!-- </div> -->
@@ -379,7 +379,7 @@
                           <p>Speed: <span id="speed-stat3">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p>Energy Saved: <span id="energy-stat3">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                          <p>Petrol Saved: <span id="petrol-stat3">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
                           <p>CO2 Saved: <span id="co2-stat3">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
@@ -433,7 +433,7 @@
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
-                                    <div class = "journey-area-chart" id="journey-area-chart4" style="width: 100%; height: 300px"></div>
+                                    <div id="journey-area-chart4" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
                             <!-- </div> -->                            
@@ -459,7 +459,7 @@
                           <p>Speed: <span id="speed-stat4">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p>Energy Saved: <span id="energy-stat4">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                          <p>Petrol Saved: <span id="petrol-stat4">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
                           <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
@@ -514,7 +514,7 @@
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
-                                    <div class = "journey-area-chart" id="journey-area-chart5" style="width: 100%; height: 300px"></div>
+                                    <div id="journey-area-chart5" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
                             <!-- </div> -->
@@ -540,7 +540,7 @@
                           <p>Speed: <span id="speed-stat5">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
                                 <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
 
-                          <p>Energy Saved: <span id="energy-stat5">xxxxxx</span> kWh<button type="button" class="btn btn-link btn-xs">
+                          <p>Petrol Saved: <span id="petrol-stat5">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
                                   <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
 
                           <p>CO2 Saved: <span id="co2-stat5">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
@@ -598,7 +598,9 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <!-- Load Google map API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-    <!-- Google Map loading code -->
+        <!-- Scatter Chart Loader -->
+    <script type="text/javascript" src="charts/scatterChartLoad.js"></script>
+    <!-- Data loading code -->
     <script type="text/javascript" src="journeyDataload.js"></script>
     <!-- Chart changer -->
     <script type="text/javascript" src="chartChanger.js"></script>

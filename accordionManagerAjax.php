@@ -43,7 +43,7 @@ $queryDatapoints = "SELECT  journey_id as JourneyID,
         ROUND(average_speed_mph,2) as AverageSpeed,
         ROUND(distance_mi,2) as Distance,
         duration_mins as Duration,
-        energy_saved as EnergySaved,
+        ROUND(petrol_saved_ltr,2) as PetrolSaved,
         ROUND(co2_saved_kg,2) as CO2Saved
       FROM journeysimport
       ORDER BY journey_date desc, start_time desc
@@ -78,7 +78,7 @@ while ($row = @mysqli_fetch_assoc($result)){
   $newnode->setAttribute("speed", $row['AverageSpeed']);
   $newnode->setAttribute("distance", $row['Distance']);
   $newnode->setAttribute("duration", $row['Duration']);
-  $newnode->setAttribute("energy", $row['EnergySaved']);
+  $newnode->setAttribute("petrol", $row['PetrolSaved']);
   $newnode->setAttribute("co2", $row['CO2Saved']);
 
 }
