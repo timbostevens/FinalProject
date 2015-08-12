@@ -12,6 +12,8 @@
      journeyNumber = journeyNumber.replace('Journey ','');
      // send the journey number to map loader
     load(journeyNumber, panelNumber);
+    // set session storage var of panel number
+    sessionStorage.panelNumber = panelNumber;
     // call loading of scatter chart
     loadScatterChart();
 });

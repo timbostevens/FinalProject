@@ -147,9 +147,7 @@
             <div class="jumbotron" id="middle">
               <div class="container">
                 <h3>JOURNEYS</h3>
-
-
-          
+         
                 <!-- set up accordion list -->
                 <!-- <div class="bs-example"> -->
                   <div class="panel-group" id="accordion">
@@ -228,7 +226,54 @@
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
                               
-                              <div id="journey-scatter-chart1" style="width: 100%; height: 100%"></div>
+                              <div id="journey-scatter-chart1" style="width: 100%; height: 300px"></div>
+                
+
+
+<!--                             <div class="btn-group" id="x-select">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SELECT X AXIS <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a>DISTANCE</a></li>
+                                <li><a>DURATION</a></li>
+                                <li><a>SPEED</a></li>                          
+                                <li><a>PETROL SAVED</a></li>
+                                <li><a>CO2 SAVED</a></li>
+
+                              </ul>
+                            </div> -->
+
+
+                            <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SELECT X AXIS <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="x-select">DISTANCE</a></li>
+                                <li><a class="x-select">DURATION</a></li>
+                                <li><a class="x-select">SPEED</a></li>                          
+                                <li><a class="x-select">PETROL SAVED</a></li>
+                                <li><a class="x-select">CO2 SAVED</a></li>
+
+                              </ul>
+                            </div>
+
+                            <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
+                                SELECT Y AXIS <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a>DISTANCE</a></li>
+                                <li><a>DURATION</a></li>
+                                <li><a>SPEED</a></li>                          
+                                <li><a>PETROL SAVED</a></li>
+                                <li><a>CO2 SAVED</a></li>
+                              </ul>
+                            </div>
+
+
+
 
                             </div> <!-- end col-md-6 box-->
 
