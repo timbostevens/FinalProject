@@ -226,7 +226,7 @@
                                   <!-- Right hand column containing chart -->
                             <div class="col-md-6 box">
                               
-                              <div id="journey-scatter-chart1" style="width: 100%; height: 300px"></div>
+                              <!-- <div id="journey-scatter-chart1" style="width: 100%; height: 300px"></div> -->
                 
 
 
@@ -245,7 +245,7 @@
                             </div> -->
 
 
-                            <div class="btn-group">
+                            <!-- <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 SELECT X AXIS <span class="caret"></span>
                               </button>
@@ -270,7 +270,7 @@
                                 <li><a>PETROL SAVED</a></li>
                                 <li><a>CO2 SAVED</a></li>
                               </ul>
-                            </div>
+                            </div> -->
 
 
 

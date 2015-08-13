@@ -30,33 +30,11 @@
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-	<!-- Load d3 charts WHERE IS THE BEST PLACE TO PUT THIS?-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-
-
       <!--Load the Google Charts AJAX API -->
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-      <!-- Sample Google chart code (Pie Chart) -->
-      <script type="text/javascript" src="sampleGoogleChartPie.js"></script>
-
-      <!--Load the Google Charts AJAX API (Line Graph) -->
-<!--     <script type="text/javascript"
-          src="https://www.google.com/jsapi?autoload={
-            'modules':[{
-              'name':'visualization',
-              'version':'1',
-              'packages':['corechart']
-            }]
-        }"></script>   -->
-
-        <script type="text/javascript" src="sampleGoogleChartLine.js"></script>
+        <!-- Load core chart scrip-->
+  <script type="text/javascript" src="charts/googleCoreCharts.js"></script>
 
     </head>
 
@@ -383,15 +361,15 @@
     				<div class="row">
 
 
-    					<div class="col-md-4">
+    					<div class="col-md-6">
 
-    						<h5>FIRST CHART</h5>
+    						<!-- <h5>FIRST CHART</h5> -->
 
     						<!-- Chart 1 Using HTML -->
 
-    						<div class="chart" id="chart-container"></div>
+    						<!-- <div class="chart" id="chart-container"></div> -->
 
-    						<script>
+    						<!-- <script>
 
     							var data = [4, 8, 15, 16, 23, 42];
 
@@ -406,12 +384,54 @@
     							.style("width", function(d) { return x(d) + "px"; })
     							.text(function(d) { return d; });
 
-    						</script>
+    						</script> -->
+
+
+    <!--Div that will hold the dashboard-->
+    <div id="dashboard_div">
+      <!--Divs that will hold each control and chart-->
+      <div id="speed_filter_div"></div>
+      <div id="distance_filter_div"></div>
+      <div id="duration_filter_div" style="display:none"></div>
+      <div id="petrol_filter_div" style="display:none"></div>
+      <div id="co2_filter_div" style="display:none"></div>
+      <div id="chart_div" style="height: 300px; width: 300px"></div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            HORIZONTAL AXIS <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="horiz-select">Speed (mph)</a></li>
+            <li><a class="horiz-select">Distance (mi)</a></li>
+            <li><a class="horiz-select">Duration (mins)</a></li>                          
+            <li><a class="horiz-select">Petrol Saved (L)</a></li>
+            <li><a class="horiz-select">CO2 Saved (kg)</a></li>
+
+          </ul>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
+              VERTICAL AXIS <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+            <li><a class="vert-select">Speed (mph)</a></li>
+            <li><a class="vert-select">Distance (mi)</a></li>
+            <li><a class="vert-select">Duration (mins)</a></li>                          
+            <li><a class="vert-select">Petrol Saved (L)</a></li>
+            <li><a class="vert-select">CO2 Saved (kg)</a></li>
+            </ul>
+          </div>
+
+
+    </div>
+
     					</div> <!-- end first chart column -->
 
 
 
-    					<div class="col-md-4">
+    					<div class="col-md-6">
     						<h5>SECOND CHART</h5>
 
     						<!-- Google Chart Example -->
@@ -419,11 +439,6 @@
     						<div id="chart_div"></div>
 
     					</div> <!-- end second chart column -->
-
-
-    					<div class="col-md-4">
-    						<h5>THIRD CHART</h5>
-    					</div> <!-- end third chart column -->
 
 
     				</div> <!-- end first chart row -->
@@ -460,6 +475,8 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
+    <!-- Code for scatterChart -->
+    <script type="text/javascript" src="charts/scatterChartLoad.js"></script>
 
 
 
