@@ -643,12 +643,10 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <!-- Load Google map API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-        <!-- Scatter Chart Loader -->
-    <script type="text/javascript" src="charts/scatterChartLoad.js"></script>
+    <!-- Code for Ajax Helper -->
+    <script type="text/javascript" src="ajaxHelper.js"></script>
     <!-- Data loading code -->
     <script type="text/javascript" src="journeyDataload.js"></script>
-    <!-- Chart changer -->
-    <script type="text/javascript" src="chartChanger.js"></script>
         <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
 

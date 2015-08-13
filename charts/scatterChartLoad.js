@@ -3,7 +3,7 @@
 google.load('visualization', '1.0', {'packages':['controls']});
 
 // Set a callback to run when the Google Visualization API is loaded.
-google.setOnLoadCallback(drawDashboard);
+// google.setOnLoadCallback(drawDashboard);
 
 // setTimeout(drawDashboard,2000);
 
@@ -228,31 +228,31 @@ return columnIndex;
 
 }
 
-/*
-    * Gets XML data
-    */
-    function downloadUrl(url, callback) {
+// /*
+//     * Gets XML data
+//     */
+//     function downloadUrl(url, callback) {
 
-      console.log(url);
+//       console.log(url);
 
-      var request = window.ActiveXObject ?
-      new ActiveXObject('Microsoft.XMLHTTP') :
-      new XMLHttpRequest;
+//       var request = window.ActiveXObject ?
+//       new ActiveXObject('Microsoft.XMLHTTP') :
+//       new XMLHttpRequest;
 
-      request.onreadystatechange = function() {
-        // ready state == 4 means complete
-        if (request.readyState == 4) {
-          request.onreadystatechange = doNothing;
-          callback(request, request.status);
-        }
-      };
-// Ajax request (GET request tyoe, url, true = asynchronous)
-request.open('GET', url, true);
-      // sends the Ajax request
-      request.send(null);
-    }
+//       request.onreadystatechange = function() {
+//         // ready state == 4 means complete
+//         if (request.readyState == 4) {
+//           request.onreadystatechange = doNothing;
+//           callback(request, request.status);
+//         }
+//       };
+// // Ajax request (GET request tyoe, url, true = asynchronous)
+// request.open('GET', url, true);
+//       // sends the Ajax request
+//       request.send(null);
+//     }
 
-    function doNothing() {}
+//     function doNothing() {}
 
 
 // listener for horizontal axis click

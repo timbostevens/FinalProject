@@ -38,7 +38,7 @@
 
     </head>
 
-    <body>
+    <body onload="drawDashboard()">
 
 
     	<!-- Navbar -->
@@ -389,16 +389,11 @@
 
     <!--Div that will hold the dashboard-->
     <div id="dashboard_div">
-      <!--Divs that will hold each control and chart-->
-      <div id="speed_filter_div"></div>
-      <div id="distance_filter_div"></div>
-      <div id="duration_filter_div" style="display:none"></div>
-      <div id="petrol_filter_div" style="display:none"></div>
-      <div id="co2_filter_div" style="display:none"></div>
-      <div id="chart_div" style="height: 300px; width: 300px"></div>
+
+    <div id="chart_div" style="height: 500px; width: 500px"></div>
 
       <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             HORIZONTAL AXIS <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
@@ -407,12 +402,11 @@
             <li><a class="horiz-select">Duration (mins)</a></li>                          
             <li><a class="horiz-select">Petrol Saved (L)</a></li>
             <li><a class="horiz-select">CO2 Saved (kg)</a></li>
-
           </ul>
         </div>
 
         <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
               VERTICAL AXIS <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -424,6 +418,13 @@
             </ul>
           </div>
 
+      <!--Divs that will hold each control and chart-->
+      <div id="speed_filter_div"></div>
+      <div id="distance_filter_div"></div>
+      <div id="duration_filter_div" style="display:none"></div>
+      <div id="petrol_filter_div" style="display:none"></div>
+      <div id="co2_filter_div" style="display:none"></div>
+      
 
     </div>
 
@@ -474,6 +475,10 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Code for Ajax Helper -->
+    <script type="text/javascript" src="ajaxHelper.js"></script>
+
 
     <!-- Code for scatterChart -->
     <script type="text/javascript" src="charts/scatterChartLoad.js"></script>
