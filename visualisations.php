@@ -1,7 +1,7 @@
 <!-- php script to generate stats -->
 <?php    
     // gets journey count and connection
-    include("journeyCount.php");
+    include("visStats.php");
 ?>
 
 
@@ -170,191 +170,275 @@
     				</div>
 
     				<div class="pill-holder">
+    					
+
     					<!-- first row of pills -->
-                     	<div class="row">
-
-    						<div class="col-lg-3 col-md-6">
-    							<div class="panel panel-primary">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-car fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge"><?php echo($journeyCount); ?></div>
-    											<div>JOURNEYS</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
-    						</div>
-
-
-
-    						<div class="col-lg-3 col-md-6">
-    							<div class="panel panel-green">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-road fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">124 km</div>
-    											<div>DRIVEN</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
-    						</div>
-
-
-
-    						<div class="col-lg-3 col-md-6">
-    							<div class="panel panel-yellow">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-clock-o fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">124 hrs</div>
-    											<div>DURATION</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
-    						</div>
-
-
-
-    						<div class="col-lg-3 col-md-6">
-    							<div class="panel panel-red">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-support fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">13</div>
-    											<div>OTHER STAT</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
-    						</div>
-
-
-
-    					</div> <!-- end first row of pills -->
-
-    					<!-- second row of pills -->
 
     					<div class="row">
 
 
     						<div class="col-md-4">
     							<div class="panel panel-primary">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-cloud fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">267 g</div>
-    											<div>CO2 SAVED</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-car fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($totalJourneys); ?></div>
+                                                <div>JOURNEYS</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
     						</div>
 
 
 
     						<div class="col-md-4">
-    							<div class="panel panel-green">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-bolt fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">34</div>
-    											<div>BATTERY CHARGES</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
+    							<div class="panel panel-yellow">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-clock-o fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($totalTime." mins"); ?></div>
+                                                <div>TOTAL DURATION</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
     						</div>
 
 
     						<div class="col-md-4">
-    							<div class="panel panel-red">
-    								<div class="panel-heading">
-    									<div class="row">
-    										<div class="col-xs-3">
-    											<i class="fa fa-power-off fa-5x"></i>
-    										</div>
-    										<div class="col-xs-9 text-right">
-    											<div class="vis-huge">1345 kWh</div>
-    											<div>ENERGY SAVED</div>
-    										</div>
-    									</div>
-    								</div>
-    								<a href="#">
-    									<div class="panel-footer">
-    										<span class="pull-left">show visualisations</span>
-    										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    										<div class="clearfix"></div>
-    									</div>
-    								</a>
-    							</div>
+    							<div class="panel panel-yellow">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-clock-o fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($averageTime." mins"); ?></div>
+                                                <div>AVERAGE DURATION</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
     						</div>
 
 
 
-    					</div> <!-- end second row of pills -->
+    					</div> <!-- end first row of pills -->
+
+                        <!-- second row of pills -->
+
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-car fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($averageSpeed." mph"); ?></div>
+                                                <div>AVERAGE SPEED</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-power-off fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($totalCo2." kg"); ?></div>
+                                                <div>TOTAL CO2 SAVED</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-power-off fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($averageCo2." kg"); ?></div>
+                                                <div>AVERAGE CO2 SAVED</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                        </div> <!-- end second row of pills -->
+                        
+
+                        <!-- third row of pills -->
+                        <div class="row">
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-road fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($totalDistance." mi"); ?></div>
+                                                <div>TOTAL DISTANCE</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-road fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($averageDistance." mi"); ?></div>
+                                                <div>AVERAGE DISTANCE</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-bolt fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($totalPetrol." L"); ?></div>
+                                                <div>TOTAL PETROL SAVED</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-bolt fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="vis-huge"><?php echo($averagePetrol." L"); ?></div>
+                                                <div>AVERAGE PETROL SAVED</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">show visualisations</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                        </div> <!-- end first row of pills -->
     				</div> <!-- end pill holder -->
 
 
