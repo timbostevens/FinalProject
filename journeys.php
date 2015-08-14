@@ -199,7 +199,7 @@
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
-                        <div class="col-md-6 box">
+                        <div class="col-md-4 box">
                           
 
                           <p>Start Time: <span id="start-stat1">xxxxxx</span></p>
@@ -224,56 +224,9 @@
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
-                            <div class="col-md-6 box">
+                            <div class="col-md-8 box">
                               
-                              <!-- <div id="journey-scatter-chart1" style="width: 100%; height: 300px"></div> -->
-                
-
-
-<!--                             <div class="btn-group" id="x-select">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                SELECT X AXIS <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a>DISTANCE</a></li>
-                                <li><a>DURATION</a></li>
-                                <li><a>SPEED</a></li>                          
-                                <li><a>PETROL SAVED</a></li>
-                                <li><a>CO2 SAVED</a></li>
-
-                              </ul>
-                            </div> -->
-
-
-                            <!-- <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                SELECT X AXIS <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a class="x-select">DISTANCE</a></li>
-                                <li><a class="x-select">DURATION</a></li>
-                                <li><a class="x-select">SPEED</a></li>                          
-                                <li><a class="x-select">PETROL SAVED</a></li>
-                                <li><a class="x-select">CO2 SAVED</a></li>
-
-                              </ul>
-                            </div>
-
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
-                                SELECT Y AXIS <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a>DISTANCE</a></li>
-                                <li><a>DURATION</a></li>
-                                <li><a>SPEED</a></li>                          
-                                <li><a>PETROL SAVED</a></li>
-                                <li><a>CO2 SAVED</a></li>
-                              </ul>
-                            </div> -->
-
-
-
+                              <div id="journey-column-chart1" style="width: 100%; height: 300px"></div>
 
                             </div> <!-- end col-md-6 box-->
 
@@ -647,6 +600,8 @@
     <script type="text/javascript" src="ajaxHelper.js"></script>
     <!-- Data loading code -->
     <script type="text/javascript" src="journeyDataload.js"></script>
+        <!-- Data loading code -->
+    <script type="text/javascript" src="charts/journeyColumnChartLoad.js"></script>
         <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
 

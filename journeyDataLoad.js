@@ -12,11 +12,13 @@
      journeyNumber = journeyNumber.replace('Journey ','');
      // send the journey number to map loader
     load(journeyNumber, panelNumber);
+    // call loading of column chart
+    drawJourneyColumnChart(journeyNumber, panelNumber);
+
+
     // set session storage var of panel number
-    sessionStorage.panelNumber = panelNumber;
-    sessionStorage.journeyNumber = journeyNumber;
-    // call loading of scatter chart
-    // loadScatterChart();
+    // sessionStorage.panelNumber = panelNumber;
+    // sessionStorage.journeyNumber = journeyNumber;
 });
 
 /*
@@ -45,7 +47,7 @@
       // IMPLEMENT A CHECK FOR the map already having contents
       ////////////////////////////////////////////
       // global var - create new area chart
-      chart = new google.visualization.AreaChart(document.getElementById("journey-area-chart"+panelNumber));
+      areaChart = new google.visualization.AreaChart(document.getElementById("journey-area-chart"+panelNumber));
       // global var - create new map with map options - gets map element id by using "mapcanvas"+panelNumber
       map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
       // global var - creates varible for info window
@@ -157,9 +159,9 @@
         // convert data into data table
         var dataArray = google.visualization.arrayToDataTable(areaChartInputData);
         // set chart options
-        var options = {
+        var journeyAreaOptions = {
           vAxis: {minValue: 0,  titleTextStyle: {color: '#333'}},
-          hAxis: {textPosition: 'bottom'},
+          hAxis: {textPosition: 'none'},
           legend: {position: 'bottom'},
           chartArea:{left:30,top:50,width:'100%',height:'75%'},
           fontSize: 12,
@@ -168,7 +170,7 @@
           lineWidth: 1
           };
           // draw chart
-          chart.draw(dataArray, options);
+          areaChart.draw(dataArray, journeyAreaOptions);
     }
 
 
