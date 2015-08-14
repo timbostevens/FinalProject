@@ -322,6 +322,7 @@ color: lightgrey;
   display: none;
 }
 
+/*hiding the journey number*/
 .panel-title .accordion-title{
   font-size: 0%;
 }
@@ -332,6 +333,11 @@ color: lightgrey;
   text-transform: uppercase;
 }
 
+/*overview image in panel title*/
 .panel-title .col-md-4>img{
   width: 200px;
+}
+
+.panel-body p{
+  font-size: 13px;
 }

@@ -28,8 +28,8 @@ function drawJourneyColumnChart(journeyNumber, panelNumber) {
 
   } // end for
 
-  var journeyColumnOptions = {
-    chartArea:{left:30,top:50,width:'100%',height:'75%'},
+  journeyColumnOptions = {
+    chartArea:{left:30,top:10,width:'100%',height:'85%'},
     hAxis: {textStyle: {fontSize: 10}},
     legend: {position: 'in'},
     fontSize: 12,
@@ -38,10 +38,10 @@ function drawJourneyColumnChart(journeyNumber, panelNumber) {
 
 
   // parses the input array into a data table
-  var chartData = google.visualization.arrayToDataTable(columnChartInputData);
+  chartData = google.visualization.arrayToDataTable(columnChartInputData);
           
     // Create a columnchart
-    var columnChart = new google.visualization.ColumnChart(document.getElementById('journey-column-chart'+panelNumber));
+    columnChart = new google.visualization.ColumnChart(document.getElementById('journey-column-chart'+panelNumber));
 
         // Draw the chart
         columnChart.draw(chartData, journeyColumnOptions);
@@ -49,3 +49,7 @@ function drawJourneyColumnChart(journeyNumber, panelNumber) {
             });// end downloadUrl
       } // end function
 
+// resizes chart on window resize
+$( window ).resize(function() {
+  columnChart.draw(chartData, journeyColumnOptions);
+});

@@ -191,7 +191,8 @@
 
                                 <!-- </div> -->
                             <!-- </div> -->
-
+                              <!-- spacer -->
+                                    <div style="width: 100%; height:30px;"></div>
 
 
                             <div class="row">
@@ -201,25 +202,16 @@
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
+                              <!-- spacer -->
+                          <div style="width: 100%; height:30px;"></div>
 
                           <p>Start Time: <span id="start-stat1">xxxxxx</span></p>
-
                           <p>End Time: <span id="end-stat1">xxxxxx</span></p>
-
-                          <p> Distance: <span id="distance-stat1">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
-                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
-
-                          <p>Duration: <span id="duration-stat1">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
-                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
-
-                          <p>Speed: <span id="speed-stat1">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
-                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
-
-                          <p>Petrol Saved: <span id="petrol-stat1">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
-
-                          <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
-                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+                          <p> Distance: <span id="distance-stat1">xxxxxx</span> miles</p>
+                          <p>Duration: <span id="duration-stat1">xxxxxx</span> minutes</p>
+                          <p>Speed: <span id="speed-stat1">xxxxxx</span> mph</p>
+                          <p>Petrol Saved: <span id="petrol-stat1">xxxxxx</span> L</p>
+                          <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> kg</p>
 
 
                           </div> <!-- end col-md-6 -->
@@ -281,35 +273,21 @@
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
-                        <div class="col-md-6 box">
+                        <div class="col-md-4 box">
                           
-
                           <p>Start Time: <span id="start-stat2">xxxxxx</span></p>
-
                           <p>End Time: <span id="end-stat2">xxxxxx</span></p>
-
-                          <p> Distance: <span id="distance-stat2">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
-                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
-
-                          <p>Duration: <span id="duration-stat2">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
-                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
-
-                          <p>Speed: <span id="speed-stat2">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
-                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
-
-                          <p>Petrol Saved: <span id="petrol-stat2">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
-
-                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
-                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
-
-
+                          <p> Distance: <span id="distance-stat2">xxxxxx</span> miles</p>
+                          <p>Duration: <span id="duration-stat2">xxxxxx</span> minutes</p>
+                          <p>Speed: <span id="speed-stat2">xxxxxx</span> mph</p>
+                          <p>Petrol Saved: <span id="petrol-stat2">xxxxxx</span> L</p>
+                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> kg</p>
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
-                            <div class="col-md-6 box">
+                            <div class="col-md-8 box">
                               
-                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+                              <div id="journey-column-chart2" style="width: 100%; height: 300px"></div>
 
                             </div> <!-- end col-md-6 box-->
 
@@ -361,35 +339,23 @@
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
-                        <div class="col-md-6 box">
+                        <div class="col-md-4 box">
                           
-
                           <p>Start Time: <span id="start-stat3">xxxxxx</span></p>
-
                           <p>End Time: <span id="end-stat3">xxxxxx</span></p>
-
-                          <p> Distance: <span id="distance-stat3">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
-                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
-
-                          <p>Duration: <span id="duration-stat3">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
-                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
-
-                          <p>Speed: <span id="speed-stat3">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
-                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
-
-                          <p>Petrol Saved: <span id="petrol-stat3">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
-
-                          <p>CO2 Saved: <span id="co2-stat3">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
-                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+                          <p> Distance: <span id="distance-stat3">xxxxxx</span> miles</p>
+                          <p>Duration: <span id="duration-stat3">xxxxxx</span> minutes</p>
+                          <p>Speed: <span id="speed-stat3">xxxxxx</span> mph</p>
+                          <p>Petrol Saved: <span id="petrol-stat3">xxxxxx</span> L</p>
+                          <p>CO2 Saved: <span id="co2-stat3">xxxxxxx</span> kg</p>
 
 
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
-                            <div class="col-md-6 box">
+                            <div class="col-md-8 box">
                               
-                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+                              <div id="journey-column-chart3" style="width: 100%; height: 300px"></div>
 
                             </div> <!-- end col-md-6 box-->
 
@@ -441,35 +407,24 @@
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
-                        <div class="col-md-6 box">
+                        <div class="col-md-4 box">
                           
 
                           <p>Start Time: <span id="start-stat4">xxxxxx</span></p>
-
                           <p>End Time: <span id="end-stat4">xxxxxx</span></p>
-
-                          <p> Distance: <span id="distance-stat4">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
-                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
-
-                          <p>Duration: <span id="duration-stat4">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
-                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
-
-                          <p>Speed: <span id="speed-stat4">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
-                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
-
-                          <p>Petrol Saved: <span id="petrol-stat4">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
-
-                          <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
-                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+                          <p> Distance: <span id="distance-stat4">xxxxxx</span> miles</p>
+                          <p>Duration: <span id="duration-stat4">xxxxxx</span> minutes</p>
+                          <p>Speed: <span id="speed-stat4">xxxxxx</span> mph</p>
+                          <p>Petrol Saved: <span id="petrol-stat4">xxxxxx</span> L</p>
+                          <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg</p>
 
 
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
-                            <div class="col-md-6 box">
+                            <div class="col-md-8 box">
                               
-                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+                              <div id="journey-column-chart4" style="width: 100%; height: 300px"></div>
 
                             </div> <!-- end col-md-6 box-->
 
@@ -522,35 +477,24 @@
 
                         <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
-                        <div class="col-md-6 box">
+                        <div class="col-md-4 box">
                           
 
                           <p>Start Time: <span id="start-stat5">xxxxxx</span></p>
-
                           <p>End Time: <span id="end-stat5">xxxxxx</span></p>
-
-                          <p> Distance: <span id="distance-stat5">xxxxxx</span> miles<button type="button" class="btn btn-link btn-xs">
-                            <span class="glyphicon glyphicon-stats large" id="distStat" aria-hidden="true"></span></button></p>
-
-                          <p>Duration: <span id="duration-stat5">xxxxxx</span> minutes<button type="button" class="btn btn-link btn-xs">
-                              <span class="glyphicon glyphicon-stats large" id="durStat" aria-hidden="true"></span></button></p>
-
-                          <p>Speed: <span id="speed-stat5">xxxxxx</span> mph<button type="button" class="btn btn-link btn-xs">
-                                <span class="glyphicon glyphicon-stats large" id="spdStat" aria-hidden="true"></span></button></p>
-
-                          <p>Petrol Saved: <span id="petrol-stat5">xxxxxx</span> L<button type="button" class="btn btn-link btn-xs">
-                                  <span class="glyphicon glyphicon-stats large" id="enStat" aria-hidden="true"></span></button></p>
-
-                          <p>CO2 Saved: <span id="co2-stat5">xxxxxxx</span> kg<button type="button" class="btn btn-link btn-xs">
-                                    <span class="glyphicon glyphicon-stats large" id="co2Stat" aria-hidden="true"></span></button></p>
+                          <p> Distance: <span id="distance-stat5">xxxxxx</span> miles</p>
+                          <p>Duration: <span id="duration-stat5">xxxxxx</span> minutes</p>
+                          <p>Speed: <span id="speed-stat5">xxxxxx</span> mph</p>
+                          <p>Petrol Saved: <span id="petrol-stat5">xxxxxx</span> L</p>
+                          <p>CO2 Saved: <span id="co2-stat5">xxxxxxx</span> kg</p>
 
 
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
-                            <div class="col-md-6 box">
+                            <div class="col-md-8 box">
                               
-                              <img src="img/sampleScatterGraphDist01.jpeg" class="img-responsive"/>
+                              <div id="journey-column-chart5" style="width: 100%; height: 300px"></div>
 
                             </div> <!-- end col-md-6 box-->
 

@@ -33,7 +33,7 @@ function drawDashboard() {
 
 
   // parses the input array into a data table
-  var chartData = google.visualization.arrayToDataTable(scatterChartInputData);
+  chartData = google.visualization.arrayToDataTable(scatterChartInputData);
           
 // Create a dashboard.
 dashboard = new google.visualization.Dashboard(
@@ -284,4 +284,11 @@ while (columnParameter!=="undefined"){
   setVert(getColumnIndex(columnParameter), columnParameter);
   break;
   }
+});
+
+//////resizes chart on window resize
+////Not sure if this is working correctly
+///////////////////////////////////
+$( window ).resize(function() {
+  dashboard.draw(chartData);
 });

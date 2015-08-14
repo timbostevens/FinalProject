@@ -157,9 +157,9 @@
         }// end for
         
         // convert data into data table
-        var dataArray = google.visualization.arrayToDataTable(areaChartInputData);
+        dataArray = google.visualization.arrayToDataTable(areaChartInputData);
         // set chart options
-        var journeyAreaOptions = {
+        journeyAreaOptions = {
           vAxis: {minValue: 0,  titleTextStyle: {color: '#333'}},
           hAxis: {textPosition: 'none'},
           legend: {position: 'bottom'},
@@ -208,6 +208,9 @@
 //     function doNothing() {}
 
 
-
+// resizes chart on window resize
+$( window ).resize(function() {
+  areaChart.draw(dataArray, journeyAreaOptions);
+});
 
 
