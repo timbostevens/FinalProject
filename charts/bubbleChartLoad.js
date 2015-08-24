@@ -1,3 +1,6 @@
+/*
+Sets up and draws bubble chart
+*/
 function drawBubbleChart() {
 
 
@@ -21,7 +24,7 @@ function drawBubbleChart() {
   // parses the input array into a data table
   bubbleChartData = google.visualization.arrayToDataTable(bubbleChartInputData);
 
-
+      // setup chart options
       var options = {
         title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
         hAxis: {title: 'Distance'},
@@ -29,8 +32,9 @@ function drawBubbleChart() {
         legend: {position: 'none'},
         bubble: {textStyle: {fontSize: 11}}
       };
-
+      // create chart and link to html id
       var chart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
+      // draw chart
       chart.draw(bubbleChartData, options);
     });
 }

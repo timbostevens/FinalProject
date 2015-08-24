@@ -529,7 +529,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <!--Div that will hold the calendar chart-->
-                            <div id="calendar_chart_div" style="height: 500px; width: 1000px"></div>
+                            <div id="calendar_chart_div" style="height: 500px"></div>
                             
                         </div>
                     </div>
