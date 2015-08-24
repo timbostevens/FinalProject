@@ -521,11 +521,18 @@
     					<div class="col-md-12">
                             <!--Div that will hold the bubble chart-->
                             <div id="bubble_div" style="height: 500px; width: 1000px"></div>
+                            
     					</div>
     				</div>
 
 
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--Div that will hold the calendar chart-->
+                            <div id="calendar_chart_div" style="height: 500px; width: 1000px"></div>
+                            
+                        </div>
+                    </div>
 
     			</div> <!-- End Main Content -->
     		</div> <!-- End Row -->
@@ -557,7 +564,8 @@
     <script type="text/javascript" src="charts/histoChartLoad.js"></script>
     <!-- Code for histoChart -->
     <script type="text/javascript" src="charts/bubbleChartLoad.js"></script>
-
+    <!-- Code for Calendar Chart -->
+    <script type="text/javascript" src="charts/calendarChartLoad.js"></script>
 </body>
 
 

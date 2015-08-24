@@ -87,14 +87,13 @@ return columnName;
 // listener for horizontal axis click
 $(".hist-select").click(function(){
 
-selectionParameter = this.innerHTML;
+histSelectionParameter = this.innerHTML;
 
 /////////////////////////////////////////////////////////
 //////CLUNKY WAY OF WAITING FOR COLUMN PARAMTER TO BE DEFINED
 /////////////////////////////////////////////////////////
-while (selectionParameter!=="undefined"){
-  // send data name to setData
-  drawHistoChart(selectionParameter);
-  break;
-  }
+while (histSelectionParameter!=="undefined"){
+  // snd data name to setData
+  drawHistoChart(histSelectionParameter);
+  break;  }
 });

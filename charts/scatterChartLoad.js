@@ -36,6 +36,9 @@ function drawDashboard() {
 dashboard = new google.visualization.Dashboard(
   document.getElementById('dashboard_div'));
 
+
+
+
 // Create chart, passing some options
         scatterChart = new google.visualization.ChartWrapper({
           chartType: 'ScatterChart',
@@ -81,15 +84,19 @@ dashboard = new google.visualization.Dashboard(
           'options': {'filterColumnLabel': 'CO2 Saved (kg)'}
         });
 
-       
+
 
         // Establish dependencies, declaring that filters drive the scatterChart,
         // so that the chart will only display entries that are let through
         // given the chosen slider range.
         dashboard.bind([speedRange, distanceRange, durationRange, petrolRange, co2Range], scatterChart);
 
+
+
         // Draw the dashboard.
         dashboard.draw(scatterChartData);
+
+console.log("ght");
 
             });// end downloadUrl
       } // end function
