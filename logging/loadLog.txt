@@ -354,3 +354,23 @@ NEW JOURNEY
 14/08/2015 10:59:48 Journey Load Success - File: source/SmallJan.json Journey Ref: 5
 14/08/2015 10:59:48 Datapoint Load Success - File: source/SmallJan.json Journey Ref: 5
 14/08/2015 10:59:48 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+24/08/2015 15:54:34 Journey Load FAIL - File: source/01-xFirst.json Journey Ref: 1mySQL Error: 
+24/08/2015 15:54:34 Datapoint Load FAIL - File: source/01-xFirst.json Journey Ref: 1mySQL Error: 
+24/08/2015 15:54:34 Summary Generation FAIL - Journey Ref: 1mySQL Error: 
+NEW JOURNEY
+24/08/2015 15:54:36 Journey Load FAIL - File: source/04-Fourth.json Journey Ref: 2mySQL Error: 
+24/08/2015 15:54:36 Datapoint Load FAIL - File: source/04-Fourth.json Journey Ref: 2mySQL Error: 
+24/08/2015 15:54:36 Summary Generation FAIL - Journey Ref: 2mySQL Error: 
+NEW JOURNEY
+24/08/2015 15:54:37 Journey Load FAIL - File: source/MidSizeDec.json Journey Ref: 3mySQL Error: 
+24/08/2015 15:54:37 Datapoint Load FAIL - File: source/MidSizeDec.json Journey Ref: 3mySQL Error: 
+24/08/2015 15:54:37 Summary Generation FAIL - Journey Ref: 3mySQL Error: 
+NEW JOURNEY
+24/08/2015 15:54:37 Journey Load FAIL - File: source/MidSizeMar.json Journey Ref: 4mySQL Error: 
+24/08/2015 15:54:37 Datapoint Load FAIL - File: source/MidSizeMar.json Journey Ref: 4mySQL Error: 
+24/08/2015 15:54:37 Summary Generation FAIL - Journey Ref: 4mySQL Error: 
+NEW JOURNEY
+24/08/2015 15:54:37 Journey Load FAIL - File: source/SmallJan.json Journey Ref: 5mySQL Error: 
+24/08/2015 15:54:37 Datapoint Load FAIL - File: source/SmallJan.json Journey Ref: 5mySQL Error: 
+24/08/2015 15:54:37 Summary Generation FAIL - Journey Ref: 5mySQL Error: 

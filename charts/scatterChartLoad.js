@@ -1,6 +1,6 @@
 
 // Load the Visualization API and the controls package.
-google.load('visualization', '1.0', {'packages':['controls']});
+// google.load('visualization', '1.0', {'packages':['controls']});
 
 // Set a callback to run when the Google Visualization API is loaded.
 // google.setOnLoadCallback(drawDashboard);
@@ -35,6 +35,9 @@ function drawDashboard() {
 // Create a dashboard.
 dashboard = new google.visualization.Dashboard(
   document.getElementById('dashboard_div'));
+
+
+
 
 // Create chart, passing some options
         scatterChart = new google.visualization.ChartWrapper({
@@ -81,12 +84,14 @@ dashboard = new google.visualization.Dashboard(
           'options': {'filterColumnLabel': 'CO2 Saved (kg)'}
         });
 
-       
+
 
         // Establish dependencies, declaring that filters drive the scatterChart,
         // so that the chart will only display entries that are let through
         // given the chosen slider range.
         dashboard.bind([speedRange, distanceRange, durationRange, petrolRange, co2Range], scatterChart);
+
+
 
         // Draw the dashboard.
         dashboard.draw(scatterChartData);
