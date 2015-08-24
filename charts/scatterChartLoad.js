@@ -96,8 +96,6 @@ dashboard = new google.visualization.Dashboard(
         // Draw the dashboard.
         dashboard.draw(scatterChartData);
 
-console.log("ght");
-
             });// end downloadUrl
       } // end function
 
