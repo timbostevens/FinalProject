@@ -33,12 +33,12 @@
       <!--Load the Google Charts AJAX API -->
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-        <!-- Load core chart scrip-->
-  <script type="text/javascript" src="charts/googleCoreCharts.js"></script>
+        <!-- Load core chart script-->
+  <script type="text/javascript" src="charts/chartLoader.js"></script>
 
     </head>
 
-    <body onload="drawDashboard()">
+    <body onload="drawAllCharts()">
 
 
     	<!-- Navbar -->
@@ -447,81 +447,70 @@
 
     					<div class="col-md-6">
 
-    						<!-- <h5>FIRST CHART</h5> -->
+    					<!--Div that will hold the dashboard-->
+					    <div id="dashboard_div">
 
-    						<!-- Chart 1 Using HTML -->
+					    <div id="chart_div" style="height: 500px; width: 500px"></div>
 
-    						<!-- <div class="chart" id="chart-container"></div> -->
+					      <div class="btn-group">
+					        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            HORIZONTAL AXIS <span class="caret"></span>
+					          </button>
+					          <ul class="dropdown-menu">
+					            <li><a class="scat-horiz-select">Speed (mph)</a></li>
+					            <li><a class="scat-horiz-select">Distance (mi)</a></li>
+					            <li><a class="scat-horiz-select">Duration (mins)</a></li>                          
+					            <li><a class="scat-horiz-select">Petrol Saved (L)</a></li>
+					            <li><a class="scat-horiz-select">CO2 Saved (kg)</a></li>
+					          </ul>
+					        </div>
 
-    						<!-- <script>
+					        <div class="btn-group">
+					          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
+					              VERTICAL AXIS <span class="caret"></span>
+					            </button>
+					            <ul class="dropdown-menu">
+					            <li><a class="scat-vert-select">Speed (mph)</a></li>
+					            <li><a class="scat-vert-select">Distance (mi)</a></li>
+					            <li><a class="scat-vert-select">Duration (mins)</a></li>                          
+					            <li><a class="scat-vert-select">Petrol Saved (L)</a></li>
+					            <li><a class="scat-vert-select">CO2 Saved (kg)</a></li>
+					            </ul>
+					          </div>
 
-    							var data = [4, 8, 15, 16, 23, 42];
+					      <!--Divs that will hold each control and chart-->
+					      <div id="speed_filter_div"></div>
+					      <div id="distance_filter_div"></div>
+					      <div id="duration_filter_div" style="display:none"></div>
+					      <div id="petrol_filter_div" style="display:none"></div>
+					      <div id="co2_filter_div" style="display:none"></div>
+					      
 
-    							var x = d3.scale.linear()
-    							.domain([0, d3.max(data)])
-    							.range([0, 420]);
-
-    							d3.select(".chart")
-    							.selectAll("div")
-    							.data(data)
-    							.enter().append("div")
-    							.style("width", function(d) { return x(d) + "px"; })
-    							.text(function(d) { return d; });
-
-    						</script> -->
-
-
-    <!--Div that will hold the dashboard-->
-    <div id="dashboard_div">
-
-    <div id="chart_div" style="height: 500px; width: 500px"></div>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            HORIZONTAL AXIS <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="horiz-select">Speed (mph)</a></li>
-            <li><a class="horiz-select">Distance (mi)</a></li>
-            <li><a class="horiz-select">Duration (mins)</a></li>                          
-            <li><a class="horiz-select">Petrol Saved (L)</a></li>
-            <li><a class="horiz-select">CO2 Saved (kg)</a></li>
-          </ul>
-        </div>
-
-        <div class="btn-group">
-          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
-              VERTICAL AXIS <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-            <li><a class="vert-select">Speed (mph)</a></li>
-            <li><a class="vert-select">Distance (mi)</a></li>
-            <li><a class="vert-select">Duration (mins)</a></li>                          
-            <li><a class="vert-select">Petrol Saved (L)</a></li>
-            <li><a class="vert-select">CO2 Saved (kg)</a></li>
-            </ul>
-          </div>
-
-      <!--Divs that will hold each control and chart-->
-      <div id="speed_filter_div"></div>
-      <div id="distance_filter_div"></div>
-      <div id="duration_filter_div" style="display:none"></div>
-      <div id="petrol_filter_div" style="display:none"></div>
-      <div id="co2_filter_div" style="display:none"></div>
-      
-
-    </div>
+					    </div>
 
     					</div> <!-- end first chart column -->
 
 
 
     					<div class="col-md-6">
-    						<h5>SECOND CHART</h5>
+    					<!-- 	<h5>SECOND CHART</h5> -->
 
     						<!-- Google Chart Example -->
     						<!--Div that will hold the pie chart-->
-    						<div id="chart_div"></div>
+    						<div id="histo_div" style="height: 500px; width: 500px"></div>
+    						     
+					      <div class="btn-group">
+					        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            DATA <span class="caret"></span>
+					          </button>
+					          <ul class="dropdown-menu">
+					            <li><a class="hist-select">Speed (mph)</a></li>
+					            <li><a class="hist-select">Distance (mi)</a></li>
+					            <li><a class="hist-select">Duration (mins)</a></li>                          
+					            <li><a class="hist-select">Petrol Saved (L)</a></li>
+					            <li><a class="hist-select">CO2 Saved (kg)</a></li>
+					          </ul>
+					        </div>
 
     					</div> <!-- end second chart column -->
 
@@ -562,11 +551,10 @@
 
     <!-- Code for Ajax Helper -->
     <script type="text/javascript" src="ajaxHelper.js"></script>
-
-
     <!-- Code for scatterChart -->
     <script type="text/javascript" src="charts/scatterChartLoad.js"></script>
-
+    <!-- Code for histoChart -->
+    <script type="text/javascript" src="charts/histoChartLoad.js"></script>
 
 
 </body>

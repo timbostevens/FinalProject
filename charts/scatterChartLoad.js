@@ -13,7 +13,7 @@ google.load('visualization', '1.0', {'packages':['controls']});
 function drawDashboard() {
 
   // setup url
-    var urlGet = "charts/scatterDataLoadAjax.php";
+    var urlGet = "charts/chartDataLoadAjax.php";
     // global var - sets up start of data input array
     scatterChartInputData = [['Speed (mph)', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
 
@@ -29,17 +29,14 @@ function drawDashboard() {
 
   } // end for
 
-
-
-
   // parses the input array into a data table
-  chartData = google.visualization.arrayToDataTable(scatterChartInputData);
+  scatterChartData = google.visualization.arrayToDataTable(scatterChartInputData);
           
 // Create a dashboard.
 dashboard = new google.visualization.Dashboard(
   document.getElementById('dashboard_div'));
 
-// Create a pie chart, passing some options
+// Create chart, passing some options
         scatterChart = new google.visualization.ChartWrapper({
           chartType: 'ScatterChart',
           containerId: 'chart_div',
@@ -92,7 +89,7 @@ dashboard = new google.visualization.Dashboard(
         dashboard.bind([speedRange, distanceRange, durationRange, petrolRange, co2Range], scatterChart);
 
         // Draw the dashboard.
-        dashboard.draw(chartData);
+        dashboard.draw(scatterChartData);
 
             });// end downloadUrl
       } // end function
@@ -198,8 +195,6 @@ Returns int
 */
 function getColumnIndex(columnName){
 
-console.log(columnName);
-
 var columnIndex;
 
 // set new index
@@ -256,7 +251,7 @@ return columnIndex;
 
 
 // listener for horizontal axis click
-$(".horiz-select").click(function(){
+$(".scat-horiz-select").click(function(){
 
 columnParameter = this.innerHTML;
 
@@ -272,7 +267,7 @@ while (columnParameter!=="undefined"){
 
 
 // listener for vertical axis click
-$(".vert-select").click(function(){
+$(".scat-vert-select").click(function(){
 
 columnParameter = this.innerHTML;
 
@@ -290,5 +285,5 @@ while (columnParameter!=="undefined"){
 ////Not sure if this is working correctly
 ///////////////////////////////////
 $( window ).resize(function() {
-  dashboard.draw(chartData);
+  dashboard.draw(scatterChartData);
 });
