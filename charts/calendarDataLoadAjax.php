@@ -3,7 +3,7 @@
 // Start XML file, create parent node
 
 $dom = new DOMDocument("1.0");
-$node = $dom->createElement("journeys");
+$node = $dom->createElement("days");
 $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
@@ -13,7 +13,7 @@ include("connection.php");
 // prepare statement
 $allSummaryQuery = "SELECT  date_format(journey_date,'%d') as jDay,
                             date_format(journey_date,'%m') as jMon,
-                            date_format(journey_date,'%y') as jYear,
+                            date_format(journey_date,'%Y') as jYear,
                             ROUND(SUM(distance_mi),2) as totalDist_mi
                           from journeysimport
                           GROUP BY journey_date";
@@ -33,7 +33,7 @@ while ($row = @mysqli_fetch_assoc($result)){
   // ADD TO XML DOCUMENT NODE
 
   // states the node name
-  $node = $dom->createElement("day");
+  $node = $dom->createElement("calDay");
   // creates a new node
   $newnode = $parnode->appendChild($node);
 

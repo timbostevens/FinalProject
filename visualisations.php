@@ -38,7 +38,7 @@
 
     </head>
 
-    <body onload="drawAllCharts()">
+    <body>
 
 
     	<!-- Navbar -->
