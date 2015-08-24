@@ -1,5 +1,3 @@
-
-
 function drawHistoChart(dataParameter) {
 
   // translate data parameter into ajax-friendly column name

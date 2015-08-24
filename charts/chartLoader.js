@@ -1,9 +1,12 @@
 
-      // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart']});
+// value for default histogram option
+var DEFAULTHISTRO = 'Speed (mph)';
 
-      function drawAllCharts(){
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart']});
+
+function drawAllCharts(){
 	drawDashboard();
-	var defaultHisto = 'Speed (mph)';
-	drawHistoChart(defaultHisto);
+	drawHistoChart(DEFAULTHISTRO);
+	drawBubbleChart();
 }

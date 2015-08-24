@@ -447,7 +447,7 @@
 
     					<div class="col-md-6">
 
-    					<!--Div that will hold the dashboard-->
+    					<!--Div that will hold the scatterchart dashboard-->
 					    <div id="dashboard_div">
 
 					    <div id="chart_div" style="height: 500px; width: 500px"></div>
@@ -496,7 +496,7 @@
     					<!-- 	<h5>SECOND CHART</h5> -->
 
     						<!-- Google Chart Example -->
-    						<!--Div that will hold the pie chart-->
+    						<!--Div that will hold the histogram-->
     						<div id="histo_div" style="height: 500px; width: 500px"></div>
     						     
 					      <div class="btn-group">
@@ -519,8 +519,8 @@
 
     				<div class="row">
     					<div class="col-md-12">
-    						<h5>BIG WIDE CHART</h5>
-    						<div id="curve_chart" style="height: 500px"></div>
+                            <!--Div that will hold the bubble chart-->
+                            <div id="bubble_div" style="height: 500px; width: 1000px"></div>
     					</div>
     				</div>
 
@@ -555,7 +555,8 @@
     <script type="text/javascript" src="charts/scatterChartLoad.js"></script>
     <!-- Code for histoChart -->
     <script type="text/javascript" src="charts/histoChartLoad.js"></script>
-
+    <!-- Code for histoChart -->
+    <script type="text/javascript" src="charts/bubbleChartLoad.js"></script>
 
 </body>
 
