@@ -32,7 +32,9 @@ function drawCalendarChart() {
       // setup chart options
       var calOptions = {
            title: "Distance Driven (mi)",
-           height: 350,
+           chartArea:{left:80,top:80,width:'100%',height:'100%'}
+           // height: 500,
+           // width: 1500
            };
       // draw chart
       calChart.draw(calendarDataTable, calOptions);

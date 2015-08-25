@@ -109,7 +109,13 @@ var vertColumnIndex =  scatterChart.getView().columns[1];
 // create new settings object
 var newSettings = {columns:[newIndex, vertColumnIndex]};
 // send indexes to filter manager
-showFilters(newIndex, vertColumnIndex);
+
+///////////////////////////////////////
+///Currently hiding filters
+/////////////////////////////////////
+
+
+//showFilters(newIndex, vertColumnIndex);
 // send settings to chart
 scatterChart.setView(newSettings);
 // change axis label
@@ -129,7 +135,13 @@ var horizColumnIndex =  scatterChart.getView().columns[0];
 // create new settings object
 var newSettings = {columns:[horizColumnIndex, newIndex]};
 // send indexes to filter manager
-showFilters(horizColumnIndex, newIndex);
+
+///////////////////////////////////////
+///Currently hiding filters
+/////////////////////////////////////
+
+
+//showFilters(horizColumnIndex, newIndex);
 // send settings to chart
 scatterChart.setView(newSettings);
 // change axis label

@@ -34,7 +34,7 @@
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
         <!-- Load core chart script-->
-  <script type="text/javascript" src="charts/chartLoader.js"></script>
+  <script type="text/javascript" src="charts/chartLoaderVis.js"></script>
 
     </head>
 
@@ -450,7 +450,7 @@
     					<!--Div that will hold the scatterchart dashboard-->
 					    <div id="dashboard_div">
 
-					    <div id="chart_div" style="height: 500px; width: 500px"></div>
+					    <div id="chart_div" style="height: 500px; width: 100%"></div>
 
 					      <div class="btn-group">
 					        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -478,9 +478,12 @@
 					            </ul>
 					          </div>
 
+
+                            <!-- CURRENTLY HIDING ALL FILTERS -->
+
 					      <!--Divs that will hold each control and chart-->
-					      <div id="speed_filter_div"></div>
-					      <div id="distance_filter_div"></div>
+					      <div id="speed_filter_div" style="display:none"></div>
+					      <div id="distance_filter_div" style="display:none"></div>
 					      <div id="duration_filter_div" style="display:none"></div>
 					      <div id="petrol_filter_div" style="display:none"></div>
 					      <div id="co2_filter_div" style="display:none"></div>
@@ -497,7 +500,7 @@
 
     						<!-- Google Chart Example -->
     						<!--Div that will hold the histogram-->
-    						<div id="histo_div" style="height: 500px; width: 500px"></div>
+    						<div id="histo_div" style="height: 500px; width: 100%"></div>
     						     
 					      <div class="btn-group">
 					        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -517,19 +520,32 @@
 
     				</div> <!-- end first chart row -->
 
+
+
     				<div class="row">
     					<div class="col-md-12">
                             <!--Div that will hold the bubble chart-->
-                            <div id="bubble_div" style="height: 500px; width: 1000px"></div>
+                            <div id="bubble_div" style="height: 500px; width: 100%"></div>
                             
     					</div>
     				</div>
 
+                    <!-- spacer -->
+                    <div style="width: 100%; height:30px;"></div>
 
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-2">
+                            
+                            
+                        </div>
+                        <div class="col-md-8">
+                            
                             <!--Div that will hold the calendar chart-->
-                            <div id="calendar_chart_div" style="height: 500px"></div>
+                            <div id="calendar_chart_div" style="height: 360px; width 1500px"></div>
+                            
+                        </div>
+                        <div class="col-md-2">
+
                             
                         </div>
                     </div>

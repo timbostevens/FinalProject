@@ -23,19 +23,8 @@
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
   <!-- Load core chart scrip-->
-  <script type="text/javascript" src="charts/googleCoreCharts.js"></script>
+  <script type="text/javascript" src="charts/chartLoaderJour.js"></script>
 
-      <!-- Google Chart Code -->
-    <!-- <script type="text/javascript" src="charts/journeysArea.js"></script> -->
-
-
-    <!-- <script type="text/javascript" src="charts/sampleGoogleChartLine.js"></script> -->
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
     </head>
     
     <body onload="setupAccordion()">
@@ -159,7 +148,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                             <div class="row">
                               <div class="col-md-8">
                                 <p class="accordion-title" id="journeyP1">Journey x</p>
@@ -178,7 +167,7 @@
                         </div>
                         <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="collapseOne" class="panel-collapse collapse">
+                        <div id="collapse1" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
@@ -236,7 +225,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          <a id="panelLink2" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                             <div class="row">
                               <div class="col-md-8">
                                 <p class="accordion-title" id="journeyP2">Journey x</p>
@@ -252,7 +241,7 @@
                         </div>
                         <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="collapseTwo" class="panel-collapse collapse">
+                        <div id="collapse2" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
@@ -304,7 +293,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink3" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                          <a id="panelLink3" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                             <div class="row">
                               <div class="col-md-8">
                                 <p class="accordion-title" id="journeyP3">Journey x</p>
@@ -320,7 +309,7 @@
                         </div>
                         <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="collapseThree" class="panel-collapse collapse">
+                        <div id="collapse3" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
@@ -372,7 +361,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink4" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                          <a id="panelLink4" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                             <div class="row">
                               <div class="col-md-8">
                                 <p class="accordion-title" id="journeyP4">Journey x</p>
@@ -388,7 +377,7 @@
                         </div>
                         <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="collapseFour" class="panel-collapse collapse">
+                        <div id="collapse4" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
@@ -442,7 +431,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                           <!-- href set as journey number -->
-                          <a id="panelLink5" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                          <a id="panelLink5" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
                             <div class="row">
                               <div class="col-md-8">
                                 <p class="accordion-title" id="journeyP5">Journey x</p>
@@ -458,7 +447,7 @@
                         </div>
                         <!-- Main Panel Body -->
                         <!-- id set as journey number (used lated when clicked to load map) -->
-                        <div id="collapseFive" class="panel-collapse collapse">
+                        <div id="collapse5" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class = "googlemap">
                               <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
@@ -548,27 +537,19 @@
     <script type="text/javascript" src="charts/journeyColumnChartLoad.js"></script>
         <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
+        <!-- Endless Scroll Manager-->
+    <script type="text/javascript" src="endlessScroll.js"></script>
+
+
 
     <script>
-    // runs on accordion panel click
-      // $(".panel-heading").click(function(){
-      //   // sends the id (journey number) to mapLoad.load()
-      //   load(this.id);
-      // });
-// $(function(){
-//   $("#collapseOne").on('show.bs.collapse', function() {
-//      Trigger map resize event  
-//   load(1);
-
-//   // run resize event
-//   google.maps.event.trigger(map, 'resize');
-// });
 
 
-
-// });
-
-
+    $(window).scroll(function() {
+      if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           addNewPanels();
+      }
+    });
 
 
 </script>
