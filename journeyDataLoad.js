@@ -1,9 +1,23 @@
-// When a panel is expanded, this waits for it to load then calls load(this.id)
-  $(".panel-collapse").on('shown.bs.collapse', function() {
+// listens for an expansion of the panel group (parent)
+// then gets waht was actually clicked (panel-collpase) and passes it thoguht to the function
+  $(".panel-group").on('shown.bs.collapse',".panel-collapse", function() {
+
+    console.log("hello");
+
     // get the id of the div clicked
     var divClicked = document.getElementById(this.id);
     // get the parent id
+//////////////
+//can probably skip a step here are collapse1 and panel1 are the two vars returned
+///////////////////////////
+
     var panelNumber = divClicked.parentNode.id;
+
+
+    console.log("Div Clicked: "+this.id+" Panel Number: "+panelNumber);
+
+
+
     // trim the parent id to leave just the number
     panelNumber = panelNumber.replace('panel','');
     // get the text from the journey title

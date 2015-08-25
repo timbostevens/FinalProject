@@ -1,5 +1,9 @@
 <?php
 
+
+// pull the total number of panels from the request
+$totalPanels = $_GET["panels"];
+
 // Start XML file, create parent node
 
 $dom = new DOMDocument("1.0");
@@ -36,7 +40,9 @@ include("connection.php");
 //       LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
 //       ORDER BY tempdata.journey_id desc";
 
-$queryDatapoints = "SELECT  journey_id as JourneyID,
+
+// setup prepared statemnt
+$stmt = mysqli_prepare($connection, "SELECT  journey_id as JourneyID,
     DATE_FORMAT(journey_date,'%D %M %Y') as JourneyDate,
         DATE_FORMAT(start_time,'%H:%i') as StartTime,
         DATE_FORMAT(end_time,'%H:%i') as EndTime,
@@ -47,10 +53,18 @@ $queryDatapoints = "SELECT  journey_id as JourneyID,
         ROUND(co2_saved_kg,2) as CO2Saved
       FROM journeysimport
       ORDER BY journey_date desc, start_time desc
-      LIMIT 5";
+      LIMIT ?");
 
 
-$result = mysqli_query($connection, $queryDatapoints);
+// bind parameters (integer)
+mysqli_stmt_bind_param($stmt, 'i',$totalPanels);
+
+// get result
+mysqli_stmt_execute($stmt);
+
+// get result and pass to var
+$result = mysqli_stmt_get_result($stmt);
+
 
 // if there is no result, throw an error
 if (!$result) {

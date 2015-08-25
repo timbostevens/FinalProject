@@ -1,8 +1,22 @@
 function setupAccordion(){
 	
 
+// var to hold panel number check
+var panelCheck = 1;
+// check for the current highest panel number
+while($('#panel'+panelCheck).length){
+    panelCheck++;
+}
+// correction to remove last increment in while loop
+// this is now equivalent to the ttla number of panels
+panelCheck-=1;
+
+
+alert(panelCheck);
+
+
 // get request
-var urlGet = "accordionManagerAjax.php";
+var urlGet = "accordionManagerAjax.php?panels="+panelCheck;
 
 downloadUrl(urlGet, function(data) {
 	var xml = data.responseXML;
