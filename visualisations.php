@@ -182,7 +182,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-car fa-5x"></i>
+                                                <i class="fa fa-car fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($totalJourneys); ?></div>
@@ -190,13 +190,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
     						</div>
 
@@ -207,7 +207,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-clock-o fa-5x"></i>
+                                                <i class="fa fa-clock-o fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($totalTime." mins"); ?></div>
@@ -215,13 +215,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
     						</div>
 
@@ -231,7 +231,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-clock-o fa-5x"></i>
+                                                <i class="fa fa-clock-o fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($averageTime." mins"); ?></div>
@@ -239,13 +239,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
     						</div>
 
@@ -263,7 +263,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-car fa-5x"></i>
+                                                <i class="fa fa-car fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($averageSpeed." mph"); ?></div>
@@ -271,13 +271,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -288,7 +288,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-power-off fa-5x"></i>
+                                                <i class="fa fa-power-off fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($totalCo2." kg"); ?></div>
@@ -296,13 +296,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -312,7 +312,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-power-off fa-5x"></i>
+                                                <i class="fa fa-power-off fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($averageCo2." kg"); ?></div>
@@ -320,13 +320,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -343,7 +343,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-road fa-5x"></i>
+                                                <i class="fa fa-road fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($totalDistance." mi"); ?></div>
@@ -351,13 +351,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -368,7 +368,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-road fa-5x"></i>
+                                                <i class="fa fa-road fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($averageDistance." mi"); ?></div>
@@ -376,13 +376,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -393,7 +393,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-bolt fa-5x"></i>
+                                                <i class="fa fa-bolt fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($totalPetrol." L"); ?></div>
@@ -401,13 +401,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -418,7 +418,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                <i class="fa fa-bolt fa-5x"></i>
+                                                <i class="fa fa-bolt fa-3x"></i>
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($averagePetrol." L"); ?></div>
@@ -426,13 +426,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+<!--                                     <a href="#">
                                         <div class="panel-footer">
                                             <span class="pull-left">show visualisations</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
@@ -534,6 +534,20 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-12">
+                        <!-- Jumbotron to set it in from the edge -->
+                            <div class = "jumbotron">
+                                
+                            <!--Div that will hold the heatmap-->
+                            <div id="heatmap-canvas" style="height: 700px"></div>
+
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+
     			</div> <!-- End Main Content -->
     		</div> <!-- End Row -->
 
@@ -555,7 +569,9 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-
+    <!-- Load heatmap api -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false">
+    </script>
     <!-- Code for Ajax Helper -->
     <script type="text/javascript" src="ajaxHelper.js"></script>
     <!-- Code for scatterChart -->
@@ -566,6 +582,8 @@
     <script type="text/javascript" src="charts/bubbleChartLoad.js"></script>
     <!-- Code for Calendar Chart -->
     <script type="text/javascript" src="charts/calendarChartLoad.js"></script>
+        <!-- Code for Heatmap Chart -->
+    <script type="text/javascript" src="charts/heatmapLoad.js"></script>
 </body>
 
 

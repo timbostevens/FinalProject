@@ -239,7 +239,7 @@ color: lightgrey;
 }
 
 .vis-huge {
-    font-size: 50px;
+    font-size: 30px;
     line-height: normal;
 }
 
@@ -296,6 +296,8 @@ color: lightgrey;
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+.fa
 
 /*====================*/
 /*======charts========*/

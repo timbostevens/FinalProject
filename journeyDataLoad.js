@@ -61,6 +61,11 @@
         var xml = data.responseXML;
         var markers = xml.documentElement.getElementsByTagName("marker");
         // load the area chart
+       
+        ///////////////////////////////////////////
+        //This location (for the call) is counter intuitive
+        //////////////////////////////////////
+
         loadAreaChart(markers);
         // load the map
         loadMap(markers);
