@@ -29,6 +29,18 @@
     
     <body onload="setupAccordion()">
 
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
       <!-- Navbar -->
       
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -155,7 +167,20 @@
                                 <p class="accordion-title" id="journeyP1">Journey x</p>
                                 <p id="dateP1">Date x</p>
                                 <p id="startP1">Start x</p>
-                                <p><small>13 km</small></p>
+                                <p id="distanceP1">x miles</p>
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
+                                        style="width:110px; height:20px;"></iframe>
+
+                                <!-- NOT WORKING VERY WELL -->
+
+                                <!-- facebook button -->
+                                <div class="fb-share-button" 
+                                    data-href="http://localhost/Project/FinalProject/journeys.php" 
+                                    data-layout="button_count">
+                                </div>
+
 
 
 
@@ -232,7 +257,11 @@
                                 <p class="accordion-title" id="journeyP2">Journey x</p>
                                 <p id="dateP2">Date x</p>
                                 <p id="startP2">Start x</p>
-                                <p><small>13 km</small></p>
+                                <p id="distanceP2">x miles</p>
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
+                                        style="width:110px; height:20px;"></iframe>
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image2"/>
@@ -300,7 +329,11 @@
                                 <p class="accordion-title" id="journeyP3">Journey x</p>
                                 <p id="dateP3">Date x</p>
                                 <p id="startP3">Start x</p>
-                                <p><small>13 km</small></p>
+                                <p id="distanceP3">x miles</p>
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
+                                        style="width:110px; height:20px;"></iframe>
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
@@ -368,7 +401,11 @@
                                 <p class="accordion-title" id="journeyP4">Journey x</p>
                                 <p id="dateP4">Date x</p>
                                 <p id="startP4">Start x</p>
-                                <p><small>13 km</small></p>
+                                <p id="distanceP4">x miles</p>
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
+                                        style="width:110px; height:20px;"></iframe>
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
@@ -438,7 +475,11 @@
                                 <p class="accordion-title" id="journeyP5">Journey x</p>
                                 <p id="dateP5">Date x</p>
                                 <p id="startP5">Start x</p>
-                                <p><small>13 km</small></p>
+                                <p id="distanceP5">x miles</p>
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
+                                        style= "width:110px; height:20px;"></iframe>
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image5"/>

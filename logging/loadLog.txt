@@ -374,3 +374,35 @@ NEW JOURNEY
 24/08/2015 15:54:37 Journey Load FAIL - File: source/SmallJan.json Journey Ref: 5mySQL Error: 
 24/08/2015 15:54:37 Datapoint Load FAIL - File: source/SmallJan.json Journey Ref: 5mySQL Error: 
 24/08/2015 15:54:37 Summary Generation FAIL - Journey Ref: 5mySQL Error: 
+NEW JOURNEY
+26/08/2015 12:53:03 Journey Load Success - File: source/01-Small.json Journey Ref: 9
+26/08/2015 12:53:03 Datapoint Load Success - File: source/01-Small.json Journey Ref: 9
+26/08/2015 12:53:04 Summary Generation Success - Journey Ref: 9
+NEW JOURNEY
+26/08/2015 12:53:04 Journey Load Success - File: source/01-xSmall.json Journey Ref: 10
+26/08/2015 12:53:04 Datapoint Load Success - File: source/01-xSmall.json Journey Ref: 10
+26/08/2015 12:53:04 Summary Generation Success - Journey Ref: 10
+NEW JOURNEY
+26/08/2015 12:53:05 Journey Load Success - File: source/02-Original-Data-Day2.json Journey Ref: 11
+26/08/2015 12:53:05 Datapoint Load Success - File: source/02-Original-Data-Day2.json Journey Ref: 11
+26/08/2015 12:53:05 Summary Generation Success - Journey Ref: 11
+NEW JOURNEY
+26/08/2015 12:53:07 Journey Load Success - File: source/02-Second.json Journey Ref: 12
+26/08/2015 12:53:07 Datapoint Load Success - File: source/02-Second.json Journey Ref: 12
+26/08/2015 12:53:07 Summary Generation Success - Journey Ref: 12
+NEW JOURNEY
+26/08/2015 12:53:07 Journey Load Success - File: source/02-SmallOld.json Journey Ref: 13
+26/08/2015 12:53:07 Datapoint Load Success - File: source/02-SmallOld.json Journey Ref: 13
+26/08/2015 12:53:07 Summary Generation Success - Journey Ref: 13
+NEW JOURNEY
+26/08/2015 12:53:07 Journey Load Success - File: source/SmallAug.json Journey Ref: 14
+26/08/2015 12:53:07 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 14
+26/08/2015 12:53:07 Summary Generation Success - Journey Ref: 14
+NEW JOURNEY
+26/08/2015 12:53:07 Journey Load Success - File: source/SmallAug2.json Journey Ref: 15
+26/08/2015 12:53:07 Datapoint Load Success - File: source/SmallAug2.json Journey Ref: 15
+26/08/2015 12:53:07 Summary Generation Success - Journey Ref: 15
+NEW JOURNEY
+26/08/2015 12:53:07 Journey Load Success - File: source/SmallFeb.json Journey Ref: 16
+26/08/2015 12:53:07 Datapoint Load Success - File: source/SmallFeb.json Journey Ref: 16
+26/08/2015 12:53:07 Summary Generation Success - Journey Ref: 16
