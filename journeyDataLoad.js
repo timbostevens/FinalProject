@@ -2,8 +2,6 @@
 // then gets waht was actually clicked (panel-collpase) and passes it thoguht to the function
   $(".panel-group").on('shown.bs.collapse',".panel-collapse", function() {
 
-    console.log("hello");
-
     // get the id of the div clicked
     var divClicked = document.getElementById(this.id);
     // get the parent id
@@ -12,12 +10,6 @@
 ///////////////////////////
 
     var panelNumber = divClicked.parentNode.id;
-
-
-    console.log("Div Clicked: "+this.id+" Panel Number: "+panelNumber);
-
-
-
     // trim the parent id to leave just the number
     panelNumber = panelNumber.replace('panel','');
     // get the text from the journey title
@@ -228,8 +220,8 @@
 
 
 // resizes chart on window resize
-$( window ).resize(function() {
-  areaChart.draw(dataArray, journeyAreaOptions);
-});
+// $( window ).resize(function() {
+//   areaChart.draw(dataArray, journeyAreaOptions);
+// });
 
 

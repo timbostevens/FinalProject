@@ -28,6 +28,7 @@
     </head>
     
     <body onload="setupAccordion()">
+
       <!-- Navbar -->
       
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -541,18 +542,14 @@
     <script type="text/javascript" src="endlessScroll.js"></script>
 
 
-
+    <!-- Checks for scrolling to the bottom of the page then calls addNewPanels() from endlessScroll.js -->
     <script>
-
-
     $(window).scroll(function() {
       if($(window).scrollTop() == $(document).height() - $(window).height()) {
            addNewPanels();
       }
     });
-
-
-</script>
+    </script>
 
 
 

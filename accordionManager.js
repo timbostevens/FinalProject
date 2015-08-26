@@ -1,6 +1,5 @@
 function setupAccordion(){
 	
-
 // var to hold panel number check
 var panelCheck = 1;
 // check for the current highest panel number
@@ -11,11 +10,12 @@ while($('#panel'+panelCheck).length){
 // this is now equivalent to the ttla number of panels
 panelCheck-=1;
 
+//////////////////////////////////////////////
+// get request - the panelCheck attribute tells the query how many journeys to limit the request to
+// SHOULD I SOMEHOW ASK IT TO RETURN ONLY 5 MORE RESULTS?
+/////////////////////////////////////////////
 
-alert(panelCheck);
 
-
-// get request
 var urlGet = "accordionManagerAjax.php?panels="+panelCheck;
 
 downloadUrl(urlGet, function(data) {

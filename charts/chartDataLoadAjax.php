@@ -10,7 +10,7 @@ $parnode = $dom->appendChild($node);
 
 include("connection.php");
 
-// prepare statement
+// create query
 $allSummaryQuery = "SELECT journey_id,
                             average_speed_mph,
                             distance_mi,
