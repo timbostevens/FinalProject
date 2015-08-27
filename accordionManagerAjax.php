@@ -12,7 +12,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("connection.php");
+include("../connection.php");
 
 // Set the active MySQL database
 

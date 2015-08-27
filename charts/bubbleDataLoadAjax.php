@@ -8,7 +8,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("connection.php");
+include("../../connection.php");
 
 // prepare statement
 $allSummaryQuery = "SELECT DATE_FORMAT(journey_date, '%d/%m/%Y') as jour_date,

@@ -2,7 +2,7 @@
 
     session_start();
     // gets connection details
-    include("connection.php");
+    include("../connection.php");
     // sql query to count journeys
     $query="SELECT COUNT(*) AS 'count' FROM journeysimport";
     // runs the query and sets to variable

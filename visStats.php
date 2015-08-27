@@ -2,7 +2,7 @@
 
     // session_start();
     // gets connection details
-    include("connection.php");
+    include("../connection.php");
     // sql query to count journeys
     $visStmt="SELECT COUNT(journey_id) as 'total journeys',
         temp_av_speed as 'av speed',

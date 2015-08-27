@@ -1,6 +1,6 @@
 <?php
 
-include("connection.php");
+include("../connection.php");
 
 $deleteData = "DELETE FROM datapointsimport WHERE journey_id>0";
 

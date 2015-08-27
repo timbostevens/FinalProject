@@ -11,7 +11,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("connection.php");
+include("../connection.php");
 
 // prepare statement
 $stmt = mysqli_prepare($connection, "SELECT point_id,

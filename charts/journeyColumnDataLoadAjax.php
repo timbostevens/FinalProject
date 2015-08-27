@@ -12,7 +12,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("connection.php");
+include("../../connection.php");
 
 // prepare statement
 $statQuery = mysqli_prepare($connection,"SELECT 'Speed (mph)' as parameter, ROUND(average_speed_mph,2) as val, min, max, average

@@ -8,7 +8,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("connection.php");
+include("../connection.php");
 
 // create query
 $countQuery = "SELECT COUNT(*) AS 'count' FROM journeysimport";
