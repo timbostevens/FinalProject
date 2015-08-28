@@ -61,7 +61,12 @@ downloadUrl(urlGet, function(dataResult) {
             /////////////////////////////
 
             tweetButton.src = tweetButton.src.replace(/&text=[^&]+/, "&text=" + encodeURIComponent(twitterMessage));
-        	// get static image (scale=2 returns high res version)
+
+            // facebook button updated with custom text
+            var facebookButton = document.getElementById("facebook-button"+panelNumber);
+            facebookButton.setAttribute('data-desc', 'It travelled '+distance+' miles on '+date);
+
+            // get static image (scale=2 returns high res version)
             document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain";
             // update stats witihn panel
             document.getElementById("start-stat"+panelNumber).innerHTML = start;

@@ -29,16 +29,35 @@
     
     <body onload="setupAccordion()">
 
-
+  <!-- http://stackoverflow.com/questions/22037021/custom-facebook-share-button -->
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1053447491347132',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+    (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function postToFeed(title, desc, url, image){
+        var obj = {method: 'feed',link: url, picture: image, name: title,description: desc};
+        function callback(response){}
+        FB.ui(obj, callback);
+      }
+
+
+
+    </script>
 
 
       <!-- Navbar -->
@@ -176,14 +195,15 @@
                                 <!-- NOT WORKING VERY WELL -->
 
                                 <!-- facebook button -->
-                                <div class="fb-share-button" 
+<!--                                 <div class="fb-share-button" 
                                     data-href="http://localhost/Project/FinalProject/journeys.php" 
                                     data-layout="button_count">
-                                </div>
+                                </div> -->
 
-
-
-
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button1" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+                              
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image1"/>
@@ -262,6 +282,14 @@
                                 <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
                                         style="width:110px; height:20px;"></iframe>
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button2" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+
+
+
+
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image2"/>
@@ -334,6 +362,13 @@
                                 <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
                                         style="width:110px; height:20px;"></iframe>
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button3" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+
+
+
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
@@ -406,6 +441,11 @@
                                 <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
                                         style="width:110px; height:20px;"></iframe>
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button4" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
@@ -480,6 +520,13 @@
                                 <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
                                         style= "width:110px; height:20px;"></iframe>
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button5" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+
+
+
                               </div>
                               <div class="col-md-4">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image5"/>
@@ -592,6 +639,16 @@
     });
     </script>
 
+    <script type="text/javascript">
+
+          $('.btnShare').click(function(){
+          elem = $(this);
+          postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
+
+          return false;
+          });
+
+    </script>
 
 
 </body>
