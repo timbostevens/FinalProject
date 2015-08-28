@@ -28,7 +28,7 @@
       <![endif]-->
     </head>
 
-    <body onload="sidebar()">
+    <body>
 
       <!-- Facebook plugin setup -->
       <div id="fb-root"></div>
@@ -38,9 +38,7 @@
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      </script>
-
+      }(document, 'script', 'facebook-jssdk'));</script>
 
 
       <!-- Navbar -->
@@ -52,7 +50,7 @@
             <!--first column to hold recent journeys text-->
             <div class="col-md-2 col-sm-3" id="navbar-recent">
               <div>
-                <h6>SOCIAL</h6>
+                <h6>JOURNEYS</h6>
 
               </div>
             </div>
@@ -95,74 +93,50 @@
       <div class="container-fluid centralised-text">
         <div class="row">
 
+
+
           <!-- Sidebar -->
-          <div class="col-sm-3 col-md-2 sidebar" id="main-sidebar">
+          <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
 
               <!-- Sidebar entry -->
-              <!-- <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div> -->
-              <!-- </a></li> End sidebar entry -->
-              <!-- <hr/> -->
-              <!-- <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div>
-              </a></li> --> <!-- End sidebar entry -->
-              <!-- <hr/>
               <li><a href="#">              
                 <div>
                   <img src="img/sampleMap02.jpg" class="img-responsive">
                   <h6>12th SEPTEMBER 2013<br/>14 km</h6>
                 </div>
-              </a></li>  --> <!-- End sidebar entry
+              </a></li> <!-- End sidebar entry -->
               <hr/>
               <li><a href="#">              
                 <div>
                   <img src="img/sampleMap02.jpg" class="img-responsive">
                   <h6>12th SEPTEMBER 2013<br/>14 km</h6>
                 </div>
-              </a></li> End sidebar entry -->
-              <!-- <hr/>
+              </a></li> <!-- End sidebar entry -->
+              <hr/>
               <li><a href="#">              
                 <div>
                   <img src="img/sampleMap02.jpg" class="img-responsive">
                   <h6>12th SEPTEMBER 2013<br/>14 km</h6>
                 </div>
-              </a></li> End sidebar entry -->
-              <!-- <hr/>
-              <li><a href="#">more journeys</a></li> -->
+              </a></li> <!-- End sidebar entry -->
+              <hr/>
+              <li><a href="#">              
+                <div>
+                  <img src="img/sampleMap02.jpg" class="img-responsive">
+                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
+                </div>
+              </a></li> <!-- End sidebar entry -->
+              <hr/>
+              <li><a href="#">              
+                <div>
+                  <img src="img/sampleMap02.jpg" class="img-responsive">
+                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
+                </div>
+              </a></li> <!-- End sidebar entry -->
+              <hr/>
+              <li><a href="#">more journeys</a></li>
               <!-- End sidebar entry -->
-
-                  <li><div style="height:30px">twitter</div></li>
-                  <li id="twitter-holder">
-                
-                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">Tweets by @QUBDeLorean</a>
-
-                    <script>!function(d,s,id){                    
-                      var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                    </script>
-                  </li>
-
-
-
-                  <li><div style="height:30px">facebook</div></li>
-
-
-
-                  <li id="facebook-holder">
-                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>
-                      
-<!--                       <div class="fb-page" data-href="https://www.facebook.com/QUBEV" data-tabs="timeline" data-width="300" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV"><a href="https://www.facebook.com/QUBEV">QUB Electric DeLorean</a></blockquote></div></div> -->
-
-                  </li>
-
-
-
             </ul>
 
           </div> <!-- End Sidebar -->
@@ -182,43 +156,28 @@
             </div>
 
 
-    <div class="row">
-      <div class="col-sm-4">
-      <a href="journeys.php"><img src="img/sass-less.png" alt="Sass and Less support" class="img-responsive"></a>
-        <h3>Journeys</h3>
-        <p>FInd out about all the recent journeys here. QSome more stuff you might want to know.</p>
-      </div>
-      <div class="col-sm-4">
-        <a href="visualisations.php"><img src="img/devices.png" alt="Responsive across devices" class="img-responsive"></a>
-        <h3>Visualisations</h3>
-        <p>All the jourtneys mashed together into some nice charts and maps</p>
-      </div>
-      <div class="col-sm-4">
-        <a href="about.html"><img src="img/components.png" alt="Components" class="img-responsive"></a>
-        <h3>About</h3>
-        <p>Get some more information on how the car was built.</p>
-      </div>
-    </div>
-<!--             <div id="middle" class="jumbotron">
+
+
+            <div id="middle" class="jumbotron">
               <div class="container centre-block-text">
-                <h2>Social</h2> -->
+                <h2>Social</h2>
                 <!-- Twitter widget -->
-                <!-- <div class="row">
+                <div class="row">
                   <div class="col-md-6">
                     
                     <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="300" height="300" data-chrome="noborders">Tweets by @QUBDeLorean</a>
 
                     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                  </div> -->
+                  </div>
 
 
                   <!-- facebook widget -->
-                  <!-- <div class="col-md-6">
+                  <div class="col-md-6">
                     <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="300" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
 
 
 
@@ -246,44 +205,6 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-  
-    <!-- Refreshes the facebook widget on resize -->
-    <script>
-
-         $(window).bind("load resize", function(){    
-          // var container_width = null;    
-          // var container_width = $('#nav-sidebar').width();
-          // alert("bosh");
-
-            $('#facebook-holder').html(
-
-              '<div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>'
-              );
-            FB.XFBML.parse( );    
-
-
-             
-
-
-        }); 
-    </script>
-
-      <!-- Script to size facebook and twitter widgets to be 50% height -->
-      <!-- TWITTER WORKS BUT FB NOT -->
-
-      <script type="text/javascript">
-
-          function sidebar(){
-
-          var widgetHeight = (window.innerHeight-51-30-30)/2;
-
-          document.getElementById("twitter-holder").style.height = widgetHeight+"px";
-          document.getElementById("facebook-holder").style.height = widgetHeight+"px";
-          
-          }
-
-      </script>
-
   </body>
 
 
