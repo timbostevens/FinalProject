@@ -190,7 +190,7 @@
                             <div class="row">
                             
 
-                              <div class="col-md-2 hidden-xs hidden-s panel-title-expand">
+                              <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
                                 <div id="expand-icon1" class="fa fa-angle-right fa-2x expand-symbol"></div>
                               </div>
                             
@@ -288,7 +288,7 @@
                             <div class="row">
                             
 
-                              <div class="col-md-2 hidden-xs hidden-s panel-title-expand">
+                              <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
                                 <div id="expand-icon2" class="fa fa-angle-right fa-2x expand-symbol"></div>
                               </div>
                             

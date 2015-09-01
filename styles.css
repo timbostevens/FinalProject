@@ -343,12 +343,15 @@ color: lightgrey;
   text-align: left;
   font-size: 14px;
   line-height: 80%;
+  color: grey;
 }
 
 /*overview image in panel title*/
 .panel-title .panel-title-map>img{
   /*This value should be the same as the panel-title-expand height*/
   width: 130px;
+  /*position: absolute;*/
+  /*right: 0px;*/
 }
 
 /*plus-minus symbol in panel title*/
@@ -374,6 +377,7 @@ color: lightgrey;
    transform: translate(0, -50%);
    /*need this one to correct issue with symbol rotation (it moved without this)*/
    transform: rotate(0deg);
+   color: grey;
  }
 
 /*Override bootstrap default panel settings*/
