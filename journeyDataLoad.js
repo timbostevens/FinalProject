@@ -1,3 +1,51 @@
+// listener to manage rotation of the expand/collapse symbol and panel header colour
+  $(".panel-group").on('hide.bs.collapse',".panel-collapse", function() {
+    // get the id of the div clicked
+    var divClicked = document.getElementById(this.id);
+    // get the parent id
+    var panelNumber = divClicked.parentNode.id;
+    // trim the parent id to leave just the number
+    panelNumber = panelNumber.replace('panel','');
+    // rotate symbol
+    var expandSymbol = document.getElementById("expand-icon"+panelNumber);
+    expandSymbol.style.transform = "rotate(0deg)";
+    expandSymbol.style.transition = "transform 0.75s";
+
+        // change background colour of the header (show it's active)
+    $("#panel-heading"+panelNumber).css({
+      transition: 'background-color 0.75s linear',
+                      "background-color": "#F5F5F5"
+    });
+
+
+});
+
+// listener to manage rotation of the expand/collapse symbol and panel header colour
+$(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
+
+    // get the id of the div clicked
+    var divClicked = document.getElementById(this.id);
+    // get the parent id
+    var panelNumber = divClicked.parentNode.id;
+    // trim the parent id to leave just the number
+    panelNumber = panelNumber.replace('panel','');
+    // rotate symbol
+    var expandSymbol = document.getElementById("expand-icon"+panelNumber);
+    expandSymbol.style.transform = "rotate(90deg)";
+    expandSymbol.style.transition = "transform 0.75s";
+
+
+    // change background colour of the header (show it's active)
+    $("#panel-heading"+panelNumber).css({
+      transition: 'background-color 0.75s linear',
+                      "background-color": "#d0dbe8"
+    });
+
+
+
+});
+
+
 // listens for an expansion of the panel group (parent)
 // then gets waht was actually clicked (panel-collpase) and passes it thoguht to the function
   $(".panel-group").on('shown.bs.collapse',".panel-collapse", function() {
@@ -16,6 +64,7 @@
      var journeyNumber = document.getElementById("journeyP"+panelNumber).innerHTML;
      // trim off the hourney text to leave the journey number
      journeyNumber = journeyNumber.replace('Journey ','');
+
      // send the journey number to map loader
     load(journeyNumber, panelNumber);
     // call loading of column chart

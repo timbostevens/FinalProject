@@ -332,21 +332,46 @@ color: lightgrey;
 }
 
 /*hiding the journey number*/
-.panel-title .accordion-title{
-  font-size: 0%;
+.panel-title .panel-title-text .accordion-title{
+  display: none;
 }
 
 /*Accordion Stuff*/
-.panel-title .col-md-8>p{
-  margin-top: 25px;
+.panel-title .panel-title-text>p{
+  margin-top: 20px;
   text-transform: uppercase;
+  text-align: left;
+  font-size: 14px;
+  line-height: 80%;
 }
 
 /*overview image in panel title*/
-.panel-title .col-md-4>img{
-  width: 200px;
+.panel-title .panel-title-map>img{
+  /*This value should be the same as the panel-title-expand height*/
+  width: 130px;
+}
+
+/*plus-minus symbol in panel title*/
+.panel-title .panel-title-expand>img{
+  color: red;
 }
 
 .panel-body p{
   font-size: 13px;
 }
+
+/*Manages vertical centralisation of symbol*/
+.panel-title-expand {
+  /*This value shoudl be the same as the static map width*/
+   height: 130px;
+   position: relative
+ }
+/*Manages vertical centralisation of symbol*/
+.expand-symbol {
+   margin: 0;
+   position: absolute;
+   top: 40%;
+   transform: translate(0, -50%);
+   /*need this one to correct issue with symbol rotation (it moved without this)*/
+   transform: rotate(0deg);
+ }

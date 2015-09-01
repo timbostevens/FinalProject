@@ -19,6 +19,9 @@
   <!-- Custom styles for this template -->
   <link href="styles.css" rel="stylesheet">
 
+    <!-- Custom Fonts for symbols-->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
   <!--Load the Google Charts AJAX API -->
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
@@ -170,7 +173,7 @@
             <!-- set up  jumbotron container -->
             <div class="jumbotron" id="middle">
               <div class="container">
-                <h3>JOURNEYS</h3>
+                <!-- <h3>JOURNEYS</h3> -->
          
                 <!-- set up accordion list -->
                 <!-- <div class="bs-example"> -->
@@ -180,37 +183,31 @@
                     <!-- This is the first accordion entry -->
                     <div class="panel panel-default accordion-panel" id="panel1">
                       <!-- Panel Header -->
-                      <div class="panel-heading">
+                      <div class="panel-heading" id="panel-heading1">
                         <h4 class="panel-title">
-                          <!-- href set as journey number -->
+                          <!-- href set as panel number -->
                           <a id="panelLink1" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                             <div class="row">
-                              <div class="col-md-8">
+                            
+
+                              <div class="col-md-2 hidden-xs hidden-s panel-title-expand">
+                                <div id="expand-icon1" class="fa fa-angle-right fa-2x expand-symbol"></div>
+                              </div>
+                            
+
+                              <div class="col-md-8 panel-title-text">
                                 <p class="accordion-title" id="journeyP1">Journey x</p>
                                 <p id="dateP1">Date x</p>
                                 <p id="startP1">Start x</p>
                                 <p id="distanceP1">x miles</p>
-                                <!-- Twitter button -->
-                                <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
-                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
-                                        style="width:110px; height:20px;"></iframe>
-
-                                <!-- NOT WORKING VERY WELL -->
-
-                                <!-- facebook button -->
-<!--                                 <div class="fb-share-button" 
-                                    data-href="http://localhost/Project/FinalProject/journeys.php" 
-                                    data-layout="button_count">
-                                </div> -->
-
-                                <!-- Facebook button -->
-                                <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button1" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
-                              
                               </div>
-                              <div class="col-md-4">
+
+
+                              <div class="col-md-2 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image1"/>
                               </div>
+                            </div> <!-- end row -->
+
                             </a>
                           </h4>
                         </div>
@@ -218,6 +215,19 @@
                         <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="collapse1" class="panel-collapse collapse">
                           <div class="panel-body">
+
+                                <p>Share this journey:</p>
+
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
+                                        style="width:110px; height:20px;"></iframe>
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button1" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+                              
+
                             <div class = "googlemap">
                               <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                             </div>
@@ -642,14 +652,12 @@
     });
     </script>
 
+
+<!-- Script to manage facebook share click -->
     <script type="text/javascript">
-
-
           $(document).on('click', '.btnShare',function(){
-
           elem = $(this);
           postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
-
           return false;
           });
 
