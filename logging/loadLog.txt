@@ -432,3 +432,75 @@ NEW JOURNEY
 27/08/2015 16:25:45 Summary Generation Success - Journey Ref: 6
 NEW JOURNEY
 27/08/2015 16:25:45 Date FAIL - File: source/bad-date.json
+NEW JOURNEY
+01/09/2015 16:03:18 Journey Load Success - File: source/01-Small.json Journey Ref: 1
+01/09/2015 16:03:18 Datapoint Load Success - File: source/01-Small.json Journey Ref: 1
+01/09/2015 16:03:18 Summary Generation FAIL - Journey Ref: 1mySQL Error: 
+NEW JOURNEY
+01/09/2015 16:03:20 Journey Load Success - File: source/02-Second.json Journey Ref: 2
+01/09/2015 16:03:20 Datapoint Load Success - File: source/02-Second.json Journey Ref: 2
+01/09/2015 16:03:20 Summary Generation FAIL - Journey Ref: 2mySQL Error: 
+NEW JOURNEY
+01/09/2015 16:03:22 Journey Load Success - File: source/03-Third.json Journey Ref: 3
+01/09/2015 16:03:22 Datapoint Load Success - File: source/03-Third.json Journey Ref: 3
+01/09/2015 16:03:22 Summary Generation FAIL - Journey Ref: 3mySQL Error: 
+NEW JOURNEY
+01/09/2015 16:03:24 Journey Load Success - File: source/05-Fifth.json Journey Ref: 4
+01/09/2015 16:03:24 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 4
+01/09/2015 16:03:24 Summary Generation FAIL - Journey Ref: 4mySQL Error: 
+NEW JOURNEY
+01/09/2015 16:03:24 Journey Load Success - File: source/SmallAug.json Journey Ref: 5
+01/09/2015 16:03:24 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 5
+01/09/2015 16:03:24 Summary Generation FAIL - Journey Ref: 5mySQL Error: 
+NEW JOURNEY
+01/09/2015 16:03:24 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 6
+01/09/2015 16:03:24 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 6
+01/09/2015 16:03:24 Summary Generation FAIL - Journey Ref: 6mySQL Error: 
+NEW JOURNEY
+01/09/2015 16:04:14 Journey Load Success - File: source/01-Small.json Journey Ref: 1
+01/09/2015 16:04:14 Datapoint Load Success - File: source/01-Small.json Journey Ref: 1
+01/09/2015 16:04:14 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+01/09/2015 16:04:16 Journey Load Success - File: source/02-Second.json Journey Ref: 2
+01/09/2015 16:04:16 Datapoint Load Success - File: source/02-Second.json Journey Ref: 2
+01/09/2015 16:04:16 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+01/09/2015 16:04:18 Journey Load Success - File: source/03-Third.json Journey Ref: 3
+01/09/2015 16:04:18 Datapoint Load Success - File: source/03-Third.json Journey Ref: 3
+01/09/2015 16:04:18 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+01/09/2015 16:04:20 Journey Load Success - File: source/05-Fifth.json Journey Ref: 4
+01/09/2015 16:04:20 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 4
+01/09/2015 16:04:20 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+01/09/2015 16:04:20 Journey Load Success - File: source/SmallAug.json Journey Ref: 5
+01/09/2015 16:04:20 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 5
+01/09/2015 16:04:20 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+01/09/2015 16:04:20 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 6
+01/09/2015 16:04:20 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 6
+01/09/2015 16:04:20 Summary Generation Success - Journey Ref: 6
+NEW JOURNEY
+01/09/2015 16:10:36 Journey Load Success - File: source/01-Small.json Journey Ref: 1
+01/09/2015 16:10:36 Datapoint Load Success - File: source/01-Small.json Journey Ref: 1
+01/09/2015 16:10:36 Summary Generation Success - Journey Ref: 1
+NEW JOURNEY
+01/09/2015 16:10:38 Journey Load Success - File: source/02-Second.json Journey Ref: 2
+01/09/2015 16:10:38 Datapoint Load Success - File: source/02-Second.json Journey Ref: 2
+01/09/2015 16:10:38 Summary Generation Success - Journey Ref: 2
+NEW JOURNEY
+01/09/2015 16:10:39 Journey Load Success - File: source/03-Third.json Journey Ref: 3
+01/09/2015 16:10:40 Datapoint Load Success - File: source/03-Third.json Journey Ref: 3
+01/09/2015 16:10:40 Summary Generation Success - Journey Ref: 3
+NEW JOURNEY
+01/09/2015 16:10:41 Journey Load Success - File: source/05-Fifth.json Journey Ref: 4
+01/09/2015 16:10:41 Datapoint Load Success - File: source/05-Fifth.json Journey Ref: 4
+01/09/2015 16:10:41 Summary Generation Success - Journey Ref: 4
+NEW JOURNEY
+01/09/2015 16:10:41 Journey Load Success - File: source/SmallAug.json Journey Ref: 5
+01/09/2015 16:10:41 Datapoint Load Success - File: source/SmallAug.json Journey Ref: 5
+01/09/2015 16:10:41 Summary Generation Success - Journey Ref: 5
+NEW JOURNEY
+01/09/2015 16:10:41 Journey Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 6
+01/09/2015 16:10:41 Datapoint Load Success - File: source/SmallMarHighSpeed.json Journey Ref: 6
+01/09/2015 16:10:41 Summary Generation Success - Journey Ref: 6

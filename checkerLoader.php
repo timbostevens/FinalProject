@@ -216,16 +216,22 @@ function updateSummaryStats($journeyCount){
 
 	// create prepared statement to retrieve summary stats
 	$summarySelectStmt=mysqli_prepare($connection, "SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
-	DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
-	DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
-	MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
-	MAX(total_dist_mi) as distance_mi,
-	MAX(time_elapsed_sec)/60 as duration_mins
-	FROM datapointsimport
-	WHERE journey_id = ?");
+						DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
+						DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
+						MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
+						MAX(total_dist_mi) as distance_mi,
+						MAX(time_elapsed_sec)/60 as duration_mins,
+					    start_coords.start_lat,
+					    start_coords.start_long,
+						end_coords.end_lat,
+					    end_coords.end_long
+						FROM datapointsimport,
+						(SELECT lat_dd as start_lat, long_dd as start_long from datapointsimport WHERE point_id = 1 AND journey_id = ?) as start_coords,
+					    (SELECT lat_dd as end_lat, long_dd as end_long from datapointsimport WHERE journey_id = ? ORDER BY point_id DESC LIMIT 1) as end_coords
+						WHERE journey_id = ?");
 
 	// bind parameters (integer)
-	mysqli_stmt_bind_param($summarySelectStmt, 'i',$journeyCount);
+	mysqli_stmt_bind_param($summarySelectStmt, 'iii',$journeyCount,$journeyCount,$journeyCount);
 	// execute prepared statement
 	mysqli_stmt_execute($summarySelectStmt);
 
@@ -242,7 +248,11 @@ function updateSummaryStats($journeyCount){
 													distance_mi=?,
 													duration_mins=?,
 													petrol_saved_ltr=?,
-													co2_saved_kg=?
+													co2_saved_kg=?,
+													start_lat_dd=?,
+													start_long_dd=?,
+													end_lat_dd=?,
+													end_long_dd=?
 												WHERE journey_id=?");
 
 	// create var for CO2 saving
@@ -252,7 +262,7 @@ function updateSummaryStats($journeyCount){
 	$petrolSaving = ($row['distance_mi']/CAR_MPG)*IMP_GALLON_TO_LITRE;
 
     // bind parameters
-	mysqli_stmt_bind_param($summaryUpdateStmt,'sssdddddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$journeyCount);
+	mysqli_stmt_bind_param($summaryUpdateStmt,'sssdddddddddi',$row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$row['start_lat'],$row['start_long'],$row['end_lat'],$row['end_long'],$journeyCount);
 
 
 

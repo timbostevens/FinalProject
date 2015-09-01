@@ -40,6 +40,12 @@ downloadUrl(urlGet, function(dataResult) {
             var speed = journeyArray[i].getAttribute("speed");
             var petrol = journeyArray[i].getAttribute("petrol");
             var co2 = journeyArray[i].getAttribute("co2");
+            var startLat = journeyArray[i].getAttribute("startLat");
+            var startLong = journeyArray[i].getAttribute("startLong");
+            var endLat = journeyArray[i].getAttribute("endLat");
+            var endLong = journeyArray[i].getAttribute("endLong");
+
+
 
           	var panelNumber = i+1;
         	// show accordion panels
@@ -67,7 +73,7 @@ downloadUrl(urlGet, function(dataResult) {
             facebookButton.setAttribute('data-desc', 'It travelled '+distance+' miles on '+date);
 
             // get static image (scale=2 returns high res version)
-            document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?center=54.599653,-5.923886&zoom=13&size=200x200&scale=2&maptype=terrain&markers=color:blue%7Clabel:S%7C54.599653,-5.923886";
+            document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?size=150x150&scale=1&maptype=roadmap&markers=color:green%7Clabel:S%7C"+startLat+","+startLong+"&markers=color:red%7Clabel:F%7C"+endLat+","+endLong;
             // update stats witihn panel
             document.getElementById("start-stat"+panelNumber).innerHTML = start;
             document.getElementById("end-stat"+panelNumber).innerHTML = end;

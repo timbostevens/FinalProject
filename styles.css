@@ -338,7 +338,7 @@ color: lightgrey;
 
 /*Accordion Stuff*/
 .panel-title .panel-title-text>p{
-  margin-top: 20px;
+  margin-top: 25px;
   text-transform: uppercase;
   text-align: left;
   font-size: 14px;
@@ -352,9 +352,9 @@ color: lightgrey;
 }
 
 /*plus-minus symbol in panel title*/
-.panel-title .panel-title-expand>img{
-  color: red;
-}
+/*.panel-title .panel-title-expand{
+  background-color: white;
+}*/
 
 .panel-body p{
   font-size: 13px;
@@ -375,3 +375,11 @@ color: lightgrey;
    /*need this one to correct issue with symbol rotation (it moved without this)*/
    transform: rotate(0deg);
  }
+
+/*Override bootstrap default panel settings*/
+ .panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 0px;
+}
+
+

@@ -50,7 +50,11 @@ $stmt = mysqli_prepare($connection, "SELECT  journey_id as JourneyID,
         ROUND(distance_mi,2) as Distance,
         duration_mins as Duration,
         ROUND(petrol_saved_ltr,2) as PetrolSaved,
-        ROUND(co2_saved_kg,2) as CO2Saved
+        ROUND(co2_saved_kg,2) as CO2Saved,
+        start_lat_dd as StartLat,
+        start_long_dd as StartLong,
+        end_lat_dd as EndLat,
+        end_long_dd as EndLong
       FROM journeysimport
       ORDER BY journey_date desc, start_time desc
       LIMIT ?");
@@ -94,6 +98,10 @@ while ($row = @mysqli_fetch_assoc($result)){
   $newnode->setAttribute("duration", $row['Duration']);
   $newnode->setAttribute("petrol", $row['PetrolSaved']);
   $newnode->setAttribute("co2", $row['CO2Saved']);
+  $newnode->setAttribute("startLat", $row['StartLat']);
+  $newnode->setAttribute("startLong", $row['StartLong']);
+  $newnode->setAttribute("endLat", $row['EndLat']);
+  $newnode->setAttribute("endLong", $row['EndLong']);
 
 }
 
