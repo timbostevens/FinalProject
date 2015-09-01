@@ -38,7 +38,7 @@ $(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
     // change background colour of the header (show it's active)
     $("#panel-heading"+panelNumber).css({
       transition: 'background-color 0.75s linear',
-                      "background-color": "#d0dbe8"
+                      "background-color": "#e1ebf5"
     });
 
 

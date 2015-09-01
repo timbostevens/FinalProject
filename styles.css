@@ -363,6 +363,11 @@ color: lightgrey;
   font-size: 13px;
 }
 
+/*main panel body*/
+.panel-body{
+  background-color: #fcfcfc;
+}
+
 /*Manages vertical centralisation of symbol*/
 .panel-title-expand {
   /*This value shoudl be the same as the static map width*/
@@ -386,4 +391,13 @@ color: lightgrey;
     border-radius: 0px;
 }
 
+.journey-social-holder{
+  margin-bottom: 30px
+}
+
+.journey-social-holder p{
+  margin-top: 3px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
 

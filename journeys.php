@@ -195,7 +195,7 @@
                               </div>
                             
 
-                              <div class="col-md-8 panel-title-text">
+                              <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP1">Journey x</p>
                                 <p id="dateP1">Date x</p>
                                 <p id="startP1">Start x</p>
@@ -203,7 +203,7 @@
                               </div>
 
 
-                              <div class="col-md-2 panel-title-map">
+                              <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image1"/>
                               </div>
                             </div> <!-- end row -->
@@ -215,17 +215,22 @@
                         <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="collapse1" class="panel-collapse collapse">
                           <div class="panel-body">
+                              <div class = "journey-social-holder">
+                                <!-- <p style="float: left">Share this journey:</p> -->
 
-                                <p>Share this journey:</p>
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button1" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:110px; height:20px;"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe>
 
-                                <!-- Facebook button -->
-                                <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button1" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+                                <p style="float: right">share this journey</p>
+
+                              </div>
                               
 
                             <div class = "googlemap">
@@ -293,7 +298,7 @@
                               </div>
                             
 
-                              <div class="col-md-8 panel-title-text">
+                              <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP2">Journey x</p>
                                 <p id="dateP2">Date x</p>
                                 <p id="startP2">Start x</p>
@@ -301,7 +306,7 @@
                               </div>
 
 
-                              <div class="col-md-2 panel-title-map">
+                              <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image2"/>
                               </div>
                             </div> <!-- end row -->
@@ -313,17 +318,22 @@
                         <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="collapse2" class="panel-collapse collapse">
                           <div class="panel-body">
+                              <div class = "journey-social-holder">
+                                <!-- <p style="float: left">Share this journey:</p> -->
 
-                                <p>Share this journey:</p>
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button2" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:110px; height:20px;"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe>
 
-                                <!-- Facebook button -->
-                                <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button2" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
+                                <p style="float: right">share this journey</p>
+
+                              </div>
                               
 
                             <div class = "googlemap">
@@ -372,37 +382,37 @@
 
                               </div> <!-- end panel body -->
                             </div> <!-- end main panel body -->
-                          </div> <!-- end second accordion -->
+                          </div><!-- end second accordion -->
 
 
                           <!-- This is the third accordion entry -->
                     <div class="panel panel-default accordion-panel" id="panel3">
                       <!-- Panel Header -->
-                      <div class="panel-heading">
+                      <div class="panel-heading" id="panel-heading3">
                         <h4 class="panel-title">
-                          <!-- href set as journey number -->
+                          <!-- href set as panel number -->
                           <a id="panelLink3" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                             <div class="row">
-                              <div class="col-md-8">
+                            
+
+                              <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
+                                <div id="expand-icon3" class="fa fa-angle-right fa-2x expand-symbol"></div>
+                              </div>
+                            
+
+                              <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP3">Journey x</p>
                                 <p id="dateP3">Date x</p>
                                 <p id="startP3">Start x</p>
                                 <p id="distanceP3">x miles</p>
-                                <!-- Twitter button -->
-                                <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
-                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
-                                        style="width:110px; height:20px;"></iframe>
-
-                                <!-- Facebook button -->
-                                <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button3" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
-
-
-
                               </div>
-                              <div class="col-md-4">
+
+
+                              <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
                               </div>
+                            </div> <!-- end row -->
+
                             </a>
                           </h4>
                         </div>
@@ -410,10 +420,28 @@
                         <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="collapse3" class="panel-collapse collapse">
                           <div class="panel-body">
+                              <div class = "journey-social-holder">
+                                <!-- <p style="float: left">Share this journey:</p> -->
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button3" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
+
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
+                                        style="width:70px; height:20px; float: right"></iframe>
+
+                                <p style="float: right">share this journey</p>
+
+                              </div>
+                              
+
                             <div class = "googlemap">
                               <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
                             </div>
-
+                          
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
@@ -421,6 +449,9 @@
 
                                 <!-- </div> -->
                             <!-- </div> -->
+                              <!-- spacer -->
+                                    <div style="width: 100%; height:30px;"></div>
+
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -429,6 +460,9 @@
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
+                              <!-- spacer -->
+                          <div style="width: 100%; height:30px;"></div>
+
                           <p>Start Time: <span id="start-stat3">xxxxxx</span></p>
                           <p>End Time: <span id="end-stat3">xxxxxx</span></p>
                           <p> Distance: <span id="distance-stat3">xxxxxx</span> miles</p>
@@ -436,7 +470,6 @@
                           <p>Speed: <span id="speed-stat3">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat3">xxxxxx</span> L</p>
                           <p>CO2 Saved: <span id="co2-stat3">xxxxxxx</span> kg</p>
-
 
 
                           </div> <!-- end col-md-6 -->
@@ -457,29 +490,31 @@
                           <!-- This is the fourth accordion entry -->
                   <div class="panel panel-default accordion-panel" id="panel4">
                       <!-- Panel Header -->
-                      <div class="panel-heading">
+                      <div class="panel-heading" id="panel-heading4">
                         <h4 class="panel-title">
-                          <!-- href set as journey number -->
+                          <!-- href set as panel number -->
                           <a id="panelLink4" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                             <div class="row">
-                              <div class="col-md-8">
+                            
+
+                              <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
+                                <div id="expand-icon4" class="fa fa-angle-right fa-2x expand-symbol"></div>
+                              </div>
+                            
+
+                              <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP4">Journey x</p>
                                 <p id="dateP4">Date x</p>
                                 <p id="startP4">Start x</p>
                                 <p id="distanceP4">x miles</p>
-                                <!-- Twitter button -->
-                                <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
-                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
-                                        style="width:110px; height:20px;"></iframe>
-
-                                <!-- Facebook button -->
-                                <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button4" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
-
                               </div>
-                              <div class="col-md-4">
+
+
+                              <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
                               </div>
+                            </div> <!-- end row -->
+
                             </a>
                           </h4>
                         </div>
@@ -487,17 +522,38 @@
                         <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="collapse4" class="panel-collapse collapse">
                           <div class="panel-body">
+                              <div class = "journey-social-holder">
+                                <!-- <p style="float: left">Share this journey:</p> -->
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button4" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
+
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
+                                        style="width:70px; height:20px; float: right"></iframe>
+
+                                <p style="float: right">share this journey</p>
+
+                              </div>
+                              
+
                             <div class = "googlemap">
                               <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
                             </div>
-
+                          
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
                                     <div id="journey-area-chart4" style="width: 100%; height: 300px"></div>
 
                                 <!-- </div> -->
-                            <!-- </div> -->                            
+                            <!-- </div> -->
+                              <!-- spacer -->
+                                    <div style="width: 100%; height:30px;"></div>
+
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -506,6 +562,8 @@
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
+                              <!-- spacer -->
+                          <div style="width: 100%; height:30px;"></div>
 
                           <p>Start Time: <span id="start-stat4">xxxxxx</span></p>
                           <p>End Time: <span id="end-stat4">xxxxxx</span></p>
@@ -514,7 +572,6 @@
                           <p>Speed: <span id="speed-stat4">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat4">xxxxxx</span> L</p>
                           <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg</p>
-
 
 
                           </div> <!-- end col-md-6 -->
@@ -536,31 +593,31 @@
                           <!-- This is the fifth accordion entry -->
                     <div class="panel panel-default accordion-panel" id="panel5">
                       <!-- Panel Header -->
-                      <div class="panel-heading">
+                      <div class="panel-heading" id="panel-heading5">
                         <h4 class="panel-title">
-                          <!-- href set as journey number -->
+                          <!-- href set as panel number -->
                           <a id="panelLink5" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
                             <div class="row">
-                              <div class="col-md-8">
+                            
+
+                              <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
+                                <div id="expand-icon5" class="fa fa-angle-right fa-2x expand-symbol"></div>
+                              </div>
+                            
+
+                              <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP5">Journey x</p>
                                 <p id="dateP5">Date x</p>
                                 <p id="startP5">Start x</p>
                                 <p id="distanceP5">x miles</p>
-                                <!-- Twitter button -->
-                                <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
-                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=horizontal"
-                                        style= "width:110px; height:20px;"></iframe>
-
-                                <!-- Facebook button -->
-                                <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button5" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric Delorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:25px;height:25px;"></a>
-
-
-
                               </div>
-                              <div class="col-md-4">
+
+
+                              <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image5"/>
                               </div>
+                            </div> <!-- end row -->
+
                             </a>
                           </h4>
                         </div>
@@ -568,10 +625,28 @@
                         <!-- id set as journey number (used lated when clicked to load map) -->
                         <div id="collapse5" class="panel-collapse collapse">
                           <div class="panel-body">
+                              <div class = "journey-social-holder">
+                                <!-- <p style="float: left">Share this journey:</p> -->
+
+                                <!-- Facebook button -->
+                                <!-- NEED TO REPLACE IMAGE NAME -->
+                                <a id="facebook-button5" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
+
+                                <!-- Twitter button -->
+                                <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
+                                        src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
+                                        style="width:70px; height:20px; float: right"></iframe>
+
+                                <p style="float: right">share this journey</p>
+
+                              </div>
+                              
+
                             <div class = "googlemap">
                               <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
                             </div>
-
+                          
                             <!-- <div class="row"> -->
                                 <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
@@ -579,6 +654,9 @@
 
                                 <!-- </div> -->
                             <!-- </div> -->
+                              <!-- spacer -->
+                                    <div style="width: 100%; height:30px;"></div>
+
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -587,6 +665,8 @@
                         THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
+                              <!-- spacer -->
+                          <div style="width: 100%; height:30px;"></div>
 
                           <p>Start Time: <span id="start-stat5">xxxxxx</span></p>
                           <p>End Time: <span id="end-stat5">xxxxxx</span></p>
@@ -595,7 +675,6 @@
                           <p>Speed: <span id="speed-stat5">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat5">xxxxxx</span> L</p>
                           <p>CO2 Saved: <span id="co2-stat5">xxxxxxx</span> kg</p>
-
 
 
                           </div> <!-- end col-md-6 -->
