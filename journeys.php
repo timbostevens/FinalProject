@@ -33,6 +33,7 @@
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
+
     window.fbAsyncInit = function() {
         FB.init({
           appId      : '1053447491347132',
@@ -47,6 +48,8 @@
       js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+
 
 
     function postToFeed(title, desc, url, image){
@@ -641,12 +644,16 @@
 
     <script type="text/javascript">
 
-          $('.btnShare').click(function(){
+
+          $(document).on('click', '.btnShare',function(){
+
           elem = $(this);
           postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
 
           return false;
           });
+
+
 
     </script>
 
