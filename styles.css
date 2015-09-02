@@ -60,6 +60,7 @@ body {
   background-size: cover;
   height: 500px;
   color: white;
+  margin: 30px;
 }
 
 #middle{
@@ -68,7 +69,8 @@ body {
 }
 
 #bottom{
-  background-color: #C3D7DF;
+  background-color: #F5F5F5;
+  margin: 30px;
 }
 
 /*
@@ -399,3 +401,20 @@ color: lightgrey;
   margin-right: 10px;
 }
 
+/*========================*/
+/*=========index=======*/
+
+.symbol-sections{
+  margin-top: 30px;
+  color: grey;
+}
+
+.index-title{
+  color: grey;
+  text-transform: lowercase;
+}
+
+.index-text{
+  color: grey;
+  text-transform: lowercase;
+}
