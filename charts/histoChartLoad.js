@@ -30,7 +30,7 @@ function drawHistoChart(dataParameter) {
 options = {
   title: 'Awesome Historgram',
   hAxis: {title: dataParameter},
-  vAxis: {title: 'Count'},
+  vAxis: {title: 'Journey Count'},
   legend: 'none'
   };
 

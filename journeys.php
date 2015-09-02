@@ -90,7 +90,12 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">DeLOREAN PROJECT</a>
+                <a class="navbar-brand" href="index.html">QUBEV</a>
+
+                <a class = "nav-social" href="https://twitter.com/intent/follow?screen_name=QUBDeLorean"><img src="img/twitter_white_nav.png" /></a>
+
+                <a class = "nav-social" href="https://www.facebook.com/QUBEV"><img src="img/facebook_white_nav.png" /></a>
+              
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">

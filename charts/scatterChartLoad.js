@@ -298,9 +298,7 @@ while (columnParameter!=="undefined"){
   }
 });
 
-//////resizes chart on window resize
-////Not sure if this is working correctly
-///////////////////////////////////
+//resizes chart on window resize
 $( window ).resize(function() {
   dashboard.draw(scatterChartData);
 });
