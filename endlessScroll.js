@@ -35,6 +35,7 @@ function addNewPanels(){
 			whileCount++;
 			// checks for the final loop of the while
 			if((journeyCount==highestPanel) || (whileCount==MAX_PANELS_TO_ADD)){
+				// console.log("in last loop");
 				// refreshes the data in the panels
 				setupAccordion();
 			}// end if

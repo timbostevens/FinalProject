@@ -578,3 +578,7 @@ NEW JOURNEY
 02/09/2015 10:06:39 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 02/09/2015 10:06:39 Datapoint Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 02/09/2015 10:06:39 Summary Generation Success - Journey Ref: 7
+NEW JOURNEY
+02/09/2015 16:13:51 Journey Load Success - File: 06-Sixth.json Journey Ref: 8
+02/09/2015 16:13:51 Datapoint Load Success - File: 06-Sixth.json Journey Ref: 8
+02/09/2015 16:13:51 Summary Generation Success - Journey Ref: 8

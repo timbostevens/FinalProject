@@ -1,6 +1,5 @@
 <?php
 
-
 // pull the total number of panels from the request
 $totalPanels = $_GET["panels"];
 

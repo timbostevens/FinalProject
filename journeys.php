@@ -1,3 +1,8 @@
+<!-- If there is a GET variable get it -->
+<?php
+$requiredJourney =  filter_input(INPUT_GET,'journey');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +35,7 @@
 
     </head>
     
-    <body onload="setupAccordion()">
+    <body onload="setupAccordion(<?php echo $requiredJourney; ?>)">
 
   <!-- http://stackoverflow.com/questions/22037021/custom-facebook-share-button -->
     <!-- Load Facebook SDK for JavaScript -->
@@ -741,7 +746,7 @@
         <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
         <!-- Endless Scroll Manager-->
-    <script type="text/javascript" src="endlessScroll.js"></script>
+    <!-- <script type="text/javascript" src="endlessScroll.js"></script> -->
 
 
     <!-- Checks for scrolling to the bottom of the page then calls addNewPanels() from endlessScroll.js -->
