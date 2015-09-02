@@ -245,10 +245,10 @@ $(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
     }
 
 
+// listener to resize chart on window resize
+$( window ).resize(function() {
+  areaChart.draw(dataArray, journeyAreaOptions);
+});
 
-// resizes chart on window resize
-// $( window ).resize(function() {
-//   areaChart.draw(dataArray, journeyAreaOptions);
-// });
 
 

@@ -25,7 +25,7 @@ function drawBubbleChart() {
   bubbleChartData = google.visualization.arrayToDataTable(bubbleChartInputData);
 
       // setup chart options
-      var options = {
+      options = {
         title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
         hAxis: {title: 'Distance'},
         vAxis: {title: 'Duration'},
@@ -34,8 +34,13 @@ function drawBubbleChart() {
         bubble: {textStyle: {fontSize: 11}}
       };
       // create chart and link to html id
-      var chart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
-      // draw chart
-      chart.draw(bubbleChartData, options);
+      bubbleChart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
+      // draw bubbleChart
+      bubbleChart.draw(bubbleChartData, options);
     });
 }
+
+// Listener to resize bubbleChart on window resize
+$( window ).resize(function() {
+  bubbleChart.draw(bubbleChartData, options);
+});

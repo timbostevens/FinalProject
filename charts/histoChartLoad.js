@@ -22,12 +22,12 @@ function drawHistoChart(dataParameter) {
 
 
   // parses the input array into a histoData table
-  histoData = google.visualization.arrayToDataTable(histoChartInputData);
+  histoDataTable = google.visualization.arrayToDataTable(histoChartInputData);
 
 
 
-// Setup Chart Options
-var options = {
+// Setup histoChart Options
+options = {
   title: 'Awesome Historgram',
   hAxis: {title: dataParameter},
   vAxis: {title: 'Count'},
@@ -39,8 +39,8 @@ var options = {
         //   legend: { position: 'none' }
         // };
 
-        var chart = new google.visualization.Histogram(document.getElementById('histo_div'));
-        chart.draw(histoData, options);
+        histoChart = new google.visualization.Histogram(document.getElementById('histo_div'));
+        histoChart.draw(histoDataTable, options);
       });
 
 }
@@ -72,7 +72,7 @@ switch(dataParameter){
     break;
   default:
     columnName = "";
-    alert("Sorry, something has gone wrong with the chart redraw");
+    alert("Sorry, something has gone wrong with the histoChart redraw");
 }
 
 return columnName;
@@ -80,8 +80,10 @@ return columnName;
 
 }
 
-
-
+// Listener to resize histoChart on window resize
+$( window ).resize(function() {
+  histoChart.draw(histoDataTable, options);
+});
 
 
 // listener for horizontal axis click
