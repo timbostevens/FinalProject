@@ -239,10 +239,11 @@ color: lightgrey;
 }
 
 .pill-holder{
+  margin: 30px 30px 0px 30px;
   padding-top: 40px;
   padding-right: 40px;
   padding-left: 40px;
-  background-color: lightgrey;
+  background-color: #F5F5F5;
 }
 
 .vis-huge {
@@ -304,15 +305,48 @@ color: lightgrey;
     color: #df8a13;
 }
 
-.fa
+.vis-chart-container{
+  background-color: #F5F5F5;
+  padding: 20px;
+  margin: 30px;
+}
+
+.vis-bubble-container{
+  background-color: #F5F5F5;
+  padding: 50px;
+  margin: 0px 30px 0px 30px;
+}
+
+.vis-chart-container-l{
+  background-color: #F5F5F5;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin: 30px 0px 30px 30px;
+}
+
+.vis-chart-container-r{
+  background-color: #F5F5F5;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin: 30px 30px 30px 0px;
+}
+
+
+.dropdown-text{
+  text-transform: lowercase;
+}
+
+.chart-button{
+  margin-top: 10px;
+}
 
 /*====================*/
 /*======charts========*/
 
-#chart-container{
+/*#chart-container{
   padding: 20px;
   
-}
+}*/
 
 /*for sample HTML chart*/
 .chart div {
@@ -326,6 +360,7 @@ color: lightgrey;
 
 /*========================*/
 /*=========journeys=======*/
+
 /*hidden by default - shown via accordionManager script*/
 .accordion-panel{
   display: none;

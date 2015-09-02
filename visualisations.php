@@ -149,13 +149,13 @@
 
 
     				<!-- set up  jumbotron container -->
-    				<div id="middle">
-    					<div class="container">
-    						<h2>visualisations</h2>
+    				<!-- <div id="vis-top"> -->
+    					<!-- <div class="container"> -->
+    						<!-- <h2>visualisations</h2> -->
 
 
     						<!-- Single button -->
-    						<div class="btn-group" id="date-select">
+<!--     						<div class="btn-group" id="date-select">
     						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="date-select" aria-haspopup="true" aria-expanded="false">
     								SELECT DATE <span class="caret"></span>
     							</button>
@@ -166,10 +166,10 @@
     								<li role="separator" class="divider"></li>
     								<li><a href="#">CUSTOM DATE</a></li>
     							</ul>
-    						</div>
+    						</div> -->
 
-    					</div>
-    				</div>
+    					<!-- </div> -->
+    				<!-- </div> -->
 
     				<div class="pill-holder">
     					
@@ -450,33 +450,33 @@
     					<div class="col-md-6">
 
     					<!--Div that will hold the scatterchart dashboard-->
-					    <div id="dashboard_div">
+					    <div id="dashboard_div" class="vis-chart-container-l">
 
 					    <div id="chart_div" style="height: 500px; width: 100%"></div>
 
-					      <div class="btn-group">
-					        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					      <div class="btn-group chart-button">
+					        <button type="button" class="btn btn-default btn-xs dropdown-toggle dropdown-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					            HORIZONTAL AXIS <span class="caret"></span>
 					          </button>
 					          <ul class="dropdown-menu">
-					            <li><a class="scat-horiz-select">Speed (mph)</a></li>
-					            <li><a class="scat-horiz-select">Distance (mi)</a></li>
-					            <li><a class="scat-horiz-select">Duration (mins)</a></li>                          
-					            <li><a class="scat-horiz-select">Petrol Saved (L)</a></li>
-					            <li><a class="scat-horiz-select">CO2 Saved (kg)</a></li>
+					            <li><a class="scat-horiz-select dropdown-text">Speed (mph)</a></li>
+					            <li><a class="scat-horiz-select dropdown-text">Distance (mi)</a></li>
+					            <li><a class="scat-horiz-select dropdown-text">Duration (mins)</a></li>                          
+					            <li><a class="scat-horiz-select dropdown-text">Petrol Saved (L)</a></li>
+					            <li><a class="scat-horiz-select dropdown-text">CO2 Saved (kg)</a></li>
 					          </ul>
 					        </div>
 
-					        <div class="btn-group">
-					          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
+					        <div class="btn-group chart-button">
+					          <button type="button" class="btn btn-default btn-xs dropdown-toggle dropdown-text" data-toggle="dropdown" id="y-select" aria-haspopup="true" aria-expanded="false">
 					              VERTICAL AXIS <span class="caret"></span>
 					            </button>
 					            <ul class="dropdown-menu">
-					            <li><a class="scat-vert-select">Speed (mph)</a></li>
-					            <li><a class="scat-vert-select">Distance (mi)</a></li>
-					            <li><a class="scat-vert-select">Duration (mins)</a></li>                          
-					            <li><a class="scat-vert-select">Petrol Saved (L)</a></li>
-					            <li><a class="scat-vert-select">CO2 Saved (kg)</a></li>
+					            <li><a class="scat-vert-select dropdown-text">Speed (mph)</a></li>
+					            <li><a class="scat-vert-select dropdown-text">Distance (mi)</a></li>
+					            <li><a class="scat-vert-select dropdown-text">Duration (mins)</a></li>                          
+					            <li><a class="scat-vert-select dropdown-text">Petrol Saved (L)</a></li>
+					            <li><a class="scat-vert-select dropdown-text">CO2 Saved (kg)</a></li>
 					            </ul>
 					          </div>
 
@@ -499,63 +499,65 @@
 
     					<div class="col-md-6">
     					<!-- 	<h5>SECOND CHART</h5> -->
-
+                        <div class="vis-chart-container-r">
     						<!-- Google Chart Example -->
     						<!--Div that will hold the histogram-->
     						<div id="histo_div" style="height: 500px; width: 100%"></div>
     						     
-					      <div class="btn-group">
-					        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					      <div class="btn-group chart-button">
+					        <button type="button" class="btn btn-default btn-xs dropdown-toggle dropdown-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					            DATA <span class="caret"></span>
 					          </button>
 					          <ul class="dropdown-menu">
-					            <li><a class="hist-select">Speed (mph)</a></li>
-					            <li><a class="hist-select">Distance (mi)</a></li>
-					            <li><a class="hist-select">Duration (mins)</a></li>                          
-					            <li><a class="hist-select">Petrol Saved (L)</a></li>
-					            <li><a class="hist-select">CO2 Saved (kg)</a></li>
+					            <li><a class="hist-select dropdown-text">Speed (mph)</a></li>
+					            <li><a class="hist-select dropdown-text">Distance (mi)</a></li>
+					            <li><a class="hist-select dropdown-text">Duration (mins)</a></li>                          
+					            <li><a class="hist-select dropdown-text">Petrol Saved (L)</a></li>
+					            <li><a class="hist-select dropdown-text">CO2 Saved (kg)</a></li>
 					          </ul>
 					        </div>
 
     					</div> <!-- end second chart column -->
 
-
+                        </div> <!--end column -->
     				</div> <!-- end first chart row -->
 
 
 
     				<div class="row">
     					<div class="col-md-12">
+
+                            <div class="vis-bubble-container">
                             <!--Div that will hold the bubble chart-->
                             <div id="bubble_div" style="height: 500px; width: 100%"></div>
-                            
+                            </div>
     					</div>
     				</div>
 
                     <!-- spacer -->
-                    <div style="width: 100%; height:30px;"></div>
+                    <!-- <div style="width: 100%; height:30px;"></div> -->
 
-                    <div class="row">
-                        <div class="col-md-2">
+                    <!-- <div class="row"> -->
+                        <!-- <div class="col-md-2"> -->
                             
                             
-                        </div>
-                        <div class="col-md-8">
+                        <!-- </div> -->
+                        <!-- <div class="col-md-8"> -->
                             
                             <!--Div that will hold the calendar chart-->
-                            <div id="calendar_chart_div" style="height: 360px; width 1500px"></div>
+                            <!-- <div id="calendar_chart_div" style="height: 360px; width 1500px"></div> -->
                             
-                        </div>
-                        <div class="col-md-2">
+                        <!-- </div> -->
+                        <!-- <div class="col-md-2"> -->
 
                             
-                        </div>
-                    </div>
+                        <!-- </div> -->
+                    <!-- </div> -->
 
                     <div class="row">
                         <div class="col-md-12">
                         <!-- Jumbotron to set it in from the edge -->
-                            <div class = "jumbotron">
+                            <div class = "vis-chart-container">
                                 
                             <!--Div that will hold the heatmap-->
                             <div id="heatmap-canvas" style="height: 700px"></div>
