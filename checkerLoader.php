@@ -38,12 +38,22 @@ $result = mysqli_query($connection, $queryDatapoints);
 
 // gets all files in folder with pattern
 $allFiles = glob(DATA_FILEPATH."*.json");
+
+// remove filepath to leave clean filename
+
+foreach ($allFiles as &$value) {
+	$value = str_replace(DATA_FILEPATH, "", $value);
+}
+// destroy foreach value
+unset($value);
+
 //Iterates over each value in the array passing them to the callback function.
 //If the callback function returns true, the current value from array is returned into the result array.
 $newFiles = array_filter(
-			// passes in file from array into the callback function
+	// passes in file from array into the callback function
 	$allFiles, function ($file) {
-				// file found flag
+
+		// file found flag
 		$fileFound = false;
 		global $result;
 
@@ -54,15 +64,14 @@ $newFiles = array_filter(
 		while ($row = @mysqli_fetch_assoc($result)){
 
 			if ($row['source_file']===$file){
-						//echo "Match found for ".$file."<br/>";
 				$fileFound = true;
 			}
-				}// end while
+		}// end while
 
-				// returns true if file is not found
-				return (!$fileFound);
-			}
-			);
+		// returns true if file is not found
+		return (!$fileFound);
+	}
+	);
 // if there are new files pass them to the dataLoader function
 if ($newFiles){
 
@@ -98,13 +107,13 @@ function dataLoader($newFiles){
 		global $rowNumber;
 		global $dateErrorFlag;
 
-// get file
-		$jsonData = file_get_contents($newFile);
+		// get file (re-append filepath)
+		$jsonData = file_get_contents(DATA_FILEPATH.$newFile);
 
-// decodes the data into an array
+		// decodes the data into an array
 		$json = json_decode($jsonData, true);
 
-// check if this is a valid array
+		// check if this is a valid array
 		if(is_array($json)){
 			
 			// creates a new recursive array iterator
@@ -137,30 +146,29 @@ function dataLoader($newFiles){
 			// check for date error flag
 			if($dateErrorFlag===false){
 
-
 				// run the journey query
 				if (mysqli_execute($insertJourneyStmt)) {
-					// create text string
+					// create text string for logging
 					$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
-					// write to file
+					// write to log file
 					file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
 				} else {
-					// create text string
+					// create text string for logging
 					$journeyFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
-					// write to file
+					// write to log file
 					file_put_contents(DATALOAD_LOGFILE, $journeyFail, FILE_APPEND | LOCK_EX);
 				}
 
 				// // run the datapoint query
 				if (mysqli_query($connection, $insertPointQuery)) {
-					// create text string
+					// create text string for logging
 					$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
-					// write to file
+					// write to log file
 					file_put_contents(DATALOAD_LOGFILE, $datapointSuccess, FILE_APPEND | LOCK_EX);
 				} else {
-					// create text string
+					// create text string for logging
 					$datapointFail = "\n".date('d/m/Y H:i:s', time())." Datapoint Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount."mySQL Error: ".mysqli_error($connection);
-					// write to file
+					// write to log file
 					file_put_contents(DATALOAD_LOGFILE, $datapointFail, FILE_APPEND | LOCK_EX);
 				}
 			
@@ -174,9 +182,9 @@ function dataLoader($newFiles){
 				// move file to error folder
 				rename($newFile, $newFileLocation);
 
-				// create text string
+				// create text string for logging
 				$dateFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Date FAIL - File: ".$newFile;
-				// write to file
+				// write to log file
 				file_put_contents(DATALOAD_LOGFILE, $dateFail, FILE_APPEND | LOCK_EX);
 
 
@@ -192,9 +200,9 @@ function dataLoader($newFiles){
 			// move file to error folder
 			rename($newFile, $newFileLocation);
 
-			// create text string
+			// create text string for logging
 			$arrayFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Array Load FAIL - File: ".$newFile;
-			// write to file
+			// write to log file
 			file_put_contents(DATALOAD_LOGFILE, $arrayFail, FILE_APPEND | LOCK_EX);
 
 		}// end if/else array check
