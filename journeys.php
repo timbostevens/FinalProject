@@ -1,6 +1,17 @@
 <!-- If there is a GET variable get it -->
 <?php
 $requiredJourney =  filter_input(INPUT_GET,'journey');
+
+// check for a decimal (either a . or a ,)
+if ((strpos($requiredJourney,"."))||(strpos($requiredJourney,","))) {
+  // set required journey to 0 to represent an invalid entry
+  $requiredJourney = 0;
+}
+
+// convert to int to deal with non numeric characters
+// characters result in a value of 0
+$requiredJourney = intval($requiredJourney);
+
 ?>
 
 <!DOCTYPE html>
