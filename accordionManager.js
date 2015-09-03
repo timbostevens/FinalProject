@@ -175,7 +175,7 @@ downloadUrl(urlGetData, function(dataResult) {
             document.getElementById("startP"+panelNumber).innerHTML = "Start: "+start;
             document.getElementById("distanceP"+panelNumber).innerHTML = distance+" miles";
             // create twitter message string
-            var twitterMessage = "The Electric DeLorean Rides Again! "+distance+" miles on "+date;
+            var twitterMessage = "Electric DeLorean Rides Again! "+distance+" miles on "+date;
             // get twitter button
             var tweetButton = document.getElementById("tweet-button"+panelNumber);
             // change text in the message
