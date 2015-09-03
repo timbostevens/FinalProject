@@ -378,12 +378,13 @@ color: lightgrey;
 
 /*hiding the journey number*/
 .panel-title .panel-title-text .accordion-title{
-  display: none;
+  /*display: none;*/
+  font-size: 0%
 }
 
 /*Accordion Stuff*/
 .panel-title .panel-title-text>p{
-  margin-top: 25px;
+  margin-top: 17px;
   text-transform: uppercase;
   text-align: left;
   font-size: 14px;

@@ -21,9 +21,17 @@ include("../connection.php");
 // $row = mysqli_fetch_array($result);
 
 
-$stmt = mysqli_prepare($connection, "SELECT COUNT(journey_id) as panel_count
-									FROM journeysimport
-									WHERE journey_id >= ?");
+// $stmt = mysqli_prepare($connection, "SELECT COUNT(journey_id) as panel_count
+// 									FROM journeysimport
+// 									WHERE journey_id >= ?");
+
+
+
+$stmt = mysqli_prepare($connection, "SELECT ordered.row as panel_count
+									from (SELECT  @rownum:=@rownum+1 'row', journey_id AS JourneyID
+      										FROM journeysimport, (SELECT @rownum:=0) temp_row_table
+      										ORDER BY journey_date DESC, start_time DESC) AS ordered
+									WHERE journeyID = ?");
 
 // bind parameters (integer)
 mysqli_stmt_bind_param($stmt, 'i',$journeyRequired);

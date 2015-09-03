@@ -58,18 +58,31 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
     }(document, 'script', 'facebook-jssdk'));
 
 
-
-
+    // Facebook method to post to feed
     function postToFeed(title, desc, url, image){
-        var obj = {method: 'feed',link: url, picture: image, name: title,description: desc};
+        var obj = {method: 'feed',link: url, picture: image, name: title, description: desc};
         function callback(response){}
         FB.ui(obj, callback);
       }
 
-
-
     </script>
 
+    <!-- twitter javascript -->
+<!--     <script>
+
+function scanForTwitter(){
+
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+      if(!d.getElementById(id)){
+          js=d.createElement(s);js.id=id;
+          js.src=p+'://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js,fjs);
+        }}(document, 'script', 'twitter-wjs');
+
+}
+
+
+      </script> -->
 
       <!-- Navbar -->
       
@@ -234,9 +247,14 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
 
 
                                 <!-- Twitter button -->
+                                <!-- <a id="tweet-button1" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
+
+
+                                <!-- Twitter button -->
                                 <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
                                         style="width:70px; height:20px; float: right"></iframe>
+
 
                                 <p style="float: right">share this journey</p>
 
@@ -334,6 +352,9 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button2" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
+                                <!-- Twitter button -->
+                                <!-- <a id="tweet-button2" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
 
 
                                 <!-- Twitter button -->
@@ -437,6 +458,8 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button3" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
+                                <!-- Twitter button -->
+                                <!-- <a id="tweet-button3" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
@@ -538,6 +561,9 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button4" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+
+                                <!-- Twitter button -->
+                                <!-- <a id="tweet-button4" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
 
 
                                 <!-- Twitter button -->
@@ -641,7 +667,8 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button5" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
-
+                                <!-- Twitter button -->
+                                <!-- <a id="tweet-button5" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
@@ -758,18 +785,15 @@ $requiredJourney =  filter_input(INPUT_GET,'journey');
     });
     </script>
 
-
-<!-- Script to manage facebook share click -->
+    <!-- Script to manage facebook share click -->
     <script type="text/javascript">
           $(document).on('click', '.btnShare',function(){
           elem = $(this);
           postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
           return false;
           });
-
-
-
     </script>
+
 
 
 </body>
