@@ -1,6 +1,7 @@
 // pseodo-constant stating the maximum number of panels to add in one load
 var MAX_PANELS_TO_ADD = 5;
 
+var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey that doesn't exist.\n\nI'm going to load the 5 most recent instead";
 /*
 Works out how many panels are required and sends that number to the next function
 
@@ -18,14 +19,31 @@ if(typeof requiredJourney!=='undefined'){
                 // retrieve attribute    
                 panelsRequired = resultArray[0].getAttribute("panel_count");
 
-                //before they are populated, the correct number of panesl need to be created.
+                console.log("Req"+panelsRequired);
 
+
+                // check for a blank entry in panels required
+                // this happens when a journey is searched for but it doesn't exist in the database
+                if (panelsRequired==="") {
+
+                    alert(NO_JOURNEY_FOUND_MESSAGE);
+                    
+                    // recursive call to run setupAccordion again withouth the journey number
+                    setupAccordion();
+
+
+                } else {
+                //before they are populated, the correct number of panesl need to be created.
                 addNewPanels(panelsRequired);
+            }
 
 
             } // end download URL function
             );//end download url
 } else {
+
+            console.log("I don't have a required journey");
+
             // var to hold panel number check
             var panelCheck = 1;
             // check for the current highest panel number
@@ -191,9 +209,6 @@ downloadUrl(urlGetData, function(dataResult) {
             
         }// end for
 
-        // console.log("got to end");
-
-        // scanForTwitter();
 
         if (typeof journeyToHighlight!=='undefined') {
                 // mimic click on correct panel
