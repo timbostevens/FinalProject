@@ -19,9 +19,6 @@ if(typeof requiredJourney!=='undefined'){
                 // retrieve attribute    
                 panelsRequired = resultArray[0].getAttribute("panel_count");
 
-                console.log("Req"+panelsRequired);
-
-
                 // check for a blank entry in panels required
                 // this happens when a journey is searched for but it doesn't exist in the database
                 if (panelsRequired==="") {
