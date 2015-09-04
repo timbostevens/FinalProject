@@ -31,6 +31,7 @@ mysqli_stmt_execute($stmt);
 // get result and pass to var
 $result = mysqli_stmt_get_result($stmt);
 
+
 // if there is no result, throw an error
 if (!$result) {
   die('Invalid query: ' . mysql_error());

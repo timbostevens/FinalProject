@@ -40,11 +40,6 @@ body {
   margin-left: 0;
 }
 
-#column-med-padding{
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
 .jumbotron .info-text{
   font-size: 90%;
   padding-top: 10px;
@@ -61,11 +56,6 @@ body {
   height: 500px;
   color: white;
   margin: 30px;
-}
-
-#middle{
-  background-color: #FFFFFF;
-
 }
 
 #bottom{
@@ -371,6 +361,11 @@ color: lightgrey;
 /*========================*/
 /*=========journeys=======*/
 
+#middle{
+  background-color: #FFFFFF;
+
+}
+
 /*hidden by default - shown via accordionManager script*/
 .accordion-panel{
   display: none;
@@ -448,19 +443,26 @@ color: lightgrey;
 }
 
 /*========================*/
-/*=========index=======*/
+/*=========index and about=======*/
 
 .symbol-sections{
   margin-top: 30px;
   color: grey;
 }
 
-.index-title{
+.bottom-text-title{
   color: grey;
   text-transform: lowercase;
 }
 
-.index-text{
+.bottom-text-body{
   color: grey;
   text-transform: lowercase;
 }
+
+#column-med-padding{
+  padding: 30px 30px 20px 30px;
+}
+
+
+

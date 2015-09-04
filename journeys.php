@@ -2,8 +2,8 @@
 <?php
   $requiredJourney =  filter_input(INPUT_GET,'journey');
 
-  // checks if the journey received is all digits (ie a number with no decimals)
-  if (!ctype_digit($requiredJourney)) {
+  // checks if the journey received is all digits (ie a number with no decimals) and isn't empty
+  if ((!ctype_digit($requiredJourney)) && (!$requiredJourney=="")) {
     // if not all digits then the request was invalid
     // change to an invalid number that the code will recognise as such
     $requiredJourney = 0;

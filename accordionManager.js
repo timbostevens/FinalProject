@@ -39,8 +39,6 @@ if(typeof requiredJourney!=='undefined'){
             );//end download url
 } else {
 
-            console.log("I don't have a required journey");
-
             // var to hold panel number check
             var panelCheck = 1;
             // check for the current highest panel number
