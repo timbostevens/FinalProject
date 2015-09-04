@@ -95,6 +95,7 @@ Takes an array of new journey filesnames as an argument and uploads each one in 
 */
 function dataLoader($newFiles){
 
+
 // retrieve how many journeys have been created thus far
 	//include("journeyCount.php");
 
