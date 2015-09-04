@@ -13,6 +13,9 @@ $parnode = $dom->appendChild($node);
 
 include("../connection.php");
 
+// escape the string for security
+$journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
+
 // prepare statement
 $stmt = mysqli_prepare($connection, "SELECT point_id,
                                             journey_id,

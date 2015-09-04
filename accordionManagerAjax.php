@@ -13,6 +13,9 @@ $parnode = $dom->appendChild($node);
 
 include("../connection.php");
 
+// escape the string for security
+$totalPanels = mysqli_real_escape_string($connection, $totalPanels);
+
 // Set the active MySQL database
 
 // $db_selected = mysql_select_db($database, $connection);

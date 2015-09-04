@@ -13,6 +13,9 @@ $parnode = $dom->appendChild($node);
 
 include("../connection.php");
 
+// escape the string for security
+$journeyRequired = mysqli_real_escape_string($connection, $journeyRequired);
+
 // // create query
 // $countQuery = "SELECT COUNT(*) AS 'count' FROM journeysimport";
 // // runs the query and sets to variable

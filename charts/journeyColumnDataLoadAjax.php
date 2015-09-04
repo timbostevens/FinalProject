@@ -14,6 +14,9 @@ $parnode = $dom->appendChild($node);
 
 include("../../connection.php");
 
+// escape the string for security
+$journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
+
 // prepare statement
 $statQuery = mysqli_prepare($connection,"SELECT 'Speed (mph)' as parameter, ROUND(average_speed_mph,2) as val, min, max, average
             FROM journeysimport, (SELECT ROUND(MIN(average_speed_mph),2) as min, ROUND(MAX(average_speed_mph),2) as max, ROUND(AVG(average_speed_mph),2) as average
