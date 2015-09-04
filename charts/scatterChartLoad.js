@@ -37,8 +37,6 @@ dashboard = new google.visualization.Dashboard(
   document.getElementById('dashboard_div'));
 
 
-
-
 // Create chart, passing some options
         scatterChart = new google.visualization.ChartWrapper({
           chartType: 'ScatterChart',
@@ -47,8 +45,10 @@ dashboard = new google.visualization.Dashboard(
           options: {
             hAxis: {title: 'Speed (mph)', minValue: 0, maxValue: 15},
             vAxis: {title: 'Distance (mi)', minValue: 0, maxValue: 15},
-            title: 'My ScatterChart',
-            legend: 'none'
+            chartArea:{left:100,top:60,width:'75%',height:'65%'},
+            // title: 'My ScatterChart',
+            legend: 'none',
+            colors: ['#808080']
           }
         });
 
@@ -142,6 +142,9 @@ var newSettings = {columns:[horizColumnIndex, newIndex]};
 
 
 //showFilters(horizColumnIndex, newIndex);
+
+
+
 // send settings to chart
 scatterChart.setView(newSettings);
 // change axis label

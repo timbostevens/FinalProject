@@ -2,6 +2,7 @@
 // Constants for data filepath, error filepath and logfile
 define("DATA_FILEPATH", "source/");
 define("DATA_ERROR_FILEPATH", "source/errors/");
+define("DATA_SUCCESS_FILEPATH", "source/loaded/");
 define("DATALOAD_LOGFILE","logging/loadlog.txt");
 define("LARGE_CAR_CO2",0.467064); // pulled from DEFRA Carbon Emissions
 define("CAR_MPG",28); //Combined - pulled from http://www.aboutautomobile.com/Fuel/1981/Delorean/DMC+12
@@ -161,6 +162,10 @@ function dataLoader($newFiles){
 
 				// // run the datapoint query
 				if (mysqli_query($connection, $insertPointQuery)) {
+					// create string containing new file location
+					$newFileLocation = DATA_SUCCESS_FILEPATH.$newFile;
+					// move file to loaded folder (re-append path)
+					rename(DATA_FILEPATH.$newFile, $newFileLocation);
 					// create text string for logging
 					$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
 					// write to log file
@@ -178,9 +183,10 @@ function dataLoader($newFiles){
 			} else {// move file to errors folder & log error
 			
 				// create string containing new file location
-				$newFileLocation = str_replace(DATA_FILEPATH,DATA_ERROR_FILEPATH,$newFile);
-				// move file to error folder
-				rename($newFile, $newFileLocation);
+				$newFileLocation = DATA_ERROR_FILEPATH.$newFile;
+
+				// move file to error folder (re-append path)
+				rename(DATA_FILEPATH.$newFile, $newFileLocation);
 
 				// create text string for logging
 				$dateFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Date FAIL - File: ".$newFile;
@@ -196,9 +202,10 @@ function dataLoader($newFiles){
 
 		}else { // move file to errors folder & log error
 			// create string containing new file location
-			$newFileLocation = str_replace(DATA_FILEPATH,DATA_ERROR_FILEPATH,$newFile);
-			// move file to error folder
-			rename($newFile, $newFileLocation);
+			$newFileLocation = DATA_ERROR_FILEPATH.$newFile;
+
+			// move file to error folder (re-append path)
+			rename(DATA_FILEPATH.$newFile, $newFileLocation);
 
 			// create text string for logging
 			$arrayFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Array Load FAIL - File: ".$newFile;
@@ -325,9 +332,12 @@ function iteratorLooper($iterator){
 				$validityCheckString = str_replace("\n", "",$validityCheckString);
 				// create new date/time from the retrieved value
 				$newDate = date_create_from_format('j M Y H:i:s',$validityCheckString);
+				// creates a timestamp for now
+				$now = new DateTime();
 				// check if new date matches the retieved date
-				// this is needed as php turns 31 Feb into 3 March!!!!				
-				if($validityCheckString!==date_format($newDate, 'j M Y H:i:s')){
+				// this is needed as php turns 31 Feb into 3 March!!!!
+				// also checks for future dates			
+				if(($validityCheckString!==date_format($newDate, 'j M Y H:i:s'))||($newDate >= $now)){
 					// sets error flag to true
 					$dateErrorFlag = true;
 					// breaks the loop

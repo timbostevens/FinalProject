@@ -257,13 +257,13 @@ color: lightgrey;
 }
 
 .panel-primary > .panel-heading {
-    border-color: #72706d;
-    color: #fff;
-    background-color: #72706d;
+    border-color: #ffffff;
+    color: #A8A7A2;
+    background-color: #ffffff;
 }
 
 .panel-primary > a {
-    color: #72706d;
+    color: #ffffff;
 }
 
 /*.panel-green > a:hover {

@@ -28,10 +28,12 @@ function drawHistoChart(dataParameter) {
 
 // Setup histoChart Options
 options = {
-  title: 'Awesome Historgram',
+  // title: 'Awesome Historgram',
   hAxis: {title: dataParameter},
   vAxis: {title: 'Journey Count'},
-  legend: 'none'
+  legend: 'none',
+  chartArea:{left:100,top:60,width:'75%',height:'65%'},
+  colors: ['#808080']
   };
 
         // var options = {

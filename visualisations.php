@@ -448,9 +448,7 @@
                         </div> <!-- end first row of pills -->
     				</div> <!-- end pill holder -->
 
-
     				<div class="row">
-
 
     					<div class="col-md-6">
 

@@ -30,7 +30,8 @@ function drawBubbleChart() {
         hAxis: {title: 'Distance'},
         vAxis: {title: 'Duration'},
         legend: {position: 'none'},
-        chartArea:{left:100,top:100,width:'85%',height:'70%'},
+        colors: ['#808080'],
+        chartArea:{left:100,top:100,width:'85%',height:'65%'},
         bubble: {textStyle: {fontSize: 11}}
       };
       // create chart and link to html id

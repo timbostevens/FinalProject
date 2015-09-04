@@ -2,9 +2,10 @@
 var MAX_PANELS_TO_ADD = 5;
 
 var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey that doesn't exist.\n\nI'm going to load the 5 most recent instead";
+
+
 /*
 Works out how many panels are required and sends that number to the next function
-
 */
 function setupAccordion(requiredJourney){
 
@@ -142,11 +143,7 @@ downloadUrl(urlGetData, function(dataResult) {
         // retrieve attributes for each element
         
         for (var i = 0; i < journeyArray.length; ++i) {
-        	
-            /////////////////////////////////////////////////////////////
-            //Probably don't have to create all the vars - good for clarity though
-            /////////////////////////////////////////////////////////////
-
+            //Creating all the vars for clarity
             var journeyID = journeyArray[i].getAttribute("journeyID");
         	var date = journeyArray[i].getAttribute("date");
             var start = journeyArray[i].getAttribute("start");
@@ -178,19 +175,12 @@ downloadUrl(urlGetData, function(dataResult) {
             var tweetButton = document.getElementById("tweet-button"+panelNumber);
             // change text in the message
             var newLink = "http://localhost/Project/FinalProject/journeys.php?journey="+journeyID;
-            // tweetButton.href='http://localhost/Project/FinalProject/journeys.php?journey='+journeyID;
-            //////////////////////////////
-            // NEED TO WORK ON THE TEXT REPLACEMENT STRING - CAN'T EXPLAIN IT AT PRESENT
-            ////////////////////////////
-
             // add message and journey specific URL
             tweetButton.src = tweetButton.src.replace(/&text=[^&]+/, "&text=" + encodeURIComponent(twitterMessage)+"&url="+encodeURIComponent(newLink));
-
             // facebook button updated with custom text
             var facebookButton = document.getElementById("facebook-button"+panelNumber);
             facebookButton.setAttribute('data-desc', 'It travelled '+distance+' miles on '+date);
             facebookButton.href='http://localhost/Project/FinalProject/journeys.php?journey='+journeyID;
-
             // get static image (scale=2 returns high res version)
             document.getElementById("panel-static-image"+panelNumber).src = "//maps.googleapis.com/maps/api/staticmap?size=150x150&scale=1&maptype=roadmap&markers=color:green%7Clabel:S%7C"+startLat+","+startLong+"&markers=color:red%7Clabel:F%7C"+endLat+","+endLong;
             // update stats witihn panel
@@ -204,7 +194,7 @@ downloadUrl(urlGetData, function(dataResult) {
             
         }// end for
 
-
+        // if there is a journey to highlight, move there and expand it
         if (typeof journeyToHighlight!=='undefined') {
                 // mimic click on correct panel
                 // expands and highlights
