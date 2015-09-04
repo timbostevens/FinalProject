@@ -50,19 +50,6 @@ body {
   margin-right: 0;
 }
 
-#top{
-  background-image: url(img/Car02Bright.png);
-  background-size: cover;
-  height: 500px;
-  color: white;
-  margin: 30px;
-}
-
-#bottom{
-  background-color: #F5F5F5;
-  margin: 30px;
-}
-
 /*
  * Global add-ons
  */
@@ -464,5 +451,31 @@ color: lightgrey;
   padding: 30px 30px 20px 30px;
 }
 
+#top-about{
+  background-image: url(img/Car02Bright.png);
+  background-size: cover;
+  /*height: 500px;*/
+  color: white;
+  margin: 30px;
+}
 
+
+#top-about.jumbotron p{
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+
+#top-index{
+  background-image: url(img/Car02Bright.png);
+  background-size: cover;
+  height: 500px;
+  color: white;
+  margin: 30px;
+}
+
+#bottom{
+  background-color: #F5F5F5;
+  margin: 30px;
+}
 
