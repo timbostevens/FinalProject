@@ -11,23 +11,24 @@ $parnode = $dom->appendChild($node);
 include("../../connection.php");
 
 // create query
-$stmt = "SELECT lat_dd,
+$heatStmt = "SELECT lat_dd,
                 long_dd
          FROM datapointsimport";
 
 
-$result = mysqli_query($connection, $stmt);
+// $result = mysqli_query($connection, $stmt);
 
 // if there is no result, throw an error
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
+// if (!$result) {
+//   die('Invalid query: ' . mysql_error());
+// }
 
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysqli_fetch_assoc($result)){
+// while ($row = @mysqli_fetch_assoc($result)){
+  foreach ($db->query($heatStmt) as $row) {
   // ADD TO XML DOCUMENT NODE
 
   // states the node name

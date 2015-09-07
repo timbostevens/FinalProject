@@ -768,6 +768,7 @@ function scanForTwitter(){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <!-- Load Google map API -->
@@ -775,14 +776,13 @@ function scanForTwitter(){
     <!-- Code for Ajax Helper -->
     <script type="text/javascript" src="ajaxHelper.js"></script>
     <!-- Data loading code -->
-    <script type="text/javascript" src="journeyDataload.js"></script>
+    <script type="text/javascript" src="journeyDataLoad.js"></script>
         <!-- Data loading code -->
     <script type="text/javascript" src="charts/journeyColumnChartLoad.js"></script>
         <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
         <!-- Endless Scroll Manager-->
     <!-- <script type="text/javascript" src="endlessScroll.js"></script> -->
-
 
     <!-- Checks for scrolling to the bottom of the page then calls addNewPanels() from endlessScroll.js -->
     <script>

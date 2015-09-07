@@ -19,18 +19,19 @@ $allSummaryQuery = "SELECT journey_id,
                             co2_saved_kg
                           FROM journeysimport WHERE 1";
 
-$result = mysqli_query($connection, $allSummaryQuery);
+// $result = mysqli_query($connection, $allSummaryQuery);
 
 // if there is no result, throw an error
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
+// if (!$result) {
+//   die('Invalid query: ' . mysql_error());
+// }
 
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysqli_fetch_assoc($result)){
+// while ($row = @mysqli_fetch_assoc($result)){
+foreach ($db->query($allSummaryQuery) as $row) {
   // ADD TO XML DOCUMENT NODE
 
   // states the node name
