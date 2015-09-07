@@ -17,7 +17,7 @@
       FROM journeysimport,
             (SELECT ROUND(AVG(velocity_mph),2) as temp_av_speed
             FROM datapointsimport) as tempspeed";
-    
+
     // runs the query and sets to variable $row
     foreach ($db->query($visStmt) as $row) {
     $totalJourneys=$row['total_journeys'];
@@ -31,4 +31,5 @@
     $totalCo2=$row['total_co2'];
     $averageCo2=$row['average_co2'];
 }
+
 ?>
