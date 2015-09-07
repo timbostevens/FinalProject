@@ -13,70 +13,6 @@ $parnode = $dom->appendChild($node);
 
 include("../connection.php");
 
-// escape the string for security
-// $totalPanels = mysqli_real_escape_string($db, $totalPanels);
-
-// Set the active MySQL database
-
-// $db_selected = mysql_select_db($database, $connection);
-// if (!$db_selected) {
-//   die ('Can\'t use db : ' . mysql_error());
-// }
-
-
-// I THINK ALL OF THIS IS FIXED //
-
-////////////////////////////////////////////////////
-//////DATES IN DB ARE CURRENTLY FOTRMATTED INCORRECTLY////
-///////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-// Can maybe simplify the query if I populate first timestamp in jour on load
-////////////////////////////////////////////////////////////////////////////
-// Select rows from the datapoints table
-//updates results so that journey 1 becomes the highest journey number from the database
-// $queryDatapoints = "SELECT tempdata.journey_id as JourneyID, DATE_FORMAT(tempdata.point_timestamp,'%D %M %Y') as FirstTimestamp, DATE_FORMAT(tempjour.start_time,'%H:%i') as StartTime, DATE_FORMAT(tempjour.end_time,'%H:%i') as EndTime, tempjour.average_speed_mph as AverageSpeed, tempjour.distance_mi as Distance, tempjour.duration_mins as Duration, tempjour.energy_saved as EnergySaved, tempjour.co2_saved as CO2Saved
-//     FROM (SELECT * FROM datap WHERE point_id=1) as tempdata
-//     JOIN (SELECT journey_id, start_time, end_time, average_speed_mph, distance_mi, duration_mins, energy_saved, co2_saved
-//       FROM jour
-//       ORDER BY journey_id desc
-//       LIMIT 5) as tempjour ON tempjour.journey_id=tempdata.journey_id
-//       ORDER BY tempdata.journey_id desc";
-
-
-// // setup prepared statemnt
-// $stmt = mysqli_prepare($connection, "SELECT  journey_id as JourneyID,
-//     DATE_FORMAT(journey_date,'%D %M %Y') as JourneyDate,
-//         DATE_FORMAT(start_time,'%H:%i') as StartTime,
-//         DATE_FORMAT(end_time,'%H:%i') as EndTime,
-//         ROUND(average_speed_mph,2) as AverageSpeed,
-//         ROUND(distance_mi,2) as Distance,
-//         duration_mins as Duration,
-//         ROUND(petrol_saved_ltr,2) as PetrolSaved,
-//         ROUND(co2_saved_kg,2) as CO2Saved,
-//         start_lat_dd as StartLat,
-//         start_long_dd as StartLong,
-//         end_lat_dd as EndLat,
-//         end_long_dd as EndLong
-//       FROM journeysimport
-//       ORDER BY journey_date desc, start_time desc
-//       LIMIT ?");
-
-
-// // bind parameters (integer)
-// mysqli_stmt_bind_param($stmt, 'i',$totalPanels);
-
-// // get result
-// mysqli_stmt_execute($stmt);
-
-// // get result and pass to var
-// $result = mysqli_stmt_get_result($stmt);
-
-// if there is no result, throw an error
-// if (!$result) {
-//   die('Invalid query: ' . mysql_error());
-// }
-
-
 // setup prepared statemnt
 $stmt = $db->prepare("SELECT  journey_id as JourneyID,
     DATE_FORMAT(journey_date,'%D %M %Y') as JourneyDate,
@@ -99,11 +35,6 @@ $stmt = $db->prepare("SELECT  journey_id as JourneyID,
 $stmt->execute(array($totalPanels));
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// if there is no result, throw an error
-// if (!$result) {
-//   echo "SOMETHING HAS GONE WRONG!!!!!";
-// }
 
 header("Content-type: text/xml");
 

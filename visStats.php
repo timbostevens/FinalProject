@@ -17,14 +17,9 @@
       FROM journeysimport,
             (SELECT ROUND(AVG(velocity_mph),2) as temp_av_speed
             FROM datapointsimport) as tempspeed";
-    // runs the query and sets to variable
-    // $result = mysqli_query($connection,$visStmt);
-    // gets the first row (all that is needed for this one)
-    // $row = mysqli_fetch_array($result);
-
+    
+    // runs the query and sets to variable $row
     foreach ($db->query($visStmt) as $row) {
-    // while($row = $visStmt->fetchAll(PDO::FETCH_ASSOC)){
-    // extracts value from first (only) row
     $totalJourneys=$row['total_journeys'];
     $averageSpeed=$row['av_speed'];
     $totalTime=$row['total_time'];

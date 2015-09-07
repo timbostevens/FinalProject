@@ -13,22 +13,6 @@ $parnode = $dom->appendChild($node);
 
 include("../connection.php");
 
-// escape the string for security
-// $journeyRequired = mysqli_real_escape_string($connection, $journeyRequired);
-
-// // create query
-// $countQuery = "SELECT COUNT(*) AS 'count' FROM journeysimport";
-// // runs the query and sets to variable
-// $result = mysqli_query($connection, $countQuery);
-// // gets the first row (all that is needed for this one)
-// $row = mysqli_fetch_array($result);
-
-
-// $stmt = mysqli_prepare($connection, "SELECT COUNT(journey_id) as panel_count
-// 									FROM journeysimport
-// 									WHERE journey_id >= ?");
-
-
 
 $stmt = $db->prepare("SELECT ordered.row as panel_count
 									from (SELECT  @rownum:=@rownum+1 'row', journey_id AS JourneyID
@@ -36,23 +20,7 @@ $stmt = $db->prepare("SELECT ordered.row as panel_count
       										ORDER BY journey_date DESC, start_time DESC) AS ordered
 									WHERE journeyID = ?");
 
-
-// get result
-// mysqli_stmt_execute($stmt);
-
-// get result and pass to var
-// $result = mysqli_stmt_get_result($stmt);
-
-// // if there is no result, throw an error
-// if (!$result) {
-//   echo "NO RESULT";
-// }
-
 header("Content-type: text/xml");
-
-// gets the first row (all that is needed for this one)
-// $row = mysqli_fetch_array($result);
-
 
 // bind parameters and execute
 $stmt->execute(array($journeyRequired));

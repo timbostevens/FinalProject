@@ -20,21 +20,11 @@ $allSummaryQuery = "SELECT DATE_FORMAT(journey_date, '%d/%m/%Y') as jour_date,
                       ORDER BY journey_date DESC, start_time DESC
                       LIMIT 20";
 
-// $result = mysqli_query($connection, $allSummaryQuery);
-
-// if there is no result, throw an error
-// if (!$result) {
-//   die('Invalid query: ' . mysql_error());
-// }
-
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
-
-// while ($row = @mysqli_fetch_assoc($result)){
 foreach ($db->query($allSummaryQuery) as $row) {
   // ADD TO XML DOCUMENT NODE
-
   // states the node name
   $node = $dom->createElement("journey");
   // creates a new node

@@ -25,37 +25,16 @@ $stmt = $db->prepare("SELECT point_id,
               ROUND(velocity_mph, 2) as velocity_mph
         FROM datapointsimport WHERE journey_id = ?");
 
-// bind parameters (integer)
-// mysqli_stmt_bind_param($stmt, 'i',$journeyNumber);
-
-// get result
-// mysqli_stmt_execute($stmt);
-
-// get result and pass to var
-// $result = mysqli_stmt_get_result($stmt);
-
-
+// bind and run
 $stmt->execute(array($journeyNumber));
-
+// get all the results
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-// if there is no result, throw an error
-// if (!$result) {
-//   die('Invalid query: ' . mysql_error());
-// }
 
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
-
-// while ($row = @mysqli_fetch_assoc($result)){
-
 foreach ($result as $row) {
-
   // ADD TO XML DOCUMENT NODE
-
   // states the node name
   $node = $dom->createElement("marker");
   // creates a new node
