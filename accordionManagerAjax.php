@@ -14,7 +14,7 @@ $parnode = $dom->appendChild($node);
 include("../connection.php");
 
 // escape the string for security
-$totalPanels = mysqli_real_escape_string($connection, $totalPanels);
+// $totalPanels = mysqli_real_escape_string($db, $totalPanels);
 
 // Set the active MySQL database
 
@@ -43,8 +43,42 @@ $totalPanels = mysqli_real_escape_string($connection, $totalPanels);
 //       ORDER BY tempdata.journey_id desc";
 
 
+// // setup prepared statemnt
+// $stmt = mysqli_prepare($connection, "SELECT  journey_id as JourneyID,
+//     DATE_FORMAT(journey_date,'%D %M %Y') as JourneyDate,
+//         DATE_FORMAT(start_time,'%H:%i') as StartTime,
+//         DATE_FORMAT(end_time,'%H:%i') as EndTime,
+//         ROUND(average_speed_mph,2) as AverageSpeed,
+//         ROUND(distance_mi,2) as Distance,
+//         duration_mins as Duration,
+//         ROUND(petrol_saved_ltr,2) as PetrolSaved,
+//         ROUND(co2_saved_kg,2) as CO2Saved,
+//         start_lat_dd as StartLat,
+//         start_long_dd as StartLong,
+//         end_lat_dd as EndLat,
+//         end_long_dd as EndLong
+//       FROM journeysimport
+//       ORDER BY journey_date desc, start_time desc
+//       LIMIT ?");
+
+
+// // bind parameters (integer)
+// mysqli_stmt_bind_param($stmt, 'i',$totalPanels);
+
+// // get result
+// mysqli_stmt_execute($stmt);
+
+// // get result and pass to var
+// $result = mysqli_stmt_get_result($stmt);
+
+// if there is no result, throw an error
+// if (!$result) {
+//   die('Invalid query: ' . mysql_error());
+// }
+
+
 // setup prepared statemnt
-$stmt = mysqli_prepare($connection, "SELECT  journey_id as JourneyID,
+$stmt = $db->prepare("SELECT  journey_id as JourneyID,
     DATE_FORMAT(journey_date,'%D %M %Y') as JourneyDate,
         DATE_FORMAT(start_time,'%H:%i') as StartTime,
         DATE_FORMAT(end_time,'%H:%i') as EndTime,
@@ -62,27 +96,20 @@ $stmt = mysqli_prepare($connection, "SELECT  journey_id as JourneyID,
       LIMIT ?");
 
 
-// bind parameters (integer)
-mysqli_stmt_bind_param($stmt, 'i',$totalPanels);
+$stmt->execute(array($totalPanels));
 
-// get result
-mysqli_stmt_execute($stmt);
-
-// get result and pass to var
-$result = mysqli_stmt_get_result($stmt);
-
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // if there is no result, throw an error
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
+// if (!$result) {
+//   echo "SOMETHING HAS GONE WRONG!!!!!";
+// }
 
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysqli_fetch_assoc($result)){
-  // ADD TO XML DOCUMENT NODE
+foreach ($result as $row) {
 
   // states the node name
   $node = $dom->createElement("journeyrecord");

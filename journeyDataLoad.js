@@ -150,12 +150,15 @@ $(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
           // add marker to marker bounds
           markerBounds.extend(point);
           // create text for info window  
-          var html = "Journey Ref: "+journeypoint+"<br/>Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batPer + " %";
+          var html = "Data Point: " + datapoint + "<br/>Speed: " + speed + " mph" + "<br/>Battery Charge: " + batPer + " %";
           //var icon = customIcons[type] || {};
           
           // create marker
           var marker = new google.maps.Marker({
             map: map,
+            icon: {
+                  url: "img/black-dot.png"
+                  },
             position: point,
             opacity: 0
           });

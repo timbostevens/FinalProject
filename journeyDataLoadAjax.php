@@ -14,37 +14,46 @@ $parnode = $dom->appendChild($node);
 include("../connection.php");
 
 // escape the string for security
-$journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
+// $journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
 
 // prepare statement
-$stmt = mysqli_prepare($connection, "SELECT point_id,
-                                            journey_id,
-                                            lat_dd,
-                                            long_dd,
-                                            battery_percent,
-                                            ROUND(velocity_mph, 2) as velocity_mph
-                                      FROM datapointsimport WHERE journey_id = ?");
+$stmt = $db->prepare("SELECT point_id,
+              journey_id,
+              lat_dd,
+              long_dd,
+              battery_percent,
+              ROUND(velocity_mph, 2) as velocity_mph
+        FROM datapointsimport WHERE journey_id = ?");
 
 // bind parameters (integer)
-mysqli_stmt_bind_param($stmt, 'i',$journeyNumber);
+// mysqli_stmt_bind_param($stmt, 'i',$journeyNumber);
 
 // get result
-mysqli_stmt_execute($stmt);
+// mysqli_stmt_execute($stmt);
 
 // get result and pass to var
-$result = mysqli_stmt_get_result($stmt);
+// $result = mysqli_stmt_get_result($stmt);
+
+
+$stmt->execute(array($journeyNumber));
+
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 // if there is no result, throw an error
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
+// if (!$result) {
+//   die('Invalid query: ' . mysql_error());
+// }
 
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysqli_fetch_assoc($result)){
+// while ($row = @mysqli_fetch_assoc($result)){
+
+foreach ($result as $row) {
+
   // ADD TO XML DOCUMENT NODE
 
   // states the node name

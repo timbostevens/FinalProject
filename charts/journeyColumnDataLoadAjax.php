@@ -15,10 +15,10 @@ $parnode = $dom->appendChild($node);
 include("../../connection.php");
 
 // escape the string for security
-$journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
+// $journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
 
 // prepare statement
-$statQuery = mysqli_prepare($connection,"SELECT 'Speed (mph)' as parameter, ROUND(average_speed_mph,2) as val, min, max, average
+$statQuery = $db->prepare("SELECT 'Speed (mph)' as parameter, ROUND(average_speed_mph,2) as val, min, max, average
             FROM journeysimport, (SELECT ROUND(MIN(average_speed_mph),2) as min, ROUND(MAX(average_speed_mph),2) as max, ROUND(AVG(average_speed_mph),2) as average
             FROM journeysimport) as temp_summary
           WHERE journey_id = ?
@@ -52,26 +52,32 @@ $statQuery = mysqli_prepare($connection,"SELECT 'Speed (mph)' as parameter, ROUN
           WHERE journey_id = ?");
 
 // bind parameters (all integers)
-mysqli_stmt_bind_param($statQuery, 'iiiii',$journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber);
+// mysqli_stmt_bind_param($statQuery, 'iiiii',$journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber);
+
+$statQuery->execute(array($journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber));
 
 // get result
-mysqli_stmt_execute($statQuery);
+// mysqli_stmt_execute($statQuery);
 
 // get result and pass to var
-$result = mysqli_stmt_get_result($statQuery);
+// $result = mysqli_stmt_get_result($statQuery);
+
+$result = $statQuery->fetchAll(PDO::FETCH_ASSOC);
 
 // $result = mysqli_query($connection, $statQuery);
 
 // if there is no result, throw an error
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
+// if (!$result) {
+//   die('Invalid query: ' . mysql_error());
+// }
 
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 
-while ($row = @mysqli_fetch_assoc($result)){
+// while ($row = @mysqli_fetch_assoc($result)){
+
+foreach ($result as $row) {
   // ADD TO XML DOCUMENT NODE
 
   // states the node name
