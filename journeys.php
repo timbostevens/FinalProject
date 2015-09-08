@@ -54,7 +54,7 @@
       <script src="twitter.js"></script>
 
 
-    <script>
+<!--     <script>
 
     window.fbAsyncInit = function() {
         FB.init({
@@ -79,7 +79,7 @@
         FB.ui(obj, callback);
       }
 
-    </script>
+    </script> -->
 
     <!-- twitter javascript -->
 <!--     <script>
@@ -247,7 +247,7 @@ function scanForTwitter(){
                                         style="width:70px; height:20px; float: right"></iframe>
 
 
-                                <p style="float: right">share this journey</p>
+                                <p>share this journey</p>
 
                               </div>
                               

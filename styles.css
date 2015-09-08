@@ -111,6 +111,7 @@ body {
     padding-top: 9px;
     padding-bottom: 9px;
     text-align: center;
+    color: grey;
   }
 }
 
@@ -208,11 +209,13 @@ color: lightgrey;
 
 #sidebar-twitter-header{
   height:30px;
+  color: grey;
 }
 
 #sidebar-facebook-header{
   height:40px;
   padding-top: 10px;
+  color: grey;
 }
 
 .social-holder{
@@ -424,6 +427,7 @@ color: lightgrey;
 }
 .panel-body p{
   font-size: 13px;
+  color: grey;
 }
 
 /*main panel body*/
@@ -462,6 +466,8 @@ color: lightgrey;
   margin-top: 3px;
   margin-bottom: 0px;
   margin-right: 10px;
+  float: right;
+  color: grey;
 }
 
 /*========================*/
