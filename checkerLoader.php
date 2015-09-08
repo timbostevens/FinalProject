@@ -39,6 +39,8 @@ $queryDatapoints = "SELECT source_file FROM journeysimport";
 
 $result = $db->query($queryDatapoints);
 
+$resultArray = $result->fetchAll();
+
 // gets all files in folder with pattern
 $allFiles = glob(DATA_FILEPATH."*.json");
 
@@ -57,28 +59,22 @@ $newFiles = array_filter(
 
 		// file found flag
 		$fileFound = false;
-		global $result;
+		global $resultArray;
 
-		// ensure row iteration starts at 0
-		// mysqli_data_seek($result, 0);
-
-		// cycle though query results
-		// while ($row = @mysqli_fetch_assoc($result)){
-
-		foreach ($result as $row) {
+		foreach ($resultArray as $row) {	
 
 			if ($row['source_file']===$file){
 				$fileFound = true;
 			}
+
 		}// end while
 
 		// returns true if file is not found
 		return (!$fileFound);
-	}
+		}
 	);
 // if there are new files pass them to the dataLoader function
 if ($newFiles){
-
 	dataloader($newFiles);
 } else {
 
@@ -90,7 +86,6 @@ if ($newFiles){
 }
 
 	echo "done";
-
 /*
 FUNCTION
 Manages upload of new files
@@ -158,58 +153,93 @@ function dataLoader($newFiles){
 			// check for date error flag
 			if($dateErrorFlag===false){
 
-				// runs the query and if it was successful
-				if ($insertJourneyStmt->execute(array($journeyCount,$newFile))) {
-					// create text string for logging
-					$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
-					// write to log file
-					file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
-				} else {
-					// create text string for logging
-					$journeyFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load FAIL - File: ".$newFile." Journey Ref: ".$journeyCount;
-					// write to log file
-					file_put_contents(DATALOAD_LOGFILE, $journeyFail, FILE_APPEND | LOCK_EX);
-					//set load error flag to true
-					$loadErrorFlag = true;
-					// reverts the journey count
-					$journeyCount = $journeyCount-1;
-				}
+				try {
+						// begin transaction
+						$db->beginTransaction();
 
-				// if there is no error load flag
-				if (!$loadErrorFlag) {
-					// run the datapoint query and if it runs successfully
+						
+				// create prepared statement to retrieve summary stats
+				$summarySelectStmt=$db->prepare("SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
+									DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
+									DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
+									MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
+									MAX(total_dist_mi) as distance_mi,
+									MAX(time_elapsed_sec)/60 as duration_mins,
+								    start_coords.start_lat,
+								    start_coords.start_long,
+									end_coords.end_lat,
+								    end_coords.end_long
+									FROM datapointsimport,
+									(SELECT lat_dd as start_lat, long_dd as start_long from datapointsimport WHERE point_id = 1 AND journey_id = ?) as start_coords,
+								    (SELECT lat_dd as end_lat, long_dd as end_long from datapointsimport WHERE journey_id = ? ORDER BY point_id DESC LIMIT 1) as end_coords
+									WHERE journey_id = ?");
 
-					if ($db->query($insertPointQuery)){
 
-						// create string containing new file location
-						$newFileLocation = DATA_SUCCESS_FILEPATH.$newFile;
-						// move file to loaded folder (re-append path)
-						rename(DATA_FILEPATH.$newFile, $newFileLocation);
+				// create prepared statement to update database with summary stats
+				$summaryUpdateStmt = $db->prepare("UPDATE journeysimport SET journey_date=?,
+																start_time=?,
+																end_time=?,
+																average_speed_mph=?,
+																distance_mi=?,
+																duration_mins=?,
+																petrol_saved_ltr=?,
+																co2_saved_kg=?,
+																start_lat_dd=?,
+																start_long_dd=?,
+																end_lat_dd=?,
+																end_long_dd=?
+															WHERE journey_id=?");
+
+
+				
+
+
+						$insertJourneyStmt->execute(array($journeyCount,$newFile));
+
+						$db->query($insertPointQuery);
+
+						// bind parameters and execute
+						$summarySelectStmt->execute(array($journeyCount,$journeyCount,$journeyCount));
+
+						$row = $summarySelectStmt->fetch(PDO::FETCH_ASSOC);
+
+						// create var for CO2 saving
+						$co2Saving = $row['distance_mi']*LARGE_CAR_CO2;
+
+						// create var for petrol saving
+						$petrolSaving = ($row['distance_mi']/CAR_MPG)*IMP_GALLON_TO_LITRE;
+
+						$summaryUpdateStmt->execute(array($row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$row['start_lat'],$row['start_long'],$row['end_lat'],$row['end_long'],$journeyCount));
+
+						// commit transaction
+						$db->commit();
+
 						// create text string for logging
-						$datapointSuccess = "\n".date('d/m/Y H:i:s', time())." Datapoint Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+						$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
 						// write to log file
-						file_put_contents(DATALOAD_LOGFILE, $datapointSuccess, FILE_APPEND | LOCK_EX);
-						// run the update summary stats function
-						updateSummaryStats($journeyCount);
-					} else {
+						file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
+
+
+
+					} catch (PDOException $ex){
+						// rollback transaction
+						$db->rollBack();
 						// create text string for logging
-						$datapointFail = "\n".date('d/m/Y H:i:s', time())." Datapoint Load FAIL (FILE ".$newFile." ROLLED BACK - File: ".$newFile." Journey Ref: ".$journeyCount;
+						$pdoFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Database Load FAIL (& Rolled Back) - File: ".$newFile." Database Error: ".$ex->getMessage();
 						// write to log file
-						file_put_contents(DATALOAD_LOGFILE, $datapointFail, FILE_APPEND | LOCK_EX);
-						// roll back the journey insertion
-						$deletePartial = $db->prepare("DELETE FROM journeysimport WHERE journey_id = ?");
-						$deletePartial->execute(array($journeyCount));
-						// reverts the journey count
+						file_put_contents(DATALOAD_LOGFILE, $pdoFail, FILE_APPEND | LOCK_EX);
+						// rollback journey count
 						$journeyCount = $journeyCount-1;
-					}
-				}
+					} // end catch
+
+
 			} else {// move file to errors folder & log error
 			
 				// create string containing new file location
-				$newFileLocation = DATA_ERROR_FILEPATH.$newFile;
+				// $newFileLocation = DATA_ERROR_FILEPATH.$newFile;
 
 				// move file to error folder (re-append path)
-				rename(DATA_FILEPATH.$newFile, $newFileLocation);
+				// rename(DATA_FILEPATH.$newFile, $newFileLocation);
 
 				// create text string for logging
 				$dateFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Date FAIL - File: ".$newFile;
@@ -220,18 +250,19 @@ function dataLoader($newFiles){
 				$journeyCount = $journeyCount-1;
 
 
-			}
+			} // end if/else date check
+
 			// reset queries
 			$insertPointQuery = "INSERT INTO datapointsimport VALUES ";
 			$rowNumber = 1;
 			$dateErrorFlag = false;
 
-		}else { // move file to errors folder & log error
+		} else { // move file to errors folder & log error
 			// create string containing new file location
 			$newFileLocation = DATA_ERROR_FILEPATH.$newFile;
 
 			// move file to error folder (re-append path)
-			rename(DATA_FILEPATH.$newFile, $newFileLocation);
+			// rename(DATA_FILEPATH.$newFile, $newFileLocation);
 
 			// create text string for logging
 			$arrayFail = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Array Load FAIL - File: ".$newFile;
@@ -250,81 +281,81 @@ FUNCTION
 Updates summary stats
 Takes the journey number to update as an argument
 */
-function updateSummaryStats($journeyCount){
+// function updateSummaryStats($journeyCount){
 
 
-	global $db;
+// 	global $db;
 
-	// create prepared statement to retrieve summary stats
-	$summarySelectStmt=$db->prepare("SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
-						DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
-						DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
-						MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
-						MAX(total_dist_mi) as distance_mi,
-						MAX(time_elapsed_sec)/60 as duration_mins,
-					    start_coords.start_lat,
-					    start_coords.start_long,
-						end_coords.end_lat,
-					    end_coords.end_long
-						FROM datapointsimport,
-						(SELECT lat_dd as start_lat, long_dd as start_long from datapointsimport WHERE point_id = 1 AND journey_id = ?) as start_coords,
-					    (SELECT lat_dd as end_lat, long_dd as end_long from datapointsimport WHERE journey_id = ? ORDER BY point_id DESC LIMIT 1) as end_coords
-						WHERE journey_id = ?");
+// 	// create prepared statement to retrieve summary stats
+// 	$summarySelectStmt=$db->prepare("SELECT DATE_FORMAT (MIN(point_timestamp), '%Y-%m-%d') as journey_date,
+// 						DATE_FORMAT (MIN(point_timestamp), '%H:%i:%s') as start_time,
+// 						DATE_FORMAT (MAX(point_timestamp), '%H:%i:%s') as end_time,
+// 						MAX(total_dist_mi)/((MAX(time_elapsed_sec)/60)/60) as average_speed_mph,
+// 						MAX(total_dist_mi) as distance_mi,
+// 						MAX(time_elapsed_sec)/60 as duration_mins,
+// 					    start_coords.start_lat,
+// 					    start_coords.start_long,
+// 						end_coords.end_lat,
+// 					    end_coords.end_long
+// 						FROM datapointsimport,
+// 						(SELECT lat_dd as start_lat, long_dd as start_long from datapointsimport WHERE point_id = 1 AND journey_id = ?) as start_coords,
+// 					    (SELECT lat_dd as end_lat, long_dd as end_long from datapointsimport WHERE journey_id = ? ORDER BY point_id DESC LIMIT 1) as end_coords
+// 						WHERE journey_id = ?");
 
-// bind parameters and execute
-$summarySelectStmt->execute(array($journeyCount,$journeyCount,$journeyCount));
-// get first row of results (there only is one row)
-$row = $summarySelectStmt->fetch(PDO::FETCH_ASSOC);
+// // bind parameters and execute
+// $summarySelectStmt->execute(array($journeyCount,$journeyCount,$journeyCount));
+// // get first row of results (there only is one row)
+// $row = $summarySelectStmt->fetch(PDO::FETCH_ASSOC);
 
 
-	// bind parameters (integer)
-	// mysqli_stmt_bind_param($summarySelectStmt, 'iii',$journeyCount,$journeyCount,$journeyCount);
-	// execute prepared statement
-	// mysqli_stmt_execute($summarySelectStmt);
+// 	// bind parameters (integer)
+// 	// mysqli_stmt_bind_param($summarySelectStmt, 'iii',$journeyCount,$journeyCount,$journeyCount);
+// 	// execute prepared statement
+// 	// mysqli_stmt_execute($summarySelectStmt);
 
-    // run summarySelectStmt
-	// $result = mysqli_stmt_get_result($summarySelectStmt);
-    // add results to an array
-	// $row = mysqli_fetch_array($result);
+//     // run summarySelectStmt
+// 	// $result = mysqli_stmt_get_result($summarySelectStmt);
+//     // add results to an array
+// 	// $row = mysqli_fetch_array($result);
 
-	// create prepared statement to update database with summary stats
-	$summaryUpdateStmt = $db->prepare("UPDATE journeysimport SET journey_date=?,
-													start_time=?,
-													end_time=?,
-													average_speed_mph=?,
-													distance_mi=?,
-													duration_mins=?,
-													petrol_saved_ltr=?,
-													co2_saved_kg=?,
-													start_lat_dd=?,
-													start_long_dd=?,
-													end_lat_dd=?,
-													end_long_dd=?
-												WHERE journey_id=?");
+// 	// create prepared statement to update database with summary stats
+// 	$summaryUpdateStmt = $db->prepare("UPDATE journeysimport SET journey_date=?,
+// 													start_time=?,
+// 													end_time=?,
+// 													average_speed_mph=?,
+// 													distance_mi=?,
+// 													duration_mins=?,
+// 													petrol_saved_ltr=?,
+// 													co2_saved_kg=?,
+// 													start_lat_dd=?,
+// 													start_long_dd=?,
+// 													end_lat_dd=?,
+// 													end_long_dd=?
+// 												WHERE journey_id=?");
 
-	// create var for CO2 saving
-	$co2Saving = $row['distance_mi']*LARGE_CAR_CO2;
+// 	// create var for CO2 saving
+// 	$co2Saving = $row['distance_mi']*LARGE_CAR_CO2;
 
-	// create var for petrol saving
-	$petrolSaving = ($row['distance_mi']/CAR_MPG)*IMP_GALLON_TO_LITRE;
+// 	// create var for petrol saving
+// 	$petrolSaving = ($row['distance_mi']/CAR_MPG)*IMP_GALLON_TO_LITRE;
 
-    // bind and execute = applys reuslt (true/false) to var
-	$summaryResult = $summaryUpdateStmt->execute(array($row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$row['start_lat'],$row['start_long'],$row['end_lat'],$row['end_long'],$journeyCount));
+//     // bind and execute = applys reuslt (true/false) to var
+// 	$summaryResult = $summaryUpdateStmt->execute(array($row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$row['start_lat'],$row['start_long'],$row['end_lat'],$row['end_long'],$journeyCount));
 
-	// if sucessfully run
-	if ($summaryResult) {
-		// create text string
-		$summarySuccess = "\n".date('d/m/Y H:i:s', time())." Summary Generation Success - Journey Ref: ".$journeyCount;
-		// write to file
-		file_put_contents(DATALOAD_LOGFILE, $summarySuccess, FILE_APPEND | LOCK_EX);
-	} else {
-		// create text string
-		$summaryFail = "\n".date('d/m/Y H:i:s', time())." Summary Generation FAIL - Journey Ref: ".$journeyCount;
-		// write to file
-		file_put_contents(DATALOAD_LOGFILE, $summaryFail, FILE_APPEND | LOCK_EX);
-	}
+// 	// if sucessfully run
+// 	if ($summaryResult) {
+// 		// create text string
+// 		$summarySuccess = "\n".date('d/m/Y H:i:s', time())." Summary Generation Success - Journey Ref: ".$journeyCount;
+// 		// write to file
+// 		file_put_contents(DATALOAD_LOGFILE, $summarySuccess, FILE_APPEND | LOCK_EX);
+// 	} else {
+// 		// create text string
+// 		$summaryFail = "\n".date('d/m/Y H:i:s', time())." Summary Generation FAIL - Journey Ref: ".$journeyCount;
+// 		// write to file
+// 		file_put_contents(DATALOAD_LOGFILE, $summaryFail, FILE_APPEND | LOCK_EX);
+// 	}
 
-}
+// }
 
 
 /*

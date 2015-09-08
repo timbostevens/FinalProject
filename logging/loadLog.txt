@@ -1,92 +1,92 @@
-
 NEW JOURNEY
-07/09/2015 12:22:17 Journey Load Success - File: 01-Small.json Journey Ref: 1
-07/09/2015 12:22:17 Datapoint Load FAIL (FILE 01-Small.json ROLLED BACK - File: 01-Small.json Journey Ref: 1
+08/09/2015 09:14:13 Journey Load Success - File: 01-xFirst.json Journey Ref: 1
 NEW JOURNEY
-07/09/2015 12:22:17 Journey Load Success - File: 01-aSmall copy.json Journey Ref: 1
-07/09/2015 12:22:17 Datapoint Load FAIL (FILE 01-aSmall copy.json ROLLED BACK - File: 01-aSmall copy.json Journey Ref: 1
+08/09/2015 09:14:13 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-07/09/2015 12:22:19 Journey Load Success - File: 03-Third.json Journey Ref: 1
-07/09/2015 12:22:19 Datapoint Load FAIL (FILE 03-Third.json ROLLED BACK - File: 03-Third.json Journey Ref: 1
+08/09/2015 09:14:13 Journey Load Success - File: SmallJan.json Journey Ref: 3
 NEW JOURNEY
-07/09/2015 12:22:19 Journey Load Success - File: SmallFeb.json Journey Ref: 1
-07/09/2015 12:22:19 Datapoint Load FAIL (FILE SmallFeb.json ROLLED BACK - File: SmallFeb.json Journey Ref: 1
+08/09/2015 09:14:13 Journey Load Success - File: SmallJul2.json Journey Ref: 4
 NEW JOURNEY
-07/09/2015 12:22:19 Journey Load Success - File: SmallJul2.json Journey Ref: 1
-07/09/2015 12:22:19 Datapoint Load FAIL (FILE SmallJul2.json ROLLED BACK - File: SmallJul2.json Journey Ref: 1
+08/09/2015 09:14:13 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 5
 NEW JOURNEY
-07/09/2015 12:23:41 Journey Load Success - File: 01-Small.json Journey Ref: 1
-07/09/2015 12:23:41 Datapoint Load Success - File: 01-Small.json Journey Ref: 1
-07/09/2015 12:23:41 Summary Generation Success - Journey Ref: 1
+08/09/2015 09:15:05 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
 NEW JOURNEY
-07/09/2015 12:23:41 Journey Load Success - File: 01-aSmall copy.json Journey Ref: 2
-07/09/2015 12:23:41 Datapoint Load Success - File: 01-aSmall copy.json Journey Ref: 2
-07/09/2015 12:23:41 Summary Generation Success - Journey Ref: 2
+08/09/2015 09:17:10 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
 NEW JOURNEY
-07/09/2015 12:23:43 Journey Load Success - File: 03-Third.json Journey Ref: 3
-07/09/2015 12:23:43 Datapoint Load Success - File: 03-Third.json Journey Ref: 3
-07/09/2015 12:23:43 Summary Generation Success - Journey Ref: 3
+08/09/2015 09:17:10 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
 NEW JOURNEY
-07/09/2015 12:23:43 Journey Load Success - File: SmallFeb.json Journey Ref: 4
-07/09/2015 12:23:43 Datapoint Load Success - File: SmallFeb.json Journey Ref: 4
-07/09/2015 12:23:43 Summary Generation Success - Journey Ref: 4
+08/09/2015 09:17:10 Date FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-07/09/2015 12:23:43 Journey Load Success - File: SmallJul2.json Journey Ref: 5
-07/09/2015 12:23:43 Datapoint Load Success - File: SmallJul2.json Journey Ref: 5
-07/09/2015 12:23:43 Summary Generation Success - Journey Ref: 5
+08/09/2015 09:17:55 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
 NEW JOURNEY
-07/09/2015 12:27:30 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
+08/09/2015 09:17:55 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
 NEW JOURNEY
-07/09/2015 12:27:30 Date FAIL - File: 01-Errors-bad-date.json
+08/09/2015 09:17:55 Date FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-07/09/2015 12:27:32 Journey Load Success - File: 03-Third.json Journey Ref: 6
-07/09/2015 12:27:32 Datapoint Load Success - File: 03-Third.json Journey Ref: 6
-07/09/2015 12:27:32 Summary Generation Success - Journey Ref: 6
+08/09/2015 09:17:55 Journey Load Success - File: 01-aSmall copy.json Journey Ref: 6
 NEW JOURNEY
-07/09/2015 12:28:48 Journey Load Success - File: SmallFeb.json Journey Ref: 1
-07/09/2015 12:28:48 Datapoint Load Success - File: SmallFeb.json Journey Ref: 1
-07/09/2015 12:28:48 Summary Generation Success - Journey Ref: 1
+08/09/2015 09:17:55 Journey Load Success - File: SmallAug.json Journey Ref: 7
 NEW JOURNEY
-07/09/2015 12:29:09 Date FAIL - File: 01-Errors-bad-date.json
+08/09/2015 09:18:58 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
 NEW JOURNEY
-07/09/2015 12:29:09 Journey Load Success - File: SmallJuly.json Journey Ref: 2
-07/09/2015 12:29:09 Datapoint Load Success - File: SmallJuly.json Journey Ref: 2
-07/09/2015 12:29:09 Summary Generation Success - Journey Ref: 2
+08/09/2015 09:18:58 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
 NEW JOURNEY
-07/09/2015 12:29:44 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+08/09/2015 09:18:58 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-07/09/2015 12:29:44 Date FAIL - File: 01-Errors-bad-date.json
+08/09/2015 09:18:58 Date FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-07/09/2015 12:29:44 Journey Load Success - File: SmallJan.json Journey Ref: 3
-07/09/2015 12:29:44 Datapoint Load Success - File: SmallJan.json Journey Ref: 3
-07/09/2015 12:29:44 Summary Generation Success - Journey Ref: 3
+08/09/2015 09:18:58 Journey Load Success - File: 01-aSmall copy.json Journey Ref: 1
 NEW JOURNEY
-07/09/2015 12:29:44 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 4
-07/09/2015 12:29:44 Datapoint Load Success - File: SmallMarHighSpeed.json Journey Ref: 4
-07/09/2015 12:29:44 Summary Generation Success - Journey Ref: 4
+08/09/2015 09:18:58 Date FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-07/09/2015 12:30:16 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
+08/09/2015 09:19:00 Journey Load Success - File: 01-xFirst.json Journey Ref: 2
 NEW JOURNEY
-07/09/2015 12:30:16 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
+08/09/2015 09:19:00 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-07/09/2015 12:30:16 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+08/09/2015 09:19:00 Journey Load Success - File: SmallFeb.json Journey Ref: 4
 NEW JOURNEY
-07/09/2015 12:30:16 Date FAIL - File: 01-Errors-bad-date.json
+08/09/2015 09:19:00 Journey Load Success - File: SmallJan.json Journey Ref: 5
 NEW JOURNEY
-07/09/2015 12:30:16 Date FAIL - File: 01-errors-Future.json
+08/09/2015 09:19:00 Journey Load Success - File: SmallJul2.json Journey Ref: 6
 NEW JOURNEY
-07/09/2015 12:30:16 Journey Load Success - File: SmallAug2.json Journey Ref: 5
-07/09/2015 12:30:16 Datapoint Load Success - File: SmallAug2.json Journey Ref: 5
-07/09/2015 12:30:16 Summary Generation Success - Journey Ref: 5
+08/09/2015 09:19:00 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-07/09/2015 12:30:44 Journey Load Success - File: MidSizeMar.json Journey Ref: 6
-07/09/2015 12:30:44 Datapoint Load Success - File: MidSizeMar.json Journey Ref: 6
-07/09/2015 12:30:44 Summary Generation Success - Journey Ref: 6
+08/09/2015 09:20:21 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
 NEW JOURNEY
-07/09/2015 12:30:44 Journey Load Success - File: SmallAug.json Journey Ref: 7
-07/09/2015 12:30:44 Datapoint Load Success - File: SmallAug.json Journey Ref: 7
-07/09/2015 12:30:44 Summary Generation Success - Journey Ref: 7
+08/09/2015 09:20:21 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
 NEW JOURNEY
-07/09/2015 12:30:44 Journey Load Success - File: SmallJul2.json Journey Ref: 8
-07/09/2015 12:30:44 Datapoint Load Success - File: SmallJul2.json Journey Ref: 8
-07/09/2015 12:30:44 Summary Generation Success - Journey Ref: 8
+08/09/2015 09:20:21 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+NEW JOURNEY
+08/09/2015 09:20:21 Date FAIL - File: 01-Errors-bad-date.json
+NEW JOURNEY
+08/09/2015 09:21:40 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
+NEW JOURNEY
+08/09/2015 09:21:40 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
+NEW JOURNEY
+08/09/2015 09:21:40 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+NEW JOURNEY
+08/09/2015 09:21:40 Date FAIL - File: 01-Errors-bad-date.json
+NEW JOURNEY
+08/09/2015 09:22:36 Array Load FAIL - File: 01-Errors-MissingInternalComma.json
+NEW JOURNEY
+08/09/2015 09:22:36 Array Load FAIL - File: 01-Errors-MissingInternalCurly.json
+NEW JOURNEY
+08/09/2015 09:22:36 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+NEW JOURNEY
+08/09/2015 09:22:36 Date FAIL - File: 01-Errors-bad-date.json
+NEW JOURNEY
+08/09/2015 09:22:36 Database Load FAIL (& Rolled Back) - File: 01-aSmall copy.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+NEW JOURNEY
+08/09/2015 09:22:36 Date FAIL - File: 01-errors-Future.json
+NEW JOURNEY
+08/09/2015 09:22:38 Database Load FAIL (& Rolled Back) - File: 01-xFirst.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+NEW JOURNEY
+08/09/2015 09:22:38 Database Load FAIL (& Rolled Back) - File: SmallAug.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+NEW JOURNEY
+08/09/2015 09:22:38 Database Load FAIL (& Rolled Back) - File: SmallFeb.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+NEW JOURNEY
+08/09/2015 09:22:38 Database Load FAIL (& Rolled Back) - File: SmallJan.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+NEW JOURNEY
+08/09/2015 09:22:38 Database Load FAIL (& Rolled Back) - File: SmallJul2.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+NEW JOURNEY
+08/09/2015 09:22:38 Database Load FAIL (& Rolled Back) - File: SmallMarHighSpeed.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
