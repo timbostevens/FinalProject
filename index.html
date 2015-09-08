@@ -32,16 +32,9 @@
 
       <!-- Facebook plugin setup -->
       <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      </script>
-
-
+      <script src="facebook.js"></script>
+      <!-- Twitter plugin setup -->
+      <script src="twitter.js"></script>
 
       <!-- Navbar -->
       
@@ -113,9 +106,7 @@
 
                     <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">Tweets by @QUBDeLorean</a>
 
-                    <script>!function(d,s,id){                    
-                      var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                    </script>
+                    
 
 
                   </li>
