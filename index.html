@@ -45,7 +45,7 @@
 
       <!-- Navbar -->
       
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-fixed-top" id="navbar-header">
         <div class="container-fluid">
           <div class="row">
 
@@ -102,22 +102,33 @@
 
           <!-- Sidebar -->
           <div class="col-sm-3 col-md-2 sidebar" id="main-sidebar">
-            <ul class="nav nav-sidebar"
+            <ul class="nav nav-sidebar" id="sidebar-main">
 
-                  <li><div style="height:30px">twitter</div></li>
-                  <li id="twitter-holder">
-                
+                  <li><div id="sidebar-twitter-header">twitter</div></li>
+                  
+
+
+                  <li id="twitter-holder" class="social-holder">
+
+
                     <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">Tweets by @QUBDeLorean</a>
 
                     <script>!function(d,s,id){                    
                       var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
                     </script>
+
+
                   </li>
 
-                  <li><div style="height:40px">facebook</div></li>
 
-                  <li id="facebook-holder">
-                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>
+
+
+                  <li><div id="sidebar-facebook-header">facebook</div></li>
+
+                  <li id="facebook-holder" class="social-holder">
+
+
+                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>
                       
 
                   </li>
@@ -181,41 +192,10 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-  <!-- twitter widget -->
-  <script src="https://platform.twitter.com/widgets.js"></script>
-
-    <!-- Refreshes the facebook widget on resize -->
-    <script>
-
-         $(window).bind("load resize", function(){    
-          // var container_width = null;    
-          // var container_width = $('#nav-sidebar').width();
-          // alert("bosh");
-
-            $('#facebook-holder').html(
-
-              '<div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>'
-              );
-            FB.XFBML.parse( );    
-
-        }); 
-    </script>
-
-      <!-- Script to size facebook and twitter widgets to be 50% height -->
-      <!-- TWITTER WORKS BUT FB NOT -->
-
-      <script type="text/javascript">
-
-          function sidebar(){
-
-          var widgetHeight = (window.innerHeight-51-30-30)/2;
-
-          document.getElementById("twitter-holder").style.height = widgetHeight+"px";
-          document.getElementById("facebook-holder").style.height = widgetHeight+"px";
-          
-          }
-
-      </script>
+    <!-- twitter widget -->
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <!-- Script to size facebook and twitter widgets -->
+    <script src="socialManager.js" type="text/javascript"></script>
 
   </body>
 

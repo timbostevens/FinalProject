@@ -206,6 +206,19 @@ color: lightgrey;
   height: 1px;
 }
 
+#sidebar-twitter-header{
+  height:30px;
+}
+
+#sidebar-facebook-header{
+  height:40px;
+  padding-top: 10px;
+}
+
+.social-holder{
+  padding: 10px;
+}
+
 /*resize faecbook plugin dynamically*/
 /*.fb-page, .fb-page iframe[style], .fb-page span {
     width: 100% !important;
@@ -215,10 +228,10 @@ color: lightgrey;
 /*==========Visualisations==========*/
 
 /*date button*/
-#date-select{
+/*#date-select{
   font-size: 90%;
   margin-bottom: 10px;
-}
+}*/
 
 /*text in the dropdown*/
 .dropdown-menu > li > a{
