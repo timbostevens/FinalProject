@@ -585,7 +585,7 @@
     <!-- Code for histoChart -->
     <script type="text/javascript" src="charts/bubbleChartLoad.js"></script>
     <!-- Code for Calendar Chart -->
-    <script type="text/javascript" src="charts/calendarChartLoad.js"></script>
+    <!-- <script type="text/javascript" src="charts/calendarChartLoad.js"></script> -->
         <!-- Code for Heatmap Chart -->
     <script type="text/javascript" src="charts/heatmapLoad.js"></script>
 

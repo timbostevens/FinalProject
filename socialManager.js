@@ -1,8 +1,8 @@
           function sidebar(){
           // get sizes of header and spacers
           var mainHeaderHeight = $(".navbar-header").height();
-          var twitterSpacerHeight = $("#twitter-holder").height();
-          var facebookSpacerHeight = $("#facebook-holder").height();
+          var twitterSpacerHeight = $("#sidebar-twitter-header").height();
+          var facebookSpacerHeight = $("#sidebar-facebook-header").height();
 
           // calculate the size of each social widget
           var widgetHeight = (window.innerHeight-mainHeaderHeight-twitterSpacerHeight-facebookSpacerHeight)/2;
@@ -22,8 +22,6 @@
               );
             FB.XFBML.parse( );
           }
-
-
 
         // resizes facebook widget on window resize
         $(window).bind("resize", function(){  

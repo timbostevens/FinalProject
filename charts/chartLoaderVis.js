@@ -12,5 +12,5 @@ function drawAllCharts(){
 	drawDashboard();
 	drawHistoChart(DEFAULT_HISTRO);
 	drawBubbleChart();
-	drawCalendarChart();
+	// drawCalendarChart();
 }
