@@ -1,6 +1,6 @@
           function sidebar(){
           // get sizes of header and spacers
-          var mainHeaderHeight = $("#navbar-header").height();
+          var mainHeaderHeight = $(".navbar-header").height();
           var twitterSpacerHeight = $("#twitter-holder").height();
           var facebookSpacerHeight = $("#facebook-holder").height();
 

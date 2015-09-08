@@ -20,28 +20,32 @@
 	<meta name="author" content="">
 	<link rel="icon" href="favicon.ico">
 
-	<title>Tim's Dashboard Test</title>
+	<title>QUBEV</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-
 	<!-- Custom styles for this template -->
 	<link href="styles.css" rel="stylesheet">
-
 	<!-- Custom Fonts for pill symbols-->
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-      <!--Load the Google Charts AJAX API -->
-      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-        <!-- Load core chart script-->
-  <script type="text/javascript" src="charts/chartLoaderVis.js"></script>
+    <!--Load the Google Charts AJAX API -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Load core chart script-->
+    <script type="text/javascript" src="charts/chartLoaderVis.js"></script>
 
     </head>
 
-    <body>
+    <body onload="sidebar()">
 
+      <!-- Facebook plugin setup -->
+      <div id="fb-root"></div>
+      <script src="facebook.js"></script>
+      <!-- Twitter plugin setup -->
+      <script src="twitter.js"></script>
+              <!-- twitter widget -->
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <!-- Script to size facebook and twitter widgets -->
+    <script src="socialManager.js" type="text/javascript"></script>
 
     	<!-- Navbar -->
 
@@ -52,7 +56,7 @@
     				<!--first column to hold recent journeys text-->
     				<div class="col-md-2 col-sm-3" id="navbar-recent">
     					<div>
-    						<h6>JOURNEYS</h6>
+    						<h6>SOCIAL</h6>
 
     					</div>
     				</div>
@@ -97,56 +101,32 @@
 
     	<!--main panel split into two (sidebar and main)-->
 
-    	<div class="container-fluid centralised-text">
-    		<div class="row">
+      <div class="container-fluid centralised-text">
+        <div class="row">
 
+          <!-- Sidebar -->
+          <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar" id="sidebar-main">
 
+                  <li><div id="sidebar-twitter-header">twitter</div></li>
+                  
+                  <li id="twitter-holder" class="social-holder">
 
-    			<!-- Sidebar -->
-    			<div class="col-sm-3 col-md-2 sidebar">
-    				<ul class="nav nav-sidebar">
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">Tweets by @QUBDeLorean</a>
 
-    					<!-- Sidebar entry -->
-    					<li><a href="#">              
-    						<div>
-    							<img src="img/sampleMap02.jpg" class="img-responsive">
-    							<h6>12th SEPTEMBER 2013<br/>14 km</h6>
-    						</div>
-    					</a></li> <!-- End sidebar entry -->
-    					<hr/>
-    					<li><a href="#">              
-    						<div>
-    							<img src="img/sampleMap02.jpg" class="img-responsive">
-    							<h6>12th SEPTEMBER 2013<br/>14 km</h6>
-    						</div>
-    					</a></li> <!-- End sidebar entry -->
-    					<hr/>
-    					<li><a href="#">              
-    						<div>
-    							<img src="img/sampleMap02.jpg" class="img-responsive">
-    							<h6>12th SEPTEMBER 2013<br/>14 km</h6>
-    						</div>
-    					</a></li> <!-- End sidebar entry -->
-    					<hr/>
-    					<li><a href="#">              
-    						<div>
-    							<img src="img/sampleMap02.jpg" class="img-responsive">
-    							<h6>12th SEPTEMBER 2013<br/>14 km</h6>
-    						</div>
-    					</a></li> <!-- End sidebar entry -->
-    					<hr/>
-    					<li><a href="#">              
-    						<div>
-    							<img src="img/sampleMap02.jpg" class="img-responsive">
-    							<h6>12th SEPTEMBER 2013<br/>14 km</h6>
-    						</div>
-    					</a></li> <!-- End sidebar entry -->
-    					<hr/>
-    					<li><a href="#">more journeys</a></li>
-    					<!-- End sidebar entry -->
-    				</ul>
+                  </li>
 
-    			</div> <!-- End Sidebar -->
+                  <li><div id="sidebar-facebook-header">facebook</div></li>
+
+                  <li id="facebook-holder" class="social-holder">
+
+                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>                      
+
+                  </li>
+
+            </ul>
+
+          </div> <!-- End Sidebar -->
 
 
     			<!-- Main Content -->
@@ -592,6 +572,7 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
     <!-- Load heatmap api -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false">
     </script>
@@ -607,6 +588,7 @@
     <script type="text/javascript" src="charts/calendarChartLoad.js"></script>
         <!-- Code for Heatmap Chart -->
     <script type="text/javascript" src="charts/heatmapLoad.js"></script>
+
 </body>
 
 

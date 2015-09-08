@@ -24,7 +24,7 @@
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
 
-  <title>Tim's Dashboard Test</title>
+  <title>QUBEV</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,11 +43,17 @@
 
     </head>
     
-    <body onload="setupAccordion(<?php echo $requiredJourney; ?>)">
+    <body onload="sidebar(); setupAccordion(<?php echo $requiredJourney; ?>)">
 
   <!-- http://stackoverflow.com/questions/22037021/custom-facebook-share-button -->
     <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
+      <!-- Facebook plugin setup -->
+      <div id="fb-root"></div>
+      <script src="facebook.js"></script>
+      <!-- Twitter plugin setup -->
+      <script src="twitter.js"></script>
+
+
     <script>
 
     window.fbAsyncInit = function() {
@@ -148,50 +154,27 @@ function scanForTwitter(){
       <div class="container-fluid centralised-text">
         <div class="row">
 
-
-
           <!-- Sidebar -->
           <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
+            <ul class="nav nav-sidebar" id="sidebar-main">
 
-              <!-- Sidebar entry -->
-              <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div>
-              </a></li> <!-- End sidebar entry -->
-              <hr/>
-              <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div>
-              </a></li> <!-- End sidebar entry -->
-              <hr/>
-              <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div>
-              </a></li> <!-- End sidebar entry -->
-              <hr/>
-              <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div>
-              </a></li> <!-- End sidebar entry -->
-              <hr/>
-              <li><a href="#">              
-                <div>
-                  <img src="img/sampleMap02.jpg" class="img-responsive">
-                  <h6>12th SEPTEMBER 2013<br/>14 km</h6>
-                </div>
-              </a></li> <!-- End sidebar entry -->
-              <hr/>
-              <li><a href="#">more journeys</a></li>
-              <!-- End sidebar entry -->
+                  <li><div id="sidebar-twitter-header">twitter</div></li>
+                  
+                  <li id="twitter-holder" class="social-holder">
+
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">Tweets by @QUBDeLorean</a>
+
+                 </li>
+
+                  <li><div id="sidebar-facebook-header">facebook</div></li>
+
+                  <li id="facebook-holder" class="social-holder">
+
+
+                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>
+                      
+                  </li>
+
             </ul>
 
           </div> <!-- End Sidebar -->
@@ -767,10 +750,12 @@ function scanForTwitter(){
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- twitter widget -->
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <!-- Script to size facebook and twitter widgets -->
+    <script src="socialManager.js" type="text/javascript"></script>
     <!-- Load Google map API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- Code for Ajax Helper -->
