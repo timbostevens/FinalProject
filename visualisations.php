@@ -18,7 +18,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="favicon.ico">
+    <link rel="icon" href="qubev.ico">
 
 	<title>QUBEV</title>
 
@@ -42,10 +42,7 @@
       <script src="facebook.js"></script>
       <!-- Twitter plugin setup -->
       <script src="twitter.js"></script>
-              <!-- twitter widget -->
-    <script src="https://platform.twitter.com/widgets.js"></script>
-    <!-- Script to size facebook and twitter widgets -->
-    <script src="socialManager.js" type="text/javascript"></script>
+
 
     	<!-- Navbar -->
 
@@ -572,7 +569,10 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-
+              <!-- twitter widget -->
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <!-- Script to size facebook and twitter widgets -->
+    <script src="socialManager.js" type="text/javascript"></script>
     <!-- Load heatmap api -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false">
     </script>
