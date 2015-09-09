@@ -1,3 +1,10 @@
+// pseudo-constant stating the maximum number of panels to add in one load
+var MAX_PANELS_TO_ADD = 5;
+// pseudo-constant holding error message
+var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey that doesn't exist.\n\nI'm going to load the 5 most recent instead";
+// base website address
+var WEBSITE_BASE_ADDRESS = "http://tstevens01.students.cs.qub.ac.uk/";
+
 // Load the Visualization API and the piechart package.
 google.load('visualization', '1.0', {'packages':['corechart']});
 
@@ -164,7 +171,7 @@ $(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
           var marker = new google.maps.Marker({
             map: map,
             icon: {
-                  url: "../img/black-dot.png"
+                  url: "img/black-dot.png"
                   },
             position: point,
             opacity: 0
@@ -314,13 +321,6 @@ $( window ).resize(function() {
 /////////////////////////////////
 /////accordion manager
 //////////////////////////////
-
-// pseudo-constant stating the maximum number of panels to add in one load
-var MAX_PANELS_TO_ADD = 5;
-// pseudo-constant holding error message
-var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey that doesn't exist.\n\nI'm going to load the 5 most recent instead";
-// base website address
-var WEBSITE_BASE_ADDRESS = "http://tstevens01.students.cs.qub.ac.uk/";
 
 /*
 Works out how many panels are required and sends that number to the next function
