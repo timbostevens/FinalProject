@@ -493,7 +493,7 @@ color: lightgrey;
 }
 
 #top-about{
-  background-image: url(img/Car02Bright.png);
+  background-image: url(../img/Car02Bright.png);
   background-size: cover;
   /*height: 500px;*/
   color: white;
@@ -508,7 +508,7 @@ color: lightgrey;
 
 
 #top-index{
-  background-image: url(img/Car02Bright.png);
+  background-image: url(../img/Car02Bright.png);
   background-size: cover;
   height: 500px;
   color: white;
