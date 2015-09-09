@@ -1,19 +1,33 @@
 
-// Load the Visualization API and the controls package.
-// google.load('visualization', '1.0', {'packages':['controls']});
+// value for default histogram option
+var DEFAULT_HISTRO = 'Speed (mph)';
 
-// Set a callback to run when the Google Visualization API is loaded.
-// google.setOnLoadCallback(drawDashboard);
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart','calendar','controls']});
 
-// setTimeout(drawDashboard,2000);
 
-// Callback that creates and populates a data table,
-// instantiates a dashboard, a range slider and a pie chart,
-// passes in the data and draws it.
+google.setOnLoadCallback(drawAllCharts);
+
+/*
+Draw All Charts
+*/
+function drawAllCharts(){
+  drawDashboard();
+  drawHistoChart(DEFAULT_HISTRO);
+  drawBubbleChart();
+  drawHeatmap();
+}
+
+/*
+Scatter Chart
+Callback that creates and populates a data table,
+instantiates a dashboard, a range slider and a pie chart,
+passes in the data and draws it
+*/
 function drawDashboard() {
 
   // setup url
-    var urlGet = "charts/chartDataLoadAjax.php";
+    var urlGet = "jsVis/chartDataLoadAjax.php";
     // global var - sets up start of data input array
     scatterChartInputData = [['Speed (mph)', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
 
@@ -52,7 +66,6 @@ dashboard = new google.visualization.Dashboard(
           }
         });
 
-
         speedRange = new google.visualization.ControlWrapper({
           'controlType': 'NumberRangeFilter',
           'containerId': 'speed_filter_div',
@@ -84,15 +97,10 @@ dashboard = new google.visualization.Dashboard(
           'options': {'filterColumnLabel': 'CO2 Saved (kg)'}
         });
 
-
-
         // Establish dependencies, declaring that filters drive the scatterChart,
         // so that the chart will only display entries that are let through
         // given the chosen slider range.
         dashboard.bind([speedRange, distanceRange, durationRange, petrolRange, co2Range], scatterChart);
-
-
-
         // Draw the dashboard.
         dashboard.draw(scatterChartData);
 
@@ -100,6 +108,7 @@ dashboard = new google.visualization.Dashboard(
       } // end function
 
 /*
+Scatter Chart
 Sets horizontal values based on dropdown
 */
 function setHoriz(newIndex, newColumnName){
@@ -109,12 +118,9 @@ var vertColumnIndex =  scatterChart.getView().columns[1];
 // create new settings object
 var newSettings = {columns:[newIndex, vertColumnIndex]};
 // send indexes to filter manager
-
 ///////////////////////////////////////
 ///Currently hiding filters
 /////////////////////////////////////
-
-
 //showFilters(newIndex, vertColumnIndex);
 // send settings to chart
 scatterChart.setView(newSettings);
@@ -126,6 +132,7 @@ scatterChart.draw();
 }
 
 /*
+Scatter Chart
 Sets vertical values based on dropdown
 */
 function setVert(newIndex, newColumnName){
@@ -135,16 +142,10 @@ var horizColumnIndex =  scatterChart.getView().columns[0];
 // create new settings object
 var newSettings = {columns:[horizColumnIndex, newIndex]};
 // send indexes to filter manager
-
 ///////////////////////////////////////
 ///Currently hiding filters
 /////////////////////////////////////
-
-
 //showFilters(horizColumnIndex, newIndex);
-
-
-
 // send settings to chart
 scatterChart.setView(newSettings);
 // change axis label
@@ -155,6 +156,7 @@ scatterChart.draw();
 }
 
 /*
+Scatter Chart
 Manager the visibility of the sliders based on what is in the chart
 */
 function showFilters(horizIndex, vertIndex){
@@ -175,6 +177,7 @@ function showFilters(horizIndex, vertIndex){
 
 
 /*
+Scatter Chart
 Helper function to turn column name into a div name
 Returns string
 */
@@ -210,6 +213,7 @@ return columnDiv;
 
 
 /*
+Scatter Chart
 Helper function to turn column name into an index
 Returns int
 */
@@ -243,41 +247,231 @@ return columnIndex;
 
 }
 
-// /*
-//     * Gets XML data
-//     */
-//     function downloadUrl(url, callback) {
+/*
+Histo Chart
+Manages draw
+*/
+function drawHistoChart(dataParameter) {
 
-//       console.log(url);
+  // translate data parameter into ajax-friendly column name
+  var columnName = getColumnName(dataParameter);
 
-//       var request = window.ActiveXObject ?
-//       new ActiveXObject('Microsoft.XMLHTTP') :
-//       new XMLHttpRequest;
+  // setup url
+  var urlGet = "jsVis/chartDataLoadAjax.php";
+    // global var - sets up start of histoData input array
+    histoChartInputData = [[dataParameter]];
 
-//       request.onreadystatechange = function() {
-//         // ready state == 4 means complete
-//         if (request.readyState == 4) {
-//           request.onreadystatechange = doNothing;
-//           callback(request, request.status);
-//         }
-//       };
-// // Ajax request (GET request tyoe, url, true = asynchronous)
-// request.open('GET', url, true);
-//       // sends the Ajax request
-//       request.send(null);
-//     }
+  // get histoData from MySQL then calls function
+  downloadUrl(urlGet, function(histoData) {
+    var xml = histoData.responseXML;
+    var journeys = xml.documentElement.getElementsByTagName("journey");
 
-//     function doNothing() {}
+  // cycles through results
+  for (var i = 0; i < journeys.length; i++) {
+    // appends values to input histoData array
+    histoChartInputData.push([parseFloat(journeys[i].getAttribute(columnName))]);
+
+  } // end for
 
 
-// listener for horizontal axis click
+  // parses the input array into a histoData table
+  histoDataTable = google.visualization.arrayToDataTable(histoChartInputData);
+
+
+
+// Setup histoChart Options
+options = {
+  // title: 'Awesome Historgram',
+  hAxis: {title: dataParameter},
+  vAxis: {title: 'Journey Count'},
+  legend: 'none',
+  chartArea:{left:100,top:60,width:'75%',height:'65%'},
+  colors: ['#808080']
+  };
+
+        // var options = {
+        //   title: 'Lengths of dinosaurs, in meters',
+        //   legend: { position: 'none' }
+        // };
+
+        histoChart = new google.visualization.Histogram(document.getElementById('histo_div'));
+        histoChart.draw(histoDataTable, options);
+      });
+
+}
+
+/*
+Histo Chart
+Helper function to turn plain text column name into
+a column name matching the ajax request
+*/
+function getColumnName(dataParameter){
+
+  var columnName;
+
+  // set new index
+switch(dataParameter){
+  case "Speed (mph)":
+    columnName = "speed";
+    break;
+  case "Distance (mi)":
+    columnName = "distance";
+    break;
+  case "Duration (mins)":
+    columnName = "duration";
+    break;
+  case "Petrol Saved (L)":
+    columnName = "petrol";
+    break;
+  case "CO2 Saved (kg)":
+    columnName = "co2";
+    break;
+  default:
+    columnName = "";
+    alert("Sorry, something has gone wrong with the histoChart redraw");
+}
+
+return columnName;
+
+
+}
+
+/*
+Sets up and draws bubble chart
+*/
+function drawBubbleChart() {
+
+// setup url
+    var urlGet = "jsVis/bubbleDataLoadAjax.php";
+    // global var - sets up start of data input array
+    bubbleChartInputData = [['Journey Date', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
+
+  // get data from MySQL then calls function
+  downloadUrl(urlGet, function(data) {
+          var xml = data.responseXML;
+          var journeys = xml.documentElement.getElementsByTagName("journey");
+
+  // cycles through results
+  for (var i = 0; i < journeys.length; i++) {
+    // appends values to input data array
+    bubbleChartInputData.push([journeys[i].getAttribute("journey_date"), parseFloat(journeys[i].getAttribute("distance")), parseFloat(journeys[i].getAttribute("duration")), parseFloat(journeys[i].getAttribute("petrol")), parseFloat(journeys[i].getAttribute("co2"))]);
+
+  } // end for
+
+  // parses the input array into a data table
+  bubbleChartData = google.visualization.arrayToDataTable(bubbleChartInputData);
+
+      // setup chart options
+      options = {
+        title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
+        hAxis: {title: 'Distance'},
+        vAxis: {title: 'Duration'},
+        legend: {position: 'none'},
+        colors: ['#808080'],
+        chartArea:{left:100,top:100,width:'85%',height:'65%'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+      // create chart and link to html id
+      bubbleChart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
+      // draw bubbleChart
+      bubbleChart.draw(bubbleChartData, options);
+    });
+}
+
+/*
+Heatmap
+Sets up heatmap
+*/
+function drawHeatmap(){
+// setup url
+var urlGet = "jsVis/heatDataLoadAjax.php";
+
+// get data from MySQL then calls function
+downloadUrl(urlGet, function(data) {
+  var xml = data.responseXML;
+  var markers = xml.documentElement.getElementsByTagName("marker");
+    // empty array for heatmap data
+    var heatmapData = [];
+
+        // var for marker bounds (used for setting the zoom and centre)
+        var markerBounds = new google.maps.LatLngBounds();
+    // var for default location
+    var belfast = new google.maps.LatLng(54.607868, -5.926437);
+
+        // cycles through results
+        for (var i = 0; i < markers.length; i++) {
+
+          var point = new google.maps.LatLng(parseFloat(markers[i].getAttribute("lat")), parseFloat(markers[i].getAttribute("lng")));
+
+          heatmapData.push(point);
+          markerBounds.extend(point);
+
+        } // end for
+
+
+    // create new map object
+    var map = new google.maps.Map(document.getElementById('heatmap-canvas'), {
+      // default zoom and loaction values in case of data load failure
+      center: belfast,
+      zoom: 13,
+      mapTypeId: google.maps.MapTypeId.SATELLITE
+    });
+
+    // set zoom based on marker bounds
+    map.fitBounds(markerBounds);
+    // create new heatmap object
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData
+    });
+
+    // joins the map and heatmap
+    heatmap.setMap(map);
+
+}); // end download url
+
+}// end heatmap load
+
+/*
+Bubble Chart
+Listener to resize on window resize
+*/
+$( window ).resize(function() {
+  bubbleChart.draw(bubbleChartData, options);
+});
+
+/*
+Histo Chart
+Listener to resize histoChart on window resize
+*/
+$( window ).resize(function() {
+  histoChart.draw(histoDataTable, options);
+});
+
+
+/*
+Hist Chart
+listener for horizontal axis click
+*/
+$(".hist-select").click(function(){
+
+histSelectionParameter = this.innerHTML;
+
+while (histSelectionParameter!=="undefined"){
+  // snd data name to setData
+  drawHistoChart(histSelectionParameter);
+  break;  }
+});
+
+
+
+/*
+Scatter Chart
+listener for horizontal axis click
+*/
 $(".scat-horiz-select").click(function(){
 
 columnParameter = this.innerHTML;
 
-/////////////////////////////////////////////////////////
-//////CLUNKY WAY OF WAITING FOR COLUMN PARAMTER TO BE DEFINED
-/////////////////////////////////////////////////////////
 while (columnParameter!=="undefined"){
   // send index and name to setHoriz
   setHoriz(getColumnIndex(columnParameter), columnParameter);
@@ -286,14 +480,13 @@ while (columnParameter!=="undefined"){
 });
 
 
-// listener for vertical axis click
+/*l
+Scatter Chart
+istener for vertical axis click
+*/
 $(".scat-vert-select").click(function(){
-
 columnParameter = this.innerHTML;
 
-/////////////////////////////////////////////////////////
-//////CLUNKY WAY OF WAITING FOR COLUMN PARAMTER TO BE DEFINED
-/////////////////////////////////////////////////////////
 while (columnParameter!=="undefined"){
     // send index and name to setVert
   setVert(getColumnIndex(columnParameter), columnParameter);
@@ -301,7 +494,10 @@ while (columnParameter!=="undefined"){
   }
 });
 
-//resizes chart on window resize
+/*
+Scatter Chart
+resizes chart on window resize
+*/
 $( window ).resize(function() {
   dashboard.draw(scatterChartData);
 });

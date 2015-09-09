@@ -31,7 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="styles.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 
     <!-- Custom Fonts for symbols-->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,9 +42,8 @@
 
       <!-- Facebook plugin setup -->
       <div id="fb-root"></div>
-      <script src="facebook.js"></script>
-      <!-- Twitter plugin setup -->
-      <script src="twitter.js"></script>
+      <!-- Social SDK setup -->
+      <script type="text/javascript" src="js/socialSetup.js"></script>
 
       <!-- Navbar -->
       
@@ -603,27 +602,29 @@
       <!--Load the Google Charts AJAX API -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <!-- Load core chart scrip-->
-    <script type="text/javascript" src="charts/chartLoaderJour.js"></script>
+    <!-- <script type="text/javascript" src="jsJour/chartLoaderJour.js"></script> -->
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
     <!-- twitter widget -->
     <script src="https://platform.twitter.com/widgets.js"></script>
-    <!-- Script to size facebook and twitter widgets -->
-    <script src="socialManager.js" type="text/javascript"></script>
+    <!-- Script to size facebook and twitter widgets also contains ie10 workaround-->
+    <script type="text/javascript" src="js/allPages.js"></script>
     <!-- Load Google map API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- Code for Ajax Helper -->
-    <script type="text/javascript" src="ajaxHelper.js"></script>
+    <!-- <script type="text/javascript" src="ajaxHelper.js"></script> -->
     <!-- Data loading code -->
-    <script type="text/javascript" src="journeyDataLoad.js"></script>
+    <!-- <script type="text/javascript" src="journeyDataLoad.js"></script> -->
         <!-- Data loading code -->
-    <script type="text/javascript" src="charts/journeyColumnChartLoad.js"></script>
+    <!-- <script type="text/javascript" src="jsJour/journeyColumnChartLoad.js"></script> -->
         <!-- Accordion Manager -->
-    <script type="text/javascript" src="accordionManager.js"></script>
+    <!-- <script type="text/javascript" src="accordionManager.js"></script> -->
+        <script type="text/javascript" src="jsJour/journeyScript.js"></script>
+
 
     <!-- Script to manage facebook share click -->
     <!-- Can't seem to move it to external file -->

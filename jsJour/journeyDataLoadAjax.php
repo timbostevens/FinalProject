@@ -11,7 +11,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("../connection.php");
+include("../../connection.php");
 
 // escape the string for security
 // $journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);

@@ -11,7 +11,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-include("../connection.php");
+include("../../connection.php");
 
 // setup prepared statemnt
 $stmt = $db->prepare("SELECT  journey_id as JourneyID,
