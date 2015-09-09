@@ -1,8 +1,8 @@
-// pseodo-constant stating the maximum number of panels to add in one load
+// pseudo-constant stating the maximum number of panels to add in one load
 var MAX_PANELS_TO_ADD = 5;
-
+// pseudo-constant holding error message
 var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey that doesn't exist.\n\nI'm going to load the 5 most recent instead";
-
+// base website address
 var WEBSITE_BASE_ADDRESS = "http://localhost/Project/FinalProject/";
 
 /*
@@ -12,9 +12,9 @@ function setupAccordion(requiredJourney){
 
 // if the script has received a required journey number
 if(typeof requiredJourney!=='undefined'){
-
+            // defines url target
             var urlGetTarget = "howManyPanelAjax.php?req="+requiredJourney;
-
+            // runs downloadURL function - passes in url
             downloadUrl(urlGetTarget, function(panelResult) {
                 var xml = panelResult.responseXML;
                 var resultArray = xml.documentElement.getElementsByTagName("count");
@@ -24,23 +24,18 @@ if(typeof requiredJourney!=='undefined'){
                 // check for a blank entry in panels required
                 // this happens when a journey is searched for but it doesn't exist in the database
                 if (panelsRequired==="") {
-
                     alert(NO_JOURNEY_FOUND_MESSAGE);
-                    
                     // recursive call to run setupAccordion again withouth the journey number
                     setupAccordion();
-
 
                 } else {
                 //before they are populated, the correct number of panesl need to be created.
                 addNewPanels(panelsRequired);
             }
 
-
             } // end download URL function
             );//end download url
 } else {
-
             // var to hold panel number check
             var panelCheck = 1;
             // check for the current highest panel number
@@ -53,7 +48,6 @@ if(typeof requiredJourney!=='undefined'){
             // send the number of required panels to populateAccordion
             populateAccordion(panelCheck);
     } // end else
-
 } // end setupAccordion
 
 
@@ -158,9 +152,7 @@ downloadUrl(urlGetData, function(dataResult) {
             var startLong = journeyArray[i].getAttribute("startLong");
             var endLat = journeyArray[i].getAttribute("endLat");
             var endLong = journeyArray[i].getAttribute("endLong");
-
-
-
+            // adjusts panel number
           	var panelNumber = i+1;
         	// show accordion panels
         	document.getElementById("panel"+panelNumber).style.display="block";
@@ -204,8 +196,16 @@ downloadUrl(urlGetData, function(dataResult) {
                 $('html, body').animate({scrollTop: $("#journeyP"+journeyToHighlight).offset().top-100}, 500);
                 // $("#journeyP"+journeyToHighlight).get(0).scrollIntoView();
                 
-
         }
       } // end download URL function
     );//end download url
   }// end populateAccordion()
+
+
+
+    //Checks for scrolling to the bottom of the page then calls addNewPanels()
+    $(window).scroll(function() {
+      if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           addNewPanels();
+      }
+    });

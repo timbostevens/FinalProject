@@ -20,8 +20,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
+  <meta name="description" content="QUB Electic DeLorean Project - Journey Data">
   <meta name="author" content="">
+  <meta name="keywords" content="Electric, DeLorean, Car, QUB, Queen's University Belfast, Journey, Data, Map, Chart, Graph">
   <link rel="icon" href="img/qubev.ico">
 
   <title>QUBEV</title>
@@ -35,68 +36,15 @@
     <!-- Custom Fonts for symbols-->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-  <!--Load the Google Charts AJAX API -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-  <!-- Load core chart scrip-->
-  <script type="text/javascript" src="charts/chartLoaderJour.js"></script>
-
-    </head>
+</head>
     
-    <body onload="sidebar(); setupAccordion(<?php echo $requiredJourney; ?>)">
+<body onload="sidebar(); setupAccordion(<?php echo $requiredJourney; ?>)">
 
-  <!-- http://stackoverflow.com/questions/22037021/custom-facebook-share-button -->
-    <!-- Load Facebook SDK for JavaScript -->
       <!-- Facebook plugin setup -->
       <div id="fb-root"></div>
       <script src="facebook.js"></script>
       <!-- Twitter plugin setup -->
       <script src="twitter.js"></script>
-
-
-<!--     <script>
-
-    window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1053447491347132',
-          xfbml      : true,
-          version    : 'v2.4'
-        });
-      };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-
-    // Facebook method to post to feed
-    function postToFeed(title, desc, url, image){
-        var obj = {method: 'feed',link: url, picture: image, name: title, description: desc};
-        function callback(response){}
-        FB.ui(obj, callback);
-      }
-
-    </script> -->
-
-    <!-- twitter javascript -->
-<!--     <script>
-
-function scanForTwitter(){
-
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-      if(!d.getElementById(id)){
-          js=d.createElement(s);js.id=id;
-          js.src=p+'://platform.twitter.com/widgets.js';
-          fjs.parentNode.insertBefore(js,fjs);
-        }}(document, 'script', 'twitter-wjs');
-
-}
-
-
-      </script> -->
 
       <!-- Navbar -->
       
@@ -137,17 +85,11 @@ function scanForTwitter(){
                 </ul>
               </div>
 
-
-
             </div>
-
-
 
           </div>
         </div>
       </nav> <!-- End Navbar -->
-
-
 
       <!--main panel split into two (sidebar and main)-->
 
@@ -187,10 +129,8 @@ function scanForTwitter(){
             <!-- set up  jumbotron container -->
             <div class="jumbotron" id="middle">
               <div class="container">
-                <!-- <h3>JOURNEYS</h3> -->
          
                 <!-- set up accordion list -->
-                <!-- <div class="bs-example"> -->
                   <div class="panel-group" id="accordion">
                    
 
@@ -230,16 +170,10 @@ function scanForTwitter(){
                         <div id="collapse1" class="panel-collapse collapse">
                           <div class="panel-body">
                               <div class = "journey-social-holder">
-                                <!-- <p style="float: left">Share this journey:</p> -->
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button1" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
-
-
-                                <!-- Twitter button -->
-                                <!-- <a id="tweet-button1" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
-
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
@@ -255,23 +189,15 @@ function scanForTwitter(){
                             <div class = "googlemap">
                               <div id="mapcanvas1" style="width: 100%; height: 300px;"></div>
                             </div>
-                          
-                            <!-- <div class="row"> -->
-                                <!-- <div class="col-md-12"> -->
-                                  <!-- large horizontal chart -->
+    
+                                      <!-- large horizontal chart -->
                                     <div id="journey-area-chart1" style="width: 100%; height: 300px"></div>
 
-                                <!-- </div> -->
-                            <!-- </div> -->
                               <!-- spacer -->
                                     <div style="width: 100%; height:30px;"></div>
 
-
                             <div class="row">
                               <!-- Left hand column containing stat list -->
-
-                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
-                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
                               <!-- spacer -->
@@ -300,8 +226,6 @@ function scanForTwitter(){
                             </div> <!-- end main panel body -->
                           </div> <!-- end first accordion -->
 
-
-
                           <!-- This is the second accordion entry -->
                     <div class="panel panel-default accordion-panel" id="panel2">
                       <!-- Panel Header -->
@@ -309,13 +233,11 @@ function scanForTwitter(){
                         <h4 class="panel-title">
                           <!-- href set as panel number -->
                           <a id="panelLink2" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            <div class="row">
-                            
+                            <div class="row">                            
 
                               <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
                                 <div id="expand-icon2" class="fa fa-angle-right fa-2x expand-symbol"></div>
                               </div>
-                            
 
                               <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP2">Journey x</p>
@@ -323,7 +245,6 @@ function scanForTwitter(){
                                 <p id="startP2">Start x</p>
                                 <p id="distanceP2">x miles</p>
                               </div>
-
 
                               <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image2"/>
@@ -338,15 +259,10 @@ function scanForTwitter(){
                         <div id="collapse2" class="panel-collapse collapse">
                           <div class="panel-body">
                               <div class = "journey-social-holder">
-                                <!-- <p style="float: left">Share this journey:</p> -->
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button2" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
-
-                                <!-- Twitter button -->
-                                <!-- <a id="tweet-button2" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
-
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
@@ -361,23 +277,16 @@ function scanForTwitter(){
                             <div class = "googlemap">
                               <div id="mapcanvas2" style="width: 100%; height: 300px;"></div>
                             </div>
-                          
-                            <!-- <div class="row"> -->
-                                <!-- <div class="col-md-12"> -->
+
                                   <!-- large horizontal chart -->
                                     <div id="journey-area-chart2" style="width: 100%; height: 300px"></div>
 
-                                <!-- </div> -->
-                            <!-- </div> -->
                               <!-- spacer -->
                                     <div style="width: 100%; height:30px;"></div>
 
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
-
-                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
-                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
                               <!-- spacer -->
@@ -390,7 +299,6 @@ function scanForTwitter(){
                           <p>Speed: <span id="speed-stat2">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat2">xxxxxx</span> L</p>
                           <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> kg</p>
-
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
@@ -415,20 +323,17 @@ function scanForTwitter(){
                           <!-- href set as panel number -->
                           <a id="panelLink3" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                             <div class="row">
-                            
 
                               <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
                                 <div id="expand-icon3" class="fa fa-angle-right fa-2x expand-symbol"></div>
                               </div>
                             
-
                               <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP3">Journey x</p>
                                 <p id="dateP3">Date x</p>
                                 <p id="startP3">Start x</p>
                                 <p id="distanceP3">x miles</p>
                               </div>
-
 
                               <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image3"/>
@@ -443,14 +348,10 @@ function scanForTwitter(){
                         <div id="collapse3" class="panel-collapse collapse">
                           <div class="panel-body">
                               <div class = "journey-social-holder">
-                                <!-- <p style="float: left">Share this journey:</p> -->
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button3" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
-
-                                <!-- Twitter button -->
-                                <!-- <a id="tweet-button3" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
@@ -460,28 +361,19 @@ function scanForTwitter(){
                                 <p style="float: right">share this journey</p>
 
                               </div>
-                              
 
                             <div class = "googlemap">
                               <div id="mapcanvas3" style="width: 100%; height: 300px;"></div>
                             </div>
-                          
-                            <!-- <div class="row"> -->
-                                <!-- <div class="col-md-12"> -->
+
                                   <!-- large horizontal chart -->
                                     <div id="journey-area-chart3" style="width: 100%; height: 300px"></div>
 
-                                <!-- </div> -->
-                            <!-- </div> -->
                               <!-- spacer -->
                                     <div style="width: 100%; height:30px;"></div>
 
-
                             <div class="row">
-                              <!-- Left hand column containing stat list -->
-
-                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
-                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
+                        <!-- Left hand column containing stat list -->
                         <div class="col-md-4 box">
                           
                               <!-- spacer -->
@@ -510,7 +402,6 @@ function scanForTwitter(){
                             </div> <!-- end main panel body -->
                           </div> <!-- end third accordion -->
 
-
                           <!-- This is the fourth accordion entry -->
                   <div class="panel panel-default accordion-panel" id="panel4">
                       <!-- Panel Header -->
@@ -520,19 +411,16 @@ function scanForTwitter(){
                           <a id="panelLink4" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                             <div class="row">
                             
-
                               <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
                                 <div id="expand-icon4" class="fa fa-angle-right fa-2x expand-symbol"></div>
                               </div>
                             
-
                               <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP4">Journey x</p>
                                 <p id="dateP4">Date x</p>
                                 <p id="startP4">Start x</p>
                                 <p id="distanceP4">x miles</p>
                               </div>
-
 
                               <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image4"/>
@@ -547,15 +435,10 @@ function scanForTwitter(){
                         <div id="collapse4" class="panel-collapse collapse">
                           <div class="panel-body">
                               <div class = "journey-social-holder">
-                                <!-- <p style="float: left">Share this journey:</p> -->
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button4" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
-
-                                <!-- Twitter button -->
-                                <!-- <a id="tweet-button4" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
-
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
@@ -566,27 +449,18 @@ function scanForTwitter(){
 
                               </div>
                               
-
                             <div class = "googlemap">
                               <div id="mapcanvas4" style="width: 100%; height: 300px;"></div>
                             </div>
                           
-                            <!-- <div class="row"> -->
-                                <!-- <div class="col-md-12"> -->
                                   <!-- large horizontal chart -->
                                     <div id="journey-area-chart4" style="width: 100%; height: 300px"></div>
-
-                                <!-- </div> -->
-                            <!-- </div> -->
                               <!-- spacer -->
                                     <div style="width: 100%; height:30px;"></div>
-
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
 
-                        <!-- MIGHT WANT TO DO THIS AS A LIST OF BUTTONS
-                        THIS WILL PRE-SET HIGHLIGHTING OF CURRENT CHOICE -->
                         <div class="col-md-4 box">
                           
                               <!-- spacer -->
@@ -599,7 +473,6 @@ function scanForTwitter(){
                           <p>Speed: <span id="speed-stat4">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat4">xxxxxx</span> L</p>
                           <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg</p>
-
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
@@ -615,8 +488,6 @@ function scanForTwitter(){
                             </div> <!-- end main panel body -->
                           </div> <!-- end fourth accordion -->
 
-
-
                           <!-- This is the fifth accordion entry -->
                     <div class="panel panel-default accordion-panel" id="panel5">
                       <!-- Panel Header -->
@@ -626,19 +497,16 @@ function scanForTwitter(){
                           <a id="panelLink5" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
                             <div class="row">
                             
-
                               <div class="col-md-2 hidden-xs hidden-sm panel-title-expand">
                                 <div id="expand-icon5" class="fa fa-angle-right fa-2x expand-symbol"></div>
                               </div>
                             
-
                               <div class="col-md-7 panel-title-text">
                                 <p class="accordion-title" id="journeyP5">Journey x</p>
                                 <p id="dateP5">Date x</p>
                                 <p id="startP5">Start x</p>
                                 <p id="distanceP5">x miles</p>
                               </div>
-
 
                               <div class="col-md-3 panel-title-map">
                                 <img src="img/sampleMap02.jpg" id="panel-static-image5"/>
@@ -658,8 +526,6 @@ function scanForTwitter(){
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
                                 <a id="facebook-button5" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
-                                <!-- Twitter button -->
-                                <!-- <a id="tweet-button5" style="float: right" rel="canonical" href="http://www.google.com" class="twitter-share-button" data-text="The Electric DeLorean Rides Again!" data-via="QUBDeLorean" data-count="none">Tweet</a> -->
 
                                 <!-- Twitter button -->
                                 <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
@@ -670,7 +536,6 @@ function scanForTwitter(){
 
                               </div>
                               
-
                             <div class = "googlemap">
                               <div id="mapcanvas5" style="width: 100%; height: 300px;"></div>
                             </div>
@@ -684,7 +549,6 @@ function scanForTwitter(){
                             <!-- </div> -->
                               <!-- spacer -->
                                     <div style="width: 100%; height:30px;"></div>
-
 
                             <div class="row">
                               <!-- Left hand column containing stat list -->
@@ -719,19 +583,10 @@ function scanForTwitter(){
                             </div> <!-- end main panel body -->
                           </div> <!-- end fifth accordion -->
 
-
-
-
                         </div> <!-- end panel group id=accordion -->
                       <!-- </div> end bs example -->
                     </div> <!-- end container -->
                   </div> <!-- end Jumbotron -->
-
-
-
-
-
-
 
                 </div> <!-- End Main Content -->
               </div> <!-- End Row -->
@@ -745,10 +600,13 @@ function scanForTwitter(){
               </div>
             </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+      <!--Load the Google Charts AJAX API -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Load core chart scrip-->
+    <script type="text/javascript" src="charts/chartLoaderJour.js"></script>
+    <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
@@ -766,19 +624,9 @@ function scanForTwitter(){
     <script type="text/javascript" src="charts/journeyColumnChartLoad.js"></script>
         <!-- Accordion Manager -->
     <script type="text/javascript" src="accordionManager.js"></script>
-        <!-- Endless Scroll Manager-->
-    <!-- <script type="text/javascript" src="endlessScroll.js"></script> -->
-
-    <!-- Checks for scrolling to the bottom of the page then calls addNewPanels() from endlessScroll.js -->
-    <script>
-    $(window).scroll(function() {
-      if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           addNewPanels();
-      }
-    });
-    </script>
 
     <!-- Script to manage facebook share click -->
+    <!-- Can't seem to move it to external file -->
     <script type="text/javascript">
           $(document).on('click', '.btnShare',function(){
           elem = $(this);

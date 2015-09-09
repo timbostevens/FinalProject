@@ -16,8 +16,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<meta name="description" content="">
-	<meta name="author" content="">
+  <meta name="description" content="QUB Electic DeLorean Project - Summary Data">
+  <meta name="author" content="">
+  <meta name="keywords" content="Electric, DeLorean, Car, QUB, Queen's University Belfast, Journey, Data, Map, Chart, Graph">
     <link rel="icon" href="img/qubev.ico">
 
 	<title>QUBEV</title>
@@ -28,10 +29,7 @@
 	<link href="styles.css" rel="stylesheet">
 	<!-- Custom Fonts for pill symbols-->
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!--Load the Google Charts AJAX API -->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <!-- Load core chart script-->
-    <script type="text/javascript" src="charts/chartLoaderVis.js"></script>
+
 
     </head>
 
@@ -560,6 +558,11 @@
     			<p id="footer-text">phone: (028) 9012 3456<br/><a href="mailto:delorean@qub.ac.uk">delorean@qub.ac.uk</a></p>
     		</div>
     	</footer>
+
+    <!--Load the Google Charts AJAX API -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Load core chart script-->
+    <script type="text/javascript" src="charts/chartLoaderVis.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
