@@ -3,7 +3,7 @@
 <!-- php script to generate stats -->
 <?php    
     // gets stats and connection
-    include("jsJour/visStats.php");
+    include("jsVis/visStats.php");
 ?>
 
 
