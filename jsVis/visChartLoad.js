@@ -204,7 +204,7 @@ switch(columnIndex){
     break;
   default:
     columnDiv = "";
-    alert("Sorry, something has gone wrong with the chart redraw");
+    alert("Sorry, something has gone wrong with the column chart redraw");
 }
 
 return columnDiv;
@@ -240,7 +240,7 @@ switch(columnName){
     break;
   default:
     columnIndex = 0;
-    alert("Ind: Sorry, something has gone wrong with the chart redraw "+columnIndex);
+    alert("Sorry, something has gone wrong with the column chart redraw");
 }
 
 return columnIndex;
@@ -328,7 +328,7 @@ switch(dataParameter){
     break;
   default:
     columnName = "";
-    alert("Sorry, something has gone wrong with the histoChart redraw");
+    alert("Sorry, something has gone wrong with the histo chart redraw");
 }
 
 return columnName;
@@ -407,7 +407,6 @@ downloadUrl(urlGet, function(data) {
           markerBounds.extend(point);
 
         } // end for
-
 
     // create new map object
     var map = new google.maps.Map(document.getElementById('heatmap-canvas'), {

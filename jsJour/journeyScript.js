@@ -330,7 +330,7 @@ function setupAccordion(requiredJourney){
 // if the script has received a required journey number
 if(typeof requiredJourney!=='undefined'){
             // defines url target
-            var urlGetTarget = "jsJour/howManyPanelAjax.php?req="+requiredJourney;
+            var urlGetTarget = "jsJour/panelCountAjax.php?req="+requiredJourney;
             // runs downloadURL function - passes in url
             downloadUrl(urlGetTarget, function(panelResult) {
                 var xml = panelResult.responseXML;

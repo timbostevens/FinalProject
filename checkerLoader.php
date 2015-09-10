@@ -89,7 +89,7 @@ $newFiles = array_filter(
 
 		}// end while
 
-		// returns true if file is not found
+		// returns true if file is not found (i.e. if flag is false)
 		return (!$fileFound);
 		}
 	);
@@ -282,7 +282,6 @@ function dataLoader($newFiles){
 		}// end if/else array check
 
 	}); // end array_filter
-
 
 } // end function
 
