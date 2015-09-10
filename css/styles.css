@@ -470,6 +470,10 @@ color: lightgrey;
   color: grey;
 }
 
+#loading-spinner{
+  display: none;
+}
+
 /*========================*/
 /*=========index and about=======*/
 

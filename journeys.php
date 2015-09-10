@@ -583,9 +583,11 @@
                           </div> <!-- end fifth accordion -->
 
                         </div> <!-- end panel group id=accordion -->
-                      <!-- </div> end bs example -->
                     </div> <!-- end container -->
                   </div> <!-- end Jumbotron -->
+
+
+                  <img src="img/loading.GIF" id="loading-spinner"/>
 
                 </div> <!-- End Main Content -->
               </div> <!-- End Row -->
