@@ -22,12 +22,12 @@ $dbMain = new PDO('mysql:host='.$webAddressMain.';dbname='.$databaseMain.';chars
 // connection for the database holding the upload files
 $dbQubev = new PDO('mysql:host='.$webAddressQubev.';dbname='.$databaseQubev.';charset=utf8', $username, $password, array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT));
 
-// sql query to count journeys
-$query="SELECT COUNT(*) AS 'count' FROM journeysimport";
+// sql query to get current max journey id
+$query="SELECT MAX(journey_id) FROM journeysimport";
 // create full statement
 $stmt = $dbMain->query($query);
 // get result and apply to var
-$journeyCount = $stmt->fetchColumn(0);
+$highestJourneyId = $stmt->fetchColumn(0);
 
 // create start of insert datapoint query
 // not converted to prepared statement to make it easier to catch errors
@@ -105,14 +105,10 @@ Takes an array of new journey filesnames as an argument and uploads each one in 
 */
 function dataLoader($newFiles){
 
-
-// retrieve how many journeys have been created thus far
-	//include("journeyCount.php");
-
 // cycle through each of the new files and send each one to the callback function
 	array_filter($newFiles, function($newFile){
 
-		global $journeyCount;
+		global $highestJourneyId;
 		global $dbMain;
 		global $dbQubev;
 		global $insertPointQuery;
@@ -135,8 +131,8 @@ function dataLoader($newFiles){
 			// creates a new recursive array iterator
 			$iterator = new RecursiveArrayIterator($json);
 
-			// gets journey count from journeyCount.php and increments it by 1 (the next journey number)
-			$journeyCount = $journeyCount+1;
+			// gets journey count increments it by 1 (to be used as the next journey number)
+			$highestJourneyId += 1;
 
 			// calls function and passes in interator
 			iterator_apply($iterator, 'iteratorLooper', array($iterator));
@@ -202,12 +198,12 @@ function dataLoader($newFiles){
 				
 
 
-						$insertJourneyStmt->execute(array($journeyCount,$newFile));
+						$insertJourneyStmt->execute(array($highestJourneyId,$newFile));
 
 						$dbMain->query($insertPointQuery);
 
 						// bind parameters and execute
-						$summarySelectStmt->execute(array($journeyCount,$journeyCount,$journeyCount));
+						$summarySelectStmt->execute(array($highestJourneyId,$highestJourneyId,$highestJourneyId));
 
 						$row = $summarySelectStmt->fetch(PDO::FETCH_ASSOC);
 
@@ -217,13 +213,13 @@ function dataLoader($newFiles){
 						// create var for petrol saving
 						$petrolSaving = ($row['distance_mi']/CAR_MPG)*IMP_GALLON_TO_LITRE;
 
-						$summaryUpdateStmt->execute(array($row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$row['start_lat'],$row['start_long'],$row['end_lat'],$row['end_long'],$journeyCount));
+						$summaryUpdateStmt->execute(array($row['journey_date'],$row['start_time'],$row['end_time'],$row['average_speed_mph'],$row['distance_mi'],$row['duration_mins'],$petrolSaving,$co2Saving,$row['start_lat'],$row['start_long'],$row['end_lat'],$row['end_long'],$highestJourneyId));
 
 						// commit transaction
 						$dbMain->commit();
 
 						// create text string for logging
-						$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$journeyCount;
+						$journeySuccess = "\nNEW JOURNEY\n".date('d/m/Y H:i:s', time())." Journey Load Success - File: ".$newFile." Journey Ref: ".$highestJourneyId;
 						// write to log file
 						file_put_contents(DATALOAD_LOGFILE, $journeySuccess, FILE_APPEND | LOCK_EX);
 
@@ -240,7 +236,7 @@ function dataLoader($newFiles){
 						// write to log file
 						file_put_contents(DATALOAD_LOGFILE, $databaseFail, FILE_APPEND | LOCK_EX);
 						// rollback journey count
-						$journeyCount = $journeyCount-1;
+						$highestJourneyId -= 1;
 
 						// binds and runs statement - records a failed load in the record database
 						$resultStmt->execute(array(FILE_LOAD_FAIL,$newFile));
@@ -256,7 +252,7 @@ function dataLoader($newFiles){
 				file_put_contents(DATALOAD_LOGFILE, $dateFail, FILE_APPEND | LOCK_EX);
 
 				// reverts the journey count
-				$journeyCount = $journeyCount-1;
+				$highestJourneyId -= 1;
 
 				// binds and runs statement - records a failed load in the record database
 				$resultStmt->execute(array(FILE_LOAD_FAIL,$newFile));
@@ -283,7 +279,6 @@ function dataLoader($newFiles){
 
 	}); // end array_filter
 
-
 } // end function
 
 /*
@@ -296,7 +291,7 @@ function iteratorLooper($iterator){
 // create references to vars outside function
 	global $insertPointQuery;
 	global $rowNumber;
-	global $journeyCount;
+	global $highestJourneyId;
 	global $dateErrorFlag;
 
 // checks for valid entry
@@ -336,7 +331,7 @@ function iteratorLooper($iterator){
 				// adds opening brackets, rowNumber and journey number and start of string to date
 				$insertPointQuery
 				= $insertPointQuery
-				." (".$rowNumber.", ".$journeyCount.", STR_TO_DATE('";
+				." (".$rowNumber.", ".$highestJourneyId.", STR_TO_DATE('";
 				// add the value with the string to date format
 					$insertPointQuery = $insertPointQuery.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
 				// increments row number

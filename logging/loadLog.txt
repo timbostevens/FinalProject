@@ -63,3 +63,11 @@ NEW JOURNEY
 10/09/2015 16:48:25 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
 10/09/2015 16:48:25 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
+NEW JOURNEY
+10/09/2015 20:27:59 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+NEW JOURNEY
+10/09/2015 20:31:30 Database Load FAIL (& Rolled Back) - File: 02-Second.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'
+NEW JOURNEY
+10/09/2015 20:36:07 Journey Load Success - File: 02-Second.json Journey Ref: 9
+NEW JOURNEY
+10/09/2015 20:40:22 Journey Load Success - File: MidSizeDec.json Journey Ref: 10
