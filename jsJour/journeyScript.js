@@ -108,8 +108,9 @@ if($('#tweet-button'+panelNumber).length){
   // do nothing
 } else {
   // insert button with appropriaet text in correct place
-  // cross fingers
-  $("#facebook-button"+panelNumber).after('<iframe id="tweet-button'+panelNumber+'" allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;url='+WEBSITE_BASE_ADDRESS+'journeys.php?journey%3D'+journeyNumber+'&amp;text=The electric DeLorean Rides Again! '+distance+' on '+date+'&amp;count=none" style="width:70px; height:20px; float: right"></iframe>');
+  // $("#facebook-button"+panelNumber).after('<iframe id="tweet-button'+panelNumber+'" allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;url='+WEBSITE_BASE_ADDRESS+'journeys.php?journey%3D'+journeyNumber+'&amp;text=The electric DeLorean Rides Again! '+distance+' on '+date+'&amp;count=none" style="width:70px; height:20px; float: right"></iframe>');
+  $("#facebook-button"+panelNumber).after('<a id="tweet-button'+panelNumber+'" class="twitter-share-button" style="float: right" href="https://twitter.com/intent/tweet?via=QUBDeLorean&amp;url='+WEBSITE_BASE_ADDRESS+'journeys.php?journey%3D'+journeyNumber+'&amp;text=The electric DeLorean Rides Again! '+distance+' on '+date+'&amp;count=none"><img src="img/twitter_blue_58.png" style="width:20px;height:20px;margin-right: 5px"></a>');
+
 }
 }
 

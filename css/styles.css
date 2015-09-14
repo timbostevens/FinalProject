@@ -474,9 +474,15 @@ color: lightgrey;
   display: none;
 }
 
-.btn-o{
-  width: 56px;
+/*.twitter-share-button{
+  float: right;
 }
+
+.twitter-share-button img{
+ width: 20px;
+ height: 20px;
+ margin-right: 5px;
+}*/
 
 /*========================*/
 /*=========index and about=======*/
