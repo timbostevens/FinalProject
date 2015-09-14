@@ -175,9 +175,9 @@
                                 <a id="facebook-button1" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
-                                <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
+<!--                                 <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:70px; height:20px; float: right"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe> -->
 
 
                                 <p>share this journey</p>
@@ -264,9 +264,9 @@
                                 <a id="facebook-button2" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
-                                <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
+<!--                                 <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:70px; height:20px; float: right"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe> -->
 
                                 <p style="float: right">share this journey</p>
 
@@ -353,9 +353,9 @@
                                 <a id="facebook-button3" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
-                                <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
+<!--                                 <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:70px; height:20px; float: right"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe> -->
 
                                 <p style="float: right">share this journey</p>
 
@@ -440,9 +440,9 @@
                                 <a id="facebook-button4" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
-                                <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
+<!--                                 <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:70px; height:20px; float: right"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe> -->
 
                                 <p style="float: right">share this journey</p>
 
@@ -527,9 +527,9 @@
                                 <a id="facebook-button5" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://localhost/Project/FinalProject/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
-                                <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
+<!--                                 <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
                                         src="http://platform.twitter.com/widgets/tweet_button.html?via=QUBDeLorean&amp;text=Replace%20Me&amp;count=none"
-                                        style="width:70px; height:20px; float: right"></iframe>
+                                        style="width:70px; height:20px; float: right"></iframe> -->
 
                                 <p style="float: right">share this journey</p>
 
