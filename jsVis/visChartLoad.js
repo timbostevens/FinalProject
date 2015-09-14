@@ -1,4 +1,5 @@
-
+//missing database error message
+var DATABASE_ERROR_MESSAGE = "Ooops, we're having a bit of a problem with the database. I can't seem to find the data I require";
 // value for default histogram option
 var DEFAULT_HISTRO = 'Speed (mph)';
 
@@ -34,6 +35,12 @@ function drawDashboard() {
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
           var xml = data.responseXML;
+
+          // if there are no results (might be a database error then fail gracefully)
+          if (xml===null){
+            alert(DATABASE_ERROR_MESSAGE);
+          }
+
           var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // cycles through results
@@ -264,6 +271,7 @@ function drawHistoChart(dataParameter) {
   // get histoData from MySQL then calls function
   downloadUrl(urlGet, function(histoData) {
     var xml = histoData.responseXML;
+
     var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // cycles through results
@@ -349,6 +357,7 @@ function drawBubbleChart() {
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
           var xml = data.responseXML;
+
           var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // cycles through results
@@ -389,6 +398,7 @@ var urlGet = "jsVis/heatDataLoadAjax.php";
 // get data from MySQL then calls function
 downloadUrl(urlGet, function(data) {
   var xml = data.responseXML;
+
   var markers = xml.documentElement.getElementsByTagName("marker");
     // empty array for heatmap data
     var heatmapData = [];

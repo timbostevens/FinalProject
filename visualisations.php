@@ -2,8 +2,22 @@
 <!-- http://stackoverflow.com/questions/23740548/how-to-pass-variables-and-data-from-php-to-javascript -->
 <!-- php script to generate stats -->
 <?php    
-    // gets stats and connection
+    try{// gets stats and connection
     include("jsVis/visStats.php");
+} catch (PDOException $ex){
+
+    // if there is a database error set all the stats to 0
+    $totalJourneys=0;
+    $averageSpeed=0;
+    $totalTime=0;
+    $averageTime=0;
+    $totalDistance=0;
+    $averageDistance=0;
+    $totalPetrol=0;
+    $averagePetrol=0;
+    $totalCo2=0;
+    $averageCo2=0;
+}
 ?>
 
 

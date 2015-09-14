@@ -4,6 +4,8 @@ var MAX_PANELS_TO_ADD = 5;
 var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey that doesn't exist.\n\nI'm going to load the 5 most recent instead";
 // base website address
 var WEBSITE_BASE_ADDRESS = "http://tstevens01.students.cs.qub.ac.uk/";
+//missing database error message
+var DATABASE_ERROR_MESSAGE = "Ooops, we're having a bit of a problem with the database. I can't seem to find any journeys to load";
 
 // Load the Visualization API and the piechart package.
 google.load('visualization', '1.0', {'packages':['corechart']});
@@ -154,6 +156,14 @@ if($('#tweet-button'+panelNumber).length){
       // get data from MySQL and calls download URL function
       downloadUrl(urlGet, function(data) {
         var xml = data.responseXML;
+
+
+        // if there are no results (might be a database error then fail gracefully)
+        if (xml===null){
+          alert(DATABASE_ERROR_MESSAGE);
+        }
+
+
         var markers = xml.documentElement.getElementsByTagName("marker");
         // load the area chart
        
@@ -309,6 +319,12 @@ function drawJourneyColumnChart(journeyNumber, panelNumber) {
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
           var xml = data.responseXML;
+
+          // if there are no results (might be a database error then fail gracefully)
+          if (xml===null){
+            alert(DATABASE_ERROR_MESSAGE);
+          }
+
           var sums = xml.documentElement.getElementsByTagName("sum");
 
   // cycles through results
@@ -359,7 +375,14 @@ if(typeof requiredJourney!=='undefined'){
             var urlGetTarget = "jsJour/panelCountAjax.php?req="+requiredJourney;
             // runs downloadURL function - passes in url
             downloadUrl(urlGetTarget, function(panelResult) {
+
                 var xml = panelResult.responseXML;
+
+                // if there are no results (might be a database error then fail gracefully)
+                if (xml===null){
+                  alert(DATABASE_ERROR_MESSAGE);
+                }
+
                 var resultArray = xml.documentElement.getElementsByTagName("count");
                 // retrieve attribute    
                 panelsRequired = resultArray[0].getAttribute("panel_count");
@@ -415,6 +438,12 @@ Adds the HTML for the number of panesl required
     // get data from MySQL and calls download URL function
     downloadUrl(urlGet, function(data) {
         var xml = data.responseXML;
+
+        // if there are no results (might be a database error then fail gracefully)
+        if (xml===null){
+          alert(DATABASE_ERROR_MESSAGE);
+        }
+
         // get xml element
         var journeyCountArray = xml.documentElement.getElementsByTagName("count");
         // get value from array
@@ -476,8 +505,16 @@ function populateAccordion(journeysRequired, journeyToHighlight){
 var urlGetData = "jsJour/accordionManagerAjax.php?panels="+journeysRequired;
 
 downloadUrl(urlGetData, function(dataResult) {
+
 	var xml = dataResult.responseXML;
+
+  // if there are no results (might be a database error then fail gracefully)
+  if (xml===null){
+    alert(DATABASE_ERROR_MESSAGE);
+  }
+
 	var journeyArray = xml.documentElement.getElementsByTagName("journeyrecord");
+
         // retrieve attributes for each element
         
         for (var i = 0; i < journeyArray.length; ++i) {
