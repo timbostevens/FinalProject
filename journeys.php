@@ -587,7 +587,7 @@
                   </div> <!-- end Jumbotron -->
 
 
-                  <img src="img/loading.GIF" id="loading-spinner"/>
+                  <!-- <img src="img/loading.GIF" id="loading-spinner"/> -->
 
                 </div> <!-- End Main Content -->
               </div> <!-- End Row -->
