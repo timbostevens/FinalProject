@@ -140,45 +140,50 @@ if($('#tweet-button'+panelNumber).length){
         //mapTypeId: 'roadmap'
       };
 
-      /////////////////////////////////////////////
-      // IMPLEMENT A CHECK FOR the map already having contents
-      ////////////////////////////////////////////
-      // global var - create new area chart
-      areaChart = new google.visualization.AreaChart(document.getElementById("journey-area-chart"+panelNumber));
-      // global var - create new map with map options - gets map element id by using "mapcanvas"+panelNumber
-      map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
-      // global var - creates varible for info window
-      infoWindow = new google.maps.InfoWindow;
+      // checks if the map has been previously loaded (ie has HTML)
+      // this is a proxy for all dynamic elements within the panel
+      var mapPresent = document.getElementById("mapcanvas"+panelNumber).innerHTML;
 
-      // append journey number to get request
-      var urlGet = "jsJour/journeyDataLoadAjax.php?journey="+journeyNumber;
+      // if there is no map, create one plus the charts
+      if (!mapPresent) {
 
-      // get data from MySQL and calls download URL function
-      downloadUrl(urlGet, function(data) {
-        var xml = data.responseXML;
+        // global var - create new area chart
+        areaChart = new google.visualization.AreaChart(document.getElementById("journey-area-chart"+panelNumber));
+        // global var - create new map with map options - gets map element id by using "mapcanvas"+panelNumber
+        map = new google.maps.Map(document.getElementById("mapcanvas"+panelNumber), mapOptions);
+        // global var - creates varible for info window
+        infoWindow = new google.maps.InfoWindow;
 
+        // append journey number to get request
+        var urlGet = "jsJour/journeyDataLoadAjax.php?journey="+journeyNumber;
 
-        // if there are no results (might be a database error then fail gracefully)
-        if (xml===null){
-          alert(DATABASE_ERROR_MESSAGE);
-        }
+        // get data from MySQL and calls download URL function
+        downloadUrl(urlGet, function(data) {
+          var xml = data.responseXML;
 
 
-        var markers = xml.documentElement.getElementsByTagName("marker");
-        // load the area chart
-       
-        ///////////////////////////////////////////
-        //This location (for the call) is counter intuitive
-        //////////////////////////////////////
-
-        loadAreaChart(markers);
-        // load the map
-        loadMap(markers);
-        
+          // if there are no results (might be a database error then fail gracefully)
+          if (xml===null){
+            alert(DATABASE_ERROR_MESSAGE);
+          }
 
 
-      } // end download URL function
-    );//end download url
+          var markers = xml.documentElement.getElementsByTagName("marker");
+          // load the area chart
+         
+          ///////////////////////////////////////////
+          //This location (for the call) is counter intuitive
+          //////////////////////////////////////
+
+          loadAreaChart(markers);
+          // load the map
+          loadMap(markers);
+          
+
+
+        } // end download URL function
+      );//end download url
+    }// end if
   }// end load()
 
     
