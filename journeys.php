@@ -208,7 +208,7 @@
                           <p>Duration: <span id="duration-stat1">xxxxxx</span> minutes</p>
                           <p>Speed: <span id="speed-stat1">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat1">xxxxxx</span> L</p>
-                          <p>CO2 Saved: <span id="co2-stat1">xxxxxxx</span> kg</p>
+                          <p>CO<sub>2</sub> Saved: <span id="co2-stat1">xxxxxxx</span> kg</p>
 
 
                           </div> <!-- end col-md-6 -->
@@ -297,7 +297,7 @@
                           <p>Duration: <span id="duration-stat2">xxxxxx</span> minutes</p>
                           <p>Speed: <span id="speed-stat2">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat2">xxxxxx</span> L</p>
-                          <p>CO2 Saved: <span id="co2-stat2">xxxxxxx</span> kg</p>
+                          <p>CO<sub>2</sub> Saved: <span id="co2-stat2">xxxxxxx</span> kg</p>
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
@@ -384,7 +384,7 @@
                           <p>Duration: <span id="duration-stat3">xxxxxx</span> minutes</p>
                           <p>Speed: <span id="speed-stat3">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat3">xxxxxx</span> L</p>
-                          <p>CO2 Saved: <span id="co2-stat3">xxxxxxx</span> kg</p>
+                          <p>CO<sub>2</sub> Saved: <span id="co2-stat3">xxxxxxx</span> kg</p>
 
 
                           </div> <!-- end col-md-6 -->
@@ -471,7 +471,7 @@
                           <p>Duration: <span id="duration-stat4">xxxxxx</span> minutes</p>
                           <p>Speed: <span id="speed-stat4">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat4">xxxxxx</span> L</p>
-                          <p>CO2 Saved: <span id="co2-stat4">xxxxxxx</span> kg</p>
+                          <p>CO<sub>2</sub> Saved: <span id="co2-stat4">xxxxxxx</span> kg</p>
 
                           </div> <!-- end col-md-6 -->
                                   <!-- Right hand column containing chart -->
@@ -565,7 +565,7 @@
                           <p>Duration: <span id="duration-stat5">xxxxxx</span> minutes</p>
                           <p>Speed: <span id="speed-stat5">xxxxxx</span> mph</p>
                           <p>Petrol Saved: <span id="petrol-stat5">xxxxxx</span> L</p>
-                          <p>CO2 Saved: <span id="co2-stat5">xxxxxxx</span> kg</p>
+                          <p>CO<sub>2</sub> Saved: <span id="co2-stat5">xxxxxxx</span> kg</p>
 
 
                           </div> <!-- end col-md-6 -->
