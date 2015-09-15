@@ -13,11 +13,24 @@ google.setOnLoadCallback(drawAllCharts);
 Draw All Charts
 */
 function drawAllCharts(){
-  drawDashboard();
-  drawHistoChart(DEFAULT_HISTRO);
-  drawBubbleChart();
-  drawHeatmap();
+  prepDashboard();
+  prepHistoChart(DEFAULT_HISTRO);
+  prepBubbleChart();
+  prepHeatMap();
 }
+
+function prepDashboard(){
+
+  // setup url
+    var urlGet = "jsVis/chartDataLoadAjax.php";
+
+  // get data from MySQL then calls function
+  downloadUrl(urlGet, function(data) {
+          drawDashboard(data.responseXML);
+        });
+}
+
+
 
 /*
 Scatter Chart
@@ -25,21 +38,17 @@ Callback that creates and populates a data table,
 instantiates a dashboard, a range slider and a pie chart,
 passes in the data and draws it
 */
-function drawDashboard() {
+function drawDashboard(xml) {
 
-  // setup url
-    var urlGet = "jsVis/chartDataLoadAjax.php";
-    // global var - sets up start of data input array
-    scatterChartInputData = [['Speed (mph)', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
-
-  // get data from MySQL then calls function
-  downloadUrl(urlGet, function(data) {
-          var xml = data.responseXML;
+      console.log(xml);
 
           // if there are no results (might be a database error then fail gracefully)
           if (xml===null){
             alert(DATABASE_ERROR_MESSAGE);
           }
+
+          // global var - sets up start of data input array
+          scatterChartInputData = [['Speed (mph)', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
 
           var journeys = xml.documentElement.getElementsByTagName("journey");
 
@@ -111,7 +120,7 @@ dashboard = new google.visualization.Dashboard(
         // Draw the dashboard.
         dashboard.draw(scatterChartData);
 
-            });// end downloadUrl
+            
       } // end function
 
 /*
@@ -254,38 +263,47 @@ return columnIndex;
 
 }
 
+
 /*
-Histo Chart
-Manages draw
+Preps histro chart
+sends on xml results
 */
-function drawHistoChart(dataParameter) {
+function prepHistoChart(dataParameter) {
+
+  // setup url
+  var urlGet = "jsVis/chartDataLoadAjax.php";
+
+  // get histoData from MySQL then calls function
+  downloadUrl(urlGet, function(histoData) {
+    drawHistroChart(dataParameter, histoData.responseXML);
+
+      });
+
+}
+
+/*
+Drawns histro chart
+Takes the data choice and xml data
+*/
+function drawHistroChart(dataParameter, xml){
+
+ var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // translate data parameter into ajax-friendly column name
   var columnName = getColumnName(dataParameter);
 
-  // setup url
-  var urlGet = "jsVis/chartDataLoadAjax.php";
     // global var - sets up start of histoData input array
     histoChartInputData = [[dataParameter]];
 
-  // get histoData from MySQL then calls function
-  downloadUrl(urlGet, function(histoData) {
-    var xml = histoData.responseXML;
-
-    var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // cycles through results
   for (var i = 0; i < journeys.length; i++) {
     // appends values to input histoData array
     histoChartInputData.push([parseFloat(journeys[i].getAttribute(columnName))]);
-
   } // end for
-
 
   // parses the input array into a histoData table
   histoDataTable = google.visualization.arrayToDataTable(histoChartInputData);
-
-
 
 // Setup histoChart Options
 options = {
@@ -304,9 +322,10 @@ options = {
 
         histoChart = new google.visualization.Histogram(document.getElementById('histo_div'));
         histoChart.draw(histoDataTable, options);
-      });
 
 }
+
+
 
 /*
 Histo Chart
@@ -343,22 +362,30 @@ return columnName;
 
 
 }
-
 /*
-Sets up and draws bubble chart
+Sets up the bubble chart data
 */
-function drawBubbleChart() {
+function prepBubbleChart() {
 
-// setup url
-    var urlGet = "jsVis/bubbleDataLoadAjax.php";
-    // global var - sets up start of data input array
-    bubbleChartInputData = [['Journey Date', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
+  // setup url
+  var urlGet = "jsVis/bubbleDataLoadAjax.php";
 
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
-          var xml = data.responseXML;
+  drawBubbleChart(data.responseXML);          
+  });
+}
 
-          var journeys = xml.documentElement.getElementsByTagName("journey");
+
+/*
+Takes xml and draws bubble chart
+*/
+function drawBubbleChart(xml){
+
+// global var - sets up start of data input array
+bubbleChartInputData = [['Journey Date', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
+
+var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // cycles through results
   for (var i = 0; i < journeys.length; i++) {
@@ -384,22 +411,31 @@ function drawBubbleChart() {
       bubbleChart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
       // draw bubbleChart
       bubbleChart.draw(bubbleChartData, options);
-    });
 }
+
+
 
 /*
 Heatmap
 Sets up heatmap
 */
-function drawHeatmap(){
+function prepHeatMap(){
 // setup url
 var urlGet = "jsVis/heatDataLoadAjax.php";
 
 // get data from MySQL then calls function
 downloadUrl(urlGet, function(data) {
-  var xml = data.responseXML;
+  drawHeatMap(data.responseXML);
+}); // end download url
+}// end heatmap load
 
-  var markers = xml.documentElement.getElementsByTagName("marker");
+
+/*
+Takes xml and drawns heatmap
+*/
+function drawHeatMap(xml){
+
+var markers = xml.documentElement.getElementsByTagName("marker");
     // empty array for heatmap data
     var heatmapData = [];
 
@@ -436,9 +472,10 @@ downloadUrl(urlGet, function(data) {
     // joins the map and heatmap
     heatmap.setMap(map);
 
-}); // end download url
+}
 
-}// end heatmap load
+
+
 
 /*
 Bubble Chart
@@ -467,7 +504,7 @@ histSelectionParameter = this.innerHTML;
 
 while (histSelectionParameter!=="undefined"){
   // snd data name to setData
-  drawHistoChart(histSelectionParameter);
+  prepHistoChart(histSelectionParameter);
   break;  }
 });
 

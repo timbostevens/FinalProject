@@ -287,7 +287,7 @@
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($totalCo2." kg"); ?></div>
-                                                <div>TOTAL CO2 SAVED</div>
+                                                <div>TOTAL CO<sub>2</sub> SAVED</div>
                                             </div>
                                         </div>
                                     </div>
@@ -311,7 +311,7 @@
                                             </div>
                                             <div class="col-xs-9 text-right">
                                                 <div class="vis-huge"><?php echo($averageCo2." kg"); ?></div>
-                                                <div>AVERAGE CO2 SAVED</div>
+                                                <div>AVERAGE CO<sub>2</sub> SAVED</div>
                                             </div>
                                         </div>
                                     </div>
@@ -454,7 +454,7 @@
 					            <li><a class="scat-horiz-select dropdown-text">Distance (mi)</a></li>
 					            <li><a class="scat-horiz-select dropdown-text">Duration (mins)</a></li>                          
 					            <li><a class="scat-horiz-select dropdown-text">Petrol Saved (L)</a></li>
-					            <li><a class="scat-horiz-select dropdown-text">CO2 Saved (kg)</a></li>
+					            <li><a class="scat-horiz-select dropdown-text">CO<sub>2</sub> Saved (kg)</a></li>
 					          </ul>
 					        </div>
 
@@ -467,7 +467,7 @@
 					            <li><a class="scat-vert-select dropdown-text">Distance (mi)</a></li>
 					            <li><a class="scat-vert-select dropdown-text">Duration (mins)</a></li>                          
 					            <li><a class="scat-vert-select dropdown-text">Petrol Saved (L)</a></li>
-					            <li><a class="scat-vert-select dropdown-text">CO2 Saved (kg)</a></li>
+					            <li><a class="scat-vert-select dropdown-text">CO<sub>2</sub> Saved (kg)</a></li>
 					            </ul>
 					          </div>
 
@@ -504,7 +504,7 @@
 					            <li><a class="hist-select dropdown-text">Distance (mi)</a></li>
 					            <li><a class="hist-select dropdown-text">Duration (mins)</a></li>                          
 					            <li><a class="hist-select dropdown-text">Petrol Saved (L)</a></li>
-					            <li><a class="hist-select dropdown-text">CO2 Saved (kg)</a></li>
+					            <li><a class="hist-select dropdown-text">CO<sub>2</sub> Saved (kg)</a></li>
 					          </ul>
 					        </div>
 
