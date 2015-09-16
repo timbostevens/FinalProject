@@ -1,7 +1,7 @@
 //missing database error message
 var DATABASE_ERROR_MESSAGE = "Ooops, we're having a bit of a problem with the database. I can't seem to find the data I require";
 // value for default histogram option
-var DEFAULT_HISTRO = 'Speed (mph)';
+var DEFAULT_HISTO = 'Speed (mph)';
 
 // Load the Visualization API and the piechart package.
 google.load('visualization', '1.0', {'packages':['corechart','calendar','controls']});
@@ -14,7 +14,7 @@ Draw All Charts
 */
 function drawAllCharts(){
   prepDashboard();
-  prepHistoChart(DEFAULT_HISTRO);
+  prepHistoChart(DEFAULT_HISTO);
   prepBubbleChart();
   prepHeatMap();
 }
@@ -275,7 +275,7 @@ function prepHistoChart(dataParameter) {
 
   // get histoData from MySQL then calls function
   downloadUrl(urlGet, function(histoData) {
-    drawHistroChart(dataParameter, histoData.responseXML);
+    drawHistoChart(dataParameter, histoData.responseXML);
 
       });
 
@@ -285,7 +285,7 @@ function prepHistoChart(dataParameter) {
 Drawns histro chart
 Takes the data choice and xml data
 */
-function drawHistroChart(dataParameter, xml){
+function drawHistoChart(dataParameter, xml){
 
  var journeys = xml.documentElement.getElementsByTagName("journey");
 
@@ -372,6 +372,7 @@ function prepBubbleChart() {
 
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
+  console.log(data);
   drawBubbleChart(data.responseXML);          
   });
 }

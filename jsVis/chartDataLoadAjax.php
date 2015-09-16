@@ -33,7 +33,7 @@ foreach ($db->query($allSummaryQuery) as $row) {
 
   // $row[] states column name in to retrieve from db results
   // setAttribute(.... is how it is listed in produced xml
-  $newnode->setAttribute("journey_ref",$row['journey_id']);
+  // $newnode->setAttribute("journey_ref",$row['journey_id']);
   $newnode->setAttribute("speed",$row['average_speed_mph']);
   $newnode->setAttribute("distance",$row['distance_mi']);
   $newnode->setAttribute("duration", $row['duration_mins']);
