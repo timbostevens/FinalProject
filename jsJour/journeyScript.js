@@ -6,6 +6,8 @@ var NO_JOURNEY_FOUND_MESSAGE = "Ooops, it looks like you requested a journey tha
 var WEBSITE_BASE_ADDRESS = "http://tstevens01.students.cs.qub.ac.uk/";
 //missing database error message
 var DATABASE_ERROR_MESSAGE = "Ooops, we're having a bit of a problem with the database. I can't seem to find any journeys to load";
+//missing database error message
+var GENERAL_ERROR_MESSAGE = "Ooops, we're having a bit of a problem. Please try loading the page again";
 
 // Load the Visualization API and the piechart package.
 google.load('visualization', '1.0', {'packages':['corechart']});
@@ -85,7 +87,7 @@ $(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
     load(journeyNumber, panelNumber);
 
     // call loading of column chart
-    drawJourneyColumnChart(journeyNumber, panelNumber);
+    prepJourneyColumnChart(journeyNumber, panelNumber);
     insertTwitter(journeyNumber, panelNumber);
 
 
@@ -115,8 +117,6 @@ if($('#tweet-button'+panelNumber).length){
 
 }
 }
-
-
 
 /*
     * Loads map and sets default zoom
@@ -312,18 +312,75 @@ $( window ).resize(function() {
 /////////journey column chart load
 /////////////////////////////
 
-// Callback that creates and populates a data table,
-// instantiates a chart, passes in the data and draws it.
-function drawJourneyColumnChart(journeyNumber, panelNumber) {
+// // Callback that creates and populates a data table,
+// // instantiates a chart, passes in the data and draws it.
+// function drawJourneyColumnChart(journeyNumber, panelNumber) {
+
+//   // setup url
+//     var urlGet = "jsJour/journeyColumnDataLoadAjax.php?journey="+journeyNumber;
+//     // global var - sets up start of data input array
+//     columnChartInputData = [['','Min','Journey','Average','Max']];
+
+//   // get data from MySQL then calls function
+//   downloadUrl(urlGet, function(data) {
+//           var xml = data.responseXML;
+
+//           // if there are no results (might be a database error then fail gracefully)
+//           if (xml===null){
+//             alert(DATABASE_ERROR_MESSAGE);
+//           }
+
+//           var sums = xml.documentElement.getElementsByTagName("sum");
+
+//   // cycles through results
+//   for (var i = 0; i < sums.length; i++) {
+//     // appends values to input data array
+//     columnChartInputData.push([(sums[i].getAttribute("parameter")), parseFloat(sums[i].getAttribute("min")), parseFloat(sums[i].getAttribute("val")), parseFloat(sums[i].getAttribute("average")), parseFloat(sums[i].getAttribute("max"))]);
+
+//   } // end for
+
+//   journeyColumnOptions = {
+//     chartArea:{left:30,top:10,width:'100%',height:'85%'},
+//     hAxis: {textStyle: {fontSize: 10}},
+//     legend: {position: 'in'},
+//     fontSize: 12,
+//     fontName: 'Biryani'
+//   };
+
+//   // parses the input array into a data table
+//   chartData = google.visualization.arrayToDataTable(columnChartInputData);
+          
+//     // Create a columnchart
+//     columnChart = new google.visualization.ColumnChart(document.getElementById('journey-column-chart'+panelNumber));
+
+//         // Draw the chart
+//         columnChart.draw(chartData, journeyColumnOptions);
+
+//             });// end downloadUrl
+// } // end function
+
+
+
+
+function prepJourneyColumnChart(journeyNumber, panelNumber){
 
   // setup url
     var urlGet = "jsJour/journeyColumnDataLoadAjax.php?journey="+journeyNumber;
+
+      // get data from MySQL then calls function
+      downloadUrl(urlGet, function(data) {
+          drawJourneyColumnChart(data.responseXML, panelNumber);
+
+    });
+}
+
+
+// Callback that creates and populates a data table,
+// instantiates a chart, passes in the data and draws it.
+function drawJourneyColumnChart(xml, panelNumber) {
+
     // global var - sets up start of data input array
     columnChartInputData = [['','Min','Journey','Average','Max']];
-
-  // get data from MySQL then calls function
-  downloadUrl(urlGet, function(data) {
-          var xml = data.responseXML;
 
           // if there are no results (might be a database error then fail gracefully)
           if (xml===null){
@@ -347,7 +404,6 @@ function drawJourneyColumnChart(journeyNumber, panelNumber) {
     fontName: 'Biryani'
   };
 
-
   // parses the input array into a data table
   chartData = google.visualization.arrayToDataTable(columnChartInputData);
           
@@ -357,8 +413,7 @@ function drawJourneyColumnChart(journeyNumber, panelNumber) {
         // Draw the chart
         columnChart.draw(chartData, journeyColumnOptions);
 
-            });// end downloadUrl
-      } // end function
+} // end function
 
 // resizes chart on window resize
 $( window ).resize(function() {
@@ -389,17 +444,18 @@ if(typeof requiredJourney!=='undefined'){
                 }
 
                 var resultArray = xml.documentElement.getElementsByTagName("count");
-                // retrieve attribute    
-                panelsRequired = resultArray[0].getAttribute("panel_count");
+
 
                 // check for a blank entry in panels required
                 // this happens when a journey is searched for but it doesn't exist in the database
-                if (panelsRequired==="") {
+                if (resultArray.length === 0) {
                     alert(NO_JOURNEY_FOUND_MESSAGE);
                     // recursive call to run setupAccordion again withouth the journey number
                     setupAccordion();
 
                 } else {
+                // retrieve attribute    
+                panelsRequired = resultArray[0].getAttribute("panel_count");
                 //before they are populated, the correct number of panesl need to be created.
                 addNewPanels(panelsRequired);
             }
@@ -474,7 +530,7 @@ Adds the HTML for the number of panesl required
                         populateAccordion(highestPanel, panelsRequired);
 
                 } else {
-                    console.log("FAIL");
+                    alert(GENERAL_ERROR_MESSAGE);
                 }
 
         // if a var wasn't passed as an argument

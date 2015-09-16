@@ -13,6 +13,9 @@ google.setOnLoadCallback(drawAllCharts);
 Draw All Charts
 */
 function drawAllCharts(){
+  // set up window width var
+  windowWidth = $(window).width();
+  // draw all charts
   prepDashboard();
   prepHistoChart(DEFAULT_HISTO);
   prepBubbleChart();
@@ -30,8 +33,6 @@ function prepDashboard(){
         });
 }
 
-
-
 /*
 Scatter Chart
 Callback that creates and populates a data table,
@@ -39,8 +40,6 @@ instantiates a dashboard, a range slider and a pie chart,
 passes in the data and draws it
 */
 function drawDashboard(xml) {
-
-      console.log(xml);
 
           // if there are no results (might be a database error then fail gracefully)
           if (xml===null){
@@ -70,12 +69,11 @@ dashboard = new google.visualization.Dashboard(
 // Create chart, passing some options
         scatterChart = new google.visualization.ChartWrapper({
           chartType: 'ScatterChart',
-          containerId: 'chart_div',
+          containerId: 'scatter_div',
           view: {'columns':['Speed (mph)','Distance (mi)']},
           options: {
             hAxis: {title: 'Speed (mph)', minValue: 0, maxValue: 15},
             vAxis: {title: 'Distance (mi)', minValue: 0, maxValue: 15},
-            chartArea:{left:100,top:60,width:'75%',height:'65%'},
             // title: 'My ScatterChart',
             legend: 'none',
             colors: ['#808080']
@@ -113,6 +111,9 @@ dashboard = new google.visualization.Dashboard(
           'options': {'filterColumnLabel': 'CO2 Saved (kg)'}
         });
 
+        // sets up width options
+        setDashboardOptions();
+
         // Establish dependencies, declaring that filters drive the scatterChart,
         // so that the chart will only display entries that are let through
         // given the chosen slider range.
@@ -122,6 +123,33 @@ dashboard = new google.visualization.Dashboard(
 
             
       } // end function
+
+
+/*
+Sets the histo chart options and height to respond to screen size
+*/
+function setDashboardOptions(){
+// chartArea:{left:100,top:60,width:'75%',height:'65%'},
+  // var width = $(window).width();
+
+  switch (true){
+    // small screen
+    case (windowWidth<850):
+    scatterChart.setOption('chartArea.left',30);
+    scatterChart.setOption('chartArea.top',30);
+    scatterChart.setOption('chartArea.width','85%');
+      $("#scatter_div").height(300);
+      break;
+    case (windowWidth>=850):
+      // Setup histoChart Options
+        scatterChart.setOption('chartArea.left',75);
+        scatterChart.setOption('chartArea.top',60);
+        scatterChart.setOption('chartArea.width','75%');
+      $("#scatter_div").height(500);
+      break;
+  }
+}
+
 
 /*
 Scatter Chart
@@ -304,27 +332,49 @@ function drawHistoChart(dataParameter, xml){
 
   // parses the input array into a histoData table
   histoDataTable = google.visualization.arrayToDataTable(histoChartInputData);
-
-// Setup histoChart Options
-options = {
-  // title: 'Awesome Historgram',
-  hAxis: {title: dataParameter},
-  vAxis: {title: 'Journey Count'},
-  legend: 'none',
-  chartArea:{left:100,top:60,width:'75%',height:'65%'},
-  colors: ['#808080']
-  };
-
-        // var options = {
-        //   title: 'Lengths of dinosaurs, in meters',
-        //   legend: { position: 'none' }
-        // };
-
-        histoChart = new google.visualization.Histogram(document.getElementById('histo_div'));
-        histoChart.draw(histoDataTable, options);
-
+  // set up option
+  setHistoOptions(dataParameter);
+  // create new chart
+  histoChart = new google.visualization.Histogram(document.getElementById('histo_div'));
+  // draw chart
+  histoChart.draw(histoDataTable, histoOptions);
 }
 
+/*
+Sets the histo chart options and height to respond to screen size
+*/
+function setHistoOptions(dataParameter){
+
+  // var width = $(window).width();
+
+  switch (true){
+    // small screen
+    case (windowWidth<850):
+        histoOptions = {
+          // title: 'Awesome Historgram',
+          hAxis: {title: dataParameter},
+          vAxis: {title: 'Journey Count'},
+          legend: 'none',
+          chartArea:{left:30,top:30,width:'85%',height:'65%'},
+          colors: ['#808080']
+          };
+
+      $("#histo_div").height(300);
+      break;
+    case (windowWidth>=850):
+      // Setup histoChart Options
+        histoOptions = {
+          // title: 'Awesome Historgram',
+          hAxis: {title: dataParameter},
+          vAxis: {title: 'Journey Count'},
+          legend: 'none',
+          chartArea:{left:75,top:60,width:'75%',height:'65%'},
+          colors: ['#808080']
+          };
+      $("#histo_div").height(500);
+      break;
+  }
+}
 
 
 /*
@@ -372,7 +422,7 @@ function prepBubbleChart() {
 
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
-  console.log(data);
+
   drawBubbleChart(data.responseXML);          
   });
 }
@@ -398,8 +448,38 @@ var journeys = xml.documentElement.getElementsByTagName("journey");
   // parses the input array into a data table
   bubbleChartData = google.visualization.arrayToDataTable(bubbleChartInputData);
 
-      // setup chart options
-      options = {
+      setBubbleOptions();
+
+      // create chart and link to html id
+      bubbleChart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
+      // draw bubbleChart
+      bubbleChart.draw(bubbleChartData, bubbleOptions);
+}
+
+/*
+Sets the bubble chart options and height to respond to screen size
+*/
+function setBubbleOptions(){
+
+  // var width = $(window).width();
+
+  switch (true){
+    // small screen
+    case (windowWidth<850):
+      bubbleOptions = {
+        title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
+        hAxis: {title: 'Distance'},
+        vAxis: {title: 'Duration'},
+        legend: {position: 'none'},
+        colors: ['#808080'],
+        chartArea:{left:30,top:30,width:'85%',height:'65%'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+      $("#bubble_div").height(300);
+      $(".vis-bubble-container").css("padding",20);
+      break;
+    case (windowWidth>=850):
+      bubbleOptions = {
         title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
         hAxis: {title: 'Distance'},
         vAxis: {title: 'Duration'},
@@ -408,13 +488,12 @@ var journeys = xml.documentElement.getElementsByTagName("journey");
         chartArea:{left:100,top:100,width:'85%',height:'65%'},
         bubble: {textStyle: {fontSize: 11}}
       };
-      // create chart and link to html id
-      bubbleChart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
-      // draw bubbleChart
-      bubbleChart.draw(bubbleChartData, options);
+      $("#bubble_div").height(500);
+      $(".vis-bubble-container").css("padding",50);
+      break;
+  }
+
 }
-
-
 
 /*
 Heatmap
@@ -469,29 +548,52 @@ var markers = xml.documentElement.getElementsByTagName("marker");
     var heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData
     });
+    // setup heatmap size
+    setupHeatmap();
 
     // joins the map and heatmap
     heatmap.setMap(map);
 
 }
 
-
-
+/*
+Manages the height of the heatmap depening on screen size
+*/
+function setupHeatmap(){
+    // var width = $(window).width();
+    switch (true){
+    // small screen
+    case (windowWidth<850):
+      $("#heatmap-canvas").height(400);
+      break;
+    case (windowWidth>=850):
+      $("#heatmap-canvas").height(600);
+      break;
+  }
+}
 
 /*
-Bubble Chart
-Listener to resize on window resize
+resizes charts on window resize
 */
 $( window ).resize(function() {
-  bubbleChart.draw(bubbleChartData, options);
-});
+  // update window width variable
+  windowWidth = $(window).width();
 
-/*
-Histo Chart
-Listener to resize histoChart on window resize
-*/
-$( window ).resize(function() {
-  histoChart.draw(histoDataTable, options);
+  // scatter chart management
+  setDashboardOptions();
+  dashboard.draw(scatterChartData);
+
+  // bubble chart management
+  setBubbleOptions();
+  bubbleChart.draw(bubbleChartData, bubbleOptions);
+
+  // sets histo options - passes in current horizonatal title
+  setHistoOptions(histoOptions['hAxis']['title']);
+  histoChart.draw(histoDataTable, histoOptions);
+
+  // sets up heatmap
+  setupHeatmap();
+
 });
 
 
@@ -508,7 +610,6 @@ while (histSelectionParameter!=="undefined"){
   prepHistoChart(histSelectionParameter);
   break;  }
 });
-
 
 
 /*
@@ -541,10 +642,4 @@ while (columnParameter!=="undefined"){
   }
 });
 
-/*
-Scatter Chart
-resizes chart on window resize
-*/
-$( window ).resize(function() {
-  dashboard.draw(scatterChartData);
-});
+

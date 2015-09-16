@@ -441,9 +441,9 @@
     					<div class="col-md-6">
 
     					<!--Div that will hold the scatterchart dashboard-->
-					    <div id="dashboard_div" class="vis-chart-container-l">
+					    <div id="dashboard_div" class="vis-chart-container-beside">
 
-					    <div id="chart_div" style="height: 500px; width: 100%"></div>
+					    <div id="scatter_div" style="height: 500px; width: 100%"></div>
 
 					      <div class="btn-group chart-button">
 					        <button type="button" class="btn btn-default btn-xs dropdown-toggle dropdown-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -454,7 +454,7 @@
 					            <li><a class="scat-horiz-select dropdown-text">Distance (mi)</a></li>
 					            <li><a class="scat-horiz-select dropdown-text">Duration (mins)</a></li>                          
 					            <li><a class="scat-horiz-select dropdown-text">Petrol Saved (L)</a></li>
-					            <li><a class="scat-horiz-select dropdown-text">CO<sub>2</sub> Saved (kg)</a></li>
+					            <li><a class="scat-horiz-select dropdown-text">CO2 Saved (kg)</a></li>
 					          </ul>
 					        </div>
 
@@ -467,7 +467,7 @@
 					            <li><a class="scat-vert-select dropdown-text">Distance (mi)</a></li>
 					            <li><a class="scat-vert-select dropdown-text">Duration (mins)</a></li>                          
 					            <li><a class="scat-vert-select dropdown-text">Petrol Saved (L)</a></li>
-					            <li><a class="scat-vert-select dropdown-text">CO<sub>2</sub> Saved (kg)</a></li>
+					            <li><a class="scat-vert-select dropdown-text">CO2 Saved (kg)</a></li>
 					            </ul>
 					          </div>
 
@@ -490,7 +490,7 @@
 
     					<div class="col-md-6">
     					<!-- 	<h5>SECOND CHART</h5> -->
-                        <div class="vis-chart-container-r">
+                        <div class="vis-chart-container-beside">
     						<!-- Google Chart Example -->
     						<!--Div that will hold the histogram-->
     						<div id="histo_div" style="height: 500px; width: 100%"></div>
@@ -504,7 +504,7 @@
 					            <li><a class="hist-select dropdown-text">Distance (mi)</a></li>
 					            <li><a class="hist-select dropdown-text">Duration (mins)</a></li>                          
 					            <li><a class="hist-select dropdown-text">Petrol Saved (L)</a></li>
-					            <li><a class="hist-select dropdown-text">CO<sub>2</sub> Saved (kg)</a></li>
+					            <li><a class="hist-select dropdown-text">CO2 Saved (kg)</a></li>
 					          </ul>
 					        </div>
 
