@@ -476,6 +476,11 @@ color: lightgrey;
   display: none;
 }
 
+#scroll-message{
+  color: grey;
+  /*display: none;*/
+}
+
 /*.twitter-share-button{
   float: right;
 }

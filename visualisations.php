@@ -44,8 +44,13 @@
 	<!-- Custom Fonts for pill symbols-->
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<!-- Prefetch links for all modern browsers -->
+  <link rel="prefetch prerender" href="http://tstevens01.students.cs.qub.ac.uk/index.html" >
+  <link rel="prefetch prerender" href="http://tstevens01.students.cs.qub.ac.uk/journeys.php" >
+  <link rel="prefetch prerender" href="http://tstevens01.students.cs.qub.ac.uk/about.html" >
 
-    </head>
+
+</head>
 
     <body onload="sidebar()">
 

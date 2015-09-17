@@ -36,6 +36,12 @@
     <!-- Custom Fonts for symbols-->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<!-- Prefetch links for all modern browsers -->
+  <link rel="prefetch prerender" href="http://tstevens01.students.cs.qub.ac.uk/visualisations.php" >
+  <link rel="prefetch prerender" href="http://tstevens01.students.cs.qub.ac.uk/index.html" >
+  <link rel="prefetch prerender" href="http://tstevens01.students.cs.qub.ac.uk/about.html" >
+
+
 </head>
     
 <body onload="sidebar(); setupAccordion(<?php echo $requiredJourney; ?>)">
@@ -172,7 +178,7 @@
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button1" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+                                <a id="facebook-button1" style="float: right" href="http://tstevens01.students.cs.qub.ac.uk/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
 <!--                                 <iframe id="tweet-button1" allowtransparency="true" frameborder="0" scrolling="no"
@@ -261,7 +267,7 @@
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button2" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+                                <a id="facebook-button2" style="float: right" href="http://tstevens01.students.cs.qub.ac.uk/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
 <!--                                 <iframe id="tweet-button2" allowtransparency="true" frameborder="0" scrolling="no"
@@ -350,7 +356,7 @@
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button3" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+                                <a id="facebook-button3" style="float: right" href="http://tstevens01.students.cs.qub.ac.uk/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
 <!--                                 <iframe id="tweet-button3" allowtransparency="true" frameborder="0" scrolling="no"
@@ -437,7 +443,7 @@
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button4" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+                                <a id="facebook-button4" style="float: right" href="http://tstevens01.students.cs.qub.ac.uk/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
 <!--                                 <iframe id="tweet-button4" allowtransparency="true" frameborder="0" scrolling="no"
@@ -524,7 +530,7 @@
 
                                 <!-- Facebook button -->
                                 <!-- NEED TO REPLACE IMAGE NAME -->
-                                <a id="facebook-button5" style="float: right" href="http://localhost/Project/FinalProject/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
+                                <a id="facebook-button5" style="float: right" href="http://tstevens01.students.cs.qub.ac.uk/journeys.php" data-image="http://tstevens01.students.cs.qub.ac.uk/img/qubev.png" data-title="The Electric DeLorean Rides Again!" data-desc="Some description k jh for this article" class="btnShare"><img src="img/FB-f-Logo__blue_58.png" alt="share" style="width:20px;height:20px;"></a>
 
                                 <!-- Twitter button -->
 <!--                                 <iframe id="tweet-button5" allowtransparency="true" frameborder="0" scrolling="no"
@@ -583,6 +589,9 @@
                           </div> <!-- end fifth accordion -->
 
                         </div> <!-- end panel group id=accordion -->
+                    
+                    <h5 id="scroll-message">scroll down for more journeys</h5>
+
                     </div> <!-- end container -->
                   </div> <!-- end Jumbotron -->
 
