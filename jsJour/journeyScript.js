@@ -16,87 +16,6 @@ google.load('visualization', '1.0', {'packages':['corechart']});
 //Journey Data Load///////////////
 //////////////////////////////////
 
-// listener to manage rotation of the expand/collapse symbol and panel header colour
-  $(".panel-group").on('hide.bs.collapse',".panel-collapse", function() {
-    // get the id of the div clicked
-    var divClicked = document.getElementById(this.id);
-    // get the parent id
-    var panelNumber = divClicked.parentNode.id;
-    // trim the parent id to leave just the number
-    panelNumber = panelNumber.replace('panel','');
-    // rotate symbol
-    var expandSymbol = document.getElementById("expand-icon"+panelNumber);
-    expandSymbol.style.transform = "rotate(0deg)";
-    expandSymbol.style.transition = "transform 0.75s";
-
-        // change background colour of the header (show it's active)
-    $("#panel-heading"+panelNumber).css({
-      transition: 'background-color 0.75s linear',
-                      "background-color": "#F5F5F5"
-    });
-
-
-});
-
-// listener to manage rotation of the expand/collapse symbol and panel header colour
-$(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
-
-    // get the id of the div clicked
-    var divClicked = document.getElementById(this.id);
-    // get the parent id
-    var panelNumber = divClicked.parentNode.id;
-    // trim the parent id to leave just the number
-    panelNumber = panelNumber.replace('panel','');
-    // rotate symbol
-    var expandSymbol = document.getElementById("expand-icon"+panelNumber);
-    expandSymbol.style.transform = "rotate(90deg)";
-    expandSymbol.style.transition = "transform 0.75s";
-
-
-    // change background colour of the header (show it's active)
-    $("#panel-heading"+panelNumber).css({
-      transition: 'background-color 0.75s linear',
-                      "background-color": "#e1ebf5"
-    });
-
-
-
-});
-
-
-// listens for an expansion of the panel group (parent)
-// then gets waht was actually clicked (panel-collpase) and passes it thoguht to the function
-  $(".panel-group").on('shown.bs.collapse',".panel-collapse", function() {
-
-    // get the id of the div clicked
-    var divClicked = document.getElementById(this.id);
-    // get the parent id
-//////////////
-//can probably skip a step here are collapse1 and panel1 are the two vars returned
-///////////////////////////
-
-    var panelNumber = divClicked.parentNode.id;
-    // trim the parent id to leave just the number
-    panelNumber = panelNumber.replace('panel','');
-    // get the text from the journey title
-     var journeyNumber = document.getElementById("journeyP"+panelNumber).innerHTML;
-     // trim off the hourney text to leave the journey number
-     journeyNumber = journeyNumber.replace('Journey ','');
-
-     // send the journey number to map loader
-    load(journeyNumber, panelNumber);
-
-    // call loading of column chart
-    prepJourneyColumnChart(journeyNumber, panelNumber);
-    insertTwitter(journeyNumber, panelNumber);
-
-
-    // set session storage var of panel number
-    // sessionStorage.panelNumber = panelNumber;
-    // sessionStorage.journeyNumber = journeyNumber;
-});
-
-
 /*
 Dynamically inserts tweet button
 */
@@ -119,10 +38,10 @@ if($('#tweet-button'+panelNumber).length){
 }
 
 /*
-    * Loads map and sets default zoom
-    * takes journey number and panel number as argument
-    */
-    function load(journeyNumber, panelNumber) {
+* Loads map and sets default zoom
+* takes journey number and panel number as argument
+*/
+function load(journeyNumber, panelNumber) {
       
       // console.log(journeyNumber, panelNumber);
 
@@ -186,8 +105,11 @@ if($('#tweet-button'+panelNumber).length){
     }// end if
   }// end load()
 
-    
-    function loadMap(markers){
+
+/*
+Creates and loads the map
+*/  
+function loadMap(markers){
 
         // retrieve attributes for each element
         for (var i = 0; i < markers.length; i++) {
@@ -220,54 +142,51 @@ if($('#tweet-button'+panelNumber).length){
 
           // call function
           bindInfoWindow(marker, map, infoWindow, html);
-
-           // on the last pass do this
-           // CAN I MOVE THIS DOWN AND NOT IN AN IF?
-           if(i==(markers.length-1)){
-              // set zoom based on marker bounds
-              map.fitBounds(markerBounds);
-
-              // setup polyline options
-              var routeLine = new google.maps.Polyline({
-                path: routeArray,
-                geodesic: true,
-                strokeColor: '#FF0000',
-                strokeOpacity: 1.0,
-                strokeWeight: 2,
-                // add icons to start and finish
-                icons: [
-                  {
-                  icon: {
-                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                    scale: 4,
-                    strokeWeight: 2,
-                    fillColor: 'yellow',
-                    fillOpacity: 1
-                    },
-                  // start of line
-                  offset: '0%'
-                  }, {
-                  icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 5,
-                    strokeWeight: 2,
-                    fillColor: 'yellow',
-                    fillOpacity: 1
-                    },
-                  // end of line
-                  offset: '100%'
-                }
-                ]
-              });
-              // add line to map
-              routeLine.setMap(map);
-
-          }// end last pass if
         }// end for
+        // set zoom based on marker bounds
+        map.fitBounds(markerBounds);
+
+        // setup polyline options
+        var routeLine = new google.maps.Polyline({
+          path: routeArray,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+          // add icons to start and finish
+          icons: [
+            {
+            icon: {
+              path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+              scale: 4,
+              strokeWeight: 2,
+              fillColor: 'yellow',
+              fillOpacity: 1
+              },
+            // start of line
+            offset: '0%'
+            }, {
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 5,
+              strokeWeight: 2,
+              fillColor: 'yellow',
+              fillOpacity: 1
+              },
+            // end of line
+            offset: '100%'
+          }
+          ]
+        });
+        // add line to map
+        routeLine.setMap(map);
     } // end loadMap
 
 
-    function loadAreaChart(datapoints){
+/*
+Creates and loads the area chart
+*/
+function loadAreaChart(datapoints){
 
         for (var i = 0; i < datapoints.length; i++) {
           // push new datapoint (as array) to the main array
@@ -291,76 +210,19 @@ if($('#tweet-button'+panelNumber).length){
           areaChart.draw(dataArray, journeyAreaOptions);
     }
 
-
-    /*
-    * adds event listener to markers to manage clicks and diplay info windows
-    */
-    function bindInfoWindow(marker, map, infoWindow, html) {
+/*
+* adds event listener to markers to manage clicks and diplay info windows
+*/
+function bindInfoWindow(marker, map, infoWindow, html) {
       google.maps.event.addListener(marker, 'click', function() {
         infoWindow.setContent(html);
         infoWindow.open(map, marker);
       });
     }
 
-
-// listener to resize chart on window resize
-$( window ).resize(function() {
-  areaChart.draw(dataArray, journeyAreaOptions);
-});
-
 /////////////////////////////
 /////////journey column chart load
 /////////////////////////////
-
-// // Callback that creates and populates a data table,
-// // instantiates a chart, passes in the data and draws it.
-// function drawJourneyColumnChart(journeyNumber, panelNumber) {
-
-//   // setup url
-//     var urlGet = "jsJour/journeyColumnDataLoadAjax.php?journey="+journeyNumber;
-//     // global var - sets up start of data input array
-//     columnChartInputData = [['','Min','Journey','Average','Max']];
-
-//   // get data from MySQL then calls function
-//   downloadUrl(urlGet, function(data) {
-//           var xml = data.responseXML;
-
-//           // if there are no results (might be a database error then fail gracefully)
-//           if (xml===null){
-//             alert(DATABASE_ERROR_MESSAGE);
-//           }
-
-//           var sums = xml.documentElement.getElementsByTagName("sum");
-
-//   // cycles through results
-//   for (var i = 0; i < sums.length; i++) {
-//     // appends values to input data array
-//     columnChartInputData.push([(sums[i].getAttribute("parameter")), parseFloat(sums[i].getAttribute("min")), parseFloat(sums[i].getAttribute("val")), parseFloat(sums[i].getAttribute("average")), parseFloat(sums[i].getAttribute("max"))]);
-
-//   } // end for
-
-//   journeyColumnOptions = {
-//     chartArea:{left:30,top:10,width:'100%',height:'85%'},
-//     hAxis: {textStyle: {fontSize: 10}},
-//     legend: {position: 'in'},
-//     fontSize: 12,
-//     fontName: 'Biryani'
-//   };
-
-//   // parses the input array into a data table
-//   chartData = google.visualization.arrayToDataTable(columnChartInputData);
-          
-//     // Create a columnchart
-//     columnChart = new google.visualization.ColumnChart(document.getElementById('journey-column-chart'+panelNumber));
-
-//         // Draw the chart
-//         columnChart.draw(chartData, journeyColumnOptions);
-
-//             });// end downloadUrl
-// } // end function
-
-
-
 
 function prepJourneyColumnChart(journeyNumber, panelNumber){
 
@@ -429,41 +291,7 @@ Works out how many panels are required and sends that number to the next functio
 */
 function setupAccordion(requiredJourney){
 
-// if the script has received a required journey number
-if(typeof requiredJourney!=='undefined'){
-            // defines url target
-            var urlGetTarget = "jsJour/panelCountAjax.php?req="+requiredJourney;
-            // runs downloadURL function - passes in url
-            downloadUrl(urlGetTarget, function(panelResult) {
-
-                var xml = panelResult.responseXML;
-
-                // if there are no results (might be a database error then fail gracefully)
-                if (xml===null){
-                  alert(DATABASE_ERROR_MESSAGE);
-                }
-
-                var resultArray = xml.documentElement.getElementsByTagName("count");
-
-
-                // check for a blank entry in panels required
-                // this happens when a journey is searched for but it doesn't exist in the database
-                if (resultArray.length === 0) {
-                    alert(NO_JOURNEY_FOUND_MESSAGE);
-                    // recursive call to run setupAccordion again withouth the journey number
-                    setupAccordion();
-
-                } else {
-                // retrieve attribute    
-                panelsRequired = resultArray[0].getAttribute("panel_count");
-                //before they are populated, the correct number of panesl need to be created.
-                addNewPanels(panelsRequired);
-            }
-
-            } // end download URL function
-            );//end download url
-} else {
-    var urlGet = "jsJour/journeyCountAjax.php";
+var urlGet = "jsJour/journeyCountAjax.php";
     // get data from MySQL and calls download URL function
     downloadUrl(urlGet, function(data) {
         var xml = data.responseXML;
@@ -476,24 +304,66 @@ if(typeof requiredJourney!=='undefined'){
         // get xml element
         var journeyCountArray = xml.documentElement.getElementsByTagName("count");
         // get value from array
-        var journeyCount = journeyCountArray[0].getAttribute("journey_count"); 
-            // var to hold panel number check
-            var panelCheck = 1;
-            // check for the current highest panel number
-            while($('#panel'+panelCheck).length){
-                panelCheck++;
-            }
-            // correction to remove last increment in while loop
-            // this is now equivalent to the total number of panels
-            panelCheck-=1;
+        journeyCount = journeyCountArray[0].getAttribute("journey_count"); 
 
-            // send parameters to function to manage message
-            manageScrollMessage(journeyCount, panelCheck);
 
-            // send the number of required panels to populateAccordion
-            populateAccordion(panelCheck);
-          });// end download url
-    } // end else
+            // if the script has received a required journey number
+            if(typeof requiredJourney!=='undefined'){
+                        // defines url target
+                        var urlGetTarget = "jsJour/panelCountAjax.php?req="+requiredJourney;
+                        // runs downloadURL function - passes in url
+                        downloadUrl(urlGetTarget, function(panelResult) {
+
+                            var xml = panelResult.responseXML;
+
+                            // if there are no results (might be a database error then fail gracefully)
+                            if (xml===null){
+                              alert(DATABASE_ERROR_MESSAGE);
+                            }
+
+                            var resultArray = xml.documentElement.getElementsByTagName("count");
+
+
+                            // check for a blank entry in panels required
+                            // this happens when a journey is searched for but it doesn't exist in the database
+                            if (resultArray.length === 0) {
+                                alert(NO_JOURNEY_FOUND_MESSAGE);
+                                // recursive call to run setupAccordion again withouth the journey number
+                                setupAccordion();
+
+                            } else {
+                            // retrieve attribute    
+                            panelsRequired = resultArray[0].getAttribute("panel_count");
+                            //before they are populated, the correct number of panesl need to be created.
+
+                            // send parameters to function to manage message
+                            manageScrollMessage(journeyCount, panelsRequired);
+
+                            addNewPanels(panelsRequired);
+                        }
+
+                        } // end download URL function
+                        );//end download url
+            } else {
+                
+                        // var to hold panel number check
+                        var panelCheck = 1;
+                        // check for the current highest panel number
+                        while($('#panel'+panelCheck).length){
+                            panelCheck++;
+                        }
+                        // correction to remove last increment in while loop
+                        // this is now equivalent to the total number of panels
+                        panelCheck-=1;
+
+                        // send parameters to function to manage message
+                        manageScrollMessage(journeyCount, panelCheck);
+
+                        // send the number of required panels to populateAccordion
+                        populateAccordion(panelCheck);
+
+                } // end else
+        }); // end download url
 } // end setupAccordion
 
 
@@ -512,42 +382,16 @@ Adds the HTML for the number of panesl required
     // var to hold current highest value
     highestPanel = panelNumber-1;
 
-    // check how many journeys there are in the database
-    // Ajax call string
-    var urlGet = "jsJour/journeyCountAjax.php";
-    // get data from MySQL and calls download URL function
-    downloadUrl(urlGet, function(data) {
-        var xml = data.responseXML;
-
-        // if there are no results (might be a database error then fail gracefully)
-        if (xml===null){
-          alert(DATABASE_ERROR_MESSAGE);
-        }
-
-        // get xml element
-        var journeyCountArray = xml.documentElement.getElementsByTagName("count");
-        // get value from array
-        var journeyCount = journeyCountArray[0].getAttribute("journey_count"); 
-
         // if a var was passed
         if (typeof panelsRequired!=='undefined') {
 
-              // manages visual status of scroll message
-              if (journeyCount>panelsRequired) {
-                $("#scroll-message").css("display", "block");
-                console.log("1");
-
-              } else {
-               $("#scroll-message").css("display", "none");
-               console.log("2");
-
-              }
+            // manages visual status of scroll message
+            manageScrollMessage(journeyCount, panelsRequired);
 
         // check we have enough journeys to fill the panel numbers
                 if (journeyCount>=panelsRequired) {
                 // calculate how many more to add
                 var additionalPanelsRequired = panelsRequired-highestPanel;
-                // console.log("Got: "+highestPanel+", Need: "+panelsRequired+", Journeys: "+journeyCount+", Additional Required: "+additionalPanelsRequired);
                 // add them
                         for (var loop = 0; loop < additionalPanelsRequired; loop++) {
                             // add the new panel after the current highest panel number
@@ -590,8 +434,8 @@ Adds the HTML for the number of panesl required
         // populate the panels with content
         populateAccordion(highestPanel);
     } // end else
-    } // end download URL function
-    );//end download url
+    // } // end download URL function
+    // );//end download url
 } // end add new panels
 
 
@@ -653,15 +497,7 @@ downloadUrl(urlGetData, function(dataResult) {
         	document.getElementById("dateP"+panelNumber).innerHTML = date;
             document.getElementById("startP"+panelNumber).innerHTML = "Start: "+start;
             document.getElementById("distanceP"+panelNumber).innerHTML = distance+" miles";
-            // create twitter message string
-            //var twitterMessage = "Electric DeLorean Rides Again! "+distance+" miles on "+date;
-            // get twitter button
-            //var tweetButton = document.getElementById("tweet-button"+panelNumber);
-            // change text in the message
-            //var newLink = WEBSITE_BASE_ADDRESS+"journeys.php?journey="+journeyID;
-            // add message and journey specific URL
-            //tweetButton.src = tweetButton.src.replace(/&text=[^&]+/, "&text=" + encodeURIComponent(twitterMessage)+"&url="+encodeURIComponent(newLink));
-            // facebook button updated with custom text
+            // facebook setup
             var facebookButton = document.getElementById("facebook-button"+panelNumber);
             facebookButton.setAttribute('data-desc', 'It travelled '+distance+' miles on '+date);
             facebookButton.href= WEBSITE_BASE_ADDRESS+'journeys.php?journey='+journeyID;
@@ -692,12 +528,87 @@ downloadUrl(urlGetData, function(dataResult) {
     );//end download url
   }// end populateAccordion()
 
+// listener to manage rotation of the expand/collapse symbol and panel header colour
+  $(".panel-group").on('hide.bs.collapse',".panel-collapse", function() {
 
+    // get the id of the div clicked
+    var panelNumber = this.id;
 
-    //Checks for scrolling to the bottom of the page then calls addNewPanels()
-    $(window).scroll(function() {
-      if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           addNewPanels();
-      }
+    // trim the parent id to leave just the number
+    panelNumber = panelNumber.replace('collapse','');
+    // rotate symbol
+    var expandSymbol = document.getElementById("expand-icon"+panelNumber);
+    expandSymbol.style.transform = "rotate(0deg)";
+    expandSymbol.style.transition = "transform 0.75s";
+
+        // change background colour of the header (show it's active)
+    $("#panel-heading"+panelNumber).css({
+      transition: 'background-color 0.75s linear',
+                      "background-color": "#F5F5F5"
     });
+
+
+});
+
+// listener to manage rotation of the expand/collapse symbol and panel header colour
+$(".panel-group").on('show.bs.collapse',".panel-collapse", function() {
+
+    // get the id of the div clicked
+    var panelNumber = this.id;
+
+    // trim the parent id to leave just the number
+    panelNumber = panelNumber.replace('collapse','');
+    // rotate symbol
+    var expandSymbol = document.getElementById("expand-icon"+panelNumber);
+    expandSymbol.style.transform = "rotate(90deg)";
+    expandSymbol.style.transition = "transform 0.75s";
+
+
+    // change background colour of the header (show it's active)
+    $("#panel-heading"+panelNumber).css({
+      transition: 'background-color 0.75s linear',
+                      "background-color": "#e1ebf5"
+    });
+
+
+
+});
+
+
+// listens for an expansion of the panel group (parent)
+// then gets waht was actually clicked (panel-collpase) and passes it thoguht to the function
+  $(".panel-group").on('shown.bs.collapse',".panel-collapse", function() {
+
+    // get the id of the div clicked
+    var panelNumber = this.id;
+
+    // trim the parent id to leave just the number
+    panelNumber = panelNumber.replace('collapse','');
+
+    // get the text from the journey title
+     var journeyNumber = document.getElementById("journeyP"+panelNumber).innerHTML;
+     // trim off the hourney text to leave the journey number
+     journeyNumber = journeyNumber.replace('Journey ','');
+
+     // send the journey number to map loader
+    load(journeyNumber, panelNumber);
+
+    // call loading of column chart
+    prepJourneyColumnChart(journeyNumber, panelNumber);
+    insertTwitter(journeyNumber, panelNumber);
+
+});
+
+
+//Checks for scrolling to the bottom of the page then calls addNewPanels()
+$(window).scroll(function() {
+  if($(window).scrollTop() == $(document).height() - $(window).height()) {
+       addNewPanels();
+  }
+});
+
+// listener to resize chart on window resize
+$( window ).resize(function() {
+  areaChart.draw(dataArray, journeyAreaOptions);
+});
 
