@@ -7,6 +7,7 @@ define("CAR_MPG",28); //Combined - pulled from http://www.aboutautomobile.com/Fu
 define("IMP_GALLON_TO_LITRE", 4.54609); // conversion factor for imp gallon to litre
 define("FILE_LOAD_SUCCESS",1); // value to represent file loading success in database
 define("FILE_LOAD_FAIL",2); // value to represent file loading failure in database
+define("MAX_ALLOWABLE_SPEED",100); // value representing the speed at which to filter data
 
 // // parameters for connection
 $webAddressMain = "localhost";
@@ -20,14 +21,7 @@ $databaseQubev = "qubev";
 $dbMain = new PDO('mysql:host='.$webAddressMain.';dbname='.$databaseMain.';charset=utf8', $username, $password, array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 // connection for the database holding the upload files
-$dbQubev = new PDO('mysql:host='.$webAddressQubev.';dbname='.$databaseQubev.';charset=utf8', $username, $password, array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT));
-
-// sql query to get current max journey id
-$query="SELECT MAX(journey_id) FROM journeysimport";
-// create full statement
-$stmt = $dbMain->query($query);
-// get result and apply to var
-$highestJourneyId = $stmt->fetchColumn(0);
+$dbQubev = new PDO('mysql:host='.$webAddressQubev.';dbname='.$databaseQubev.';charset=utf8', $username, $password, array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 // create start of insert datapoint query
 // not converted to prepared statement to make it easier to catch errors
@@ -43,60 +37,114 @@ $rowNumber = 1;
 // flag for date errors
 $dateErrorFlag = false;
 
-////////////////////////////////////////
-// This section checks for new files////
-///////////////////////////////////////
+// var to hold highest journey id
+$highestJourneyId;
+// var to hold file in file upload database
+$filesInQubev;
+// var to hold files in main journey database
+$filesInMainDatabase;
 
-// Select rows from the datapoints table
-$queryFilenamesMain = "SELECT source_file FROM journeysimport";
+// run the function
+getPrepValues();
 
-// runs query and creates PDO data object
-$resultFilenamesMain = $dbMain->query($queryFilenamesMain);
+/*
+Gets preliminary data from the database
+*/
+function getPrepValues(){
 
-// converts PDO data object into array
-$filesInMainDatabase = $resultFilenamesMain->fetchAll(PDO::FETCH_ASSOC);
+global $dbMain;
+global $dbQubev;
+global $highestJourneyId;
+global $filesInQubev;
+global $filesInMainDatabase;
 
-// check for unloaded files
-$queryFilenamesQubev = "SELECT filename FROM files WHERE vis_status = 0 AND filename LIKE '%.json'";
-// runs query and creates PDO objecr
-$resultFilenamesQubev = $dbQubev->query($queryFilenamesQubev);
-// converts PDO data object into array
-$filesInQubev = $resultFilenamesQubev->fetchAll(PDO::FETCH_ASSOC);
+try{
+		// sql query to get current max journey id
+		$query="SELECT MAX(journey_id) FROM journeysimport";
+		
+		// create full statement
+		$stmt = $dbMain->query($query);
+		
+		// get result and apply to superglobal
+		$highestJourneyId = $stmt->fetchColumn(0);
 
-// empty array for filenames
-$allFiles = array();
+		// Select rows from the datapoints table
+		$queryFilenamesMain = "SELECT source_file FROM journeysimport";
 
-// restructures the array
-foreach ($filesInQubev as $row) {
-	$allFiles[]=$row['filename'];
+		// runs query and creates PDO data object
+		$resultFilenamesMain = $dbMain->query($queryFilenamesMain);
+
+		// converts PDO data object into array
+		$filesInMainDatabase = $resultFilenamesMain->fetchAll(PDO::FETCH_ASSOC);
+
+		// check for unloaded files
+		$queryFilenamesQubev = "SELECT filename FROM files WHERE vis_status = 0 AND filename LIKE '%.json'";
+		
+		// runs query and creates PDO objecr
+		$resultFilenamesQubev = $dbQubev->query($queryFilenamesQubev);
+		
+		// converts PDO data object into array
+		$filesInQubev = $resultFilenamesQubev->fetchAll(PDO::FETCH_ASSOC);
+	}catch (PDOException $ex){
+				// create text string for logging
+				$databaseFail = "\nPREP\n".date('d/m/Y H:i:s', time())." Database Query FAIL - Database Error: ".$ex->getMessage();
+				// write to log file
+				file_put_contents(DATALOAD_LOGFILE, $databaseFail, FILE_APPEND | LOCK_EX);
+				//exit
+				exit();
+	}
+
+
+	// send both arrays to the checking function
+	checkForNew();
 }
 
-//Iterates over each value in the array passing them to the callback function.
-//If the callback function returns true, the current value from array is returned into the result array.
-$newFiles = array_filter(
-	// passes in file from array into the callback function
-	$allFiles, function ($file) {
+/*
+Compares the two input arrays and sends onteh files marked as new to teh dataloader
+*/
+function checkForNew(){
+	// setup variable scope
+	global $filesInQubev;
 
-		// file found flag
-		$fileFound = false;
+	// empty array for filenames
+	$allFiles = array();
+
+	// restructures the array
+	foreach ($filesInQubev as $row) {
+		$allFiles[]=$row['filename'];
+	}
+
+	//Iterates over each value in the array passing them to the callback function.
+	//If the callback function returns true, the current value from array is returned into the result array.
+	$newFiles = array_filter(
+
+
+		// passes in file from array into the callback function
+		$allFiles, function ($file) {
+		// setup varibale scope
 		global $filesInMainDatabase;
 
-		foreach ($filesInMainDatabase as $row) {	
+			// file found flag
+			$fileFound = false;
 
-			if ($row['source_file']===$file){
-				$fileFound = true;
+			foreach ($filesInMainDatabase as $row) {	
+
+				if ($row['source_file']===$file){
+					$fileFound = true;
+				}
+
+			}// end while
+
+			// returns true if file is not found
+			return (!$fileFound);
 			}
-
-		}// end while
-
-		// returns true if file is not found
-		return (!$fileFound);
-		}
-	);
-// if there are new files pass them to the dataLoader function
-if ($newFiles){
-	dataloader($newFiles);
+		);
+	// if there are new files pass them to the dataLoader function
+	if ($newFiles){
+		dataloader($newFiles);
+	}
 }
+
 
 /*
 FUNCTION
@@ -135,7 +183,7 @@ function dataLoader($newFiles){
 			$highestJourneyId += 1;
 
 			// calls function and passes in interator
-			iterator_apply($iterator, 'iteratorLooper', array($iterator));
+			iterator_apply($iterator, 'datapointIterator', array($iterator));
 
 
 			////////////////////////////////////////////////////
@@ -286,7 +334,7 @@ FUNCTION
 Creates main body of data point insert query
 recursive function to loop through multi-dimensional array
 */
-function iteratorLooper($iterator){
+function datapointIterator($iterator){
 
 // create references to vars outside function
 	global $insertPointQuery;
@@ -300,7 +348,7 @@ function iteratorLooper($iterator){
 	// if the entry has children
 		if($iterator->hasChildren()){
 		// recursive call to loop down a level
-			iteratorLooper($iterator -> getChildren());
+			datapointIterator($iterator -> getChildren());
         // if it doesn't have children
 		} else {
     	// checks for a new entry - uses timestamp as a new line id
@@ -329,15 +377,13 @@ function iteratorLooper($iterator){
 				};
 
 				// adds opening brackets, rowNumber and journey number and start of string to date
-				$insertPointQuery
-				= $insertPointQuery
-				." (".$rowNumber.", ".$highestJourneyId.", STR_TO_DATE('";
+				$insertPointQuery = $insertPointQuery." (".$rowNumber.", ".$highestJourneyId.", STR_TO_DATE('";
 				// add the value with the string to date format
-					$insertPointQuery = $insertPointQuery.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
+				$insertPointQuery = $insertPointQuery.$iterator -> current().PHP_EOL."', '%d %M %Y %H:%i:%s'), ";
 				// increments row number
 				$rowNumber++;
 			// checks for speeds over 100mph and removes them
-			} elseif(($iterator -> key()=="velocity_mph") && ($iterator -> current().PHP_EOL>100)){
+			} elseif(($iterator -> key()=="velocity_mph") && ($iterator -> current().PHP_EOL>MAX_ALLOWABLE_SPEED)){
 				// appends null to the spped attribute
 				$insertPointQuery= $insertPointQuery."Null".", ";
 

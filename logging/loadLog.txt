@@ -1,79 +1,75 @@
 
 NEW JOURNEY
-08/09/2015 10:46:28 Journey Load Success - File: SmallJan.json Journey Ref: 2
+18/09/2015 15:24:11 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-08/09/2015 10:53:55 Journey Load Success - File: SmallAug.json Journey Ref: 1
+18/09/2015 15:24:11 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-08/09/2015 10:58:04 Journey Load Success - File: SmallAug.json Journey Ref: 1
+18/09/2015 15:24:11 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-08/09/2015 10:59:43 Journey Load Success - File: SmallJan.json Journey Ref: 2
+18/09/2015 15:24:11 Array Load FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-08/09/2015 11:01:41 Journey Load Success - File: SmallAug.json Journey Ref: 1
+18/09/2015 15:24:11 Array Load FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-08/09/2015 11:01:41 Journey Load Success - File: SmallJan.json Journey Ref: 2
+18/09/2015 15:24:11 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-08/09/2015 11:04:20 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+18/09/2015 15:24:13 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-08/09/2015 11:06:03 Date FAIL - File: 01-errors-Future.json
+18/09/2015 15:24:14 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-08/09/2015 11:06:03 Date FAIL - File: 01-Errors-bad-date.json
+18/09/2015 15:24:14 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-08/09/2015 11:08:23 Database Load FAIL (& Rolled Back) - File: SmallFeb.json Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.datapointsimport' doesn't exist
+18/09/2015 15:24:14 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-09/09/2015 09:33:39 Journey Load Success - File: MidSizeDec.json Journey Ref: 3
+18/09/2015 15:24:16 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
 NEW JOURNEY
-09/09/2015 09:33:39 Journey Load Success - File: SmallFeb.json Journey Ref: 4
+18/09/2015 15:27:23 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-09/09/2015 09:33:40 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
+18/09/2015 15:27:23 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-09/09/2015 09:33:42 Journey Load Success - File: 01-xFirst.json Journey Ref: 6
+18/09/2015 15:27:23 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-10/09/2015 16:38:06 Database Load FAIL (& Rolled Back) - File: SmallFeb.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key 'PRIMARY'
+18/09/2015 15:27:23 Array Load FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-10/09/2015 16:38:06 Database Load FAIL (& Rolled Back) - File: SmallAug2.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key 'PRIMARY'
+18/09/2015 15:27:23 Array Load FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-10/09/2015 16:38:06 Database Load FAIL (& Rolled Back) - File: SmallMarHighSpeed.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key 'PRIMARY'
+18/09/2015 15:27:23 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-10/09/2015 16:41:36 Database Load FAIL (& Rolled Back) - File: SmallFeb.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key 'PRIMARY'
+18/09/2015 15:27:25 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-10/09/2015 16:41:36 Database Load FAIL (& Rolled Back) - File: SmallAug2.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key 'PRIMARY'
+18/09/2015 15:27:26 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-10/09/2015 16:41:36 Database Load FAIL (& Rolled Back) - File: SmallMarHighSpeed.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key 'PRIMARY'
+18/09/2015 15:27:26 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-10/09/2015 16:44:36 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+18/09/2015 15:27:26 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-10/09/2015 16:44:36 Journey Load Success - File: SmallAug.json Journey Ref: 2
+18/09/2015 15:27:28 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
 NEW JOURNEY
-10/09/2015 16:44:36 Journey Load Success - File: SmallJan.json Journey Ref: 3
+18/09/2015 15:29:03 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-10/09/2015 16:44:36 Journey Load Success - File: MidSizeMar.json Journey Ref: 4
+18/09/2015 15:29:03 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-10/09/2015 16:44:36 Array Load FAIL - File: 01-xFirst.json
+18/09/2015 15:29:03 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-10/09/2015 16:48:24 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+18/09/2015 15:29:03 Array Load FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-10/09/2015 16:48:24 Journey Load Success - File: SmallFeb.json Journey Ref: 2
+18/09/2015 15:29:03 Array Load FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-10/09/2015 16:48:24 Journey Load Success - File: SmallAug.json Journey Ref: 3
+18/09/2015 15:29:03 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-10/09/2015 16:48:24 Journey Load Success - File: SmallJan.json Journey Ref: 4
+18/09/2015 15:29:05 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-10/09/2015 16:48:25 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
+18/09/2015 15:29:06 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-10/09/2015 16:48:25 Journey Load Success - File: SmallAug2.json Journey Ref: 6
+18/09/2015 15:29:06 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-10/09/2015 16:48:25 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
+18/09/2015 15:29:06 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-10/09/2015 20:27:59 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+18/09/2015 15:29:08 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
 NEW JOURNEY
-10/09/2015 20:31:30 Database Load FAIL (& Rolled Back) - File: 02-Second.json Database Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'
+18/09/2015 15:32:14 Journey Load Success - File: SmallFeb.json Journey Ref: 1
 NEW JOURNEY
-10/09/2015 20:36:07 Journey Load Success - File: 02-Second.json Journey Ref: 9
+18/09/2015 15:32:14 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 2
 NEW JOURNEY
-10/09/2015 20:40:22 Journey Load Success - File: MidSizeDec.json Journey Ref: 10
+18/09/2015 15:34:04 Journey Load Success - File: SmallFeb.json Journey Ref: 1
 NEW JOURNEY
-17/09/2015 17:13:05 Journey Load Success - File: SmallFeb.json Journey Ref: 11
-NEW JOURNEY
-17/09/2015 17:13:05 Journey Load Success - File: SmallAug.json Journey Ref: 12
-NEW JOURNEY
-17/09/2015 17:13:05 Journey Load Success - File: SmallAug2.json Journey Ref: 13
+18/09/2015 15:34:04 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 2

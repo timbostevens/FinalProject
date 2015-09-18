@@ -274,13 +274,7 @@ function drawJourneyColumnChart(xml, panelNumber) {
 
         // Draw the chart
         columnChart.draw(chartData, journeyColumnOptions);
-
 } // end function
-
-// resizes chart on window resize
-$( window ).resize(function() {
-  columnChart.draw(chartData, journeyColumnOptions);
-});
 
 /////////////////////////////////
 /////accordion manager
@@ -610,5 +604,10 @@ $(window).scroll(function() {
 // listener to resize chart on window resize
 $( window ).resize(function() {
   areaChart.draw(dataArray, journeyAreaOptions);
+});
+
+// resizes chart on window resize
+$( window ).resize(function() {
+  columnChart.draw(chartData, journeyColumnOptions);
 });
 
