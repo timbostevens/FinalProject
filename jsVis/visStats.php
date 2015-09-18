@@ -1,6 +1,4 @@
 <?php
-
-    // session_start();
     // gets connection details
     include("../connection.php");
     // sql query to count journeys

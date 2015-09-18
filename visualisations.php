@@ -1,5 +1,3 @@
-<!-- IS THIS INSECURE/BAD PRACTICE? -->
-<!-- http://stackoverflow.com/questions/23740548/how-to-pass-variables-and-data-from-php-to-javascript -->
 <!-- php script to generate stats -->
 <?php    
     try{// gets stats and connection
