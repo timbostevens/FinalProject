@@ -634,7 +634,7 @@
     <!-- <script type="text/javascript" src="jsJour/journeyColumnChartLoad.js"></script> -->
         <!-- Accordion Manager -->
     <!-- <script type="text/javascript" src="accordionManager.js"></script> -->
-        <script type="text/javascript" src="jsJour/journeyScript.js"></script>
+        <script type="text/javascript" src="js/journeyScript.js"></script>
 
 
     <!-- Script to manage facebook share click -->

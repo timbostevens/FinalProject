@@ -15,7 +15,7 @@ include("../../connection.php");
 
 
 $stmt = $db->prepare("SELECT ordered.row as panel_count
-									from (SELECT  @rownum:=@rownum+1 'row', journey_id AS JourneyID
+									FROM (SELECT  @rownum:=@rownum+1 'row', journey_id AS JourneyID
       										FROM journeysimport, (SELECT @rownum:=0) temp_row_table
       										ORDER BY journey_date DESC, start_time DESC) AS ordered
 									WHERE journeyID = ?");

@@ -25,7 +25,7 @@ function drawAllCharts(){
 function prepDashboard(){
 
   // setup url
-    var urlGet = "jsVis/chartDataLoadAjax.php";
+    var urlGet = "php/chartDataLoadAjax.php";
 
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
@@ -299,7 +299,7 @@ sends on xml results
 function prepHistoChart(dataParameter) {
 
   // setup url
-  var urlGet = "jsVis/chartDataLoadAjax.php";
+  var urlGet = "php/chartDataLoadAjax.php";
 
   // get histoData from MySQL then calls function
   downloadUrl(urlGet, function(histoData) {
@@ -418,7 +418,7 @@ Sets up the bubble chart data
 function prepBubbleChart() {
 
   // setup url
-  var urlGet = "jsVis/bubbleDataLoadAjax.php";
+  var urlGet = "php/bubbleDataLoadAjax.php";
 
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
@@ -501,7 +501,7 @@ Sets up heatmap
 */
 function prepHeatMap(){
 // setup url
-var urlGet = "jsVis/heatDataLoadAjax.php";
+var urlGet = "php/heatDataLoadAjax.php";
 
 // get data from MySQL then calls function
 downloadUrl(urlGet, function(data) {

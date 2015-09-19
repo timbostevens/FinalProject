@@ -1,7 +1,7 @@
 <!-- php script to generate stats -->
 <?php    
     try{// gets stats and connection
-    include("jsVis/visStats.php");
+    include("php/visStats.php");
 } catch (PDOException $ex){
 
     // if there is a database error set all the stats to 0
@@ -594,7 +594,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false">
     </script>
             <!-- Code for all charts -->
-    <script type="text/javascript" src="jsVis/visChartLoad.js"></script>
+    <script type="text/javascript" src="js/visChartLoad.js"></script>
 
 
 </body>

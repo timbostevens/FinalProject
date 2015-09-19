@@ -74,7 +74,7 @@ function load(journeyNumber, panelNumber) {
         infoWindow = new google.maps.InfoWindow;
 
         // append journey number to get request
-        var urlGet = "jsJour/journeyDataLoadAjax.php?journey="+journeyNumber;
+        var urlGet = "php/journeyDataLoadAjax.php?journey="+journeyNumber;
 
         // get data from MySQL and calls download URL function
         downloadUrl(urlGet, function(data) {
@@ -227,7 +227,7 @@ function bindInfoWindow(marker, map, infoWindow, html) {
 function prepJourneyColumnChart(journeyNumber, panelNumber){
 
   // setup url
-    var urlGet = "jsJour/journeyColumnDataLoadAjax.php?journey="+journeyNumber;
+    var urlGet = "php/journeyColumnDataLoadAjax.php?journey="+journeyNumber;
 
       // get data from MySQL then calls function
       downloadUrl(urlGet, function(data) {
@@ -285,7 +285,7 @@ Works out how many panels are required and sends that number to the next functio
 */
 function setupAccordion(requiredJourney){
 
-var urlGet = "jsJour/journeyCountAjax.php";
+var urlGet = "php/journeyCountAjax.php";
     // get data from MySQL and calls download URL function
     downloadUrl(urlGet, function(data) {
         var xml = data.responseXML;
@@ -304,7 +304,7 @@ var urlGet = "jsJour/journeyCountAjax.php";
             // if the script has received a required journey number
             if(typeof requiredJourney!=='undefined'){
                         // defines url target
-                        var urlGetTarget = "jsJour/panelCountAjax.php?req="+requiredJourney;
+                        var urlGetTarget = "php/panelCountAjax.php?req="+requiredJourney;
                         // runs downloadURL function - passes in url
                         downloadUrl(urlGetTarget, function(panelResult) {
 
@@ -405,8 +405,8 @@ Adds the HTML for the number of panesl required
         // if a var wasn't passed as an argument
         } else {
 
-            // manages visual status of scroll message
-            manageScrollMessage(journeyCount, panelsRequired);
+        // manages visual status of scroll message
+        manageScrollMessage(journeyCount, panelsRequired);
 
         // var to manage the maximum number of new panels to add
         var whileCount = 1;
@@ -451,7 +451,7 @@ Populates the panesl with the right ammount of data
 
 function populateAccordion(journeysRequired, journeyToHighlight){
 
-var urlGetData = "jsJour/accordionManagerAjax.php?panels="+journeysRequired;
+var urlGetData = "php/accordionManagerAjax.php?panels="+journeysRequired;
 
 downloadUrl(urlGetData, function(dataResult) {
 
