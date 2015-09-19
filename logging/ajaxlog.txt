@@ -1,0 +1,21 @@
+
+DATABASE ERROR
+19/09/2015 15:29:47 accordionManagerAjax.php Error: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: vjghv
+DATABASE ERROR
+19/09/2015 15:30:39 accordionManagerAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:36:00 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/accordionManagerAjax.php Error: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: jghvjvg
+DATABASE ERROR
+19/09/2015 15:43:12 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/visStats.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:43:14 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/visStats.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:43:54 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/panelCountAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:44:50 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/panelCountAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:45:32 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/panelCountAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:45:56 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/panelCountAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 15:47:37 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/journeyColumnDataLoadAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
