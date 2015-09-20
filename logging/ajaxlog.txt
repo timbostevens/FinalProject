@@ -19,3 +19,5 @@ DATABASE ERROR
 19/09/2015 15:45:56 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/panelCountAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
 DATABASE ERROR
 19/09/2015 15:47:37 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/journeyColumnDataLoadAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out
+DATABASE ERROR
+19/09/2015 16:45:48 /Applications/XAMPP/xamppfiles/htdocs/Project/FinalProject/php/journeyCountAjax.php Error: SQLSTATE[HY000] [2002] Operation timed out

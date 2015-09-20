@@ -77,9 +77,9 @@
                 </button>
                 <a class="navbar-brand" href="index.html">QUBEV</a>
 
-                <a class = "nav-social" href="https://twitter.com/intent/follow?screen_name=QUBDeLorean"><img src="img/twitter_white_nav.png" /></a>
+                <a class = "nav-social" href="https://twitter.com/QUBDeLorean" target="_blank"><img src="img/twitter_white_nav.png" /></a>
 
-                <a class = "nav-social" href="https://www.facebook.com/QUBEV"><img src="img/facebook_white_nav.png" /></a>
+                <a class = "nav-social" href="https://www.facebook.com/QUBEV" target="_blank"><img src="img/facebook_white_nav.png" /></a>
               
               </div>
               <div id="navbar" class="navbar-collapse collapse">
@@ -109,7 +109,7 @@
                   
                   <li id="twitter-holder" class="social-holder">
 
-                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">Tweets by @QUBDeLorean</a>
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QUBDeLorean" data-widget-id="622021958096564224" width="100%" height="100%" data-chrome="noborders">waiting for Twitter...</a>
 
                  </li>
 
@@ -118,7 +118,7 @@
                   <li id="facebook-holder" class="social-holder">
 
 
-                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">waiting for Facebook...</a></blockquote></div></div>
                       
                   </li>
 
