@@ -506,7 +506,7 @@ color: lightgrey;
 
 .bottom-text-body{
   color: grey;
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
 }
 
 #column-med-padding{
@@ -524,7 +524,7 @@ color: lightgrey;
 
 #top-about.jumbotron p{
   font-size: 16px;
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
 }
 
 
