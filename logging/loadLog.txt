@@ -73,3 +73,19 @@ NEW JOURNEY
 18/09/2015 15:34:04 Journey Load Success - File: SmallFeb.json Journey Ref: 1
 NEW JOURNEY
 18/09/2015 15:34:04 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 2
+NEW JOURNEY
+22/09/2015 14:45:58 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+NEW JOURNEY
+22/09/2015 14:45:58 Journey Load Success - File: SmallFeb.json Journey Ref: 2
+NEW JOURNEY
+22/09/2015 14:45:58 Journey Load Success - File: SmallAug.json Journey Ref: 3
+NEW JOURNEY
+22/09/2015 14:46:00 Journey Load Success - File: 02-Second.json Journey Ref: 4
+NEW JOURNEY
+22/09/2015 14:46:00 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
+NEW JOURNEY
+22/09/2015 14:46:00 Journey Load Success - File: SmallAug2.json Journey Ref: 6
+NEW JOURNEY
+22/09/2015 14:46:00 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
+NEW JOURNEY
+22/09/2015 14:46:02 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8

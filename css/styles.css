@@ -222,19 +222,8 @@ color: lightgrey;
   padding: 10px;
 }
 
-/*resize faecbook plugin dynamically*/
-/*.fb-page, .fb-page iframe[style], .fb-page span {
-    width: 100% !important;
-}*/
-
 /*==================================*/
 /*==========Visualisations==========*/
-
-/*date button*/
-/*#date-select{
-  font-size: 90%;
-  margin-bottom: 10px;
-}*/
 
 /*text in the dropdown*/
 .dropdown-menu > li > a{
@@ -243,11 +232,7 @@ color: lightgrey;
 
 .pill-holder{
   margin: 30px 30px 0px 30px;
-/*  padding-top: 40px;
-  padding-right: 40px;
-  padding-left: 40px;*/
   padding: 20px 20px 0px 20px;
-
   background-color: #F5F5F5;
 }
 
@@ -256,73 +241,61 @@ color: lightgrey;
     line-height: normal;
 }
 
-.panel-green {
+.panel-mid {
     border-color: #A8A7A2;
 }
 
-.panel-green > .panel-heading {
+.panel-mid > .panel-heading {
     border-color: #A8A7A2;
     color: #fff;
     background-color: #A8A7A2;
 }
 
-.panel-green > a {
+.panel-mid > a {
     color: #A8A7A2;
 }
 
-.panel-primary {
+.panel-white {
     border-color: #72706d;
 }
 
-.panel-primary > .panel-heading {
+.panel-white > .panel-heading {
     border-color: #ffffff;
     color: #A8A7A2;
     background-color: #ffffff;
 }
 
-.panel-primary > a {
+.panel-white > a {
     color: #ffffff;
 }
 
-/*.panel-green > a:hover {
-    color: #3d8b3d;
-}*/
-
-.panel-red {
+.panel-dark {
     border-color: #87847F;
 }
 
-.panel-red > .panel-heading {
+.panel-dark > .panel-heading {
     border-color: #87847F;
     color: #fff;
     background-color: #87847F;
 }
 
-.panel-red > a {
+.panel-dark > a {
     color: #87847F;
 }
 
-/*.panel-red > a:hover {
-    color: #b52b27;
-}*/
-
-.panel-yellow {
+.panel-light {
     border-color: #c4c3be;
 }
 
-.panel-yellow > .panel-heading {
+.panel-light > .panel-heading {
     border-color: #c4c3be;
     color: #fff;
     background-color: #c4c3be;
 }
 
-.panel-yellow > a {
+.panel-light > a {
     color: #c4c3be;
 }
-
-/*.panel-yellow > a:hover {
-    color: #df8a13;
-}*/
 
 .vis-chart-container{
   background-color: #F5F5F5;
@@ -343,14 +316,6 @@ color: lightgrey;
   margin: 30px;
 }
 
-/*.vis-chart-container-r{
-  background-color: #F5F5F5;
-  padding: 20px;
-  padding-bottom: 10px;
-  margin: 30px 30px 30px 30px;
-}*/
-
-
 .dropdown-text{
   text-transform: lowercase;
 }
@@ -361,11 +326,6 @@ color: lightgrey;
 
 /*====================*/
 /*======charts========*/
-
-/*#chart-container{
-  padding: 20px;
-  
-}*/
 
 /*for sample HTML chart*/
 .chart div {
@@ -385,7 +345,7 @@ color: lightgrey;
 
 }
 
-/*hidden by default - shown via accordionManager script*/
+/*hidden by default - shown via journeyScript*/
 .accordion-panel{
   display: none;
 }
@@ -410,14 +370,7 @@ color: lightgrey;
 .panel-title .panel-title-map>img{
   /*This value should be the same as the panel-title-expand height*/
   width: 130px;
-  /*position: absolute;*/
-  /*right: 0px;*/
 }
-
-/*plus-minus symbol in panel title*/
-/*.panel-title .panel-title-expand{
-  background-color: white;
-}*/
 
 /*vis pills*/
 .panel{
@@ -481,16 +434,6 @@ color: lightgrey;
   /*display: none;*/
 }
 
-/*.twitter-share-button{
-  float: right;
-}
-
-.twitter-share-button img{
- width: 20px;
- height: 20px;
- margin-right: 5px;
-}*/
-
 /*========================*/
 /*=========index and about=======*/
 
@@ -513,7 +456,7 @@ color: lightgrey;
   padding: 30px 30px 20px 30px;
 }
 
-#top-about{
+.top-about-index{
   background-image: url(../img/Car02Bright.png);
   background-size: cover;
   /*height: 500px;*/
@@ -527,13 +470,8 @@ color: lightgrey;
   /*text-transform: lowercase;*/
 }
 
-
 #top-index{
-  background-image: url(../img/Car02Bright.png);
-  background-size: cover;
   height: 500px;
-  color: white;
-  margin: 30px;
 }
 
 #bottom{

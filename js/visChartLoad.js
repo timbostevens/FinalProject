@@ -9,6 +9,7 @@ google.load('visualization', '1.0', {'packages':['corechart','calendar','control
 
 google.setOnLoadCallback(drawAllCharts);
 
+
 /*
 Draw All Charts
 */
@@ -22,16 +23,22 @@ function drawAllCharts(){
   prepHeatMap();
 }
 
+
+
+/*
+Runs Ajax for dashboard
+*/
 function prepDashboard(){
 
   // setup url
-    var urlGet = "php/chartDataLoadAjax.php";
+  var urlGet = "php/chartDataLoadAjax.php";
 
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
-          drawDashboard(data.responseXML);
-        });
+    drawDashboard(data.responseXML);
+  });
 }
+
 
 /*
 Scatter Chart
@@ -60,56 +67,56 @@ function drawDashboard(xml) {
 
   // parses the input array into a data table
   scatterChartData = google.visualization.arrayToDataTable(scatterChartInputData);
-          
+  
 // Create a dashboard.
 dashboard = new google.visualization.Dashboard(
   document.getElementById('dashboard_div'));
 
 
 // Create chart, passing some options
-        scatterChart = new google.visualization.ChartWrapper({
-          chartType: 'ScatterChart',
-          containerId: 'scatter_div',
-          view: {'columns':['Speed (mph)','Distance (mi)']},
-          options: {
-            hAxis: {title: 'Speed (mph)', minValue: 0, maxValue: 15},
-            vAxis: {title: 'Distance (mi)', minValue: 0, maxValue: 15},
+scatterChart = new google.visualization.ChartWrapper({
+  chartType: 'ScatterChart',
+  containerId: 'scatter_div',
+  view: {'columns':['Speed (mph)','Distance (mi)']},
+  options: {
+    hAxis: {title: 'Speed (mph)', minValue: 0, maxValue: 15},
+    vAxis: {title: 'Distance (mi)', minValue: 0, maxValue: 15},
             // title: 'My ScatterChart',
             legend: 'none',
             colors: ['#808080']
           }
         });
 
-        speedRange = new google.visualization.ControlWrapper({
-          'controlType': 'NumberRangeFilter',
-          'containerId': 'speed_filter_div',
-          'options': {'filterColumnLabel': 'Speed (mph)'}
-        });
-        
-        distanceRange = new google.visualization.ControlWrapper({
-          'controlType': 'NumberRangeFilter',
-          'containerId': 'distance_filter_div',
-          'options': {'filterColumnLabel': 'Distance (mi)'}
-        });
+speedRange = new google.visualization.ControlWrapper({
+  'controlType': 'NumberRangeFilter',
+  'containerId': 'speed_filter_div',
+  'options': {'filterColumnLabel': 'Speed (mph)'}
+});
 
-        durationRange = new google.visualization.ControlWrapper({
-          'controlType': 'NumberRangeFilter',
-          'containerId': 'duration_filter_div',
-          'options': {'filterColumnLabel': 'Duration (mins)'}
-        });
+distanceRange = new google.visualization.ControlWrapper({
+  'controlType': 'NumberRangeFilter',
+  'containerId': 'distance_filter_div',
+  'options': {'filterColumnLabel': 'Distance (mi)'}
+});
 
-        petrolRange = new google.visualization.ControlWrapper({
-          'controlType': 'NumberRangeFilter',
-          'containerId': 'petrol_filter_div',
-          'options': {'filterColumnLabel': 'Petrol Saved (L)'}
-        });
+durationRange = new google.visualization.ControlWrapper({
+  'controlType': 'NumberRangeFilter',
+  'containerId': 'duration_filter_div',
+  'options': {'filterColumnLabel': 'Duration (mins)'}
+});
+
+petrolRange = new google.visualization.ControlWrapper({
+  'controlType': 'NumberRangeFilter',
+  'containerId': 'petrol_filter_div',
+  'options': {'filterColumnLabel': 'Petrol Saved (L)'}
+});
 
 
-        co2Range = new google.visualization.ControlWrapper({
-          'controlType': 'NumberRangeFilter',
-          'containerId': 'co2_filter_div',
-          'options': {'filterColumnLabel': 'CO2 Saved (kg)'}
-        });
+co2Range = new google.visualization.ControlWrapper({
+  'controlType': 'NumberRangeFilter',
+  'containerId': 'co2_filter_div',
+  'options': {'filterColumnLabel': 'CO2 Saved (kg)'}
+});
 
         // sets up width options
         setDashboardOptions();
@@ -121,8 +128,9 @@ dashboard = new google.visualization.Dashboard(
         // Draw the dashboard.
         dashboard.draw(scatterChartData);
 
-            
+        
       } // end function
+
 
 
 /*
@@ -138,17 +146,18 @@ function setDashboardOptions(){
     scatterChart.setOption('chartArea.left',30);
     scatterChart.setOption('chartArea.top',30);
     scatterChart.setOption('chartArea.width','85%');
-      $("#scatter_div").height(300);
-      break;
+    $("#scatter_div").height(300);
+    break;
     case (windowWidth>=850):
       // Setup histoChart Options
-        scatterChart.setOption('chartArea.left',75);
-        scatterChart.setOption('chartArea.top',60);
-        scatterChart.setOption('chartArea.width','75%');
+      scatterChart.setOption('chartArea.left',75);
+      scatterChart.setOption('chartArea.top',60);
+      scatterChart.setOption('chartArea.width','75%');
       $("#scatter_div").height(500);
       break;
+    }
   }
-}
+
 
 
 /*
@@ -172,8 +181,8 @@ scatterChart.setView(newSettings);
 scatterChart.setOption('hAxis.title',newColumnName);
 // refresh chart
 scatterChart.draw();
-
 }
+
 
 /*
 Scatter Chart
@@ -196,8 +205,8 @@ scatterChart.setView(newSettings);
 scatterChart.setOption('vAxis.title',newColumnName);
 // refresh chart
 scatterChart.draw();
-
 }
+
 
 /*
 Scatter Chart
@@ -210,13 +219,12 @@ function showFilters(horizIndex, vertIndex){
   $("#duration_filter_div").hide();
   $("#petrol_filter_div").hide();
   $("#co2_filter_div").hide();
-
+  // get divs via functions
   var horizDiv = getColumnDiv(horizIndex);
   var vertDiv = getColumnDiv(vertIndex);
   // show appropriate divs
   $("#"+horizDiv).show();  
   $("#"+vertDiv).show();
-
 }
 
 
@@ -226,33 +234,31 @@ Helper function to turn column name into a div name
 Returns string
 */
 function getColumnDiv(columnIndex){
-
+// var to hold div name
 var columnDiv;
 
 // set new index
 switch(columnIndex){
   case 0:
-    columnDiv = "speed_filter_div";
-    break;
+  columnDiv = "speed_filter_div";
+  break;
   case 1:
-    columnDiv = "distance_filter_div";
-    break;
+  columnDiv = "distance_filter_div";
+  break;
   case 2:
-    columnDiv = "duration_filter_div";
-    break;
+  columnDiv = "duration_filter_div";
+  break;
   case 3:
-    columnDiv = "petrol_filter_div";
-    break;
+  columnDiv = "petrol_filter_div";
+  break;
   case 4:
-    columnDiv = "co2_filter_div";
-    break;
+  columnDiv = "co2_filter_div";
+  break;
   default:
-    columnDiv = "";
-    alert("Sorry, something has gone wrong with the column chart redraw");
+  columnDiv = "";
+  alert("Sorry, something has gone wrong with the column chart redraw");
 }
-
 return columnDiv;
-
 }
 
 
@@ -262,38 +268,36 @@ Helper function to turn column name into an index
 Returns int
 */
 function getColumnIndex(columnName){
-
+// var to hold column index
 var columnIndex;
 
 // set new index
 switch(columnName){
   case 'Speed (mph)':
-    columnIndex = 0;
-    break;
+  columnIndex = 0;
+  break;
   case 'Distance (mi)':
-    columnIndex = 1;
-    break;
+  columnIndex = 1;
+  break;
   case 'Duration (mins)':
-    columnIndex = 2;
-    break;
+  columnIndex = 2;
+  break;
   case 'Petrol Saved (L)':
-    columnIndex = 3;
-    break;
+  columnIndex = 3;
+  break;
   case 'CO2 Saved (kg)':
-    columnIndex = 4;
-    break;
+  columnIndex = 4;
+  break;
   default:
-    columnIndex = 0;
-    alert("Sorry, something has gone wrong with the column chart redraw");
+  columnIndex = 0;
+  alert("Sorry, something has gone wrong with the column chart redraw");
 }
-
 return columnIndex;
-
 }
 
 
 /*
-Preps histro chart
+Preps histro chart - calls Ajax
 sends on xml results
 */
 function prepHistoChart(dataParameter) {
@@ -305,7 +309,7 @@ function prepHistoChart(dataParameter) {
   downloadUrl(urlGet, function(histoData) {
     drawHistoChart(dataParameter, histoData.responseXML);
 
-      });
+  });
 
 }
 
@@ -314,15 +318,13 @@ Drawns histro chart
 Takes the data choice and xml data
 */
 function drawHistoChart(dataParameter, xml){
-
- var journeys = xml.documentElement.getElementsByTagName("journey");
-
+  // get variable from xml
+  var journeys = xml.documentElement.getElementsByTagName("journey");
   // translate data parameter into ajax-friendly column name
   var columnName = getColumnName(dataParameter);
 
     // global var - sets up start of histoData input array
     histoChartInputData = [[dataParameter]];
-
 
   // cycles through results
   for (var i = 0; i < journeys.length; i++) {
@@ -340,41 +342,41 @@ function drawHistoChart(dataParameter, xml){
   histoChart.draw(histoDataTable, histoOptions);
 }
 
+
+
 /*
 Sets the histo chart options and height to respond to screen size
 */
 function setHistoOptions(dataParameter){
 
-  // var width = $(window).width();
-
   switch (true){
-    // small screen
+    // small screen - window width less than 850
     case (windowWidth<850):
-        histoOptions = {
+    histoOptions = {
           // title: 'Awesome Historgram',
           hAxis: {title: dataParameter},
           vAxis: {title: 'Journey Count'},
           legend: 'none',
           chartArea:{left:30,top:30,width:'85%',height:'65%'},
           colors: ['#808080']
-          };
-
-      $("#histo_div").height(300);
-      break;
-    case (windowWidth>=850):
+        };
+        $("#histo_div").height(300);
+        break;
+      // larger screen - window width 850 and up
+      case (windowWidth>=850):
       // Setup histoChart Options
-        histoOptions = {
+      histoOptions = {
           // title: 'Awesome Historgram',
           hAxis: {title: dataParameter},
           vAxis: {title: 'Journey Count'},
           legend: 'none',
           chartArea:{left:75,top:60,width:'75%',height:'65%'},
           colors: ['#808080']
-          };
-      $("#histo_div").height(500);
-      break;
-  }
-}
+        };
+        $("#histo_div").height(500);
+        break;
+      }
+    }
 
 
 /*
@@ -383,47 +385,44 @@ Helper function to turn plain text column name into
 a column name matching the ajax request
 */
 function getColumnName(dataParameter){
-
+  // var to hold column name
   var columnName;
 
   // set new index
-switch(dataParameter){
-  case "Speed (mph)":
+  switch(dataParameter){
+    case "Speed (mph)":
     columnName = "speed";
     break;
-  case "Distance (mi)":
+    case "Distance (mi)":
     columnName = "distance";
     break;
-  case "Duration (mins)":
+    case "Duration (mins)":
     columnName = "duration";
     break;
-  case "Petrol Saved (L)":
+    case "Petrol Saved (L)":
     columnName = "petrol";
     break;
-  case "CO2 Saved (kg)":
+    case "CO2 Saved (kg)":
     columnName = "co2";
     break;
-  default:
+    default:
     columnName = "";
     alert("Sorry, something has gone wrong with the histo chart redraw");
+  }
+
+  return columnName;
 }
 
-return columnName;
 
-
-}
 /*
-Sets up the bubble chart data
+Sets up the bubble chart data via Ajax
 */
 function prepBubbleChart() {
-
   // setup url
   var urlGet = "php/bubbleDataLoadAjax.php";
-
   // get data from MySQL then calls function
   downloadUrl(urlGet, function(data) {
-
-  drawBubbleChart(data.responseXML);          
+    drawBubbleChart(data.responseXML);          
   });
 }
 
@@ -435,69 +434,68 @@ function drawBubbleChart(xml){
 
 // global var - sets up start of data input array
 bubbleChartInputData = [['Journey Date', 'Distance (mi)', 'Duration (mins)', 'Petrol Saved (L)', 'CO2 Saved (kg)']];
-
+// creates journey from xml
 var journeys = xml.documentElement.getElementsByTagName("journey");
 
   // cycles through results
   for (var i = 0; i < journeys.length; i++) {
     // appends values to input data array
     bubbleChartInputData.push([journeys[i].getAttribute("journey_date"), parseFloat(journeys[i].getAttribute("distance")), parseFloat(journeys[i].getAttribute("duration")), parseFloat(journeys[i].getAttribute("petrol")), parseFloat(journeys[i].getAttribute("co2"))]);
-
   } // end for
 
   // parses the input array into a data table
   bubbleChartData = google.visualization.arrayToDataTable(bubbleChartInputData);
-
+      // calls function
       setBubbleOptions();
-
       // create chart and link to html id
       bubbleChart = new google.visualization.BubbleChart(document.getElementById('bubble_div'));
       // draw bubbleChart
       bubbleChart.draw(bubbleChartData, bubbleOptions);
-}
+    }
+
+
 
 /*
 Sets the bubble chart options and height to respond to screen size
 */
 function setBubbleOptions(){
 
-  // var width = $(window).width();
-
   switch (true){
-    // small screen
+    // small screen - window width less than 850
     case (windowWidth<850):
-      bubbleOptions = {
-        title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
-        hAxis: {title: 'Distance'},
-        vAxis: {title: 'Duration'},
-        legend: {position: 'none'},
-        colors: ['#808080'],
-        chartArea:{left:30,top:30,width:'85%',height:'65%'},
-        bubble: {textStyle: {fontSize: 11}}
-      };
-      $("#bubble_div").height(300);
-      $(".vis-bubble-container").css("padding",20);
-      break;
+    bubbleOptions = {
+      title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
+      hAxis: {title: 'Distance'},
+      vAxis: {title: 'Duration'},
+      legend: {position: 'none'},
+      colors: ['#808080'],
+      chartArea:{left:30,top:30,width:'85%',height:'65%'},
+      bubble: {textStyle: {fontSize: 11}}
+    };
+    $("#bubble_div").height(300);
+    $(".vis-bubble-container").css("padding",20);
+    break;
+    // larger scree screen - window width 850 and up
     case (windowWidth>=850):
-      bubbleOptions = {
-        title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
-        hAxis: {title: 'Distance'},
-        vAxis: {title: 'Duration'},
-        legend: {position: 'none'},
-        colors: ['#808080'],
-        chartArea:{left:100,top:100,width:'85%',height:'65%'},
-        bubble: {textStyle: {fontSize: 11}}
-      };
-      $("#bubble_div").height(500);
-      $(".vis-bubble-container").css("padding",50);
-      break;
+    bubbleOptions = {
+      title: 'Savings per Journey - Size: CO2 (kg), Colour: Petrol (L)',
+      hAxis: {title: 'Distance'},
+      vAxis: {title: 'Duration'},
+      legend: {position: 'none'},
+      colors: ['#808080'],
+      chartArea:{left:100,top:100,width:'85%',height:'65%'},
+      bubble: {textStyle: {fontSize: 11}}
+    };
+    $("#bubble_div").height(500);
+    $(".vis-bubble-container").css("padding",50);
+    break;
   }
-
 }
+
 
 /*
 Heatmap
-Sets up heatmap
+Sets up heatmap - calls Ajax
 */
 function prepHeatMap(){
 // setup url
@@ -514,24 +512,19 @@ downloadUrl(urlGet, function(data) {
 Takes xml and drawns heatmap
 */
 function drawHeatMap(xml){
-
+// gets markers from cml
 var markers = xml.documentElement.getElementsByTagName("marker");
     // empty array for heatmap data
     var heatmapData = [];
-
         // var for marker bounds (used for setting the zoom and centre)
         var markerBounds = new google.maps.LatLngBounds();
     // var for default location
     var belfast = new google.maps.LatLng(54.607868, -5.926437);
-
         // cycles through results
         for (var i = 0; i < markers.length; i++) {
-
           var point = new google.maps.LatLng(parseFloat(markers[i].getAttribute("lat")), parseFloat(markers[i].getAttribute("lng")));
-
           heatmapData.push(point);
           markerBounds.extend(point);
-
         } // end for
 
     // create new map object
@@ -550,11 +543,10 @@ var markers = xml.documentElement.getElementsByTagName("marker");
     });
     // setup heatmap size
     setupHeatmap();
-
     // joins the map and heatmap
     heatmap.setMap(map);
 
-}
+  }
 
 /*
 Manages the height of the heatmap depening on screen size
@@ -562,17 +554,21 @@ Manages the height of the heatmap depening on screen size
 function setupHeatmap(){
     // var width = $(window).width();
     switch (true){
-    // small screen
+    // small screen - window width less than 850
     case (windowWidth<850):
-      $("#heatmap-canvas").height(400);
-      break;
-    case (windowWidth>=850):
+    $("#heatmap-canvas").height(400);
+    break;
+      // larger screen - window width 850 and above
+      case (windowWidth>=850):
       $("#heatmap-canvas").height(600);
       break;
+    }
   }
-}
+
+
 
 /*
+Resize listener
 resizes charts on window resize
 */
 $( window ).resize(function() {
@@ -602,7 +598,7 @@ Hist Chart
 listener for horizontal axis click
 */
 $(".hist-select").click(function(){
-
+// gets HTML
 histSelectionParameter = this.innerHTML;
 
 while (histSelectionParameter!=="undefined"){
@@ -617,28 +613,29 @@ Scatter Chart
 listener for horizontal axis click
 */
 $(".scat-horiz-select").click(function(){
-
+// gets HTML
 columnParameter = this.innerHTML;
 
 while (columnParameter!=="undefined"){
   // send index and name to setHoriz
   setHoriz(getColumnIndex(columnParameter), columnParameter);
   break;
-  }
+}
 });
 
 
-/*l
+/*
 Scatter Chart
-istener for vertical axis click
+listener for vertical axis click
 */
 $(".scat-vert-select").click(function(){
+// gets HTML
 columnParameter = this.innerHTML;
 
 while (columnParameter!=="undefined"){
     // send index and name to setVert
-  setVert(getColumnIndex(columnParameter), columnParameter);
-  break;
+    setVert(getColumnIndex(columnParameter), columnParameter);
+    break;
   }
 });
 

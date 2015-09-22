@@ -16,23 +16,20 @@ function sidebar(){
   // removes padding
   facebookWidth -= 20;
 
-  // apply width and height to facebook widget
+  // apply width and height to facebook container
   $('#facebook-holder').html(
-
     '<div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="'+facebookWidth+'" data-height="'+widgetHeight+'" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>'
-  );
-
+    );
   FB.XFBML.parse( );
 }
 
 // resizes facebook widget on window resize
 $(window).bind("resize", function(){  
-
-  $('#facebook-holder').html(
-
+// get container, change html
+$('#facebook-holder').html(
   '<div class="fb-page" data-href="https://www.facebook.com/QUBEV?_rdr=p" data-width="" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/QUBEV?_rdr=p"><a href="https://www.facebook.com/QUBEV?_rdr=p">QUB Electric DeLorean</a></blockquote></div></div>'
   );
-  FB.XFBML.parse( );    
+FB.XFBML.parse( );    
 
 }); 
 
@@ -42,10 +39,7 @@ $(window).bind("resize", function(){
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-// See the Getting Started docs for more information:
-// http://getbootstrap.com/getting-started/#support-ie10-width
-
-(function () {
+ (function () {
   'use strict';
 
   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -53,18 +47,18 @@ $(window).bind("resize", function(){
     msViewportStyle.appendChild(
       document.createTextNode(
         '@-ms-viewport{width:auto!important}'
-      )
-    );
+        )
+      );
     document.querySelector('head').appendChild(msViewportStyle);
   }
-
 })();
 
 /*
-* Gets XML data
+* Gets XML data and runs callback
+FROM: Google Maps API
 */
 function downloadUrl(url, callback) {
-
+      // creqte new request object
       var request = window.ActiveXObject ?
       new ActiveXObject('Microsoft.XMLHTTP') :
       new XMLHttpRequest;
@@ -82,4 +76,8 @@ request.open('GET', url, true);
       request.send(null);
     }
 
-    function doNothing() {}
+/*
+Function to do nothinf
+FROM Google Maps AP
+*/
+function doNothing() {}
