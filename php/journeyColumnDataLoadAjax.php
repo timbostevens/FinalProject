@@ -51,12 +51,12 @@ try{
               WHERE journey_id = ?");
 
     // bind parameters and execute
-
     $statQuery->execute(array($journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber,$journeyNumber));
 
     // get result and pass to var
     $result = $statQuery->fetchAll(PDO::FETCH_ASSOC);
 
+    // prep xml header
     header("Content-type: text/xml");
 
     // Iterate through the rows, adding XML nodes for each

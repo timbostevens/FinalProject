@@ -1,91 +1,87 @@
 
 NEW JOURNEY
-18/09/2015 15:24:11 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+22/09/2015 15:16:24 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-18/09/2015 15:24:11 Journey Load Success - File: SmallFeb.json Journey Ref: 2
+22/09/2015 15:16:24 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-18/09/2015 15:24:11 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+22/09/2015 15:16:24 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-18/09/2015 15:24:11 Array Load FAIL - File: 01-errors-Future.json
+22/09/2015 15:16:24 Date FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-18/09/2015 15:24:11 Array Load FAIL - File: 01-Errors-bad-date.json
+22/09/2015 15:16:24 Date FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-18/09/2015 15:24:11 Journey Load Success - File: SmallAug.json Journey Ref: 3
+22/09/2015 15:16:24 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-18/09/2015 15:24:13 Journey Load Success - File: 02-Second.json Journey Ref: 4
+22/09/2015 15:16:26 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-18/09/2015 15:24:14 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
+22/09/2015 15:16:26 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-18/09/2015 15:24:14 Journey Load Success - File: SmallAug2.json Journey Ref: 6
+22/09/2015 15:16:26 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-18/09/2015 15:24:14 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
+22/09/2015 15:16:26 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-18/09/2015 15:24:16 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+22/09/2015 15:16:28 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
 NEW JOURNEY
-18/09/2015 15:27:23 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+22/09/2015 15:38:58 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-18/09/2015 15:27:23 Journey Load Success - File: SmallFeb.json Journey Ref: 2
+22/09/2015 15:39:39 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-18/09/2015 15:27:23 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+22/09/2015 15:39:39 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-18/09/2015 15:27:23 Array Load FAIL - File: 01-errors-Future.json
+22/09/2015 15:39:39 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-18/09/2015 15:27:23 Array Load FAIL - File: 01-Errors-bad-date.json
+22/09/2015 15:39:39 Date FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-18/09/2015 15:27:23 Journey Load Success - File: SmallAug.json Journey Ref: 3
+22/09/2015 15:39:39 Date FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-18/09/2015 15:27:25 Journey Load Success - File: 02-Second.json Journey Ref: 4
+22/09/2015 15:39:39 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-18/09/2015 15:27:26 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
+22/09/2015 15:39:41 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-18/09/2015 15:27:26 Journey Load Success - File: SmallAug2.json Journey Ref: 6
+22/09/2015 15:39:41 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-18/09/2015 15:27:26 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
+22/09/2015 15:39:41 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-18/09/2015 15:27:28 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+22/09/2015 15:39:41 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-18/09/2015 15:29:03 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+22/09/2015 15:39:43 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
 NEW JOURNEY
-18/09/2015 15:29:03 Journey Load Success - File: SmallFeb.json Journey Ref: 2
+22/09/2015 15:43:36 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-18/09/2015 15:29:03 Array Load FAIL - File: 01-Errors-NoEndBracket.json
+22/09/2015 15:43:36 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-18/09/2015 15:29:03 Array Load FAIL - File: 01-errors-Future.json
+22/09/2015 15:43:36 Array Load FAIL - File: 01-Errors-NoEndBracket.json
 NEW JOURNEY
-18/09/2015 15:29:03 Array Load FAIL - File: 01-Errors-bad-date.json
+22/09/2015 15:43:36 Date FAIL - File: 01-errors-Future.json
 NEW JOURNEY
-18/09/2015 15:29:03 Journey Load Success - File: SmallAug.json Journey Ref: 3
+22/09/2015 15:43:36 Date FAIL - File: 01-Errors-bad-date.json
 NEW JOURNEY
-18/09/2015 15:29:05 Journey Load Success - File: 02-Second.json Journey Ref: 4
+22/09/2015 15:43:36 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-18/09/2015 15:29:06 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
+22/09/2015 15:43:38 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-18/09/2015 15:29:06 Journey Load Success - File: SmallAug2.json Journey Ref: 6
+22/09/2015 15:43:38 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-18/09/2015 15:29:06 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
+22/09/2015 15:43:38 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-18/09/2015 15:29:08 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+22/09/2015 15:43:38 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-18/09/2015 15:32:14 Journey Load Success - File: SmallFeb.json Journey Ref: 1
+22/09/2015 15:43:40 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+PREP
+22/09/2015 15:44:48 Database Query FAIL - Database Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qubev.files' doesn't exist
 NEW JOURNEY
-18/09/2015 15:32:14 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 2
+22/09/2015 15:45:44 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
 NEW JOURNEY
-18/09/2015 15:34:04 Journey Load Success - File: SmallFeb.json Journey Ref: 1
+22/09/2015 15:45:44 Journey Load Success - File: SmallFeb.json Journey Ref: 2
 NEW JOURNEY
-18/09/2015 15:34:04 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 2
+22/09/2015 15:45:44 Journey Load Success - File: SmallAug.json Journey Ref: 3
 NEW JOURNEY
-22/09/2015 14:45:58 Journey Load Success - File: MidSizeDec.json Journey Ref: 1
+22/09/2015 15:45:46 Journey Load Success - File: 02-Second.json Journey Ref: 4
 NEW JOURNEY
-22/09/2015 14:45:58 Journey Load Success - File: SmallFeb.json Journey Ref: 2
+22/09/2015 15:45:46 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
 NEW JOURNEY
-22/09/2015 14:45:58 Journey Load Success - File: SmallAug.json Journey Ref: 3
+22/09/2015 15:45:46 Journey Load Success - File: SmallAug2.json Journey Ref: 6
 NEW JOURNEY
-22/09/2015 14:46:00 Journey Load Success - File: 02-Second.json Journey Ref: 4
+22/09/2015 15:45:46 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
-22/09/2015 14:46:00 Journey Load Success - File: MidSizeMar.json Journey Ref: 5
-NEW JOURNEY
-22/09/2015 14:46:00 Journey Load Success - File: SmallAug2.json Journey Ref: 6
-NEW JOURNEY
-22/09/2015 14:46:00 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
-NEW JOURNEY
-22/09/2015 14:46:02 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+22/09/2015 15:45:48 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8

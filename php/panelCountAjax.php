@@ -16,13 +16,13 @@ try{
     // Opens a connection to a MySQL server
     include("../../connection.php");
 
-
     $stmt = $db->prepare("SELECT ordered.row as panel_count
     									FROM (SELECT  @rownum:=@rownum+1 'row', journey_id AS JourneyID
           										FROM journeysimport, (SELECT @rownum:=0) temp_row_table
           										ORDER BY journey_date DESC, start_time DESC) AS ordered
     									WHERE journeyID = ?");
 
+    // prep xml header
     header("Content-type: text/xml");
 
     // bind parameters and execute
@@ -30,7 +30,6 @@ try{
 
     // get all results
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
     // cycle through results
     foreach($result as $row){

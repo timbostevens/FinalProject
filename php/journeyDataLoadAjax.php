@@ -16,9 +16,6 @@ try{
     // Opens a connection to a MySQL server
     include("../../connection.php");
 
-    // escape the string for security
-    // $journeyNumber = mysqli_real_escape_string($connection, $journeyNumber);
-
     // prepare statement
     $stmt = $db->prepare("SELECT point_id,
                   journey_id,
@@ -33,8 +30,7 @@ try{
     // get all the results
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-
+    // prep xml header
     header("Content-type: text/xml");
 
     // Iterate through the rows, adding XML nodes for each

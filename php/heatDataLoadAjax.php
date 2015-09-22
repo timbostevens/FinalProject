@@ -10,7 +10,6 @@ $parnode = $dom->appendChild($node);
 
 
 try{
-
     // Opens a connection to a MySQL server
     include("../../connection.php");
 
@@ -19,13 +18,12 @@ try{
                     long_dd
              FROM datapointsimport";
 
-
+    // prep xml header
     header("Content-type: text/xml");
 
     // Iterate through the rows, adding XML nodes for each
-      foreach ($db->query($heatStmt) as $row) {
+    foreach ($db->query($heatStmt) as $row) {
       // ADD TO XML DOCUMENT NODE
-
       // states the node name
       $node = $dom->createElement("marker");
       // creates a new node

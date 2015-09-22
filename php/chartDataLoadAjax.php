@@ -9,7 +9,6 @@ $node = $dom->createElement("journeys");
 $parnode = $dom->appendChild($node);
 
 try{
-
     // Opens a connection to a MySQL server
     include("../../connection.php");
 
@@ -21,7 +20,7 @@ try{
                                 petrol_saved_ltr,
                                 co2_saved_kg
                               FROM journeysimport WHERE 1";
-
+    // prep xml header
     header("Content-type: text/xml");
 
     // Iterate through the rows, adding XML nodes for each

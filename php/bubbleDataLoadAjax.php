@@ -20,7 +20,7 @@ try{
                           FROM journeysimport
                           ORDER BY journey_date DESC, start_time DESC
                           LIMIT 20";
-
+    // prep xml header
     header("Content-type: text/xml");
 
     // Iterate through the rows, adding XML nodes for each
@@ -48,7 +48,6 @@ try{
       file_put_contents(AJAX_LOGFILE, $databaseFail, FILE_APPEND | LOCK_EX);
 
 } // end catch
-
 
 echo $dom->saveXML();
 

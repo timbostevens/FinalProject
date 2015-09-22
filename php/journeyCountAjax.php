@@ -10,22 +10,23 @@ $parnode = $dom->appendChild($node);
 
 try{
 
-// Opens a connection to a MySQL server
-include("../../connection.php");
+  // Opens a connection to a MySQL server
+  include("../../connection.php");
 
-// create query
-$countQuery = "SELECT COUNT(*) AS 'count' FROM journeysimport";
+  // create query
+  $countQuery = "SELECT COUNT(*) AS 'count' FROM journeysimport";
 
-header("Content-type: text/xml");
+  // prep xml header
+  header("Content-type: text/xml");
 
-foreach ($db->query($countQuery) as $row) {
-	  // states the node name
-  $node = $dom->createElement("count");
-  // creates a new node
-  $newnode = $parnode->appendChild($node);
-  // gets attribute and adds it to the node
-  $newnode->setAttribute("journey_count",$row['count']);
-}
+  foreach ($db->query($countQuery) as $row) {
+  	  // states the node name
+    $node = $dom->createElement("count");
+    // creates a new node
+    $newnode = $parnode->appendChild($node);
+    // gets attribute and adds it to the node
+    $newnode->setAttribute("journey_count",$row['count']);
+  }
 
 }catch(PDOException $ex){
 
