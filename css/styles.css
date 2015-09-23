@@ -115,6 +115,13 @@ body {
   }
 }
 
+/*
+Hides scrollbars in chrome
+*/
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 /*=============================*/
 /*===== Footer ================*/
 

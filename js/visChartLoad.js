@@ -68,6 +68,14 @@ function drawDashboard(xml) {
   // parses the input array into a data table
   scatterChartData = google.visualization.arrayToDataTable(scatterChartInputData);
   
+// add tootip column
+scatterChartData.addColumn({type: 'string', role: 'tooltip'});
+// add values
+for (var loop = 0; loop < journeys.length; loop++) {
+scatterChartData.setCell(loop,5, 'Speed: '+parseFloat(journeys[loop].getAttribute("speed"))+' mph'+'\nDistance: '+parseFloat(journeys[loop].getAttribute("distance"))+' mi');
+}
+
+
 // Create a dashboard.
 dashboard = new google.visualization.Dashboard(
   document.getElementById('dashboard_div'));
@@ -77,7 +85,7 @@ dashboard = new google.visualization.Dashboard(
 scatterChart = new google.visualization.ChartWrapper({
   chartType: 'ScatterChart',
   containerId: 'scatter_div',
-  view: {'columns':['Speed (mph)','Distance (mi)']},
+  view: {'columns':['Speed (mph)','Distance (mi)',5]},
   options: {
     hAxis: {title: 'Speed (mph)', minValue: 0, maxValue: 15},
     vAxis: {title: 'Distance (mi)', minValue: 0, maxValue: 15},
@@ -169,7 +177,7 @@ function setHoriz(newIndex, newColumnName){
 // get current vert axis index
 var vertColumnIndex =  scatterChart.getView().columns[1];
 // create new settings object
-var newSettings = {columns:[newIndex, vertColumnIndex]};
+var newSettings = {columns:[newIndex, vertColumnIndex,5]};
 // send indexes to filter manager
 ///////////////////////////////////////
 ///Currently hiding filters
@@ -193,7 +201,7 @@ function setVert(newIndex, newColumnName){
 // get current horiz axis index
 var horizColumnIndex =  scatterChart.getView().columns[0];
 // create new settings object
-var newSettings = {columns:[horizColumnIndex, newIndex]};
+var newSettings = {columns:[horizColumnIndex, newIndex,5]};
 // send indexes to filter manager
 ///////////////////////////////////////
 ///Currently hiding filters
