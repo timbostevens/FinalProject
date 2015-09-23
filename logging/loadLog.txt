@@ -85,3 +85,11 @@ NEW JOURNEY
 22/09/2015 15:45:46 Journey Load Success - File: SmallMarHighSpeed.json Journey Ref: 7
 NEW JOURNEY
 22/09/2015 15:45:48 Journey Load Success - File: 01-Original-Data.json Journey Ref: 8
+NEW JOURNEY
+23/09/2015 10:42:27 Array Load FAIL - File: Template.json
+NEW JOURNEY
+23/09/2015 10:44:46 Journey Load Success - File: Template.json Journey Ref: 9
+NEW JOURNEY
+23/09/2015 11:32:11 Journey Load Success - File: NewJourney01.json Journey Ref: 10
+NEW JOURNEY
+23/09/2015 11:34:38 Journey Load Success - File: NewJourney01.json Journey Ref: 1

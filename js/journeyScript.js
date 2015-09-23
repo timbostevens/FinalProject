@@ -568,3 +568,13 @@ $( window ).resize(function() {
   columnChart.draw(chartData, journeyColumnOptions);
 });
 
+
+ /*
+ Script to manage facebook share click
+*/
+$(document).on('click', '.btnShare',function(){
+  elem = $(this);
+  postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
+  return false;
+});
+

@@ -13,7 +13,7 @@ if ((!ctype_digit($requiredJourney)) && (!$requiredJourney=="")) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Download fint from google -->
+  <!-- Download font from google -->
   <link href='http://fonts.googleapis.com/css?family=Biryani' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -455,17 +455,6 @@ if ((!ctype_digit($requiredJourney)) && (!$requiredJourney=="")) {
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
   <!-- Main journey script -->
   <script type="text/javascript" src="js/journeyScript.js"></script>
-
-
-  <!-- Script to manage facebook share click -->
-  <!-- Doesn't work externally - sync/async? -->
-  <script type="text/javascript">
-    $(document).on('click', '.btnShare',function(){
-      elem = $(this);
-      postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
-      return false;
-    });
-  </script>
 
 </body>
 
